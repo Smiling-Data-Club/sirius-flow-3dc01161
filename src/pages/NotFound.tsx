@@ -1,24 +1,19 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import PageLayout from "@/components/PageLayout";
 
-const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
+const NotFound = () => (
+  <PageLayout title="Seite nicht gefunden — SIRIUS GmbH">
+    <section className="py-32 md:py-48">
+      <div className="container text-center">
+        <h1 className="text-6xl md:text-8xl font-bold text-primary mb-4">404</h1>
+        <p className="text-xl text-muted-foreground mb-8">Diese Seite existiert leider nicht.</p>
+        <Button variant="hero" size="lg" asChild>
+          <Link to="/">Zur Startseite</Link>
+        </Button>
       </div>
-    </div>
-  );
-};
+    </section>
+  </PageLayout>
+);
 
 export default NotFound;

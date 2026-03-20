@@ -3,8 +3,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Index from "./pages/Index";
+import Print from "./pages/Print";
+import Blog from "./pages/Blog";
+import Social from "./pages/Social";
+import About from "./pages/About";
+import Team from "./pages/Team";
+import ServiceArea from "./pages/ServiceArea";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +24,14 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/print" element={<Print />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/social" element={<Social />} />
+          <Route path="/ueber-uns" element={<About />} />
+          <Route path="/ueber-uns/team" element={<Team />} />
+          <Route path="/service-area" element={<ServiceArea />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
