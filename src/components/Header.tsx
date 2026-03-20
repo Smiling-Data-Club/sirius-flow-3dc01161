@@ -1,0 +1,112 @@
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SiriusLogo from "./SiriusLogo";
+
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [insightsOpen, setInsightsOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setInsightsOpen(false);
+  }, [location]);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 bg-background ${
+        scrolled ? "shadow-md" : ""
+      }`}
+    >
+      <nav className="container flex items-center justify-between h-16 md:h-20">
+        <Link to="/" className="shrink-0" aria-label="Startseite">
+          <SiriusLogo variant="blue" className="h-10 w-auto" />
+        </Link>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-8">
+          <a
+            href="https://smiling-data.club"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors font-medium"
+          >
+            <span className="w-2 h-2 rounded-full bg-sdc-cyan shrink-0" />
+            Smiling Data Club
+          </a>
+          <Link to="/print" className="text-foreground hover:text-primary transition-colors font-medium">
+            Print
+          </Link>
+          <div className="relative">
+            <button
+              onClick={() => setInsightsOpen(!insightsOpen)}
+              className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Insights
+              <ChevronDown className={`w-4 h-4 transition-transform ${insightsOpen ? "rotate-180" : ""}`} />
+            </button>
+            {insightsOpen && (
+              <>
+                <div className="fixed inset-0 z-40" onClick={() => setInsightsOpen(false)} />
+                <div className="absolute top-full mt-2 left-0 bg-background border rounded-lg shadow-lg py-2 min-w-[160px] z-50">
+                  <Link to="/blog" className="block px-4 py-2 hover:bg-secondary transition-colors">Blog</Link>
+                  <Link to="/social" className="block px-4 py-2 hover:bg-secondary transition-colors">Social</Link>
+                </div>
+              </>
+            )}
+          </div>
+          <Link to="/ueber-uns" className="text-foreground hover:text-primary transition-colors font-medium">
+            Über uns
+          </Link>
+          <Button asChild variant="hero" size="default">
+            <Link to="/service-area">Service Area</Link>
+          </Button>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-2 text-foreground"
+          aria-label="Menü öffnen"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </nav>
+
+      {/* Mobile Panel */}
+      {mobileOpen && (
+        <div className="md:hidden bg-background border-t shadow-lg">
+          <div className="container py-6 flex flex-col gap-4">
+            <a
+              href="https://smiling-data.club"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-foreground font-medium py-2"
+            >
+              <span className="w-2 h-2 rounded-full bg-sdc-cyan" />
+              Smiling Data Club
+            </a>
+            <Link to="/print" className="text-foreground font-medium py-2">Print</Link>
+            <Link to="/blog" className="text-foreground font-medium py-2">Blog</Link>
+            <Link to="/social" className="text-foreground font-medium py-2">Social</Link>
+            <Link to="/ueber-uns" className="text-foreground font-medium py-2">Über uns</Link>
+            <Button asChild variant="hero" size="lg" className="mt-2">
+              <Link to="/service-area">Service Area</Link>
+            </Button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
