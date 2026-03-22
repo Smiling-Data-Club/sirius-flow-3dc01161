@@ -174,6 +174,12 @@
   to { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
+@keyframes sdc-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(3deg); }
+  75% { transform: translateY(4px) rotate(-2deg); }
+}
+
 .animate-float-paper {
   animation: float-paper 20s ease-in-out infinite;
 }
@@ -192,6 +198,10 @@
 
 .animate-sdc-logo {
   animation: sdc-logo-enter 0.6s ease-out both;
+}
+
+.animate-sdc-float {
+  animation: sdc-float 4s ease-in-out infinite, sdc-logo-enter 0.6s ease-out both;
 }
 
 /* Paper decorative element */
@@ -226,6 +236,7 @@
   .animate-bounce-arrow,
   .animate-pulse-play,
   .animate-sdc-logo,
+  .animate-sdc-float,
   .animate-hero-fade-up {
     animation: none !important;
     opacity: 1;
