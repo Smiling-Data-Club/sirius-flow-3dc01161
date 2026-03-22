@@ -27,32 +27,33 @@ interface TeamMember {
   name: string;
   role: string;
   image?: string;
+  objectPos?: string;
 }
 
 const salesMarketing: TeamMember[] = [
   { name: "Fabian Schüler", role: "Geschäftsführer", image: fabianImg },
   { name: "Michael Wangerowski", role: "Geschäftsführer", image: michaelWImg },
   { name: "Patricia Pierdel", role: "Marketing & Sales Coordination", image: patriciaImg },
-  { name: "Lara Köbelin", role: "Social Media Marketing", image: laraImg },
-  { name: "Sally Nehring", role: "Account Managerin", image: sallyImg },
-  { name: "Michael Heitzmann", role: "Account Manager", image: michaelHImg },
+  { name: "Lara Köbelin", role: "Social Media Marketing", image: laraImg, objectPos: "center 15%" },
+  { name: "Sally Nehring", role: "Account Managerin", image: sallyImg, objectPos: "center 15%" },
+  { name: "Michael Heitzmann", role: "Account Manager", image: michaelHImg, objectPos: "center 15%" },
   { name: "Sena Kaya", role: "Business Development", image: senaImg },
-  { name: "Josefine Wartner", role: "Inside Sales", image: josefineImg },
+  { name: "Josefine Wartner", role: "Inside Sales", image: josefineImg, objectPos: "center 15%" },
   { name: "Daniela Trunner", role: "Sales", image: danielaImg },
-  { name: "Angela Warzecha", role: "Operations Managerin", image: angelaImg },
-  { name: "Natascha Biechele", role: "Accounting", image: nataschaImg },
+  { name: "Angela Warzecha", role: "Operations Managerin", image: angelaImg, objectPos: "center 15%" },
+  { name: "Natascha Biechele", role: "Accounting", image: nataschaImg, objectPos: "center 15%" },
 ];
 
 const professionalServices: TeamMember[] = [
   { name: "Manfred Schüler", role: "Geschäftsführer", image: manfredImg },
   { name: "Bahadir Alaz", role: "Head of Professional Services", image: bahadirImg },
-  { name: "Christian Klose", role: "Senior System Engineer", image: christianImg },
+  { name: "Christian Klose", role: "Senior System Engineer", image: christianImg, objectPos: "center 15%" },
   { name: "Jonas Gabel", role: "Projektmanagement Print", image: jonasImg },
   { name: "Christoph Schild", role: "Helpdesk & Dispatching", image: christophImg },
-  { name: "Vladimir Korotine", role: "Senior Service Specialist", image: vladimirImg },
+  { name: "Vladimir Korotine", role: "Senior Service Specialist", image: vladimirImg, objectPos: "center 15%" },
   { name: "Hasib Jabari", role: "Service & Maintenance", image: hasibImg },
   { name: "Hussein Ahmad", role: "Service & Maintenance", image: husseinImg },
-  { name: "Rami Nouri", role: "Service & Maintenance", image: ramiImg },
+  { name: "Rami Nouri", role: "Service & Maintenance", image: ramiImg, objectPos: "center 15%" },
   { name: "Majed", role: "Professional Services" },
 ];
 
@@ -63,12 +64,13 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
         <img
           src={member.image}
           alt={member.name}
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: member.objectPos || "center top" }}
           loading="lazy"
         />
       </div>
     ) : (
-      <div className="w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary mx-auto mb-5 flex items-center justify-center text-muted-foreground text-xs">
+      <div className="w-44 h-44 md:w-48 md:h-48 rounded-full bg-secondary mx-auto mb-5 flex items-center justify-center text-muted-foreground text-xs">
         Foto
       </div>
     )}
