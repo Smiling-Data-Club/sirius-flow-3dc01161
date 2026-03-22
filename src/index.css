@@ -236,6 +236,7 @@
   .animate-bounce-arrow,
   .animate-pulse-play,
   .animate-sdc-logo,
+  .animate-sdc-float,
   .animate-hero-fade-up {
     animation: none !important;
     opacity: 1;
