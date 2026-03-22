@@ -51,8 +51,8 @@ const Print = () => (
                 Als Sharp-Partner bieten wir Ihnen zuverlässige Hardware, kombiniert mit intelligentem Flottenmanagement und transparenter Kostenstruktur.
               </p>
             </div>
-            <div className="reveal aspect-[4/3] bg-secondary rounded-xl flex items-center justify-center text-muted-foreground text-sm">
-              Platzhalter: MPS-Bild
+            <div className="reveal aspect-[4/3] rounded-xl overflow-hidden">
+              <img src={werkstattImg} alt="SIRIUS Mitarbeiter bei der Arbeit im Technik-Lager" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </SectionReveal>

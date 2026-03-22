@@ -93,7 +93,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-foreground font-medium py-2"
             >
-              <span className="w-2 h-2 rounded-full bg-sdc-cyan" />
+              <img src={sdcLogo} alt="SDC" className="w-5 h-5" />
               Smiling Data Club
             </a>
             <Link to="/print" className="text-foreground font-medium py-2">Print</Link>

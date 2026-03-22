@@ -4,6 +4,7 @@ import { ChevronDown, Printer, FileText, Settings, Play } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
+import sdcLogo from "@/assets/sdc-logo.ico";
 
 /* ════════════════════════════════════════════
    Decorative floating paper elements

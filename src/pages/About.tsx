@@ -45,8 +45,8 @@ const About = () => (
                 Mit dem Smiling Data Club haben wir zudem ein Spin-off gegründet, das sich auf KI-gestützte Automatisierung und smarte Datenprozesse spezialisiert.
               </p>
             </div>
-            <div className="reveal aspect-[4/3] bg-secondary rounded-xl flex items-center justify-center text-muted-foreground text-sm">
-              Platzhalter: Über-uns-Bild
+            <div className="reveal aspect-[4/3] rounded-xl overflow-hidden">
+              <img src={teamPortrait} alt="SIRIUS Mitarbeiterin im modernen Büro" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </SectionReveal>
