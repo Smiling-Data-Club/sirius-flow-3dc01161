@@ -353,7 +353,7 @@ const ServiceCTA = () => (
 const Index = () => (
   <PageLayout
     title="SIRIUS GmbH — Dokumentenlösungen, Digitalisierung & Managed Print Services"
-    description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 30 Jahren aus Freiburg."
+    description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 45 Jahren aus Freiburg."
   >
     <Hero />
     <SDCTeaser />
