@@ -63,7 +63,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
         <img
           src={member.image}
           alt={member.name}
-          className="w-[140%] h-[140%] object-cover object-top -ml-[20%] -mt-[5%]"
+          className="w-full h-full object-cover object-top"
           loading="lazy"
         />
       </div>
