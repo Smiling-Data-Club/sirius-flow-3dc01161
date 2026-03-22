@@ -59,7 +59,7 @@ const professionalServices: TeamMember[] = [
 const TeamCard = ({ member }: { member: TeamMember }) => (
   <div className="reveal text-center">
     {member.image ? (
-      <div className="w-32 h-32 rounded-full mx-auto mb-5 overflow-hidden">
+      <div className="w-44 h-44 md:w-52 md:h-52 rounded-full mx-auto mb-5 overflow-hidden">
         <img
           src={member.image}
           alt={member.name}
@@ -68,7 +68,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
         />
       </div>
     ) : (
-      <div className="w-32 h-32 rounded-full bg-secondary mx-auto mb-5 flex items-center justify-center text-muted-foreground text-xs">
+      <div className="w-44 h-44 md:w-52 md:h-52 rounded-full bg-secondary mx-auto mb-5 flex items-center justify-center text-muted-foreground text-xs">
         Foto
       </div>
     )}
