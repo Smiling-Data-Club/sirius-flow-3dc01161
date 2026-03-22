@@ -9,7 +9,6 @@ const Footer = () => (
         {/* Left */}
         <div>
           <SiriusLogo variant="white" className="h-10 w-auto mb-2" />
-          <p className="text-dark-foreground/60 text-sm mt-1">document solutions.</p>
         </div>
 
         {/* Center */}
