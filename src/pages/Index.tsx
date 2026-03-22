@@ -146,7 +146,7 @@ const SDCTeaser = () => (
       style={{ background: "linear-gradient(90deg, hsl(var(--sdc-pink)), hsl(var(--sdc-purple)), hsl(var(--sdc-cyan)))" }}
     />
 
-    <div className="container relative py-24 md:py-32">
+    <div className="container relative py-16 md:py-20">
       <SectionReveal stagger>
         <div className="flex flex-col items-center text-center">
           {/* Animated Logo */}
