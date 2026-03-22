@@ -14,7 +14,7 @@ const values = [
 const About = () => (
   <PageLayout
     title="Über uns — SIRIUS GmbH"
-    description="Seit über 30 Jahren begleitet SIRIUS Unternehmen auf dem Weg zu effizienten Dokumentenprozessen."
+    description="Seit über 45 Jahren begleitet SIRIUS Unternehmen auf dem Weg zu effizienten Dokumentenprozessen."
   >
     {/* Hero */}
     <section className="py-24 md:py-32 bg-gradient-to-b from-background to-secondary">
