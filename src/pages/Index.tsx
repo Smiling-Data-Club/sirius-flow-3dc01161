@@ -269,9 +269,9 @@ const Testimonials = () => (
    TRUST / NUMBERS
    ════════════════════════════════════════════ */
 const stats = [
-  { value: 30, suffix: "+", label: "Jahre Erfahrung" },
-  { value: 500, suffix: "+", label: "Betreute Geräte" },
-  { value: 3, suffix: "", label: "Geschäftsbereiche" },
+  { value: 45, suffix: "+", label: "Jahre Erfahrung" },
+  { value: 4000, suffix: "+", label: "Betreute Geräte" },
+  { value: 120, suffix: "+", label: "Digitalisierungsprojekte" },
 ];
 
 const StatItem = ({ value, suffix, label }: { value: number; suffix: string; label: string }) => {
