@@ -302,7 +302,7 @@ const Trust = () => (
       <SectionReveal>
         <div className="reveal max-w-2xl mx-auto text-center">
           <p className="text-muted-foreground text-lg mb-8">
-            Seit über 30 Jahren begleiten wir Unternehmen auf dem Weg zu effizienten Dokumentenprozessen. Als zertifizierter DocuWare-Partner und Zoho-Authorized-Partner verbinden wir Beratung mit Umsetzung.
+            Seit über 45 Jahren begleiten wir Unternehmen auf dem Weg zu effizienten Dokumentenprozessen. Als zertifizierter DocuWare-Partner und Zoho-Authorized-Partner verbinden wir Beratung mit Umsetzung.
           </p>
 
           {/* Partner logos placeholder */}
