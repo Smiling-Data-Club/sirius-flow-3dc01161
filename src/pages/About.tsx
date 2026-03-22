@@ -22,7 +22,7 @@ const About = () => (
         <SectionReveal>
           <h1 className="reveal text-3xl md:text-5xl font-bold mb-6">Über SIRIUS</h1>
           <p className="reveal text-lg text-muted-foreground max-w-2xl">
-            Seit über 30 Jahren sind wir Partner für Unternehmen, die ihre Dokumentenprozesse klarer, effizienter und zukunftssicher gestalten wollen.
+            Seit über 45 Jahren sind wir Partner für Unternehmen, die ihre Dokumentenprozesse klarer, effizienter und zukunftssicher gestalten wollen.
           </p>
         </SectionReveal>
       </div>
