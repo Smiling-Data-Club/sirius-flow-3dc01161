@@ -5,6 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import sdcLogo from "@/assets/sdc-logo.ico";
+import whiteboardImg from "@/assets/homepage-whiteboard.jpg";
 
 /* ════════════════════════════════════════════
    Decorative floating paper elements
