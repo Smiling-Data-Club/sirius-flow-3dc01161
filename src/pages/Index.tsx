@@ -5,6 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import sdcLogo from "@/assets/sdc-logo.ico";
+import whiteboardImg from "@/assets/homepage-whiteboard.jpg";
 
 /* ════════════════════════════════════════════
    Decorative floating paper elements
@@ -221,6 +222,12 @@ const Services = () => (
               <span className="text-primary font-semibold text-sm">Mehr erfahren →</span>
             </Link>
           ))}
+        </div>
+      </SectionReveal>
+
+      <SectionReveal>
+        <div className="reveal mt-16 aspect-[21/9] rounded-xl overflow-hidden">
+          <img src={whiteboardImg} alt="SIRIUS Team bei der Strategieplanung am Whiteboard" className="w-full h-full object-cover" loading="lazy" />
         </div>
       </SectionReveal>
     </div>

@@ -3,6 +3,7 @@ import { Lightbulb, Shield, Wrench, Rocket } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import teamPortrait from "@/assets/team-portrait-frau.jpg";
+import tabletImg from "@/assets/about-tablet.jpg";
 
 const values = [
   { icon: Lightbulb, title: "Klarheit", text: "Wir machen Komplexes verständlich." },
@@ -45,8 +46,13 @@ const About = () => (
                 Mit dem Smiling Data Club haben wir zudem ein Spin-off gegründet, das sich auf KI-gestützte Automatisierung und smarte Datenprozesse spezialisiert.
               </p>
             </div>
-            <div className="reveal aspect-[4/3] rounded-xl overflow-hidden">
-              <img src={teamPortrait} alt="SIRIUS Mitarbeiterin im modernen Büro" className="w-full h-full object-cover" loading="lazy" />
+            <div className="reveal space-y-6">
+              <div className="aspect-[4/3] rounded-xl overflow-hidden">
+                <img src={teamPortrait} alt="SIRIUS Mitarbeiterin im modernen Büro" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="aspect-[16/10] rounded-xl overflow-hidden">
+                <img src={tabletImg} alt="SIRIUS Team arbeitet gemeinsam an einem digitalen Workflow auf dem Tablet" className="w-full h-full object-cover" loading="lazy" />
+              </div>
             </div>
           </div>
         </SectionReveal>
