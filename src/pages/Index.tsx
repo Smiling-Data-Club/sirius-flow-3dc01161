@@ -172,10 +172,10 @@ const SDCTeaser = () => (
 
           {/* Tagline */}
           <p
-            className="reveal text-base md:text-lg tracking-[0.15em] mb-8"
+            className="reveal text-[10px] md:text-xs tracking-[0.15em] mb-8"
             style={{
               color: "#E84B8A",
-              fontFamily: "'Courier New', Courier, monospace",
+              fontFamily: "'Press Start 2P', monospace",
               textShadow: "0 0 20px rgba(232,75,138,0.3)",
             }}
           >
