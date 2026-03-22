@@ -59,11 +59,11 @@ const professionalServices: TeamMember[] = [
 const TeamCard = ({ member }: { member: TeamMember }) => (
   <div className="reveal text-center">
     {member.image ? (
-      <div className="w-44 h-44 md:w-52 md:h-52 rounded-full mx-auto mb-5 overflow-hidden">
+      <div className="w-44 h-44 md:w-48 md:h-48 rounded-full mx-auto mb-5 overflow-hidden">
         <img
           src={member.image}
           alt={member.name}
-          className="w-full h-full object-cover object-top"
+          className="w-[140%] h-[140%] object-cover object-top -ml-[20%] -mt-[5%]"
           loading="lazy"
         />
       </div>
