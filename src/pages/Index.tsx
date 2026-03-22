@@ -198,7 +198,8 @@ const SDCTeaser = () => (
               style={{
                 background: "linear-gradient(135deg, #2ABFBF, #E84B8A)",
                 color: "#0d0d1a",
-                fontFamily: "'Courier New', Courier, monospace",
+                fontFamily: "'Press Start 2P', monospace",
+                fontSize: "10px",
                 boxShadow: "0 0 20px rgba(42,191,191,0.2)",
               }}
             >
