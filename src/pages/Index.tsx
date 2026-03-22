@@ -4,7 +4,7 @@ import { ChevronDown, Printer, FileText, Settings, Play } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
-import sdcLogo from "@/assets/sdc-logo.ico";
+import sdcLogo from "@/assets/sdc-logo.png";
 import whiteboardImg from "@/assets/homepage-whiteboard.jpg";
 
 /* ════════════════════════════════════════════
