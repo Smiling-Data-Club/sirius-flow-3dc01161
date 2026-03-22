@@ -224,6 +224,12 @@ const Services = () => (
           ))}
         </div>
       </SectionReveal>
+
+      <SectionReveal>
+        <div className="reveal mt-16 aspect-[21/9] rounded-xl overflow-hidden">
+          <img src={whiteboardImg} alt="SIRIUS Team bei der Strategieplanung am Whiteboard" className="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </SectionReveal>
     </div>
   </section>
 );
