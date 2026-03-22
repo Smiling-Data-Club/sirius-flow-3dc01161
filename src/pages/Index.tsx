@@ -148,11 +148,13 @@ const SDCTeaser = () => (
             </a>
           </div>
 
-          {/* SDC Logo placeholder */}
+          {/* SDC Logo */}
           <div className="reveal flex justify-center md:justify-end">
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-dark-foreground/5 border border-dark-foreground/10 flex items-center justify-center text-dark-foreground/30 text-sm text-center animate-sdc-logo">
-              SDC Logo<br />(Platzhalter)
-            </div>
+            <img
+              src={sdcLogo}
+              alt="Smiling Data Club Logo"
+              className="w-48 h-48 md:w-56 md:h-56 object-contain animate-sdc-logo"
+            />
           </div>
         </div>
       </SectionReveal>
