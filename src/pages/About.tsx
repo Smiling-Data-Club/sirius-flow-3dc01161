@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Lightbulb, Shield, Wrench, Rocket } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
+import teamPortrait from "@/assets/team-portrait-frau.jpg";
 
 const values = [
   { icon: Lightbulb, title: "Klarheit", text: "Wir machen Komplexes verständlich." },
@@ -13,7 +14,7 @@ const values = [
 const About = () => (
   <PageLayout
     title="Über uns — SIRIUS GmbH"
-    description="Seit über 30 Jahren begleitet SIRIUS Unternehmen auf dem Weg zu effizienten Dokumentenprozessen."
+    description="Seit über 45 Jahren begleitet SIRIUS Unternehmen auf dem Weg zu effizienten Dokumentenprozessen."
   >
     {/* Hero */}
     <section className="py-24 md:py-32 bg-gradient-to-b from-background to-secondary">
@@ -21,7 +22,7 @@ const About = () => (
         <SectionReveal>
           <h1 className="reveal text-3xl md:text-5xl font-bold mb-6">Über SIRIUS</h1>
           <p className="reveal text-lg text-muted-foreground max-w-2xl">
-            Seit über 30 Jahren sind wir Partner für Unternehmen, die ihre Dokumentenprozesse klarer, effizienter und zukunftssicher gestalten wollen.
+            Seit über 45 Jahren sind wir Partner für Unternehmen, die ihre Dokumentenprozesse klarer, effizienter und zukunftssicher gestalten wollen.
           </p>
         </SectionReveal>
       </div>
@@ -44,8 +45,8 @@ const About = () => (
                 Mit dem Smiling Data Club haben wir zudem ein Spin-off gegründet, das sich auf KI-gestützte Automatisierung und smarte Datenprozesse spezialisiert.
               </p>
             </div>
-            <div className="reveal aspect-[4/3] bg-secondary rounded-xl flex items-center justify-center text-muted-foreground text-sm">
-              Platzhalter: Über-uns-Bild
+            <div className="reveal aspect-[4/3] rounded-xl overflow-hidden">
+              <img src={teamPortrait} alt="SIRIUS Mitarbeiterin im modernen Büro" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </SectionReveal>
