@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Lightbulb, Shield, Wrench, Rocket } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
+import teamPortrait from "@/assets/team-portrait-frau.jpg";
 
 const values = [
   { icon: Lightbulb, title: "Klarheit", text: "Wir machen Komplexes verständlich." },
