@@ -80,11 +80,16 @@ const Print = () => (
       </div>
     </section>
 
-    {/* Manufacturers */}
+    {/* Logistics Image + Manufacturers */}
     <section className="py-24 md:py-32">
-      <div className="container text-center">
+      <div className="container">
+        <SectionReveal stagger>
+          <div className="reveal aspect-[21/9] rounded-xl overflow-hidden mb-16">
+            <img src={lagerImg} alt="SIRIUS Mitarbeiter bei der Anlieferung von Sharp-Druckern" className="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </SectionReveal>
         <SectionReveal>
-          <h2 className="reveal text-2xl md:text-3xl font-bold mb-12">Unsere Hersteller-Partner</h2>
+          <h2 className="reveal text-2xl md:text-3xl font-bold text-center mb-12">Unsere Hersteller-Partner</h2>
           <div className="reveal flex flex-wrap justify-center gap-8">
             {["Sharp", "HP", "Lexmark"].map((name) => (
               <div key={name} className="px-8 py-4 bg-secondary rounded-lg text-muted-foreground text-sm">
