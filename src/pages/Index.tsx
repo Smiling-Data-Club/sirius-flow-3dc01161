@@ -146,7 +146,7 @@ const SDCTeaser = () => (
       style={{ background: "linear-gradient(90deg, hsl(var(--sdc-pink)), hsl(var(--sdc-purple)), hsl(var(--sdc-cyan)))" }}
     />
 
-    <div className="container relative py-24 md:py-32">
+    <div className="container relative py-16 md:py-20">
       <SectionReveal stagger>
         <div className="flex flex-col items-center text-center">
           {/* Animated Logo */}
@@ -160,10 +160,10 @@ const SDCTeaser = () => (
 
           {/* Headline — retro monospace style */}
           <h2
-            className="reveal text-3xl md:text-5xl lg:text-6xl font-bold tracking-[0.1em] uppercase mb-4"
+            className="reveal text-lg md:text-2xl lg:text-3xl font-normal tracking-[0.1em] uppercase mb-4"
             style={{
               color: "#2ABFBF",
-              fontFamily: "'Courier New', Courier, monospace",
+              fontFamily: "'Press Start 2P', monospace",
               textShadow: "0 0 30px rgba(42,191,191,0.4), 0 0 60px rgba(42,191,191,0.15)",
             }}
           >
@@ -172,10 +172,10 @@ const SDCTeaser = () => (
 
           {/* Tagline */}
           <p
-            className="reveal text-base md:text-lg tracking-[0.15em] mb-8"
+            className="reveal text-[10px] md:text-xs tracking-[0.15em] mb-8"
             style={{
               color: "#E84B8A",
-              fontFamily: "'Courier New', Courier, monospace",
+              fontFamily: "'Press Start 2P', monospace",
               textShadow: "0 0 20px rgba(232,75,138,0.3)",
             }}
           >
@@ -198,7 +198,8 @@ const SDCTeaser = () => (
               style={{
                 background: "linear-gradient(135deg, #2ABFBF, #E84B8A)",
                 color: "#0d0d1a",
-                fontFamily: "'Courier New', Courier, monospace",
+                fontFamily: "'Press Start 2P', monospace",
+                fontSize: "10px",
                 boxShadow: "0 0 20px rgba(42,191,191,0.2)",
               }}
             >
