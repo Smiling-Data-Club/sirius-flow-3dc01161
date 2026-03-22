@@ -269,9 +269,9 @@ const Testimonials = () => (
    TRUST / NUMBERS
    ════════════════════════════════════════════ */
 const stats = [
-  { value: 30, suffix: "+", label: "Jahre Erfahrung" },
-  { value: 500, suffix: "+", label: "Betreute Geräte" },
-  { value: 3, suffix: "", label: "Geschäftsbereiche" },
+  { value: 45, suffix: "+", label: "Jahre Erfahrung" },
+  { value: 4000, suffix: "+", label: "Betreute Geräte" },
+  { value: 120, suffix: "+", label: "Digitalisierungsprojekte" },
 ];
 
 const StatItem = ({ value, suffix, label }: { value: number; suffix: string; label: string }) => {
@@ -302,7 +302,7 @@ const Trust = () => (
       <SectionReveal>
         <div className="reveal max-w-2xl mx-auto text-center">
           <p className="text-muted-foreground text-lg mb-8">
-            Seit über 30 Jahren begleiten wir Unternehmen auf dem Weg zu effizienten Dokumentenprozessen. Als zertifizierter DocuWare-Partner und Zoho-Authorized-Partner verbinden wir Beratung mit Umsetzung.
+            Seit über 45 Jahren begleiten wir Unternehmen auf dem Weg zu effizienten Dokumentenprozessen. Als zertifizierter DocuWare-Partner und Zoho-Authorized-Partner verbinden wir Beratung mit Umsetzung.
           </p>
 
           {/* Partner logos placeholder */}
@@ -353,7 +353,7 @@ const ServiceCTA = () => (
 const Index = () => (
   <PageLayout
     title="SIRIUS GmbH — Dokumentenlösungen, Digitalisierung & Managed Print Services"
-    description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 30 Jahren aus Freiburg."
+    description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 45 Jahren aus Freiburg."
   >
     <Hero />
     <SDCTeaser />
