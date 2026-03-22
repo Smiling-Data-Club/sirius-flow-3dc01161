@@ -3,6 +3,7 @@ import { Lightbulb, Shield, Wrench, Rocket } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import teamPortrait from "@/assets/team-portrait-frau.jpg";
+import tabletImg from "@/assets/about-tablet.jpg";
 
 const values = [
   { icon: Lightbulb, title: "Klarheit", text: "Wir machen Komplexes verständlich." },
