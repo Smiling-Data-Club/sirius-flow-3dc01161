@@ -39,9 +39,9 @@ const Header = () => {
             href="https://smiling-data.club"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-foreground hover:text-primary transition-colors font-medium"
+            className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
           >
-            <span className="w-2 h-2 rounded-full bg-sdc-cyan shrink-0" />
+            <img src={sdcLogo} alt="SDC" className="w-5 h-5 shrink-0" />
             Smiling Data Club
           </a>
           <Link to="/print" className="text-foreground hover:text-primary transition-colors font-medium">
