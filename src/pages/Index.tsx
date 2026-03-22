@@ -160,10 +160,10 @@ const SDCTeaser = () => (
 
           {/* Headline — retro monospace style */}
           <h2
-            className="reveal text-3xl md:text-5xl lg:text-6xl font-bold tracking-[0.1em] uppercase mb-4"
+            className="reveal text-lg md:text-2xl lg:text-3xl font-normal tracking-[0.1em] uppercase mb-4"
             style={{
               color: "#2ABFBF",
-              fontFamily: "'Courier New', Courier, monospace",
+              fontFamily: "'Press Start 2P', monospace",
               textShadow: "0 0 30px rgba(42,191,191,0.4), 0 0 60px rgba(42,191,191,0.15)",
             }}
           >
