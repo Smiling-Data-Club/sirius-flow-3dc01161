@@ -85,7 +85,7 @@ const Print = () => (
       <div className="container">
         <SectionReveal stagger>
           <div className="reveal aspect-[21/9] rounded-xl overflow-hidden mb-16">
-            <img src={lagerImg} alt="SIRIUS Mitarbeiter bei der Anlieferung von Sharp-Druckern" className="w-full h-full object-cover" loading="lazy" />
+            <img src={lagerImg} alt="SIRIUS Mitarbeiter mit Tablet" className="w-full h-full object-cover object-top" loading="lazy" />
           </div>
         </SectionReveal>
         <SectionReveal>
