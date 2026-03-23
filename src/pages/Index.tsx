@@ -395,16 +395,12 @@ const Trust = () => (
                 { src: diatoolLogo, alt: "Diatool" },
                 { src: skodaLogo, alt: "Skoda Sütterlin" },
                 { src: edekaLogo, alt: "Edeka Barwig" },
-                { src: kestenholzLogo, alt: "Schloss Reinach" },
                 { src: weinbauLogo, alt: "Badischer Weinbauverband" },
                 { src: grieshaberLogo, alt: "Grafried" },
                 { src: marderLogo, alt: "Marder Stop & Go" },
                 { src: andockLogo, alt: "Andocksysteme" },
                 { src: kundoLogo, alt: "Kundo xT" },
                 { src: waldhausLogo, alt: "Waldhaus" },
-                { src: hardworkLogo, alt: "Hardwork" },
-                { src: wilhelmVolzLogo, alt: "Wilhelm Volz" },
-                { src: conceptLogo, alt: "Concept Dienstleistungen" },
               ].map((logo, i) => (
                 <img
                   key={`${setIdx}-${i}`}
