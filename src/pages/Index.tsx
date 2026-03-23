@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Printer, FileText, Settings, Play } from "lucide-react";
+import { ChevronDown, Printer, FileText, Settings, Check } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
@@ -24,7 +24,7 @@ import waldhausLogo from "@/assets/referenzen/waldhaus.png";
 /* ════════════════════════════════════════════
    Decorative floating paper elements
    ════════════════════════════════════════════ */
-const PaperElement = ({
+const FloatingPaper = ({
   className,
   style,
 }: {
@@ -39,36 +39,39 @@ const PaperElement = ({
 );
 
 /* ════════════════════════════════════════════
-   HERO
+   HERO — two-column, editorial
    ════════════════════════════════════════════ */
 const Hero = () => (
-  <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-background to-secondary">
+  <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-20">
     {/* Floating papers */}
-    <PaperElement
-      className="hidden md:block w-32 h-44 opacity-[0.35]"
-      style={{ top: "12%", left: "5%", "--rotate": "-6deg", "--drift-x": "120px", "--drift-y": "-60px", animationDuration: "18s" } as React.CSSProperties}
-    />
-    <PaperElement
-      className="hidden md:block w-24 h-32 opacity-[0.30]"
-      style={{ top: "20%", right: "10%", "--rotate": "8deg", "--drift-x": "-100px", "--drift-y": "50px", animationDuration: "22s" } as React.CSSProperties}
-    />
-    <PaperElement
-      className="hidden md:block w-20 h-28 opacity-[0.32]"
-      style={{ bottom: "25%", left: "15%", "--rotate": "4deg", "--drift-x": "90px", "--drift-y": "-70px", animationDuration: "25s" } as React.CSSProperties}
-    />
-    <PaperElement
-      className="w-16 h-20 opacity-[0.30]"
-      style={{ bottom: "35%", right: "20%", "--rotate": "-10deg", "--drift-x": "-80px", "--drift-y": "-50px", animationDuration: "20s" } as React.CSSProperties}
-    />
-    <PaperElement
-      className="hidden lg:block w-28 h-36 opacity-[0.33]"
-      style={{ top: "45%", right: "3%", "--rotate": "12deg", "--drift-x": "-110px", "--drift-y": "40px", animationDuration: "24s" } as React.CSSProperties}
-    />
+    <div className="absolute inset-0 pointer-events-none">
+      <FloatingPaper
+        className="hidden md:block w-[120px] h-[160px] opacity-60"
+        style={{ top: "20%", left: "10%", "--rotate": "-4deg" } as React.CSSProperties}
+      />
+      <FloatingPaper
+        className="hidden md:block w-[100px] h-[140px] opacity-60"
+        style={{ top: "15%", left: "70%", "--rotate": "6deg", animationDelay: "2s" } as React.CSSProperties}
+      />
+      <FloatingPaper
+        className="hidden lg:block w-[90px] h-[120px] opacity-60"
+        style={{ top: "50%", left: "85%", "--rotate": "-8deg", animationDelay: "4s" } as React.CSSProperties}
+      />
+      <FloatingPaper
+        className="hidden md:block w-[110px] h-[150px] opacity-60"
+        style={{ top: "60%", left: "5%", "--rotate": "5deg", animationDelay: "1s" } as React.CSSProperties}
+      />
+      <FloatingPaper
+        className="hidden lg:block w-[80px] h-[110px] opacity-60"
+        style={{ top: "75%", left: "40%", "--rotate": "-3deg", animationDelay: "3s" } as React.CSSProperties}
+      />
+    </div>
 
-    <div className="container relative z-10 py-24 md:py-0">
-      <div className="max-w-3xl">
-        <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3.25rem] lg:text-[3.75rem] font-bold leading-[1.08] tracking-tight">
-          {"Klarheit für Ihre Dokumente.".split(" ").map((word, i) => (
+    <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Text */}
+      <div>
+        <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.25rem] font-extrabold leading-[1.1] tracking-tight mb-6">
+          {"Klarheit für Ihre".split(" ").map((word, i) => (
             <span
               key={i}
               className="inline-block animate-hero-fade-up"
@@ -77,42 +80,55 @@ const Hero = () => (
               {word}&nbsp;
             </span>
           ))}
-          <br className="hidden sm:block" />
-          {"Struktur für Ihre Prozesse.".split(" ").map((word, i) => (
-            <span
-              key={`b-${i}`}
-              className="inline-block animate-hero-fade-up"
-              style={{ animationDelay: `${(i + 4) * 200}ms` }}
-            >
-              {word}&nbsp;
-            </span>
-          ))}
+          <span
+            className="inline-block animate-hero-fade-up text-primary"
+            style={{ animationDelay: "600ms" }}
+          >
+            Dokumente
+          </span>
+          <span className="inline-block animate-hero-fade-up" style={{ animationDelay: "800ms" }}>.</span>
         </h1>
 
         <p
-          className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl animate-hero-fade-up"
-          style={{ animationDelay: "1.6s" }}
+          className="text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground mb-10 leading-relaxed animate-hero-fade-up"
+          style={{ animationDelay: "1.2s" }}
         >
-          SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert.
+          Struktur für Ihre Prozesse. Wir begleiten den Mittelstand in die digitale Souveränität.
         </p>
 
         <div
-          className="flex flex-wrap gap-4 mt-10 animate-hero-fade-up"
-          style={{ animationDelay: "2.1s" }}
+          className="flex flex-wrap gap-4 animate-hero-fade-up"
+          style={{ animationDelay: "1.6s" }}
         >
           <Button
-            variant="hero"
             size="lg"
+            className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground px-8 py-4 shadow-lg hover:scale-105 transition-transform font-semibold"
             onClick={() =>
               document.getElementById("leistungen")?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Leistungen entdecken
+            Lösungen entdecken
           </Button>
-          <Button variant="hero-outline" size="lg" asChild>
+          <Button
+            variant="outline"
+            size="lg"
+            className="px-8 py-4 text-primary border-border font-semibold hover:bg-secondary"
+            asChild
+          >
             <Link to="/service-area">Service Area</Link>
           </Button>
         </div>
+      </div>
+
+      {/* Image */}
+      <div className="hidden lg:block relative">
+        <div className="absolute -top-10 -right-10 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-50" />
+        <img
+          src={whiteboardImg}
+          alt="SIRIUS Team bei der Strategieplanung"
+          className="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+          loading="lazy"
+        />
       </div>
     </div>
 
@@ -124,30 +140,29 @@ const Hero = () => (
 );
 
 /* ════════════════════════════════════════════
-   SDC TEASER — Mini-preview of smiling-data.club
+   SDC TEASER — dark, editorial
    ════════════════════════════════════════════ */
 const SDCTeaser = () => (
-  <section className="relative bg-dark text-dark-foreground py-20 md:py-28 overflow-hidden">
+  <section className="bg-dark text-dark-foreground py-24 relative overflow-hidden">
     {/* Gradient accent line top */}
-    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-sdc-cyan via-sdc-purple to-sdc-pink" />
-    {/* Gradient accent line bottom */}
-    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-sdc-cyan via-sdc-purple to-sdc-pink" />
+    <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-sdc-cyan via-sdc-purple to-sdc-pink" />
 
     <div className="container">
       <SectionReveal stagger>
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
-          {/* Text – left */}
-          <div className="reveal flex-1 text-center md:text-left order-2 md:order-1">
-            <span className="reveal text-xs uppercase tracking-[0.25em] text-dark-foreground/50 mb-3 block">
-              Von SIRIUS
-            </span>
-            <h2 className="reveal text-2xl md:text-3xl font-bold mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Text */}
+          <div className="reveal">
+            <span className="reveal inline-block px-3 py-1 rounded-full bg-white/10 text-sdc-cyan text-xs font-bold tracking-[0.2em] uppercase mb-6">
               Smiling Data Club
+            </span>
+            <h2 className="reveal text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Daten, die Sie{" "}
+              <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sdc-pink to-sdc-purple">
+                lächeln lassen.
+              </span>
             </h2>
-            <p className="reveal text-dark-foreground/60 font-light mb-4 text-lg">
-              Today's complexity. Retro simplicity.
-            </p>
-            <p className="reveal text-dark-foreground/70 mb-8 max-w-lg">
+            <p className="reveal text-dark-foreground/60 text-lg mb-8 leading-relaxed">
               Unser Spin-off für KI-gestützte Automatisierung und smarte Datenprozesse.
               Wenn Digitalisierung nicht nur funktionieren, sondern auch Spaß machen soll.
             </p>
@@ -155,18 +170,19 @@ const SDCTeaser = () => (
               href="https://smiling-data.club"
               target="_blank"
               rel="noopener noreferrer"
-              className="reveal text-sdc-cyan font-semibold hover:underline underline-offset-4 transition-colors"
+              className="reveal inline-flex items-center text-dark-foreground font-semibold group"
             >
-              Zum Smiling Data Club →
+              Zum Smiling Data Club
+              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </div>
 
-          {/* Logo – right */}
-          <div className="reveal shrink-0 order-1 md:order-2">
+          {/* Logo */}
+          <div className="reveal flex justify-center items-center">
             <img
               src={sdcLogo}
               alt="Smiling Data Club Logo"
-              className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 object-contain animate-sdc-float"
+              className="w-64 h-64 md:w-80 md:h-80 object-contain animate-sdc-float"
             />
           </div>
         </div>
@@ -176,44 +192,39 @@ const SDCTeaser = () => (
 );
 
 /* ════════════════════════════════════════════
-   LEISTUNGEN
+   LEISTUNGEN — folded-corner cards
    ════════════════════════════════════════════ */
 const services = [
   {
     icon: Printer,
     title: "Managed Print Services",
-    text: "Druck-Infrastruktur, die läuft — geplant, gewartet, optimiert.",
+    text: "Optimierung Ihrer Druckinfrastruktur für maximale Effizienz und minimale Kosten.",
+    bullets: ["Hardware-Flottenmanagement", "Automatisierte Verbrauchsmaterialien"],
     link: "/print",
   },
   {
     icon: FileText,
     title: "Dokumentenmanagement",
-    text: "Vom Papier zum digitalen Workflow. Mit DocuWare als DMS-Plattform.",
+    text: "Zentrale Ablage und rechtssichere Archivierung für eine papierlose Zukunft.",
+    bullets: ["Cloud & On-Premise DMS", "GoBD-konforme Archivierung"],
     link: "#",
   },
   {
     icon: Settings,
     title: "Digitale Prozesse",
-    text: "CRM, ERP, Automatisierung — mit Zoho One und Make.",
+    text: "Intelligente Workflows, die Ihre Teams entlasten und Prozesse beschleunigen.",
+    bullets: ["Workflow-Automatisierung", "ERP-Integration"],
     link: "#",
   },
 ];
 
 const Services = () => (
-  <section id="leistungen" className="bg-secondary py-24 md:py-32 relative overflow-hidden">
-    {/* Decorative paper */}
-    <div
-      className="paper-deco hidden md:block w-20 h-28 opacity-[0.04] -rotate-12"
-      style={{ top: "10%", right: "5%" }}
-      aria-hidden="true"
-    />
+  <section id="leistungen" className="bg-secondary py-32 relative overflow-hidden">
     <div className="container">
       <SectionReveal>
-        <div className="text-center mb-16">
-          <h2 className="reveal text-3xl md:text-4xl font-bold mb-4">Was wir tun</h2>
-          <p className="reveal text-muted-foreground text-lg max-w-xl mx-auto">
-            Drei Säulen. Ein Ziel: Ihre Prozesse einfacher machen.
-          </p>
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="reveal text-3xl md:text-4xl font-extrabold mb-6">Ganzheitliche Lösungen</h2>
+          <div className="reveal w-20 h-1 bg-primary mx-auto" />
         </div>
       </SectionReveal>
 
@@ -223,22 +234,23 @@ const Services = () => (
             <Link
               key={s.title}
               to={s.link}
-              className="reveal group bg-card rounded-xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="reveal group bg-card p-10 folded-corner shadow-[0px_20px_40px_rgba(25,28,30,0.06)] hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                <s.icon className="w-6 h-6 text-primary group-hover:animate-spin-once" />
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform">
+                <s.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{s.title}</h3>
-              <p className="text-muted-foreground mb-4">{s.text}</p>
-              <span className="text-primary font-semibold text-sm">Mehr erfahren →</span>
+              <h3 className="text-xl font-bold mb-4">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed mb-8">{s.text}</p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                {s.bullets.map((b) => (
+                  <li key={b} className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </Link>
           ))}
-        </div>
-      </SectionReveal>
-
-      <SectionReveal>
-        <div className="reveal mt-16 aspect-[21/9] rounded-xl overflow-hidden">
-          <img src={whiteboardImg} alt="SIRIUS Team bei der Strategieplanung am Whiteboard" className="w-full h-full object-cover" loading="lazy" />
         </div>
       </SectionReveal>
     </div>
@@ -272,11 +284,11 @@ const referenceLogos = [
 ];
 
 const Testimonials = () => (
-  <section className="py-24 md:py-32">
+  <section className="bg-card py-32 overflow-hidden">
     <div className="container">
       <SectionReveal>
-        <h2 className="reveal text-3xl md:text-4xl font-bold text-center mb-16">
-          Das sagen unsere Kunden
+        <h2 className="reveal text-3xl md:text-4xl font-extrabold text-center mb-16">
+          Stimmen unserer Kunden
         </h2>
       </SectionReveal>
 
@@ -284,7 +296,7 @@ const Testimonials = () => (
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <div key={i} className="reveal">
-              <div className="aspect-video rounded-lg overflow-hidden mb-5 shadow-md">
+              <div className="aspect-video rounded-2xl overflow-hidden mb-5 shadow-xl">
                 <iframe
                   src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
                   title={`Testimonial von ${t.name}`}
@@ -306,8 +318,8 @@ const Testimonials = () => (
         <div className="reveal mt-20">
           <h3 className="text-xl md:text-2xl font-semibold text-center mb-10">Weitere Referenzen</h3>
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-card to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-card to-transparent z-10" />
             <div className="flex w-max animate-marquee gap-12 md:gap-16 items-center">
               {[...referenceLogos, ...referenceLogos].map((logo, i) => (
                 <img
@@ -338,10 +350,10 @@ const StatItem = ({ value, suffix, label }: { value: number; suffix: string; lab
   const { count, ref } = useCountUp(value);
   return (
     <div ref={ref} className="text-center">
-      <div className="text-5xl md:text-7xl font-bold text-primary tabular-nums">
+      <div className="text-5xl md:text-6xl font-extrabold text-primary tabular-nums mb-2">
         {count}{suffix}
       </div>
-      <div className="text-xs uppercase tracking-[0.2em] text-foreground mt-2">{label}</div>
+      <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{label}</div>
     </div>
   );
 };
@@ -377,15 +389,19 @@ const Trust = () => (
    SERVICE AREA CTA
    ════════════════════════════════════════════ */
 const ServiceCTA = () => (
-  <section className="bg-dark text-dark-foreground py-24 md:py-32">
-    <div className="container text-center">
+  <section className="bg-dark text-dark-foreground py-24 md:py-32 relative">
+    <div className="container text-center max-w-4xl">
       <SectionReveal>
-        <h2 className="reveal text-3xl md:text-4xl font-bold mb-4">Service Area</h2>
-        <p className="reveal text-dark-foreground/70 text-lg mb-8 max-w-lg mx-auto">
+        <h2 className="reveal text-4xl md:text-5xl font-bold mb-8">Service Area</h2>
+        <p className="reveal text-dark-foreground/60 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
           Toner bestellen, Reparatur anfragen — direkt und unkompliziert.
         </p>
         <div className="reveal">
-          <Button variant="dark-cta" size="lg" asChild>
+          <Button
+            size="lg"
+            className="bg-primary text-primary-foreground px-10 py-5 text-lg font-bold hover:bg-primary/90 shadow-xl"
+            asChild
+          >
             <Link to="/service-area">Zur Service Area →</Link>
           </Button>
         </div>
