@@ -6,6 +6,10 @@ import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import sdcLogo from "@/assets/sdc-logo.png";
 import whiteboardImg from "@/assets/homepage-whiteboard.jpg";
+import belleLogo from "@/assets/referenzen/belle.png";
+import gesslerLogo from "@/assets/referenzen/gessler.svg";
+import dafheLogo from "@/assets/referenzen/dafhe.png";
+import tobyLogo from "@/assets/referenzen/toby-schaum.png";
 
 /* ════════════════════════════════════════════
    Decorative floating paper elements
@@ -369,16 +373,23 @@ const Trust = () => (
             Seit über 45 Jahren begleiten wir Unternehmen auf dem Weg zu effizienten Dokumentenprozessen. Als zertifizierter DocuWare-Partner und Zoho-Authorized-Partner verbinden wir Beratung mit Umsetzung.
           </p>
 
-          {/* Partner logos placeholder */}
-          <div className="flex flex-wrap justify-center gap-8 mb-8">
-            {["DocuWare Partner", "Zoho Authorized Partner", "Sharp", "Make"].map((name) => (
-              <div
-                key={name}
-                className="px-6 py-3 bg-card rounded border text-sm text-muted-foreground"
-              >
-                {name}
-              </div>
-            ))}
+          {/* Referenzen-Logo-Marquee */}
+          <div className="relative overflow-hidden mb-8">
+            <div className="flex animate-marquee gap-16 items-center">
+              {[...Array(2)].flatMap((_, setIdx) => [
+                { src: belleLogo, alt: "BELLE AG" },
+                { src: gesslerLogo, alt: "Gessler Collection" },
+                { src: dafheLogo, alt: "Deutscher Arbeitskreis für Familienhilfe e.V." },
+                { src: tobyLogo, alt: "Toby Schaum" },
+              ].map((logo, i) => (
+                <img
+                  key={`${setIdx}-${i}`}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-12 md:h-16 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity shrink-0"
+                />
+              )))}
+            </div>
           </div>
 
           <Link to="/ueber-uns" className="text-primary font-semibold hover:underline underline-offset-4">
