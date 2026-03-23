@@ -406,7 +406,7 @@ const Trust = () => (
                   key={`${setIdx}-${i}`}
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 md:h-14 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity shrink-0"
+                  className="h-12 md:h-14 max-w-[120px] md:max-w-[160px] w-auto object-contain opacity-50 hover:opacity-100 transition-opacity shrink-0"
                 />
               )))}
             </div>
