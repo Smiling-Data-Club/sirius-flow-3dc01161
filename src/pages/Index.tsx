@@ -10,6 +10,19 @@ import belleLogo from "@/assets/referenzen/belle.png";
 import gesslerLogo from "@/assets/referenzen/gessler.svg";
 import dafheLogo from "@/assets/referenzen/dafhe.png";
 import tobyLogo from "@/assets/referenzen/toby-schaum.png";
+import diatoolLogo from "@/assets/referenzen/diatool.jpg";
+import skodaLogo from "@/assets/referenzen/skoda-suetterlin.jpg";
+import edekaLogo from "@/assets/referenzen/edeka-barwig-light.png";
+import kestenholzLogo from "@/assets/referenzen/schloss-reinach.jpg";
+import weinbauLogo from "@/assets/referenzen/weinbauverband-light.png";
+import grieshaberLogo from "@/assets/referenzen/grafried.png";
+import marderLogo from "@/assets/referenzen/marder-stopgo-light.png";
+import andockLogo from "@/assets/referenzen/andocksysteme.png";
+import kundoLogo from "@/assets/referenzen/kundo-xt.jpg";
+import waldhausLogo from "@/assets/referenzen/waldhaus.jpg";
+import hardworkLogo from "@/assets/referenzen/hardwork.jpg";
+import wilhelmVolzLogo from "@/assets/referenzen/wilhelm-volz-light.png";
+import conceptLogo from "@/assets/referenzen/concept.jpg";
 
 /* ════════════════════════════════════════════
    Decorative floating paper elements
