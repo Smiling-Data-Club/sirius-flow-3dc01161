@@ -10,6 +10,19 @@ import belleLogo from "@/assets/referenzen/belle.png";
 import gesslerLogo from "@/assets/referenzen/gessler.svg";
 import dafheLogo from "@/assets/referenzen/dafhe.png";
 import tobyLogo from "@/assets/referenzen/toby-schaum.png";
+import diatoolLogo from "@/assets/referenzen/diatool.jpg";
+import skodaLogo from "@/assets/referenzen/skoda-suetterlin.jpg";
+import edekaLogo from "@/assets/referenzen/edeka-barwig-light.png";
+import kestenholzLogo from "@/assets/referenzen/schloss-reinach.jpg";
+import weinbauLogo from "@/assets/referenzen/weinbauverband-light.png";
+import grieshaberLogo from "@/assets/referenzen/grafried.png";
+import marderLogo from "@/assets/referenzen/marder-stopgo-light.png";
+import andockLogo from "@/assets/referenzen/andocksysteme.png";
+import kundoLogo from "@/assets/referenzen/kundo-xt.jpg";
+import waldhausLogo from "@/assets/referenzen/waldhaus.jpg";
+import hardworkLogo from "@/assets/referenzen/hardwork.jpg";
+import wilhelmVolzLogo from "@/assets/referenzen/wilhelm-volz-light.png";
+import conceptLogo from "@/assets/referenzen/concept.jpg";
 
 /* ════════════════════════════════════════════
    Decorative floating paper elements
@@ -375,18 +388,33 @@ const Trust = () => (
 
           {/* Referenzen-Logo-Marquee */}
           <div className="relative overflow-hidden mb-8">
-            <div className="flex animate-marquee gap-16 items-center">
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-secondary to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-secondary to-transparent z-10" />
+            <div className="flex animate-marquee gap-12 md:gap-16 items-center">
               {[...Array(2)].flatMap((_, setIdx) => [
                 { src: belleLogo, alt: "BELLE AG" },
                 { src: gesslerLogo, alt: "Gessler Collection" },
-                { src: dafheLogo, alt: "Deutscher Arbeitskreis für Familienhilfe e.V." },
+                { src: dafheLogo, alt: "Dt. Arbeitskreis für Familienhilfe" },
                 { src: tobyLogo, alt: "Toby Schaum" },
+                { src: diatoolLogo, alt: "Diatool" },
+                { src: skodaLogo, alt: "Skoda Sütterlin" },
+                { src: edekaLogo, alt: "Edeka Barwig" },
+                { src: kestenholzLogo, alt: "Schloss Reinach" },
+                { src: weinbauLogo, alt: "Badischer Weinbauverband" },
+                { src: grieshaberLogo, alt: "Grafried" },
+                { src: marderLogo, alt: "Marder Stop & Go" },
+                { src: andockLogo, alt: "Andocksysteme" },
+                { src: kundoLogo, alt: "Kundo xT" },
+                { src: waldhausLogo, alt: "Waldhaus" },
+                { src: hardworkLogo, alt: "Hardwork" },
+                { src: wilhelmVolzLogo, alt: "Wilhelm Volz" },
+                { src: conceptLogo, alt: "Concept Dienstleistungen" },
               ].map((logo, i) => (
                 <img
                   key={`${setIdx}-${i}`}
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-12 md:h-16 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity shrink-0"
+                  className="h-10 md:h-14 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity shrink-0"
                 />
               )))}
             </div>
