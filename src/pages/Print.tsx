@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import werkstattImg from "@/assets/print-werkstatt.jpg";
-import lagerImg from "@/assets/print-lager.jpg";
+import lagerImg from "@/assets/print-hero.jpg";
 
 const benefits = [
   { title: "Kostenoptimierung", text: "Transparente Kosten durch planbares Druckmanagement." },
