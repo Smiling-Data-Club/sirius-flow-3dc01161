@@ -45,23 +45,23 @@ const Hero = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-background to-secondary">
     {/* Floating papers */}
     <PaperElement
-      className="hidden md:block w-32 h-44 opacity-[0.25]"
+      className="hidden md:block w-32 h-44 opacity-[0.35]"
       style={{ top: "12%", left: "8%", "--rotate": "-6deg", "--tx": "12px", "--ty": "-18px" } as React.CSSProperties}
     />
     <PaperElement
-      className="hidden md:block w-24 h-32 opacity-[0.20]"
+      className="hidden md:block w-24 h-32 opacity-[0.30]"
       style={{ top: "25%", right: "12%", "--rotate": "8deg", "--tx": "-10px", "--ty": "-14px" } as React.CSSProperties}
     />
     <PaperElement
-      className="hidden md:block w-20 h-28 opacity-[0.22]"
+      className="hidden md:block w-20 h-28 opacity-[0.32]"
       style={{ bottom: "20%", left: "20%", "--rotate": "4deg", "--tx": "6px", "--ty": "-10px" } as React.CSSProperties}
     />
     <PaperElement
-      className="w-16 h-20 opacity-[0.18]"
+      className="w-16 h-20 opacity-[0.30]"
       style={{ bottom: "30%", right: "25%", "--rotate": "-10deg", "--tx": "-8px", "--ty": "6px" } as React.CSSProperties}
     />
     <PaperElement
-      className="hidden lg:block w-28 h-36 opacity-[0.20]"
+      className="hidden lg:block w-28 h-36 opacity-[0.33]"
       style={{ top: "40%", right: "5%", "--rotate": "12deg", "--tx": "14px", "--ty": "-20px" } as React.CSSProperties}
     />
 
