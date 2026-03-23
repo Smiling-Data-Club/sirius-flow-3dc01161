@@ -140,7 +140,7 @@ const Team = () => (
           </div>
         </SectionReveal>
         <SectionReveal stagger>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {professionalServices.map((m, i) => (
               <TeamCard key={i} member={m} />
             ))}
