@@ -127,37 +127,47 @@ const Hero = () => (
    SDC TEASER — Mini-preview of smiling-data.club
    ════════════════════════════════════════════ */
 const SDCTeaser = () => (
-  <section className="py-24 md:py-32">
+  <section className="relative bg-dark text-dark-foreground py-20 md:py-28 overflow-hidden">
+    {/* Gradient accent line top */}
+    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-sdc-cyan via-sdc-purple to-sdc-pink" />
+    {/* Gradient accent line bottom */}
+    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-sdc-cyan via-sdc-purple to-sdc-pink" />
+
     <div className="container">
       <SectionReveal stagger>
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          {/* Logo */}
-          <div className="reveal shrink-0">
-            <img
-              src={sdcLogo}
-              alt="Smiling Data Club Logo"
-              className="w-20 h-20 md:w-28 md:h-28 object-contain animate-sdc-float"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="reveal text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+          {/* Text – left */}
+          <div className="reveal flex-1 text-center md:text-left order-2 md:order-1">
+            <span className="reveal text-xs uppercase tracking-[0.25em] text-dark-foreground/50 mb-3 block">
+              Von SIRIUS
+            </span>
+            <h2 className="reveal text-2xl md:text-3xl font-bold mb-2">
               Smiling Data Club
             </h2>
-            <p className="text-muted-foreground mb-6 max-w-lg">
+            <p className="reveal text-dark-foreground/60 font-light mb-4 text-lg">
+              Today's complexity. Retro simplicity.
+            </p>
+            <p className="reveal text-dark-foreground/70 mb-8 max-w-lg">
               Unser Spin-off für KI-gestützte Automatisierung und smarte Datenprozesse.
               Wenn Digitalisierung nicht nur funktionieren, sondern auch Spaß machen soll.
             </p>
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://smiling-data.club"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Zum Smiling Data Club →
-              </a>
-            </Button>
+            <a
+              href="https://smiling-data.club"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="reveal text-sdc-cyan font-semibold hover:underline underline-offset-4 transition-colors"
+            >
+              Zum Smiling Data Club →
+            </a>
+          </div>
+
+          {/* Logo – right */}
+          <div className="reveal shrink-0 order-1 md:order-2">
+            <img
+              src={sdcLogo}
+              alt="Smiling Data Club Logo"
+              className="w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 object-contain animate-sdc-float"
+            />
           </div>
         </div>
       </SectionReveal>
