@@ -127,104 +127,38 @@ const Hero = () => (
    SDC TEASER — Mini-preview of smiling-data.club
    ════════════════════════════════════════════ */
 const SDCTeaser = () => (
-  <section className="relative overflow-hidden" style={{ background: "#0d0d1a" }}>
-    {/* Grid pattern overlay */}
-    <div
-      className="absolute inset-0 opacity-[0.07]"
-      style={{
-        backgroundImage: "linear-gradient(rgba(42,191,191,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(42,191,191,0.5) 1px, transparent 1px)",
-        backgroundSize: "60px 60px",
-      }}
-      aria-hidden="true"
-    />
-
-    {/* Gradient glow effects */}
-    <div
-      className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-[0.08] blur-[120px]"
-      style={{ background: "hsl(var(--sdc-cyan))" }}
-      aria-hidden="true"
-    />
-    <div
-      className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-[0.06] blur-[100px]"
-      style={{ background: "hsl(var(--sdc-pink))" }}
-      aria-hidden="true"
-    />
-
-    {/* Gradient accent lines top & bottom */}
-    <div
-      className="absolute top-0 left-0 right-0 h-px"
-      style={{ background: "linear-gradient(90deg, hsl(var(--sdc-cyan)), hsl(var(--sdc-purple)), hsl(var(--sdc-pink)))" }}
-    />
-    <div
-      className="absolute bottom-0 left-0 right-0 h-px"
-      style={{ background: "linear-gradient(90deg, hsl(var(--sdc-pink)), hsl(var(--sdc-purple)), hsl(var(--sdc-cyan)))" }}
-    />
-
-    <div className="container relative py-16 md:py-20">
+  <section className="py-24 md:py-32">
+    <div className="container">
       <SectionReveal stagger>
-        <div className="flex flex-col items-center text-center">
-          {/* Animated Logo */}
-          <div className="reveal mb-8">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          {/* Logo */}
+          <div className="reveal shrink-0">
             <img
               src={sdcLogo}
               alt="Smiling Data Club Logo"
-              className="w-24 h-24 md:w-32 md:h-32 object-contain animate-sdc-float"
+              className="w-20 h-20 md:w-28 md:h-28 object-contain animate-sdc-float"
             />
           </div>
 
-          {/* Headline — retro monospace style */}
-          <h2
-            className="reveal text-lg md:text-2xl lg:text-3xl font-normal tracking-[0.1em] uppercase mb-4"
-            style={{
-              color: "#2ABFBF",
-              fontFamily: "'Press Start 2P', monospace",
-              textShadow: "0 0 30px rgba(42,191,191,0.4), 0 0 60px rgba(42,191,191,0.15)",
-            }}
-          >
-            Smiling Data Club
-          </h2>
-
-          {/* Tagline */}
-          <p
-            className="reveal text-[10px] md:text-xs tracking-[0.15em] mb-8"
-            style={{
-              color: "#E84B8A",
-              fontFamily: "'Press Start 2P', monospace",
-              textShadow: "0 0 20px rgba(232,75,138,0.3)",
-            }}
-          >
-            Today's complexity. Retro simplicity.
-          </p>
-
-          {/* Description */}
-          <p className="reveal text-white/60 max-w-lg mb-8 text-sm md:text-base">
-            Unser Spin-off für KI-gestützte Automatisierung und smarte Datenprozesse.
-            Wenn Digitalisierung nicht nur funktionieren, sondern auch Spaß machen soll.
-          </p>
-
-          {/* CTA Button — gradient like the real site */}
-          <div className="reveal">
-            <a
-              href="https://smiling-data.club"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3 rounded-full text-sm font-semibold tracking-wider uppercase transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              style={{
-                background: "linear-gradient(135deg, #2ABFBF, #E84B8A)",
-                color: "#0d0d1a",
-                fontFamily: "'Press Start 2P', monospace",
-                fontSize: "10px",
-                boxShadow: "0 0 20px rgba(42,191,191,0.2)",
-              }}
-            >
-              Zum Smiling Data Club →
-            </a>
+          {/* Content */}
+          <div className="reveal text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              Smiling Data Club
+            </h2>
+            <p className="text-muted-foreground mb-6 max-w-lg">
+              Unser Spin-off für KI-gestützte Automatisierung und smarte Datenprozesse.
+              Wenn Digitalisierung nicht nur funktionieren, sondern auch Spaß machen soll.
+            </p>
+            <Button variant="outline" size="lg" asChild>
+              <a
+                href="https://smiling-data.club"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zum Smiling Data Club →
+              </a>
+            </Button>
           </div>
-
-          {/* "Von SIRIUS" label */}
-          <p className="reveal text-white/30 text-xs uppercase tracking-[0.3em] mt-8">
-            Ein Spin-off von SIRIUS
-          </p>
         </div>
       </SectionReveal>
     </div>
