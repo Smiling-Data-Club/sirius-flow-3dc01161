@@ -420,37 +420,6 @@ const Trust = () => (
           <p className="text-muted-foreground text-lg mb-8">
             Seit über 45 Jahren begleiten wir Unternehmen auf dem Weg zu effizienten Dokumentenprozessen. Als zertifizierter DocuWare-Partner und Zoho-Authorized-Partner verbinden wir Beratung mit Umsetzung.
           </p>
-
-          {/* Referenzen-Logo-Marquee */}
-          <div className="relative overflow-hidden mb-8">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-secondary to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-secondary to-transparent z-10" />
-            <div className="flex animate-marquee gap-12 md:gap-16 items-center">
-              {[...Array(2)].flatMap((_, setIdx) => [
-                { src: belleLogo, alt: "BELLE AG" },
-                { src: gesslerLogo, alt: "Gessler Collection" },
-                { src: dafheLogo, alt: "Dt. Arbeitskreis für Familienhilfe" },
-                { src: tobyLogo, alt: "Toby Schaum" },
-                { src: diatoolLogo, alt: "Diatool" },
-                { src: skodaLogo, alt: "Skoda Sütterlin" },
-                { src: edekaLogo, alt: "Edeka Barwig" },
-                { src: weinbauLogo, alt: "Badischer Weinbauverband" },
-                { src: grieshaberLogo, alt: "Grafried" },
-                { src: marderLogo, alt: "Marder Stop & Go" },
-                { src: andockLogo, alt: "Andocksysteme" },
-                { src: kundoLogo, alt: "Kundo xT" },
-                { src: waldhausLogo, alt: "Waldhaus" },
-              ].map((logo, i) => (
-                <img
-                  key={`${setIdx}-${i}`}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-12 md:h-14 max-w-[120px] md:max-w-[160px] w-auto object-contain opacity-50 hover:opacity-100 transition-opacity shrink-0"
-                />
-              )))}
-            </div>
-          </div>
-
           <Link to="/ueber-uns" className="text-primary font-semibold hover:underline underline-offset-4">
             Mehr über uns →
           </Link>
