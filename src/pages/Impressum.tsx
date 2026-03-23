@@ -1,85 +1,143 @@
+import { Building2, Phone, Mail, FileText } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
+import SectionReveal from "@/components/SectionReveal";
 
 const Impressum = () => (
   <PageLayout
     title="Impressum — SIRIUS GmbH"
     description="Impressum der SIRIUS GmbH document solutions, Freiburg."
   >
-    <section className="py-24 md:py-32">
-      <div className="container max-w-3xl">
-        <h1 className="text-3xl md:text-5xl font-bold mb-12">Impressum</h1>
+    <div className="pt-12 pb-24 px-6">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <SectionReveal>
+          <header className="mb-16">
+            <h1 className="reveal text-5xl font-extrabold text-primary mb-4 tracking-tight">Impressum</h1>
+            <div className="reveal h-1 w-24 bg-amber-500" />
+          </header>
+        </SectionReveal>
 
-        <div className="prose prose-lg max-w-none text-foreground [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:text-muted-foreground [&_p]:mb-4 [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4">
-          <h2>Angaben gemäß § 5 TMG</h2>
-          <p>
-            SIRIUS GmbH document solutions<br />
-            Abrichstrasse 23<br />
-            79108 Freiburg-Hochdorf
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          {/* Main Content */}
+          <div className="md:col-span-8 space-y-12">
+            <SectionReveal stagger>
+              {/* Section: Mandatory Info */}
+              <section className="reveal bg-card p-8 rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] relative overflow-hidden folded-corner">
+                <h2 className="text-xl font-bold mb-6 text-primary flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-amber-600" />
+                  Angaben gemäß § 5 TMG
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p className="font-bold text-foreground">SIRIUS GmbH document solutions</p>
+                  <p>
+                    Abrichstrasse 23<br />
+                    79108 Freiburg-Hochdorf<br />
+                    Deutschland
+                  </p>
+                </div>
+              </section>
 
-          <h2>Vertreten durch</h2>
-          <p>Fabian Schüler, Michael Wangerowski, Manfred Schüler</p>
+              {/* Section: Contact */}
+              <section className="reveal bg-secondary p-8 rounded-xl">
+                <h2 className="text-xl font-bold mb-6 text-primary flex items-center gap-2">
+                  <Phone className="w-5 h-5 text-amber-600" />
+                  Kontakt
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Telefon</p>
+                      <p className="font-medium">(0761) 704070</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">E-Mail</p>
+                      <p className="font-medium">
+                        <a href="mailto:info@sirius-gmbh.de" className="text-primary underline underline-offset-4">
+                          info@sirius-gmbh.de
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-          <h2>Kontakt</h2>
-          <p>
-            Telefon: (0761) 704070<br />
-            E-Mail: <a href="mailto:info@sirius-gmbh.de">info@sirius-gmbh.de</a>
-          </p>
+              {/* Section: Registry */}
+              <section className="reveal bg-card p-8 rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)]">
+                <h2 className="text-xl font-bold mb-6 text-primary flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-amber-600" />
+                  Register & Steuer
+                </h2>
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-2">Registereintrag</p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Eintragung im Handelsregister.<br />
+                      Registergericht: Amtsgericht Freiburg<br />
+                      Registernummer: HRB 2624
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-border/20">
+                    <p className="text-sm text-muted-foreground mb-2">Umsatzsteuer-ID</p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+                      DE 142113183
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-          <h2>Registereintrag</h2>
-          <p>
-            Eintragung im Handelsregister<br />
-            Registergericht: Amtsgericht Freiburg<br />
-            Registernummer: HRB 2624
-          </p>
+              {/* Section: Disclaimers */}
+              <section className="reveal space-y-8">
+                <div>
+                  <h3 className="text-lg font-bold text-primary mb-3">Haftung für Inhalte</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-primary mb-3">Urheberrecht</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                  </p>
+                </div>
+              </section>
+            </SectionReveal>
+          </div>
 
-          <h2>Umsatzsteuer</h2>
-          <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: DE 142113183</p>
+          {/* Side Info */}
+          <aside className="md:col-span-4 space-y-8">
+            <SectionReveal stagger>
+              <div className="reveal bg-primary p-8 rounded-xl text-primary-foreground">
+                <h3 className="text-lg font-bold mb-4">Vertreten durch</h3>
+                <p className="font-medium mb-1">Fabian Schüler</p>
+                <p className="text-blue-100 text-sm">Geschäftsführer</p>
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <p className="font-medium mb-1">Michael Wangerowski</p>
+                  <p className="text-blue-100 text-sm">Geschäftsführer</p>
+                </div>
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <p className="font-medium mb-1">Manfred Schüler</p>
+                  <p className="text-blue-100 text-sm">Geschäftsführer</p>
+                </div>
+              </div>
 
-          <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-          <p>
-            Fabian Schüler<br />
-            Abrichstrasse 23<br />
-            79108 Freiburg-Hochdorf
-          </p>
-
-          <h2>Streitschlichtung</h2>
-          <p>
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-            <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">
-              https://ec.europa.eu/consumers/odr
-            </a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.
-          </p>
-          <p>
-            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-          </p>
-
-          <h2>Haftung für Inhalte</h2>
-          <p>
-            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-          </p>
-          <p>
-            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-          </p>
-
-          <h2>Haftung für Links</h2>
-          <p>
-            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
-          </p>
-          <p>
-            Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-          </p>
-
-          <h2>Urheberrecht</h2>
-          <p>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-          </p>
-          <p>
-            Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-          </p>
+              <div className="reveal bg-muted p-8 rounded-xl">
+                <h3 className="text-sm uppercase tracking-widest text-muted-foreground mb-4">Verantwortlich für Inhalt</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Fabian Schüler<br />
+                  Abrichstrasse 23<br />
+                  79108 Freiburg-Hochdorf
+                </p>
+              </div>
+            </SectionReveal>
+          </aside>
         </div>
       </div>
-    </section>
+    </div>
   </PageLayout>
 );
 
