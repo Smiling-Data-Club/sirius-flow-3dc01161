@@ -1,147 +1,192 @@
+import { Building2, Server, Mail, Cookie, Gavel, HeadphonesIcon } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
+import SectionReveal from "@/components/SectionReveal";
 
 const Datenschutz = () => (
   <PageLayout
     title="Datenschutzerklärung — SIRIUS GmbH"
     description="Datenschutzerklärung der SIRIUS GmbH document solutions."
   >
-    <section className="py-24 md:py-32">
-      <div className="container max-w-3xl">
-        <h1 className="text-3xl md:text-5xl font-bold mb-12">Datenschutzerklärung</h1>
-
-        <div className="prose prose-lg max-w-none text-foreground [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-3 [&_p]:text-muted-foreground [&_p]:mb-4 [&_ul]:text-muted-foreground [&_ul]:mb-4 [&_li]:mb-1 [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4">
-          <h2>1. Verantwortlicher</h2>
-          <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
-          <p>
-            SIRIUS GmbH document solutions<br />
-            Abrichstrasse 23<br />
-            79108 Freiburg-Hochdorf<br />
-            Telefon: (0761) 704070<br />
-            E-Mail: <a href="mailto:info@sirius-gmbh.de">info@sirius-gmbh.de</a>
-          </p>
-          <p>Vertretungsberechtigte Geschäftsführer: Fabian Schüler, Michael Wangerowski, Manfred Schüler</p>
-
-          <h2>2. Allgemeines zur Datenverarbeitung</h2>
-          <p>
-            Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Rechtsgrundlagen sind insbesondere:
-          </p>
-          <ul>
-            <li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</li>
-            <li>Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung / vorvertragliche Maßnahmen)</li>
-            <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</li>
-          </ul>
-
-          <h2>3. Hosting</h2>
-          <p>
-            Diese Website wird bei der IONOS SE (Elgendorfer Str. 57, 56410 Montabaur, Deutschland) gehostet. Beim Aufruf unserer Website werden durch den Hosting-Anbieter automatisch Informationen erfasst (sog. Server-Log-Dateien). Dazu gehören:
-          </p>
-          <ul>
-            <li>Browsertyp und -version</li>
-            <li>Verwendetes Betriebssystem</li>
-            <li>Referrer-URL</li>
-            <li>IP-Adresse des zugreifenden Rechners (ggf. anonymisiert)</li>
-            <li>Uhrzeit der Serveranfrage</li>
-          </ul>
-          <p>
-            Die Verarbeitung erfolgt auf Grundlage unseres berechtigten Interesses an einer sicheren und effizienten Bereitstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO).
-          </p>
-          <p>
-            IONOS ist ein deutscher Hosting-Anbieter mit Rechenzentren in Deutschland. Eine Übermittlung personenbezogener Daten in Drittländer findet im Rahmen des Hostings nicht statt.
-          </p>
-          <p>
-            Weitere Informationen: <a href="https://www.ionos.de/terms-gtc/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer">https://www.ionos.de/terms-gtc/datenschutzerklaerung/</a>
-          </p>
-
-          <h2>4. Kontaktformular</h2>
-          <p>
-            Wenn Sie uns über das Kontaktformular auf unserer Website Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular (z. B. Name, E-Mail-Adresse, Nachricht) zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
-          </p>
-          <p>
-            Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage).
-          </p>
-          <p>
-            Die übermittelten Daten werden im CRM-System Zoho CRM (Zoho Corporation B.V., Beneluxlaan 4B, 3527 HS Utrecht, Niederlande) verarbeitet. Zoho betreibt Rechenzentren in der EU (u. a. in den Niederlanden und Irland).
-          </p>
-          <p>
-            Weitere Informationen: <a href="https://www.zoho.com/de/privacy.html" target="_blank" rel="noopener noreferrer">https://www.zoho.com/de/privacy.html</a>
-          </p>
-          <p>
-            Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind — in der Regel nach abschließender Bearbeitung Ihrer Anfrage, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
-          </p>
-
-          <h2>5. Webanalyse</h2>
-          <p>
-            Zur Analyse des Nutzungsverhaltens setzen wir Zoho Analytics bzw. vergleichbare Analysefunktionen innerhalb der Zoho-Plattform ein. Dabei können folgende Daten erhoben werden:
-          </p>
-          <ul>
-            <li>Seitenaufrufe und Verweildauer</li>
-            <li>Gerätetyp, Bildschirmauflösung</li>
-            <li>Ungefährer Standort (auf Basis der IP-Adresse)</li>
-            <li>Referrer (verweisende Seite)</li>
-          </ul>
-          <p>
-            Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie über unser Cookie-Banner erteilen können. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.
-          </p>
-          <p>Die Daten werden bei der Zoho Corporation B.V. in der EU verarbeitet.</p>
-
-          <h2>6. Cookies</h2>
-          <p>
-            Diese Website verwendet Cookies. Technisch notwendige Cookies werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gesetzt. Analyse-Cookies werden nur mit Ihrer Einwilligung gesetzt (Art. 6 Abs. 1 lit. a DSGVO) und können über das Cookie-Banner verwaltet werden.
-          </p>
-          <p>
-            Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, das Annehmen von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
-          </p>
-
-          <h2>7. Eingebettete Inhalte</h2>
-          <p>Auf unserer Website können Inhalte von Drittanbietern eingebettet sein, insbesondere:</p>
-          <ul>
-            <li>Video-Inhalte (z. B. YouTube oder Vimeo) im Bereich der Kunden-Testimonials</li>
-            <li>LinkedIn-Beiträge auf unserer Social-Media-Seite</li>
-          </ul>
-          <p>
-            Beim Laden eingebetteter Inhalte wird eine Verbindung zu den Servern des jeweiligen Anbieters hergestellt. Dabei kann Ihre IP-Adresse an den Anbieter übermittelt werden. Die Einbettung erfolgt auf Grundlage Ihres berechtigten Interesses bzw. unseres berechtigten Interesses an einer ansprechenden Darstellung unserer Leistungen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern ein Einwilligungsbanner vorgeschaltet ist.
-          </p>
-
-          <h2>8. SSL-/TLS-Verschlüsselung</h2>
-          <p>
-            Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
-          </p>
-
-          <h2>9. Ihre Rechte als betroffene Person</h2>
-          <p>Ihnen stehen folgende Rechte gegenüber dem Verantwortlichen zu:</p>
-          <ul>
-            <li>Auskunftsrecht (Art. 15 DSGVO) — Sie können Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten verlangen.</li>
-            <li>Recht auf Berichtigung (Art. 16 DSGVO) — Sie können die Berichtigung unrichtiger Daten verlangen.</li>
-            <li>Recht auf Löschung (Art. 17 DSGVO) — Sie können die Löschung Ihrer Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
-            <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-            <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
-            <li>Widerspruchsrecht (Art. 21 DSGVO) — Sie können der Verarbeitung Ihrer Daten jederzeit widersprechen, soweit die Verarbeitung auf Art. 6 Abs. 1 lit. f DSGVO beruht.</li>
-            <li>Recht auf Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO) — Sie können erteilte Einwilligungen jederzeit mit Wirkung für die Zukunft widerrufen.</li>
-          </ul>
-          <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:info@sirius-gmbh.de">info@sirius-gmbh.de</a></p>
-
-          <h2>10. Beschwerderecht bei einer Aufsichtsbehörde</h2>
-          <p>
-            Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
-          </p>
-          <p>Zuständige Aufsichtsbehörde:</p>
-          <p>
-            Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br />
-            Lautenschlagerstraße 20<br />
-            70173 Stuttgart<br />
-            <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener noreferrer">
-              https://www.baden-wuerttemberg.datenschutz.de
-            </a>
-          </p>
-
-          <h2>11. Änderung dieser Datenschutzerklärung</h2>
-          <p>
-            Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
-          </p>
-          <p><strong>Stand: März 2026</strong></p>
+    {/* Hero / Title */}
+    <header className="pt-12 pb-16 px-8 max-w-5xl mx-auto">
+      <SectionReveal>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <span className="reveal text-amber-600 font-semibold tracking-widest uppercase text-xs mb-4 block">Rechtliche Hinweise</span>
+            <h1 className="reveal font-extrabold text-5xl md:text-6xl tracking-tighter leading-tight">
+              Datenschutz-<br />erklärung
+            </h1>
+          </div>
+          <div className="hidden md:block pb-2">
+            <p className="text-sm text-muted-foreground font-medium uppercase tracking-tighter">Stand: März 2026</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </SectionReveal>
+    </header>
+
+    <main className="px-8 pb-32 max-w-5xl mx-auto space-y-24">
+      {/* Section 1: Responsible Party */}
+      <SectionReveal stagger>
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="md:col-span-4 md:sticky md:top-24">
+            <h2 className="reveal font-bold text-2xl text-primary flex items-center gap-3">
+              <Building2 className="w-6 h-6" />
+              Verantwortlicher
+            </h2>
+            <div className="reveal mt-4 p-6 bg-secondary rounded-xl border-l-4 border-primary">
+              <p className="font-bold">SIRIUS GmbH</p>
+              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                document solutions<br />
+                Abrichstrasse 23<br />
+                79108 Freiburg-Hochdorf<br />
+                Telefon: (0761) 704070<br />
+                E-Mail: info@sirius-gmbh.de
+              </p>
+            </div>
+          </div>
+          <div className="md:col-span-8 space-y-6">
+            <p className="reveal text-lg leading-relaxed text-muted-foreground">
+              Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+            </p>
+            <div className="reveal bg-card p-8 rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] folded-corner">
+              <h3 className="font-bold text-xl mb-4">Grundlagen der Verarbeitung</h3>
+              <p className="leading-relaxed text-muted-foreground">
+                Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+              </p>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* Section 2: Hosting & Technical */}
+      <SectionReveal stagger>
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div className="md:col-span-8 order-2 md:order-1 space-y-6">
+            <div className="reveal bg-muted p-8 rounded-xl">
+              <h3 className="font-bold text-xl mb-4">Hosting durch IONOS</h3>
+              <p className="leading-relaxed text-muted-foreground">
+                Unsere Website wird bei IONOS gehostet. Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur (im Folgenden: IONOS). Wenn Sie unsere Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen.
+              </p>
+              <p className="leading-relaxed text-muted-foreground mt-4">
+                Details entnehmen Sie der Datenschutzerklärung von IONOS:{" "}
+                <a className="text-primary font-bold underline decoration-2 underline-offset-4" href="https://www.ionos.de/terms-gtc/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer">
+                  https://www.ionos.de/terms-gtc/datenschutzerklaerung/
+                </a>
+              </p>
+              <div className="mt-6 flex items-start gap-4 p-4 bg-card/50 rounded-lg">
+                <Server className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-sm font-medium">Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website.</p>
+              </div>
+            </div>
+            <div className="reveal p-8 border-2 border-border rounded-xl">
+              <h3 className="font-bold text-xl mb-4">SSL- bzw. TLS-Verschlüsselung</h3>
+              <p className="leading-relaxed text-muted-foreground">
+                Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+              </p>
+            </div>
+          </div>
+          <div className="md:col-span-4 order-1 md:order-2">
+            <h2 className="reveal font-bold text-2xl text-primary flex items-center gap-3">
+              <Server className="w-6 h-6" />
+              Infrastruktur
+            </h2>
+            <p className="reveal mt-4 text-sm text-muted-foreground leading-relaxed">
+              Sichere Datenspeicherung und verschlüsselte Übertragungswege bilden das Rückgrat unserer digitalen Dokumentenlösungen.
+            </p>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* Section 3: Zoho */}
+      <SectionReveal>
+        <section className="reveal p-12 bg-primary text-primary-foreground rounded-3xl overflow-hidden relative">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="font-extrabold text-3xl tracking-tight mb-6">Zoho Ökosystem & Web-Analyse</h2>
+              <p className="text-blue-100/80 leading-relaxed mb-8">
+                Für unsere Kundenkommunikation und die Analyse des Nutzerverhaltens setzen wir Tools der Zoho Corporation ein. Dies ermöglicht uns eine präzise Steuerung unserer Servicequalität.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-4">
+                  <span className="bg-white/10 p-2 rounded-full">
+                    <Mail className="w-5 h-5" />
+                  </span>
+                  <div>
+                    <p className="font-bold">Zoho Contact Forms</p>
+                    <p className="text-xs text-blue-100/60">Anfragen & Lead-Management</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-4">
+                  <span className="bg-white/10 p-2 rounded-full">
+                    <Server className="w-5 h-5" />
+                  </span>
+                  <div>
+                    <p className="font-bold">Zoho Analytics</p>
+                    <p className="text-xs text-blue-100/60">Anonymisierte Nutzungsstatistiken</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+              <h4 className="font-bold mb-4">Datenverarbeitung</h4>
+              <p className="text-sm leading-relaxed mb-4">
+                Wenn Sie unser Kontaktformular nutzen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+              </p>
+              <p className="text-sm leading-relaxed">
+                Zoho Analytics verwendet Cookies, um die Benutzung der Website zu analysieren. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Zoho übertragen und dort gespeichert.
+              </p>
+            </div>
+          </div>
+          <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-primary/50 rounded-full blur-3xl opacity-50" />
+        </section>
+      </SectionReveal>
+
+      {/* Section 4: Cookies & Rights */}
+      <SectionReveal stagger>
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="reveal bg-secondary p-8 rounded-2xl flex flex-col h-full">
+            <Cookie className="w-9 h-9 text-amber-600 mb-6" />
+            <h3 className="font-bold text-xl mb-4">Cookies</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Sie dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen.
+            </p>
+          </div>
+          <div className="reveal bg-secondary p-8 rounded-2xl flex flex-col h-full">
+            <Gavel className="w-9 h-9 text-amber-600 mb-6" />
+            <h3 className="font-bold text-xl mb-4">Ihre Rechte</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
+            </p>
+          </div>
+          <div className="reveal bg-secondary p-8 rounded-2xl flex flex-col h-full">
+            <HeadphonesIcon className="w-9 h-9 text-amber-600 mb-6" />
+            <h3 className="font-bold text-xl mb-4">Beschwerderecht</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              Im Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde ist der Landesdatenschutzbeauftragte des Bundeslandes Baden-Württemberg.
+            </p>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* Final Notice */}
+      <SectionReveal>
+        <div className="reveal bg-muted/30 p-12 rounded-3xl border-2 border-dashed border-border text-center max-w-3xl mx-auto">
+          <h4 className="font-bold text-2xl mb-4">Noch Fragen zum Datenschutz?</h4>
+          <p className="text-muted-foreground mb-8">
+            Unser Datenschutz-Team steht Ihnen für spezifische Rückfragen zur Verarbeitung Ihrer Daten jederzeit zur Verfügung.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              className="px-8 py-3 bg-card border border-border font-bold rounded-xl hover:bg-secondary transition-colors inline-flex items-center gap-2"
+              href="mailto:info@sirius-gmbh.de"
+            >
+              <Mail className="w-4 h-4" />
+              E-Mail schreiben
+            </a>
+          </div>
+        </div>
+      </SectionReveal>
+    </main>
   </PageLayout>
 );
 
