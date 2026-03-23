@@ -6,6 +6,10 @@ import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import sdcLogo from "@/assets/sdc-logo.png";
 import whiteboardImg from "@/assets/homepage-whiteboard.jpg";
+import belleLogo from "@/assets/referenzen/belle.png";
+import gesslerLogo from "@/assets/referenzen/gessler.svg";
+import dafheLogo from "@/assets/referenzen/dafhe.png";
+import tobyLogo from "@/assets/referenzen/toby-schaum.png";
 
 /* ════════════════════════════════════════════
    Decorative floating paper elements
