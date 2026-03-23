@@ -1,3 +1,4 @@
+import { Linkedin } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 
@@ -28,32 +29,33 @@ interface TeamMember {
   role: string;
   image?: string;
   objectPos?: string;
+  linkedin?: string;
 }
 
 const salesMarketing: TeamMember[] = [
-  { name: "Fabian Schüler", role: "Geschäftsführer", image: fabianImg },
-  { name: "Michael Wangerowski", role: "Geschäftsführer", image: michaelWImg },
-  { name: "Patricia Pierdel", role: "Marketing & Sales Coordination", image: patriciaImg },
-  { name: "Lara Köbelin", role: "Social Media Marketing", image: laraImg, objectPos: "center 15%" },
-  { name: "Sally Nehring", role: "Account Managerin", image: sallyImg, objectPos: "center 15%" },
-  { name: "Michael Heitzmann", role: "Account Manager", image: michaelHImg, objectPos: "center 15%" },
-  { name: "Sena Kaya", role: "Business Development", image: senaImg },
-  { name: "Josefine Wartner", role: "Inside Sales", image: josefineImg, objectPos: "center 15%" },
-  { name: "Daniela Trunner", role: "Sales", image: danielaImg },
-  { name: "Angela Warzecha", role: "Operations Managerin", image: angelaImg, objectPos: "center 15%" },
-  { name: "Natascha Biechele", role: "Accounting", image: nataschaImg, objectPos: "center 15%" },
+  { name: "Fabian", role: "Geschäftsführer", image: fabianImg, linkedin: "https://www.linkedin.com/in/fabian-sch%C3%BCler-6a9049159" },
+  { name: "Michael", role: "Geschäftsführer", image: michaelWImg, linkedin: "https://www.linkedin.com/in/michael-wangerowski-771628283" },
+  { name: "Patricia", role: "Marketing & Sales Coordination", image: patriciaImg, linkedin: "https://www.linkedin.com/in/patricia-pierdel-502486221" },
+  { name: "Lara", role: "Social Media Marketing", image: laraImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/lara-k%C3%B6belin" },
+  { name: "Sally", role: "Account Managerin", image: sallyImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/sally-nehring-2a6138207" },
+  { name: "Michael H.", role: "Account Manager", image: michaelHImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/michael-heitzmann-614971251" },
+  { name: "Sena", role: "Business Development", image: senaImg, linkedin: "https://www.linkedin.com/in/sena-kaya-hammoud-0b2439211" },
+  { name: "Josefine", role: "Inside Sales", image: josefineImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/josefine-wartner" },
+  { name: "Daniela", role: "Sales", image: danielaImg },
+  { name: "Angela", role: "Operations Managerin", image: angelaImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/angela-warzecha" },
+  { name: "Natascha", role: "Accounting", image: nataschaImg, objectPos: "center 15%" },
 ];
 
 const professionalServices: TeamMember[] = [
-  { name: "Manfred Schüler", role: "Geschäftsführer", image: manfredImg },
-  { name: "Bahadir Alaz", role: "Head of Professional Services", image: bahadirImg },
-  { name: "Christian Klose", role: "Senior System Engineer", image: christianImg, objectPos: "center 15%" },
-  { name: "Jonas Gabel", role: "Projektmanagement Print", image: jonasImg },
-  { name: "Christoph Schild", role: "Helpdesk & Dispatching", image: christophImg },
-  { name: "Vladimir Korotine", role: "Senior Service Specialist", image: vladimirImg, objectPos: "center 15%" },
-  { name: "Hasib Jabari", role: "Service & Maintenance", image: hasibImg },
-  { name: "Hussein Ahmad", role: "Service & Maintenance", image: husseinImg },
-  { name: "Rami Nouri", role: "Service & Maintenance", image: ramiImg, objectPos: "center 15%" },
+  { name: "Manfred", role: "Geschäftsführer", image: manfredImg, linkedin: "https://www.linkedin.com/in/manfred-sch%C3%BCler-583761169" },
+  { name: "Bahadir", role: "Head of Professional Services", image: bahadirImg, linkedin: "https://www.linkedin.com/in/bahadir-alaz-a9884728a" },
+  { name: "Christian", role: "Senior System Engineer", image: christianImg, objectPos: "center 15%" },
+  { name: "Jonas", role: "Projektmanagement Print", image: jonasImg },
+  { name: "Christoph", role: "Helpdesk & Dispatching", image: christophImg, linkedin: "https://www.linkedin.com/in/christoph-schild-38b62b15b" },
+  { name: "Vladimir", role: "Senior Service Specialist", image: vladimirImg, objectPos: "center 15%" },
+  { name: "Hasib", role: "Service & Maintenance", image: hasibImg },
+  { name: "Hussein", role: "Service & Maintenance", image: husseinImg, linkedin: "https://www.linkedin.com/in/hussein-ahmad-48a10b340" },
+  { name: "Rami", role: "Service & Maintenance", image: ramiImg, objectPos: "center 15%" },
   { name: "Majed", role: "Professional Services" },
 ];
 
@@ -76,6 +78,17 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
     )}
     <h3 className="text-lg font-semibold">{member.name}</h3>
     <p className="text-primary text-sm font-medium">{member.role}</p>
+    {member.linkedin && (
+      <a
+        href={member.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center w-8 h-8 mt-2 rounded-full text-muted-foreground hover:text-[#0A66C2] hover:bg-accent transition-colors"
+        aria-label={`${member.name} auf LinkedIn`}
+      >
+        <Linkedin size={18} />
+      </a>
+    )}
   </div>
 );
 
