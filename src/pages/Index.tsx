@@ -310,6 +310,23 @@ const testimonials = [
   { name: "Bastian Rudigier", role: "Qualitätsmanagement, Deutscher Arbeitskreis für Familienhilfe e.V.", videoId: "HB3e8Xly6BM" },
 ];
 
+const referenceLogos = [
+  { src: belleLogo, alt: "BELLE AG" },
+  { src: gesslerLogo, alt: "Gessler Collection" },
+  { src: dafheLogo, alt: "Dt. Arbeitskreis für Familienhilfe" },
+  { src: tobyLogo, alt: "Toby Schaum" },
+  { src: diatoolLogo, alt: "Diatool" },
+  { src: skodaLogo, alt: "Skoda Sütterlin" },
+  { src: edekaLogo, alt: "Edeka Barwig" },
+  { src: weinbauLogo, alt: "Badischer Weinbauverband" },
+  { src: grieshaberLogo, alt: "Grieshaber Logistics" },
+  { src: kestenholzLogo, alt: "Kestenholz" },
+  { src: marderLogo, alt: "Marder Stop & Go" },
+  { src: andockLogo, alt: "Andocksysteme" },
+  { src: kundoLogo, alt: "Kundo xT" },
+  { src: waldhausLogo, alt: "Waldhaus" },
+];
+
 const Testimonials = () => (
   <section className="py-24 md:py-32">
     <div className="container">
@@ -337,6 +354,27 @@ const Testimonials = () => (
               <p className="text-muted-foreground text-sm">{t.role}</p>
             </div>
           ))}
+        </div>
+      </SectionReveal>
+
+      {/* Weitere Referenzen - Logo Marquee */}
+      <SectionReveal>
+        <div className="reveal mt-20">
+          <h3 className="text-xl md:text-2xl font-semibold text-center mb-10">Weitere Referenzen</h3>
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="flex w-max animate-marquee gap-12 md:gap-16 items-center">
+              {[...referenceLogos, ...referenceLogos].map((logo, i) => (
+                <img
+                  key={i}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-10 md:h-12 max-w-[120px] md:max-w-[150px] w-auto object-contain opacity-50 hover:opacity-100 transition-opacity shrink-0"
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </SectionReveal>
     </div>
