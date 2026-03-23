@@ -291,9 +291,9 @@ const Services = () => (
    VIDEO TESTIMONIALS
    ════════════════════════════════════════════ */
 const testimonials = [
-  { name: "Kundenname", role: "Geschäftsführer, Musterfirma GmbH", quote: "SIRIUS hat unsere Druckprozesse komplett vereinfacht." },
-  { name: "Kundenname", role: "IT-Leiter, Beispiel AG", quote: "Endlich ein Partner, der mitdenkt." },
-  { name: "Kundenname", role: "Office Manager, Demo KG", quote: "Von der Beratung bis zur Umsetzung — alles aus einer Hand." },
+  { name: "Aline Hernandez", role: "Prokuristin, BELLE AG", videoId: "z7m9qV7ZceU" },
+  { name: "Johannes Gessler", role: "CEO, Gessler Collection", videoId: "5CFvvNQnBC4" },
+  { name: "Bastian Rudigier", role: "Qualitätsmanagement, Deutscher Arbeitskreis für Familienhilfe e.V.", videoId: "HB3e8Xly6BM" },
 ];
 
 const Testimonials = () => (
@@ -309,15 +309,16 @@ const Testimonials = () => (
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <div key={i} className="reveal">
-              <div className="aspect-video bg-secondary rounded-lg flex items-center justify-center mb-5 relative overflow-hidden group cursor-pointer">
-                <span className="text-muted-foreground text-sm">Testimonial-Video {i + 1}</span>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center shadow-lg animate-pulse-play group-hover:bg-primary transition-colors">
-                    <Play size={22} className="ml-1" />
-                  </div>
-                </div>
+              <div className="aspect-video rounded-lg overflow-hidden mb-5 shadow-md">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
+                  title={`Testimonial von ${t.name}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  loading="lazy"
+                />
               </div>
-              <p className="text-foreground italic mb-3">"{t.quote}"</p>
               <p className="font-semibold">{t.name}</p>
               <p className="text-muted-foreground text-sm">{t.role}</p>
             </div>
