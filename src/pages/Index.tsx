@@ -46,23 +46,23 @@ const Hero = () => (
     {/* Floating papers */}
     <PaperElement
       className="hidden md:block w-32 h-44 opacity-[0.35]"
-      style={{ top: "12%", left: "8%", "--rotate": "-6deg", "--tx": "12px", "--ty": "-18px" } as React.CSSProperties}
+      style={{ top: "12%", left: "5%", "--rotate": "-6deg", "--drift-x": "120px", "--drift-y": "-60px", animationDuration: "18s" } as React.CSSProperties}
     />
     <PaperElement
       className="hidden md:block w-24 h-32 opacity-[0.30]"
-      style={{ top: "25%", right: "12%", "--rotate": "8deg", "--tx": "-10px", "--ty": "-14px" } as React.CSSProperties}
+      style={{ top: "20%", right: "10%", "--rotate": "8deg", "--drift-x": "-100px", "--drift-y": "50px", animationDuration: "22s" } as React.CSSProperties}
     />
     <PaperElement
       className="hidden md:block w-20 h-28 opacity-[0.32]"
-      style={{ bottom: "20%", left: "20%", "--rotate": "4deg", "--tx": "6px", "--ty": "-10px" } as React.CSSProperties}
+      style={{ bottom: "25%", left: "15%", "--rotate": "4deg", "--drift-x": "90px", "--drift-y": "-70px", animationDuration: "25s" } as React.CSSProperties}
     />
     <PaperElement
       className="w-16 h-20 opacity-[0.30]"
-      style={{ bottom: "30%", right: "25%", "--rotate": "-10deg", "--tx": "-8px", "--ty": "6px" } as React.CSSProperties}
+      style={{ bottom: "35%", right: "20%", "--rotate": "-10deg", "--drift-x": "-80px", "--drift-y": "-50px", animationDuration: "20s" } as React.CSSProperties}
     />
     <PaperElement
       className="hidden lg:block w-28 h-36 opacity-[0.33]"
-      style={{ top: "40%", right: "5%", "--rotate": "12deg", "--tx": "14px", "--ty": "-20px" } as React.CSSProperties}
+      style={{ top: "45%", right: "3%", "--rotate": "12deg", "--drift-x": "-110px", "--drift-y": "40px", animationDuration: "24s" } as React.CSSProperties}
     />
 
     <div className="container relative z-10 py-24 md:py-0">
