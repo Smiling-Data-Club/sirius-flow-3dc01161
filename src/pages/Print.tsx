@@ -153,7 +153,7 @@ const Print = () => (
         <SectionReveal>
           <p className="reveal text-center text-muted-foreground text-sm font-medium mb-12 uppercase tracking-widest opacity-60">Unsere Technologie-Partner</p>
           <div className="reveal flex flex-wrap justify-center items-center gap-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-            {["SHARP", "KYOCERA", "HP", "KONICA MINOLTA", "RICOH"].map((name) => (
+            {["SHARP", "LEXMARK", "EPSON", "PAPERCUT", "GESPAGE", "DOCUWARE", "ZOHO"].map((name) => (
               <div key={name} className="font-black text-3xl tracking-tighter">{name}</div>
             ))}
           </div>
