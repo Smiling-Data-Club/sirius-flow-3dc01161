@@ -1,7 +1,7 @@
 import { ThumbsUp, MessageCircle, Share2, ExternalLink, Star, ChevronRight, BarChart3 } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
-import LinkedInFeed from "@/components/LinkedInFeed";
+import SocialHub from "@/components/SocialHub";
 
 const Social = () => (
   <PageLayout
