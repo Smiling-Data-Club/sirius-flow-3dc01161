@@ -1,6 +1,7 @@
 import { ThumbsUp, MessageCircle, Share2, ExternalLink, Star, ChevronRight, BarChart3 } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
+import LinkedInFeed from "@/components/LinkedInFeed";
 
 const Social = () => (
   <PageLayout
@@ -132,6 +133,13 @@ const Social = () => (
             </div>
             <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/50 rounded-full opacity-50 blur-3xl" />
           </div>
+        </div>
+      </SectionReveal>
+
+      {/* Dynamic LinkedIn Feed */}
+      <SectionReveal>
+        <div className="reveal">
+          <LinkedInFeed />
         </div>
       </SectionReveal>
 
