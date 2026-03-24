@@ -1,7 +1,7 @@
 import { ThumbsUp, MessageCircle, Share2, ExternalLink, Star, ChevronRight, BarChart3 } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
-import LinkedInFeed from "@/components/LinkedInFeed";
+import SocialHub from "@/components/SocialHub";
 
 const Social = () => (
   <PageLayout
@@ -136,33 +136,10 @@ const Social = () => (
         </div>
       </SectionReveal>
 
-      {/* Dynamic LinkedIn Feed */}
+      {/* Social Hub with tabs */}
       <SectionReveal>
         <div className="reveal">
-          <LinkedInFeed />
-        </div>
-      </SectionReveal>
-
-      {/* Secondary CTA */}
-      <SectionReveal>
-        <div className="reveal mt-24 bg-muted rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Bleiben Sie informiert.</h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Erhalten Sie exklusive Einblicke in Branchentrends, neue Technologien und Best Practices direkt in Ihren LinkedIn Feed.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="https://www.linkedin.com/company/79397257/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-primary-foreground font-bold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              SIRIUS auf LinkedIn
-            </a>
-            <button className="bg-transparent border border-border font-bold px-8 py-3 rounded-lg hover:bg-secondary transition-colors">
-              Andere Kanäle
-            </button>
-          </div>
+          <SocialHub />
         </div>
       </SectionReveal>
     </div>
