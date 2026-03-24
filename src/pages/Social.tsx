@@ -136,6 +136,13 @@ const Social = () => (
         </div>
       </SectionReveal>
 
+      {/* Dynamic LinkedIn Feed */}
+      <SectionReveal>
+        <div className="reveal">
+          <LinkedInFeed />
+        </div>
+      </SectionReveal>
+
       {/* Secondary CTA */}
       <SectionReveal>
         <div className="reveal mt-24 bg-muted rounded-2xl p-12 text-center">
