@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      instagram_posts: {
+        Row: {
+          caption: string
+          created_at: string
+          id: string
+          likes: number
+          media_type: string
+          media_url: string | null
+          post_id: string
+          url: string
+        }
+        Insert: {
+          caption: string
+          created_at?: string
+          id?: string
+          likes?: number
+          media_type?: string
+          media_url?: string | null
+          post_id: string
+          url: string
+        }
+        Update: {
+          caption?: string
+          created_at?: string
+          id?: string
+          likes?: number
+          media_type?: string
+          media_url?: string | null
+          post_id?: string
+          url?: string
+        }
+        Relationships: []
+      }
       linkedin_posts: {
         Row: {
           created_at: string
@@ -41,6 +74,72 @@ export type Database = {
           post_id?: string
           text?: string
           url?: string
+        }
+        Relationships: []
+      }
+      tiktok_posts: {
+        Row: {
+          cover_image_url: string | null
+          created_at: string
+          description: string
+          id: string
+          post_id: string
+          url: string
+          views: number
+        }
+        Insert: {
+          cover_image_url?: string | null
+          created_at?: string
+          description: string
+          id?: string
+          post_id: string
+          url: string
+          views?: number
+        }
+        Update: {
+          cover_image_url?: string | null
+          created_at?: string
+          description?: string
+          id?: string
+          post_id?: string
+          url?: string
+          views?: number
+        }
+        Relationships: []
+      }
+      youtube_videos: {
+        Row: {
+          created_at: string
+          description: string
+          duration: string | null
+          id: string
+          thumbnail_url: string | null
+          title: string
+          url: string
+          video_id: string
+          view_count: number
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          duration?: string | null
+          id?: string
+          thumbnail_url?: string | null
+          title: string
+          url: string
+          video_id: string
+          view_count?: number
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          duration?: string | null
+          id?: string
+          thumbnail_url?: string | null
+          title?: string
+          url?: string
+          video_id?: string
+          view_count?: number
         }
         Relationships: []
       }
