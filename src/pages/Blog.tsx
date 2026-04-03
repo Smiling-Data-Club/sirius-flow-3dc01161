@@ -1,6 +1,7 @@
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
+import PageHero from "@/components/PageHero";
 
 const posts = [
   {
@@ -28,16 +29,13 @@ const Blog = () => (
     title="Blog — SIRIUS GmbH"
     description="Insights zu Dokumentenmanagement, Digitalisierung und Managed Print Services."
   >
-    <div className="pt-12 pb-24 px-8 max-w-7xl mx-auto">
-      {/* Hero Title */}
-      <SectionReveal>
-        <div className="mb-16">
-          <span className="reveal text-amber-600 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Magazin</span>
-          <h1 className="reveal font-extrabold text-7xl text-primary tracking-tighter leading-none mb-6">Blog</h1>
-          <div className="reveal h-1.5 w-24 bg-amber-500 rounded-full" />
-        </div>
-      </SectionReveal>
+    <PageHero
+      topLine="Klarheit für Ihre"
+      keyword="Insights"
+      subtitle="Aktuelle Artikel zu Dokumentenmanagement, Digitalisierung und Managed Print Services."
+    />
 
+    <div className="pb-24 px-8 max-w-7xl mx-auto">
       {/* Blog Cards Grid */}
       <SectionReveal stagger>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">

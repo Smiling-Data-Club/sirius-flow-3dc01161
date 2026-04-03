@@ -1,6 +1,7 @@
 import { Linkedin } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
+import PageHero from "@/components/PageHero";
 
 import fabianImg from "@/assets/team/fabian-schueler.jpg";
 import michaelWImg from "@/assets/team/michael-wangerowski.jpg";
@@ -67,7 +68,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
           <img
             src={member.image}
             alt={member.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
             style={{ objectPosition: member.objectPos || "center top" }}
             loading="lazy"
           />
@@ -99,24 +100,14 @@ const Team = () => (
     title="Unser Team — SIRIUS GmbH"
     description="Lernen Sie das Team hinter SIRIUS kennen."
   >
-    <section className="pt-32 pb-24">
-      <div className="container">
-        {/* Hero Header */}
-        <SectionReveal>
-          <header className="reveal text-center max-w-3xl mx-auto mb-20">
-            <span className="text-primary font-semibold tracking-[0.2em] text-[10px] uppercase mb-4 block">
-              Architects of Information
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-              Unser Team
-            </h1>
-            <p className="text-muted-foreground text-lg font-light leading-relaxed">
-              Hinter SIRIUS steht ein Team aus Visionären, Technik-Experten und strategischen Denkern.
-              Gemeinsam gestalten wir die Zukunft des digitalen Dokumentenmanagements.
-            </p>
-          </header>
-        </SectionReveal>
+    <PageHero
+      topLine="Klarheit für Ihre"
+      keyword="Menschen"
+      subtitle="Hinter SIRIUS steht ein Team aus Visionären, Technik-Experten und strategischen Denkern."
+    />
 
+    <section className="pb-24">
+      <div className="container">
         {/* Sales & Marketing */}
         <SectionReveal>
           <div className="reveal flex items-center gap-4 mb-10">

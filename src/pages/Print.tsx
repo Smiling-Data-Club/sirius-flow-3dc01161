@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { BarChart3, Settings2, ShieldCheck, Banknote, Zap, Leaf, ArrowRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
+import PageHero from "@/components/PageHero";
 import werkstattImg from "@/assets/print-werkstatt.jpg";
 import lagerImg from "@/assets/print-hero.jpg";
 
@@ -10,19 +11,25 @@ const Print = () => (
     title="Managed Print Services — SIRIUS GmbH"
     description="Druck-Infrastruktur, die einfach funktioniert. Geplant, gewartet, optimiert — von SIRIUS."
   >
-    {/* Hero */}
-    <section className="relative min-h-[716px] flex items-center overflow-hidden px-8">
+    <PageHero
+      topLine="Klarheit für Ihre"
+      keyword="Drucklösungen"
+      subtitle="Druck-Infrastruktur, die einfach funktioniert. Wir gestalten Ihre Dokumentenprozesse effizienter, sicherer und nachhaltiger."
+    />
+
+    {/* Content sections */}
+    <section className="relative flex items-center overflow-hidden px-8 pb-24">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="relative z-10 space-y-6">
           <SectionReveal>
             <span className="reveal inline-block px-4 py-1.5 rounded-full bg-blue-50 text-primary text-xs font-bold tracking-widest uppercase">
               Dokumenten-Infrastruktur
             </span>
-            <h1 className="reveal text-5xl lg:text-7xl font-extrabold text-primary leading-[1.1] tracking-tighter mt-4">
+            <h2 className="reveal text-4xl lg:text-5xl font-extrabold text-primary leading-[1.1] tracking-tighter mt-4">
               Managed Print <br /><span className="text-muted-foreground">Services</span>
-            </h1>
+            </h2>
             <p className="reveal text-xl text-muted-foreground max-w-lg leading-relaxed font-light mt-6">
-              Druck-Infrastruktur, die einfach funktioniert. Wir gestalten Ihre Dokumentenprozesse effizienter, sicherer und nachhaltiger.
+              Wir planen, installieren und warten Ihre gesamte Druckerflotte — damit Sie sich auf Ihr Kerngeschäft konzentrieren können.
             </p>
             <div className="reveal flex flex-wrap gap-4 pt-4">
               <Link
@@ -40,12 +47,11 @@ const Print = () => (
             <div className="reveal aspect-[4/5] rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,30,0.06)] scale-95 lg:scale-100 rotate-1 lg:rotate-2">
               <img
                 src={lagerImg}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 alt="Moderner Drucker in minimalistischem Workspace"
                 loading="lazy"
               />
             </div>
-            {/* Floating Element */}
             <div className="absolute -bottom-6 -left-6 bg-card p-8 rounded-xl shadow-xl max-w-xs border-l-4 border-amber-500 hidden md:block">
               <div className="flex items-center gap-4 mb-3">
                 <ShieldCheck className="w-5 h-5 text-amber-600" />
@@ -100,7 +106,7 @@ const Print = () => (
             <div className="reveal folded-corner p-1 shadow-lg rounded-xl overflow-hidden">
               <img
                 src={werkstattImg}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-700"
                 alt="Professionelles Büro mit klaren architektonischen Linien"
                 loading="lazy"
               />
