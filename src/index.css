@@ -151,12 +151,18 @@
 /* ═══════════════════════════════════════════
    Hero Animations
    ═══════════════════════════════════════════ */
-@keyframes float-paper {
-  0% { transform: translateY(0) rotate(var(--rotate, 0deg)); }
-  25% { transform: translateY(-40px) rotate(calc(var(--rotate, 0deg) + 8deg)); }
-  50% { transform: translateY(10px) rotate(calc(var(--rotate, 0deg) - 4deg)); }
-  75% { transform: translateY(-25px) rotate(calc(var(--rotate, 0deg) + 6deg)); }
-  100% { transform: translateY(0) rotate(var(--rotate, 0deg)); }
+@keyframes paper-rain {
+  0%   { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
+  8%   { opacity: 0.7; }
+  55%  { opacity: 0.7; transform: translateY(55vh) rotate(15deg) scale(1); }
+  80%  { opacity: 0; transform: translateY(65vh) rotate(25deg) scale(0.3); }
+  100% { opacity: 0; transform: translateY(70vh) rotate(30deg) scale(0); }
+}
+
+@keyframes paper-sway {
+  0%, 100% { translate: 0; }
+  25% { translate: 18px; }
+  75% { translate: -18px; }
 }
 
 @keyframes hero-fade-up {
@@ -190,29 +196,8 @@
   75% { transform: translateY(4px) rotate(-2deg); }
 }
 
-/* Document Tornado orbits */
-@keyframes tornado-orbit-1 {
-  0%   { transform: translate(-50%, -50%) rotate(0deg)   translateX(70px)  rotate(0deg)   scale(1); }
-  50%  { transform: translate(-50%, -50%) rotate(180deg) translateX(100px) rotate(-180deg) scale(0.6); }
-  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(70px)  rotate(-360deg) scale(1); }
-}
-@keyframes tornado-orbit-2 {
-  0%   { transform: translate(-50%, -50%) rotate(0deg)   translateX(50px) rotate(0deg)   scale(0.8); }
-  50%  { transform: translate(-50%, -50%) rotate(180deg) translateX(85px) rotate(-180deg) scale(0.5); }
-  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(50px) rotate(-360deg) scale(0.8); }
-}
-@keyframes tornado-orbit-3 {
-  0%   { transform: translate(-50%, -50%) rotate(0deg)   translateX(30px) rotate(0deg)   scale(0.9); }
-  50%  { transform: translate(-50%, -50%) rotate(180deg) translateX(60px) rotate(-180deg) scale(0.4); }
-  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(30px) rotate(-360deg) scale(0.9); }
-}
-
-.animate-tornado-orbit-1 { animation: tornado-orbit-1 10s linear infinite; }
-.animate-tornado-orbit-2 { animation: tornado-orbit-2 13s linear infinite; }
-.animate-tornado-orbit-3 { animation: tornado-orbit-3 8s  linear infinite; }
-
-.animate-float-paper {
-  animation: float-paper 12s ease-in-out infinite;
+.animate-paper-rain {
+  animation: paper-rain 13s linear infinite, paper-sway 4s ease-in-out infinite;
 }
 
 .animate-hero-fade-up {
@@ -256,26 +241,7 @@
   border-bottom-left-radius: 2px;
 }
 
-/* Darker paper for tornado */
-.paper-deco-dark {
-  position: absolute;
-  background: hsl(213 30% 78%);
-  border: 1px solid hsl(213 25% 65%);
-  border-radius: 2px;
-  filter: drop-shadow(0 8px 24px rgba(25, 28, 30, 0.35)) drop-shadow(0 2px 6px rgba(25, 28, 30, 0.2));
-  pointer-events: none;
-  clip-path: polygon(0 0, calc(100% - 0.8rem) 0, 100% 0.8rem, 100% 100%, 0 100%);
-}
-.paper-deco-dark::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0.8rem;
-  height: 0.8rem;
-  background: linear-gradient(135deg, rgba(0,0,0,0.1) 50%, rgba(255,255,255,0.6) 50%);
-  border-bottom-left-radius: 2px;
-}
+
 
 
 main section > *,
@@ -311,15 +277,12 @@ footer > * {
     filter: none;
     transition: none;
   }
-  .animate-float-paper,
+  .animate-paper-rain,
   .animate-bounce-arrow,
   .animate-pulse-play,
   .animate-sdc-logo,
   .animate-sdc-float,
-  .animate-hero-fade-up,
-  .animate-tornado-orbit-1,
-  .animate-tornado-orbit-2,
-  .animate-tornado-orbit-3 {
+  .animate-hero-fade-up {
     animation: none !important;
     opacity: 1;
     transform: none;
