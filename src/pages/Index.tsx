@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Printer, FileText, Settings, Check } from "lucide-react";
-
+import FloatingPapers from "@/components/FloatingPapers";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
