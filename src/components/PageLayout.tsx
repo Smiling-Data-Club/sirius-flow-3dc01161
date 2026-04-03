@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import CookieBanner from "./CookieBanner";
+import FloatingPapers from "./FloatingPapers";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -34,7 +35,10 @@ const PageLayout = ({ children, title, description }: PageLayoutProps) => {
   return (
     <>
       <Header />
-      <main className="pt-16 md:pt-20">{children}</main>
+      <main className="pt-20 md:pt-24 relative">
+        <FloatingPapers />
+        {children}
+      </main>
       <Footer />
       <ScrollToTop />
       <CookieBanner />
