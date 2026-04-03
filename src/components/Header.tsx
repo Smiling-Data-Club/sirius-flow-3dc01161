@@ -30,7 +30,7 @@ const Header = () => {
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="shrink-0" aria-label="Startseite">
-          <SiriusLogo variant="blue" className="h-10 w-auto" />
+          <SiriusLogo variant="blue" className="h-16 md:h-20 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

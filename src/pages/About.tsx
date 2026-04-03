@@ -57,9 +57,9 @@ const About = () => (
           <div className="reveal relative group">
             <div className="absolute -inset-4 bg-muted rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500" />
             <img
-              src={teamPortrait}
-              alt="SIRIUS Team meeting and collaboration"
-              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] transition-all duration-700"
+              src={siriusTeamImg}
+              alt="SIRIUS Team mit Laptops im modernen Büro"
+              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] grayscale hover:grayscale-0 transition-all duration-700"
               loading="lazy"
             />
           </div>

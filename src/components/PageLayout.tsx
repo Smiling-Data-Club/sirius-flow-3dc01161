@@ -35,7 +35,10 @@ const PageLayout = ({ children, title, description }: PageLayoutProps) => {
   return (
     <>
       <Header />
-      <main className="pt-16 md:pt-20">{children}</main>
+      <main className="pt-16 md:pt-20 relative">
+        <FloatingPapers />
+        {children}
+      </main>
       <Footer />
       <ScrollToTop />
       <CookieBanner />
