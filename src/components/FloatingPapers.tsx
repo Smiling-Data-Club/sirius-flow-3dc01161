@@ -13,26 +13,26 @@ const FloatingPaper = ({
 );
 
 const FloatingPapers = () => (
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+  <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
     <FloatingPaper
-      className="hidden md:block w-[120px] h-[160px] opacity-60"
+      className="hidden md:block w-[120px] h-[160px] opacity-90"
       style={{ top: "8%", left: "8%", "--rotate": "-4deg" } as React.CSSProperties}
     />
     <FloatingPaper
-      className="hidden md:block w-[100px] h-[140px] opacity-60"
-      style={{ top: "12%", left: "72%", "--rotate": "6deg", animationDelay: "2s" } as React.CSSProperties}
+      className="hidden md:block w-[100px] h-[140px] opacity-90"
+      style={{ top: "20%", left: "75%", "--rotate": "6deg", animationDelay: "3s" } as React.CSSProperties}
     />
     <FloatingPaper
-      className="hidden lg:block w-[90px] h-[120px] opacity-60"
-      style={{ top: "35%", left: "88%", "--rotate": "-8deg", animationDelay: "4s" } as React.CSSProperties}
+      className="hidden lg:block w-[90px] h-[120px] opacity-90"
+      style={{ top: "45%", left: "88%", "--rotate": "-8deg", animationDelay: "6s" } as React.CSSProperties}
     />
     <FloatingPaper
-      className="hidden md:block w-[110px] h-[150px] opacity-60"
-      style={{ top: "45%", left: "3%", "--rotate": "5deg", animationDelay: "1s" } as React.CSSProperties}
+      className="hidden md:block w-[110px] h-[150px] opacity-90"
+      style={{ top: "55%", left: "3%", "--rotate": "5deg", animationDelay: "2s" } as React.CSSProperties}
     />
     <FloatingPaper
-      className="hidden lg:block w-[80px] h-[110px] opacity-60"
-      style={{ top: "60%", left: "40%", "--rotate": "-3deg", animationDelay: "3s" } as React.CSSProperties}
+      className="hidden lg:block w-[80px] h-[110px] opacity-90"
+      style={{ top: "75%", left: "45%", "--rotate": "-3deg", animationDelay: "5s" } as React.CSSProperties}
     />
   </div>
 );

@@ -21,22 +21,7 @@ import andockLogo from "@/assets/referenzen/andocksysteme.png";
 import kundoLogo from "@/assets/referenzen/kundo-xt.png";
 import waldhausLogo from "@/assets/referenzen/waldhaus.png";
 
-/* ════════════════════════════════════════════
-   Decorative floating paper elements
-   ════════════════════════════════════════════ */
-const FloatingPaper = ({
-  className,
-  style,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-}) => (
-  <div
-    className={`paper-deco animate-float-paper ${className ?? ""}`}
-    style={style}
-    aria-hidden="true"
-  />
-);
+
 
 /* ════════════════════════════════════════════
    HERO — two-column, editorial
