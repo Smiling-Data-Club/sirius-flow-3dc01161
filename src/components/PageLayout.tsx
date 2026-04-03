@@ -11,9 +11,10 @@ interface PageLayoutProps {
   children: React.ReactNode;
   title?: string;
   description?: string;
+  hideFloatingPapers?: boolean;
 }
 
-const PageLayout = ({ children, title, description }: PageLayoutProps) => {
+const PageLayout = ({ children, title, description, hideFloatingPapers }: PageLayoutProps) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const PageLayout = ({ children, title, description }: PageLayoutProps) => {
 
   return (
     <div className="relative">
-      <FloatingPapers />
+      {!hideFloatingPapers && <FloatingPapers />}
       <Header />
       <main className="pt-20 md:pt-24 relative">
         {children}
