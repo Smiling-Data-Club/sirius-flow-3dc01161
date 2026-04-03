@@ -295,7 +295,10 @@ footer > * {
   .animate-pulse-play,
   .animate-sdc-logo,
   .animate-sdc-float,
-  .animate-hero-fade-up {
+  .animate-hero-fade-up,
+  .animate-tornado-orbit-1,
+  .animate-tornado-orbit-2,
+  .animate-tornado-orbit-3 {
     animation: none !important;
     opacity: 1;
     transform: none;
