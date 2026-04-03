@@ -12,25 +12,16 @@ const Print = () => (
     description="Druck-Infrastruktur, die einfach funktioniert. Geplant, gewartet, optimiert — von SIRIUS."
   >
     <PageHero
-      topLine="Klarheit für Ihre"
-      keyword="Drucklösungen"
+      topLine="Klarheit durch"
+      keyword="ManagedPrint Services"
       subtitle="Druck-Infrastruktur, die einfach funktioniert. Wir gestalten Ihre Dokumentenprozesse effizienter, sicherer und nachhaltiger."
     />
 
-    {/* Content sections */}
+    {/* Hero image + CTA */}
     <section className="relative flex items-center overflow-hidden px-8 pb-24">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="relative z-10 space-y-6">
           <SectionReveal>
-            <span className="reveal inline-block px-4 py-1.5 rounded-full bg-blue-50 text-primary text-xs font-bold tracking-widest uppercase">
-              Dokumenten-Infrastruktur
-            </span>
-            <h2 className="reveal text-4xl lg:text-5xl font-extrabold text-primary leading-[1.1] tracking-tighter mt-4">
-              Managed Print <br /><span className="text-muted-foreground">Services</span>
-            </h2>
-            <p className="reveal text-xl text-muted-foreground max-w-lg leading-relaxed font-light mt-6">
-              Wir planen, installieren und warten Ihre gesamte Druckerflotte — damit Sie sich auf Ihr Kerngeschäft konzentrieren können.
-            </p>
             <div className="reveal flex flex-wrap gap-4 pt-4">
               <Link
                 to="/service-area"

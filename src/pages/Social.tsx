@@ -9,8 +9,8 @@ const Social = () => (
     description="Folgen Sie SIRIUS auf LinkedIn für Insights, Updates und Blicke hinter die Kulissen."
   >
     <PageHero
-      topLine="Klarheit für Ihre"
-      keyword="Reichweite"
+      topLine="Klarheit durch"
+      keyword="Social Media"
       subtitle="Folgen Sie uns auf LinkedIn, Instagram, TikTok und YouTube für Insights, Updates und den ein oder anderen Blick hinter die Kulissen."
     />
 

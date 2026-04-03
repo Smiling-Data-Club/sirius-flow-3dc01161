@@ -30,7 +30,7 @@ const Blog = () => (
     description="Insights zu Dokumentenmanagement, Digitalisierung und Managed Print Services."
   >
     <PageHero
-      topLine="Klarheit für Ihre"
+      topLine="Klarheit durch"
       keyword="Insights"
       subtitle="Aktuelle Artikel zu Dokumentenmanagement, Digitalisierung und Managed Print Services."
     />

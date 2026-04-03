@@ -101,8 +101,8 @@ const Team = () => (
     description="Lernen Sie das Team hinter SIRIUS kennen."
   >
     <PageHero
-      topLine="Klarheit für Ihre"
-      keyword="Menschen"
+      topLine="Klarheit durch"
+      keyword="Teamwork"
       subtitle="Hinter SIRIUS steht ein Team aus Visionären, Technik-Experten und strategischen Denkern."
     />
 
