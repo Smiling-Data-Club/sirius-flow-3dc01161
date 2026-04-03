@@ -43,7 +43,7 @@ const PageLayout = ({ children, title, description }: PageLayoutProps) => {
       <Footer />
       <ScrollToTop />
       <CookieBanner />
-    </>
+    </div>
   );
 };
 
