@@ -381,7 +381,7 @@ const Index = () => (
     title="SIRIUS GmbH — Dokumentenlösungen, Digitalisierung & Managed Print Services"
     description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 45 Jahren aus Freiburg."
   >
-
+    <FloatingPapers />
 
     <Hero />
     <SDCTeaser />

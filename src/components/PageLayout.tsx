@@ -4,17 +4,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import CookieBanner from "./CookieBanner";
-import FloatingPapers from "./FloatingPapers";
-
 
 interface PageLayoutProps {
   children: React.ReactNode;
   title?: string;
   description?: string;
-  hideFloatingPapers?: boolean;
 }
 
-const PageLayout = ({ children, title, description, hideFloatingPapers }: PageLayoutProps) => {
+const PageLayout = ({ children, title, description }: PageLayoutProps) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -36,7 +33,6 @@ const PageLayout = ({ children, title, description, hideFloatingPapers }: PageLa
 
   return (
     <div className="relative">
-      {!hideFloatingPapers && <FloatingPapers />}
       <Header />
       <main className="pt-20 md:pt-24 relative">
         {children}
