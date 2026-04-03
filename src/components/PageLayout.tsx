@@ -11,9 +11,10 @@ interface PageLayoutProps {
   children: React.ReactNode;
   title?: string;
   description?: string;
+  hideFloatingPapers?: boolean;
 }
 
-const PageLayout = ({ children, title, description }: PageLayoutProps) => {
+const PageLayout = ({ children, title, description, hideFloatingPapers }: PageLayoutProps) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
