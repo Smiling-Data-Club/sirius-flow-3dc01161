@@ -4,7 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import CookieBanner from "./CookieBanner";
-import FloatingPapers from "./FloatingPapers";
+
 
 interface PageLayoutProps {
   children: React.ReactNode;
