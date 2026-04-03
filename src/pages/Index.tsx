@@ -46,24 +46,24 @@ const Hero = () => (
     {/* Floating papers */}
     <div className="absolute inset-0 pointer-events-none">
       <FloatingPaper
-        className="hidden md:block w-[120px] h-[160px] opacity-60"
+        className="hidden md:block w-[120px] h-[160px] opacity-90"
         style={{ top: "20%", left: "10%", "--rotate": "-4deg" } as React.CSSProperties}
       />
       <FloatingPaper
-        className="hidden md:block w-[100px] h-[140px] opacity-60"
-        style={{ top: "15%", left: "70%", "--rotate": "6deg", animationDelay: "2s" } as React.CSSProperties}
+        className="hidden md:block w-[100px] h-[140px] opacity-90"
+        style={{ top: "15%", left: "70%", "--rotate": "6deg", animationDelay: "0.5s" } as React.CSSProperties}
       />
       <FloatingPaper
-        className="hidden lg:block w-[90px] h-[120px] opacity-60"
-        style={{ top: "50%", left: "85%", "--rotate": "-8deg", animationDelay: "4s" } as React.CSSProperties}
+        className="hidden lg:block w-[90px] h-[120px] opacity-85"
+        style={{ top: "50%", left: "85%", "--rotate": "-8deg", animationDelay: "1s" } as React.CSSProperties}
       />
       <FloatingPaper
-        className="hidden md:block w-[110px] h-[150px] opacity-60"
-        style={{ top: "60%", left: "5%", "--rotate": "5deg", animationDelay: "1s" } as React.CSSProperties}
+        className="hidden md:block w-[110px] h-[150px] opacity-90"
+        style={{ top: "60%", left: "5%", "--rotate": "5deg", animationDelay: "0.3s" } as React.CSSProperties}
       />
       <FloatingPaper
-        className="hidden lg:block w-[80px] h-[110px] opacity-60"
-        style={{ top: "75%", left: "40%", "--rotate": "-3deg", animationDelay: "3s" } as React.CSSProperties}
+        className="hidden lg:block w-[80px] h-[110px] opacity-85"
+        style={{ top: "75%", left: "40%", "--rotate": "-3deg", animationDelay: "0.8s" } as React.CSSProperties}
       />
     </div>
 
