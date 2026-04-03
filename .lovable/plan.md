@@ -1,53 +1,52 @@
 
 
-## Plan
+## Plan: Papierregen-Animation mit Auflösung
 
-### 1. Remove floating papers from Team page
+Alle bisherigen Animationen (FloatingPapers, DocumentTornado) werden entfernt und durch eine neue **Papierregen-Animation** ersetzt.
 
-**PageLayout.tsx** — accept an optional `hideFloatingPapers` prop. When true, skip rendering `<FloatingPapers />`.
+### Konzept
 
-**Team.tsx** — pass `hideFloatingPapers` to `<PageLayout>`.
+Papierblätter fallen kontinuierlich von oben herab. Jedes Blatt startet oberhalb des Viewports, fällt nach unten und löst sich dabei nach ca. 60-70% der Viewport-Höhe auf (fade-out + scale-down). So verschwinden sie bevor sie den Textbereich erreichen.
 
-### 2. Add a subtle document tornado animation in the Hero section
+Umsetzung rein mit CSS-Keyframes — kein JavaScript-Tracking nötig. Die „Auflösung" wird über opacity + scale im unteren Teil der Animation simuliert.
 
-The "free space" between the SIRIUS logo (header) and the "Klarheit für Ihre Dokumente" headline is the upper portion of the Hero section (the `pt-20` padding area plus the space above the text within the `min-h-screen` flex container).
+### Änderungen
 
-Create a new component **`DocumentTornado.tsx`** that renders a CSS-only tornado/whirlwind effect with small document shapes swirling in a vortex pattern. Implementation:
+**1. `src/components/FloatingPapers.tsx` — komplett neu schreiben**
+- 8-12 Papierblätter mit `paper-deco` Styling
+- Jedes auf einer zufälligen horizontalen Position (`left: X%`)
+- `position: fixed`, `pointer-events-none`, `z-index: 1`
+- Verschiedene Größen, Verzögerungen und Geschwindigkeiten
 
-- A container positioned `absolute` in the Hero section, placed in the gap between header and headline (roughly `top: 0` to the headline start)
-- 6-8 small document shapes (styled like the floating papers with `paper-deco` class, but smaller ~30-50px) orbiting in elliptical paths at different speeds and radii
-- CSS keyframes for elliptical orbit (`tornado-orbit-1` through `tornado-orbit-3`) with varying radii and speeds
-- A subtle funnel/vortex visual using a radial gradient or blur effect
-- Kept subtle: low opacity (0.3-0.5), small elements, gentle motion
-- `pointer-events-none` so it doesn't interfere with interaction
+**2. `src/index.css` — Keyframes ersetzen**
+- Alte `float-paper`, `tornado-orbit-*` Keyframes entfernen
+- Neuer `@keyframes paper-rain`:
+  - 0%: `translateY(-100px)`, `opacity: 0`, leichte Rotation
+  - 10%: `opacity: 0.7` (einblenden)
+  - 60%: `opacity: 0.7` (noch sichtbar)
+  - 85%: `opacity: 0`, `scale(0.3)` (auflösen)
+  - 100%: `translateY(70vh)`, `opacity: 0`
+- Animation: `paper-rain 10-16s linear infinite`
+- Leichtes seitliches Pendeln über einen zweiten Keyframe (`paper-sway`)
 
-**Index.tsx** — insert `<DocumentTornado />` inside the Hero section, positioned in the upper area.
+**3. `src/components/DocumentTornado.tsx` — löschen**
 
-**index.css** — add tornado orbit keyframes:
-- Multiple orbit paths (different ellipse sizes) 
-- Documents scale slightly smaller as they go "deeper" into the vortex
-- 8-15s animation duration for subtlety
+**4. `src/pages/Index.tsx` — DocumentTornado Import/Nutzung entfernen**
 
-### Technical details
+**5. `src/components/PageLayout.tsx` — `hideFloatingPapers` Prop bleibt für Team-Seite**
+
+### Technisches Detail
 
 ```text
-┌─────────────────────────────┐
-│  Header (SIRIUS Logo)       │  ← z-50 fixed
-├─────────────────────────────┤
-│                             │
-│   🌀 Document Tornado       │  ← absolute, in this gap
-│   (subtle, ~150-200px)      │
-│                             │
-│  "Klarheit für Ihre         │
-│   Dokumente."               │
-│                             │
-└─────────────────────────────┘
+     ╷  ╷    ╷       ╷
+     📄  📄   📄      📄    ← Blätter starten über dem Viewport
+     │   │    │       │
+     ▼   ▼    ▼       ▼     ← fallen herab, pendeln leicht
+     ·   ·    ·       ·     ← lösen sich auf (~60-70vh)
+  ─────────────────────────
+  │  Headline / Content   │  ← Textbereich bleibt frei
+  ─────────────────────────
 ```
 
-Files to create/modify:
-- **Create** `src/components/DocumentTornado.tsx`
-- **Edit** `src/index.css` — add tornado keyframes
-- **Edit** `src/pages/Index.tsx` — add tornado to Hero
-- **Edit** `src/components/PageLayout.tsx` — add `hideFloatingPapers` prop
-- **Edit** `src/pages/Team.tsx` — pass `hideFloatingPapers`
+5 Dateien betroffen, rein CSS-basiert, keine Runtime-Abhängigkeiten.
 
