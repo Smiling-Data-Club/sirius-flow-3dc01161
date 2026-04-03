@@ -34,10 +34,10 @@ const PageLayout = ({ children, title, description }: PageLayoutProps) => {
   }, [title, description]);
 
   return (
-    <>
+    <div className="relative">
       <FloatingPapers />
       <Header />
-      <main className="pt-20 md:pt-24 relative">
+      <main className="pt-20 md:pt-24 relative" style={{ zIndex: 2 }}>
         {children}
       </main>
       <Footer />
