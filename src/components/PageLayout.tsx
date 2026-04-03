@@ -36,7 +36,7 @@ const PageLayout = ({ children, title, description, hideFloatingPapers }: PageLa
 
   return (
     <div className="relative">
-      <FloatingPapers />
+      {!hideFloatingPapers && <FloatingPapers />}
       <Header />
       <main className="pt-20 md:pt-24 relative">
         {children}

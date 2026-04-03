@@ -99,6 +99,7 @@ const Team = () => (
   <PageLayout
     title="Unser Team — SIRIUS GmbH"
     description="Lernen Sie das Team hinter SIRIUS kennen."
+    hideFloatingPapers
   >
     <PageHero
       topLine="Klarheit durch"
