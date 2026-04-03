@@ -28,7 +28,7 @@ const Header = () => {
         scrolled ? "bg-background/70 backdrop-blur-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)]" : "bg-background/70 backdrop-blur-xl"
       }`}
     >
-      <nav className="container flex items-center justify-between h-16 md:h-20">
+      <nav className="container flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="shrink-0" aria-label="Startseite">
           <SiriusLogo variant="blue" className="h-16 md:h-20 w-auto" />
         </Link>
