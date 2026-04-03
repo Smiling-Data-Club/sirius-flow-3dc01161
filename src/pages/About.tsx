@@ -19,8 +19,8 @@ const About = () => (
     description="Seit über 45 Jahren begleitet SIRIUS Unternehmen auf dem Weg zu effizienten Dokumentenprozessen."
   >
     <PageHero
-      topLine="Klarheit für Ihre"
-      keyword="Kultur"
+      topLine="Klarheit durch"
+      keyword="unsere Werte"
       subtitle="Wir gestalten die digitale Transformation von Dokumentenprozessen mit architektonischer Präzision und menschlicher Weitsicht."
     />
 

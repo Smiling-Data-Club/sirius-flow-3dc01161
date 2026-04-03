@@ -36,7 +36,6 @@ const PageLayout = ({ children, title, description }: PageLayoutProps) => {
     <>
       <Header />
       <main className="pt-20 md:pt-24 relative">
-        <FloatingPapers />
         {children}
       </main>
       <Footer />
