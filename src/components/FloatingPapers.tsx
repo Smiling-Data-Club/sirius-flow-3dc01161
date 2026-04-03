@@ -13,7 +13,7 @@ const FloatingPaper = ({
 );
 
 const FloatingPapers = () => (
-  <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
+  <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
     <FloatingPaper
       className="hidden md:block w-[120px] h-[160px] opacity-90"
       style={{ top: "8%", left: "8%", "--rotate": "-4deg" } as React.CSSProperties}

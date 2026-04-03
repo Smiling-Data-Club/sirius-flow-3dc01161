@@ -235,6 +235,13 @@
   border-bottom-left-radius: 2px;
 }
 
+main section > *,
+main article > *,
+footer > * {
+  position: relative;
+  z-index: 2;
+}
+
 /* Folded corner for cards */
 .folded-corner {
   clip-path: polygon(0 0, calc(100% - 1.2rem) 0, 100% 1.2rem, 100% 100%, 0 100%);
