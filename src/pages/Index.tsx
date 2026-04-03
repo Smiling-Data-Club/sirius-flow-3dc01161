@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Printer, FileText, Settings, Check } from "lucide-react";
-
+import FloatingPapers from "@/components/FloatingPapers";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
@@ -381,7 +381,7 @@ const Index = () => (
     title="SIRIUS GmbH — Dokumentenlösungen, Digitalisierung & Managed Print Services"
     description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 45 Jahren aus Freiburg."
   >
-
+    <FloatingPapers />
 
     <Hero />
     <SDCTeaser />
