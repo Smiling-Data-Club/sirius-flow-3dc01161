@@ -191,7 +191,7 @@
 }
 
 .animate-float-paper {
-  animation: float-paper 15s ease-in-out infinite;
+  animation: float-paper 4s ease-in-out infinite;
 }
 
 .animate-hero-fade-up {
