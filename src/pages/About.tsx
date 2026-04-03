@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import teamPortrait from "@/assets/team-portrait-frau.jpg";
 import tabletImg from "@/assets/about-tablet.jpg";
+import siriusTeamImg from "@/assets/about-team-sirius.jpg";
 
 const values = [
   { icon: Eye, title: "Klarheit", text: "Wir schaffen Durchblick in komplexen Datenstrukturen durch intuitive Logik und sauberes Design." },
