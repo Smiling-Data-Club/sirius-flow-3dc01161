@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Eye, ShieldCheck, Wrench, Rocket } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
-import teamPortrait from "@/assets/team-portrait-frau.jpg";
+import PageHero from "@/components/PageHero";
 import tabletImg from "@/assets/about-tablet.jpg";
 import siriusTeamImg from "@/assets/about-team-sirius.jpg";
 
@@ -18,30 +18,14 @@ const About = () => (
     title="Über uns — SIRIUS GmbH"
     description="Seit über 45 Jahren begleitet SIRIUS Unternehmen auf dem Weg zu effizienten Dokumentenprozessen."
   >
-    {/* Hero */}
-    <section className="relative h-[614px] flex items-center overflow-hidden bg-primary">
-      <div className="absolute inset-0 opacity-40">
-        <img
-          src={teamPortrait}
-          alt="Office Interior"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
-      <div className="relative max-w-7xl mx-auto px-8 w-full">
-        <SectionReveal>
-          <h1 className="reveal font-extrabold text-6xl md:text-8xl text-primary-foreground tracking-tighter leading-tight max-w-2xl">
-            Über <span className="text-amber-200">SIRIUS</span>
-          </h1>
-          <p className="reveal mt-6 text-xl text-blue-100 max-w-xl font-light">
-            Wir gestalten die digitale Transformation von Dokumentenprozessen mit architektonischer Präzision und menschlicher Weitsicht.
-          </p>
-        </SectionReveal>
-      </div>
-    </section>
+    <PageHero
+      topLine="Klarheit für Ihre"
+      keyword="Kultur"
+      subtitle="Wir gestalten die digitale Transformation von Dokumentenprozessen mit architektonischer Präzision und menschlicher Weitsicht."
+    />
 
     {/* Story Section */}
-    <section className="py-24 px-8 max-w-7xl mx-auto space-y-32">
+    <section className="pb-24 px-8 max-w-7xl mx-auto space-y-32">
       {/* Part 1: Intro */}
       <SectionReveal stagger>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -74,7 +58,7 @@ const About = () => (
             <img
               src={tabletImg}
               alt="SIRIUS Technician operating digital systems"
-              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)]"
+              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] grayscale hover:grayscale-0 transition-all duration-700"
               loading="lazy"
             />
           </div>

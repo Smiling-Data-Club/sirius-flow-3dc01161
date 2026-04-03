@@ -9,6 +9,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [insightsOpen, setInsightsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const Header = () => {
   useEffect(() => {
     setMobileOpen(false);
     setInsightsOpen(false);
+    setAboutOpen(false);
   }, [location]);
 
   return (
@@ -47,9 +49,11 @@ const Header = () => {
           <Link to="/print" className="text-foreground hover:text-primary transition-colors font-medium">
             Print
           </Link>
+
+          {/* Insights Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setInsightsOpen(!insightsOpen)}
+              onClick={() => { setInsightsOpen(!insightsOpen); setAboutOpen(false); }}
               className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium"
             >
               Insights
@@ -65,9 +69,27 @@ const Header = () => {
               </>
             )}
           </div>
-          <Link to="/ueber-uns" className="text-foreground hover:text-primary transition-colors font-medium">
-            Über uns
-          </Link>
+
+          {/* Über uns Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => { setAboutOpen(!aboutOpen); setInsightsOpen(false); }}
+              className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Über uns
+              <ChevronDown className={`w-4 h-4 transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
+            </button>
+            {aboutOpen && (
+              <>
+                <div className="fixed inset-0 z-40" onClick={() => setAboutOpen(false)} />
+                <div className="absolute top-full mt-2 left-0 bg-background border rounded-lg shadow-lg py-2 min-w-[160px] z-50">
+                  <Link to="/ueber-uns" className="block px-4 py-2 hover:bg-secondary transition-colors">Kultur</Link>
+                  <Link to="/ueber-uns/team" className="block px-4 py-2 hover:bg-secondary transition-colors">Team</Link>
+                </div>
+              </>
+            )}
+          </div>
+
           <Button asChild variant="hero" size="default">
             <Link to="/service-area">Service Area</Link>
           </Button>
@@ -99,7 +121,8 @@ const Header = () => {
             <Link to="/print" className="text-foreground font-medium py-2">Print</Link>
             <Link to="/blog" className="text-foreground font-medium py-2">Blog</Link>
             <Link to="/social" className="text-foreground font-medium py-2">Social</Link>
-            <Link to="/ueber-uns" className="text-foreground font-medium py-2">Über uns</Link>
+            <Link to="/ueber-uns" className="text-foreground font-medium py-2">Kultur</Link>
+            <Link to="/ueber-uns/team" className="text-foreground font-medium py-2">Team</Link>
             <Button asChild variant="hero" size="lg" className="mt-2">
               <Link to="/service-area">Service Area</Link>
             </Button>
