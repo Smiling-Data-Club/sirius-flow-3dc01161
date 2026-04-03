@@ -1,39 +1,34 @@
-const FloatingPaper = ({
-  className,
-  style,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-}) => (
-  <div
-    className={`paper-deco animate-float-paper ${className ?? ""}`}
-    style={style}
-    aria-hidden="true"
-  />
-);
+const papers = [
+  { left: "5%", size: "w-[45px] h-[60px]", delay: "0s", duration: "12s" },
+  { left: "15%", size: "w-[35px] h-[48px]", delay: "2s", duration: "14s" },
+  { left: "28%", size: "w-[50px] h-[66px]", delay: "5s", duration: "11s" },
+  { left: "40%", size: "w-[30px] h-[42px]", delay: "1s", duration: "16s" },
+  { left: "55%", size: "w-[42px] h-[56px]", delay: "4s", duration: "13s" },
+  { left: "65%", size: "w-[38px] h-[52px]", delay: "7s", duration: "15s" },
+  { left: "78%", size: "w-[48px] h-[64px]", delay: "3s", duration: "12s" },
+  { left: "88%", size: "w-[32px] h-[44px]", delay: "6s", duration: "14s" },
+  { left: "10%", size: "w-[36px] h-[50px]", delay: "8s", duration: "13s" },
+  { left: "50%", size: "w-[40px] h-[54px]", delay: "9s", duration: "15s" },
+];
 
 const FloatingPapers = () => (
-  <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
-    <FloatingPaper
-      className="hidden md:block w-[120px] h-[160px] opacity-90"
-      style={{ top: "8%", left: "8%", "--rotate": "-4deg" } as React.CSSProperties}
-    />
-    <FloatingPaper
-      className="hidden md:block w-[100px] h-[140px] opacity-90"
-      style={{ top: "20%", left: "75%", "--rotate": "6deg", animationDelay: "3s" } as React.CSSProperties}
-    />
-    <FloatingPaper
-      className="hidden lg:block w-[90px] h-[120px] opacity-90"
-      style={{ top: "45%", left: "88%", "--rotate": "-8deg", animationDelay: "6s" } as React.CSSProperties}
-    />
-    <FloatingPaper
-      className="hidden md:block w-[110px] h-[150px] opacity-90"
-      style={{ top: "55%", left: "3%", "--rotate": "5deg", animationDelay: "2s" } as React.CSSProperties}
-    />
-    <FloatingPaper
-      className="hidden lg:block w-[80px] h-[110px] opacity-90"
-      style={{ top: "75%", left: "45%", "--rotate": "-3deg", animationDelay: "5s" } as React.CSSProperties}
-    />
+  <div
+    className="fixed inset-0 pointer-events-none overflow-hidden"
+    style={{ zIndex: 1 }}
+    aria-hidden="true"
+  >
+    {papers.map((p, i) => (
+      <div
+        key={i}
+        className={`paper-deco ${p.size} animate-paper-rain`}
+        style={{
+          left: p.left,
+          top: "-80px",
+          animationDelay: p.delay,
+          animationDuration: p.duration,
+        }}
+      />
+    ))}
   </div>
 );
 

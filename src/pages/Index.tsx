@@ -29,7 +29,7 @@ import waldhausLogo from "@/assets/referenzen/waldhaus.png";
    ════════════════════════════════════════════ */
 const Hero = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-20">
-    <DocumentTornado />
+    
     <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Text */}
       <div>
