@@ -380,29 +380,8 @@ const Index = () => (
     title="SIRIUS GmbH — Dokumentenlösungen, Digitalisierung & Managed Print Services"
     description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 45 Jahren aus Freiburg."
   >
-    {/* Floating papers spanning entire page */}
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-      <FloatingPaper
-        className="hidden md:block w-[120px] h-[160px] opacity-90"
-        style={{ top: "12%", left: "6%", "--rotate": "-4deg" } as React.CSSProperties}
-      />
-      <FloatingPaper
-        className="hidden md:block w-[100px] h-[140px] opacity-90"
-        style={{ top: "8%", left: "75%", "--rotate": "6deg", animationDelay: "2s" } as React.CSSProperties}
-      />
-      <FloatingPaper
-        className="hidden lg:block w-[90px] h-[120px] opacity-85"
-        style={{ top: "38%", left: "88%", "--rotate": "-8deg", animationDelay: "4s" } as React.CSSProperties}
-      />
-      <FloatingPaper
-        className="hidden md:block w-[110px] h-[150px] opacity-90"
-        style={{ top: "55%", left: "3%", "--rotate": "5deg", animationDelay: "1s" } as React.CSSProperties}
-      />
-      <FloatingPaper
-        className="hidden lg:block w-[80px] h-[110px] opacity-85"
-        style={{ top: "72%", left: "42%", "--rotate": "-3deg", animationDelay: "3s" } as React.CSSProperties}
-      />
-    </div>
+
+
     <Hero />
     <SDCTeaser />
     <Services />
