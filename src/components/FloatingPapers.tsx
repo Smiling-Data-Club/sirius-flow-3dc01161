@@ -13,7 +13,7 @@ const papers = [
 
 const FloatingPapers = () => (
   <div
-    className="fixed inset-0 pointer-events-none overflow-hidden"
+    className="absolute inset-x-0 top-0 h-screen pointer-events-none overflow-hidden"
     style={{ zIndex: 1 }}
     aria-hidden="true"
   >
