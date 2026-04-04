@@ -13,7 +13,7 @@ const Print = () => (
   >
     <PageHero
       topLine="Klarheit durch"
-      keyword="ManagedPrint Services"
+      keyword={`Managed Print\nServices`}
       subtitle="Druck-Infrastruktur, die einfach funktioniert. Wir gestalten Ihre Dokumentenprozesse effizienter, sicherer und nachhaltiger."
     />
 
