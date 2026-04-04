@@ -11,18 +11,17 @@ const Print = () => (
     title="Managed Print Services — SIRIUS GmbH"
     description="Druck-Infrastruktur, die einfach funktioniert. Geplant, gewartet, optimiert — von SIRIUS."
   >
-    <PageHero
-      topLine="Klarheit durch"
-      keyword={`Managed Print\nServices`}
-      subtitle="Druck-Infrastruktur, die einfach funktioniert. Wir gestalten Ihre Dokumentenprozesse effizienter, sicherer und nachhaltiger."
-    />
-
-    {/* Hero image + CTA */}
-    <section className="relative flex items-center overflow-hidden px-8 pb-24">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="relative z-10 space-y-6">
+    {/* Hero with image beside headline */}
+    <section className="pt-12 pb-24 px-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <PageHero
+            topLine="Klarheit durch"
+            keyword={`Managed Print\nServices`}
+            subtitle="Druck-Infrastruktur, die einfach funktioniert. Wir gestalten Ihre Dokumentenprozesse effizienter, sicherer und nachhaltiger."
+          />
           <SectionReveal>
-            <div className="reveal flex flex-wrap gap-4 pt-4">
+            <div className="reveal flex flex-wrap gap-4 pt-4 px-8">
               <Link
                 to="/service-area"
                 className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform duration-300"
@@ -38,7 +37,7 @@ const Print = () => (
             <div className="reveal aspect-[4/5] rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,30,0.06)] scale-95 lg:scale-100 rotate-1 lg:rotate-2">
               <img
                 src={lagerImg}
-                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 object-contain text-justify"
+                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 object-contain"
                 alt="Moderner Drucker in minimalistischem Workspace"
                 loading="lazy"
               />
