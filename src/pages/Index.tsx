@@ -385,7 +385,6 @@ const Index = () => (
 
     <Hero />
     <SDCTeaser />
-    <Services />
     <Testimonials />
     <Trust />
     <ServiceCTA />
