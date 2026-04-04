@@ -142,11 +142,13 @@ const SDCTeaser = () => (
 
           {/* Logo */}
           <div className="reveal flex justify-center items-center">
-            <img
-              src={sdcLogo}
-              alt="Smiling Data Club Logo"
-              className="w-64 h-64 md:w-80 md:h-80 object-contain animate-sdc-float"
-            />
+            <a href="https://smiling-data.club" target="_blank" rel="noopener noreferrer">
+              <img
+                src={sdcLogo}
+                alt="Smiling Data Club Logo"
+                className="w-64 h-64 md:w-80 md:h-80 object-contain animate-sdc-float"
+              />
+            </a>
           </div>
         </div>
       </SectionReveal>
@@ -325,7 +327,7 @@ const Trust = () => (
   <section className="bg-secondary py-24 md:py-32">
     <div className="container">
       <SectionReveal stagger>
-        <div className="grid grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
           {stats.map((s) => (
             <div key={s.label} className="reveal">
               <StatItem {...s} />
@@ -385,7 +387,6 @@ const Index = () => (
 
     <Hero />
     <SDCTeaser />
-    <Services />
     <Testimonials />
     <Trust />
     <ServiceCTA />

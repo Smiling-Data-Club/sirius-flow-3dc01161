@@ -4,7 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import PageHero from "@/components/PageHero";
 import tabletImg from "@/assets/about-tablet.jpg";
-import siriusTeamImg from "@/assets/about-team-sirius.jpg";
+import visionImg from "@/assets/about-vision.jpg";
 
 const values = [
   { icon: Eye, title: "Klarheit", text: "Wir schaffen Durchblick in komplexen Datenstrukturen durch intuitive Logik und sauberes Design." },
@@ -41,8 +41,8 @@ const About = () => (
           <div className="reveal relative group">
             <div className="absolute -inset-4 bg-muted rounded-xl -rotate-2 group-hover:rotate-0 transition-transform duration-500" />
             <img
-              src={siriusTeamImg}
-              alt="SIRIUS Team mit Laptops im modernen Büro"
+              src={visionImg}
+              alt="SIRIUS Mitarbeiterin im modernen Büro"
               className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] grayscale hover:grayscale-0 transition-all duration-700"
               loading="lazy"
             />
