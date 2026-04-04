@@ -57,7 +57,7 @@ const Print = () => (
 
 
     {/* Vorteile */}
-    <section className="py-32 px-8 bg-background">
+    <section className="py-32 px-8 bg-accent">
       <div className="max-w-7xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
