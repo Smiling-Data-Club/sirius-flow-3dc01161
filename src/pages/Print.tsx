@@ -16,6 +16,7 @@ const Print = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <PageHero
+            className="mb-6"
             topLine="Klarheit durch"
             keyword={`Managed Print\nServices`}
             subtitle="Druck-Infrastruktur, die einfach funktioniert. Wir gestalten Ihre Dokumentenprozesse effizienter, sicherer und nachhaltiger."
