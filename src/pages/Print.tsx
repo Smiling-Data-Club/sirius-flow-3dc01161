@@ -38,7 +38,7 @@ const Print = () => (
             <div className="reveal aspect-[4/5] rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,30,0.06)] scale-95 lg:scale-100 rotate-1 lg:rotate-2">
               <img
                 src={lagerImg}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 object-contain text-justify"
                 alt="Moderner Drucker in minimalistischem Workspace"
                 loading="lazy"
               />
