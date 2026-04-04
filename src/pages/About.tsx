@@ -6,6 +6,30 @@ import PageHero from "@/components/PageHero";
 import tabletImg from "@/assets/about-tablet.jpg";
 import visionImg from "@/assets/about-vision.jpg";
 
+import stepLogo from "@/assets/partner/step.svg";
+import edvGieselLogo from "@/assets/partner/edv-giesel.png";
+import rsnetLogo from "@/assets/partner/rsnet-it.png";
+import maierLogo from "@/assets/partner/maier-edv.png";
+import jochenLogo from "@/assets/partner/jochen-schweizer.jpg";
+import gurLogo from "@/assets/partner/gur.svg";
+import itgmbhLogo from "@/assets/partner/itgmbh.svg";
+import cabLogo from "@/assets/partner/cab.svg";
+import braunLogo from "@/assets/partner/braun-its.png";
+import abacusLogo from "@/assets/partner/abacus.png";
+
+const partnerLogos = [
+  { src: stepLogo, alt: "STEP IT-Partner" },
+  { src: edvGieselLogo, alt: "EDV-Giesel" },
+  { src: rsnetLogo, alt: "RSNET IT" },
+  { src: maierLogo, alt: "Maier EDV-Systeme" },
+  { src: jochenLogo, alt: "Jochen Schweizer IT-Solutions" },
+  { src: gurLogo, alt: "G&R" },
+  { src: itgmbhLogo, alt: "IT GmbH" },
+  { src: cabLogo, alt: "cab" },
+  { src: braunLogo, alt: "Braun IT Solutions" },
+  { src: abacusLogo, alt: "ABACUS" },
+];
+
 const values = [
   { icon: Eye, title: "Klarheit", text: "Wir schaffen Durchblick in komplexen Datenstrukturen durch intuitive Logik und sauberes Design." },
   { icon: ShieldCheck, title: "Verlässlichkeit", text: "Höchste Sicherheitsstandards und termingerechte Ausführung sind unser Versprechen an Sie." },
