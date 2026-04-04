@@ -2,10 +2,11 @@ interface PageHeroProps {
   topLine: string;
   keyword: string;
   subtitle: string;
+  className?: string;
 }
 
-const PageHero = ({ topLine, keyword, subtitle }: PageHeroProps) => (
-  <div className="pt-12 pb-0 px-8 max-w-7xl mx-auto mb-16">
+const PageHero = ({ topLine, keyword, subtitle, className }: PageHeroProps) => (
+  <div className={className ?? "pt-12 pb-0 px-8 max-w-7xl mx-auto mb-16"}>
     <div>
       {topLine.split(" ").map((word, i) => (
         <span
