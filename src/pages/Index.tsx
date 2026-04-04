@@ -325,7 +325,7 @@ const Trust = () => (
   <section className="bg-secondary py-24 md:py-32">
     <div className="container">
       <SectionReveal stagger>
-        <div className="grid grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
           {stats.map((s) => (
             <div key={s.label} className="reveal">
               <StatItem {...s} />
