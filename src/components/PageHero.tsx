@@ -18,7 +18,7 @@ const PageHero = ({ topLine, keyword, subtitle }: PageHeroProps) => (
       ))}
       <br />
       <span
-        className="inline-block animate-hero-fade-up text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-primary"
+        className="inline-block animate-hero-fade-up text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-primary border-0 whitespace-pre-line"
         style={{ animationDelay: `${topLine.split(" ").length * 200}ms` }}
       >
         {keyword}
