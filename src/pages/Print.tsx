@@ -55,57 +55,6 @@ const Print = () => (
       </div>
     </section>
 
-    {/* Leistungsbeschreibung */}
-    <section className="py-32 bg-secondary px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        <div className="lg:col-span-7">
-          <SectionReveal stagger>
-            <h2 className="reveal text-3xl lg:text-4xl font-bold tracking-tight mb-8">Ganzheitliche Betreuung Ihrer Flotte</h2>
-            <div className="space-y-8">
-              <div className="reveal flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Analyse & Consulting</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Wir erfassen Ihren Ist-Zustand und identifizieren Einsparpotenziale von bis zu 30% Ihrer aktuellen Druckkosten.</p>
-                </div>
-              </div>
-              <div className="reveal flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
-                  <Settings2 className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Automatisierung</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Automatisierte Verbrauchsmaterial-Lieferung und proaktives Monitoring verhindern Stillstände, bevor sie entstehen.</p>
-                </div>
-              </div>
-              <div className="reveal flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Secure Printing</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Höchste Sicherheitsstandards durch Follow-Me-Printing und verschlüsselte Datenübertragung in Ihrem Netzwerk.</p>
-                </div>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-        <div className="lg:col-span-5">
-          <SectionReveal>
-            <div className="reveal folded-corner p-1 shadow-lg rounded-xl overflow-hidden">
-              <img
-                src={werkstattImg}
-                className="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-700"
-                alt="Professionelles Büro mit klaren architektonischen Linien"
-                loading="lazy"
-              />
-            </div>
-          </SectionReveal>
-        </div>
-      </div>
-    </section>
 
     {/* Vorteile */}
     <section className="py-32 px-8 bg-background">
