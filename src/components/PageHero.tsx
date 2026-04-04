@@ -5,7 +5,7 @@ interface PageHeroProps {
 }
 
 const PageHero = ({ topLine, keyword, subtitle }: PageHeroProps) => (
-  <div className="pt-12 pb-0 px-8 max-w-7xl mx-auto mb-16">
+  <div className="pb-0 mb-8">
     <div>
       {topLine.split(" ").map((word, i) => (
         <span
