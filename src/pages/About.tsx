@@ -6,6 +6,30 @@ import PageHero from "@/components/PageHero";
 import tabletImg from "@/assets/about-tablet.jpg";
 import visionImg from "@/assets/about-vision.jpg";
 
+import stepLogo from "@/assets/partner/step.svg";
+import edvGieselLogo from "@/assets/partner/edv-giesel.png";
+import rsnetLogo from "@/assets/partner/rsnet-it.png";
+import maierLogo from "@/assets/partner/maier-edv.png";
+import jochenLogo from "@/assets/partner/jochen-schweizer.jpg";
+import gurLogo from "@/assets/partner/gur.svg";
+import itgmbhLogo from "@/assets/partner/itgmbh.svg";
+import cabLogo from "@/assets/partner/cab.svg";
+import braunLogo from "@/assets/partner/braun-its.png";
+import abacusLogo from "@/assets/partner/abacus.png";
+
+const partnerLogos = [
+  { src: stepLogo, alt: "STEP IT-Partner" },
+  { src: edvGieselLogo, alt: "EDV-Giesel" },
+  { src: rsnetLogo, alt: "RSNET IT" },
+  { src: maierLogo, alt: "Maier EDV-Systeme" },
+  { src: jochenLogo, alt: "Jochen Schweizer IT-Solutions" },
+  { src: gurLogo, alt: "G&R" },
+  { src: itgmbhLogo, alt: "IT GmbH" },
+  { src: cabLogo, alt: "cab" },
+  { src: braunLogo, alt: "Braun IT Solutions" },
+  { src: abacusLogo, alt: "ABACUS" },
+];
+
 const values = [
   { icon: Eye, title: "Klarheit", text: "Wir schaffen Durchblick in komplexen Datenstrukturen durch intuitive Logik und sauberes Design." },
   { icon: ShieldCheck, title: "Verlässlichkeit", text: "Höchste Sicherheitsstandards und termingerechte Ausführung sind unser Versprechen an Sie." },
@@ -101,18 +125,25 @@ const About = () => (
       </div>
     </section>
 
-    {/* Partners */}
+    {/* Partners - Logo Marquee */}
     <section className="py-24 max-w-7xl mx-auto px-8">
       <SectionReveal>
         <div className="text-center mb-12">
           <h2 className="reveal font-bold text-2xl text-muted-foreground/60">Unsere Partner & Netzwerke</h2>
         </div>
-        <div className="reveal flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
-          {["DocuWare Partner", "Zoho Authorized Partner", "Sharp", "Make"].map((name) => (
-            <div key={name} className="font-bold text-xl tracking-tighter hover:opacity-100 transition-opacity">
-              {name}
-            </div>
-          ))}
+        <div className="reveal relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+          <div className="flex w-max animate-marquee gap-12 md:gap-16 items-center">
+            {[...partnerLogos, ...partnerLogos].map((logo, i) => (
+              <img
+                key={i}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 md:h-12 max-w-[120px] md:max-w-[150px] w-auto object-contain opacity-50 hover:opacity-100 transition-opacity shrink-0"
+              />
+            ))}
+          </div>
         </div>
       </SectionReveal>
     </section>
