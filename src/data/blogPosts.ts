@@ -4,6 +4,7 @@ import digitaleMeilensteineImg from "@/assets/blog/digitale-meilensteine.jpg";
 import digitalisierungMittelstandImg from "@/assets/blog/digitalisierung-mittelstand.jpg";
 import digitalisierungKulturImg from "@/assets/blog/digitalisierung-kultur.jpg";
 import soMachtArbeitSpassImg from "@/assets/blog/so-macht-arbeit-spass.jpg";
+import eRechnung2025Img from "@/assets/blog/e-rechnung-2025.png";
 
 export interface BlogPost {
   slug: string;
@@ -337,7 +338,7 @@ Die Umstellung auf die E-Rechnung ist nicht nur eine gesetzliche Pflicht, sonder
     title: "E-Rechnung 2025: Letzte Tipps und was Unternehmen vor dem Jahreswechsel noch tun müssen",
     date: "2024-12-13",
     excerpt: "Ab dem 1. Januar 2025 müssen alle Unternehmen in Deutschland E-Rechnungen empfangen und verarbeiten. Die wichtigsten Maßnahmen im Überblick.",
-    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80",
+    image: eRechnung2025Img,
     tags: ["E-Rechnung", "DocuWare", "Compliance", "Digitalisierung"],
     author: "SIRIUS GmbH",
     content: `Die verpflichtende Einführung der elektronischen Rechnung (E-Rechnung) zum 1. Januar 2025 markiert einen entscheidenden Schritt in der Digitalisierung des deutschen Geschäftsverkehrs. Für Unternehmen ist es höchste Zeit, die finalen Vorbereitungen zu treffen.
