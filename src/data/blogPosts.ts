@@ -303,7 +303,7 @@ Flexible Arbeitsmodelle sind ein Gewinn für Unternehmen und Mitarbeitende gleic
     title: "E-Rechnung mit DocuWare: Einfach und automatisiert",
     date: "2025-01-15",
     excerpt: "Die E-Rechnung ist Pflicht! Automatisieren Sie mit DocuWare Ihren Rechnungseingang vollständig – effizient, gesetzeskonform und digital.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    image: eRechnungDocuwareImg,
     tags: ["E-Rechnung", "DocuWare", "Automatisierung", "Compliance"],
     author: "SIRIUS GmbH",
     content: `## Die Zeit drängt: Jetzt auf die E-Rechnung umstellen!
