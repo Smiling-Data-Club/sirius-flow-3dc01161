@@ -379,6 +379,60 @@ Die E-Rechnung markiert lediglich den Anfang einer Entwicklung. Eine Ausweitung 
 
 Die Umstellung auf E-Rechnungen mag zunächst herausfordernd erscheinen, bietet aber erhebliche Vorteile wie verbesserte Effizienz und Kosteneinsparungen. Mit DocuWare und sorgfältiger Vorbereitung können Unternehmen den Übergang zur E-Rechnung erfolgreich meistern und von den Vorteilen der Digitalisierung profitieren.`,
   },
+  {
+    slug: "stillstand-ist-das-groesste-risiko",
+    title: "\u201EFür mich ist Stillstand das größte Risiko\u201C",
+    date: "2026-03-31",
+    excerpt: "Fabian Schüler spricht im Interview über strategische Entscheidungen, den Smiling Data Club und warum er offen mit seiner ADHS-Diagnose umgeht.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    tags: ["Interview", "Fabian Schüler", "Smiling Data Club", "Strategie", "Unternehmertum"],
+    author: "SIRIUS GmbH",
+    source: "Netzwerk Südbaden",
+    sourceUrl: "https://www.netzwerk-suedbaden.de/sirius-fuer-mich-ist-stillstand-das-groesste-risiko/",
+    content: `Fabian Schüler ist Geschäftsführer der Freiburger SIRIUS GmbH, die auf Digitalisierung und Optimierung von Geschäftsprozessen spezialisiert ist. Im Interview spricht der 37-Jährige über strategische Entscheidungen, eine neue Businessplattform sowie über seine ADHS-Diagnose.
+
+**Wenn Sie auf die Entwicklung Ihrer Firma SIRIUS blicken – was hat sich in den vergangenen Jahren grundlegend verändert?**
+
+Wir beschäftigen uns nach wie vor mit den Themen, mit denen wir groß geworden sind: Print, IT, Infrastruktur. Aber wir haben uns Schritt für Schritt weiterentwickelt, weil sich unsere Kunden verändert haben und auch, weil wir intern Kompetenzen aufgebaut haben.
+
+**War das ein bewusster Strategiewechsel?**
+
+Es war eher eine logische Konsequenz. Wenn man gute Leute im Team hat, die Lust auf neue Themen mitbringen, dann entwickelt sich ein Unternehmen weiter. Früher waren wir stärker produktorientiert. Heute verstehen wir uns als Transformationsbegleiter. Wir unterstützen Unternehmen bei der Digitalisierung von Prozessen, bei Dokumentenmanagement, Cloudlösungen und strategischen Fragen rund um Daten und Automatisierung. Dafür gibt es auch den Smiling Data Club.
+
+**Was genau ist der Smiling Data Club?**
+
+Eine Community-Plattform für mittelständische Unternehmen, die sich ehrlich mit Digitalisierung und Datenqualität auseinandersetzen wollen. Dafür schaffen wir einen Raum – digital oder vor Ort –, in dem Führungskräfte offen über ihre Herausforderungen sprechen können.
+
+**Was unterscheidet das Format von klassischen Business-Netzwerken?**
+
+Es geht nicht primär um Verkauf, sondern um Orientierung. Viele Unternehmer wissen, dass sie digitalisieren müssen, aber nicht wo sie anfangen sollen. Genau da setzen wir an.
+
+*Erstveröffentlichung: [Netzwerk Südbaden](https://www.netzwerk-suedbaden.de/sirius-fuer-mich-ist-stillstand-das-groesste-risiko/), März 2026*`,
+  },
+  {
+    slug: "so-macht-arbeit-spass",
+    title: "So macht Arbeit Spaß",
+    date: "2026-03-31",
+    excerpt: "Bei der SIRIUS GmbH wurde früh begriffen: Langweilige Tätigkeiten sind nicht nur unnötig, sie sind auch ineffizient. Wie Fabian Schüler und sein Team Prozesse so optimieren, dass Menschen wieder gerne zur Arbeit kommen.",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+    tags: ["Unternehmenskultur", "Digitalisierung", "Go Paperless", "DocuWare"],
+    author: "SIRIUS GmbH",
+    source: "Netzwerk Südbaden",
+    sourceUrl: "https://www.netzwerk-suedbaden.de/sirius-so-macht-arbeit-spass/",
+    content: `Bei der SIRIUS GmbH wurde früh begriffen: Langweilige Tätigkeiten sind nicht nur unnötig, sie sind auch ineffizient. Wie Fabian Schüler und sein Team auch anderen Unternehmen dabei helfen, ihre Prozesse so zu optimieren, dass Menschen wieder gerne zur Arbeit kommen.
+
+Däumchen dreht hier niemand. Das ist Fabian Schüler auch besonders wichtig. \u201ENichts ist schlimmer, als wenn sich deine Mitarbeitenden bei der Arbeit langweilen\u201C, sagt der 37-Jährige. Schüler ist Geschäftsführer der SIRIUS GmbH aus Freiburg-Hochdorf. Gegründet wurde das Unternehmen in den 1980er-Jahren als \u201ESchreibmaschineneck\u201C von seinem Vater Manfred Schüler, der als CEO Technik & Logistik immer noch an Bord ist. SIRIUS entwickelte sich sukzessive weiter, schaffte den Sprung von Schreibmaschinen zu analogen und später zu digitalen Druckern, versorgte hunderte Kunden in der Region mit tausenden Geräten. Heute beschäftigt das Unternehmen 23 Mitarbeitende.
+
+Inzwischen legen Fabian Schüler und sein Geschäftspartner Michael Wangerowski den Fokus verstärkt auf Digitalisierung und Beratung. Ihre Vision: Die Arbeitswelt so gestalten, dass Menschen gerne kommen. Doch wie erreicht man das? \u201EEchte Freude entsteht, wenn Arbeit Sinn ergibt, wenn Technik unterstützt, statt zu bremsen und wenn Benefits wirklich etwas bringen\u201C, sagt Schüler.
+
+## Das papierlose Büro
+
+Konkret hilft SIRIUS Unternehmen dabei, ihre Prozesse zu optimieren, Rechnungen zu automatisieren und Dokumente cloudbasiert zu verwalten. \u201EGo Paperless\u201C heißt die Initiative, die SIRIUS gemeinsam mit dem Softwareanbieter DocuWare anbietet. Fabian Schüler und seine Leute wissen: Digitalisierung ist kein IT-Projekt, sondern ein Kulturthema. Sie entscheidet mit darüber, ob Arbeit als Belastung oder als gestaltbar erlebt wird.
+
+Moderne digitale Werkzeuge wie DocuWare oder die cloudbasierte Business-Plattform Zoho können Routineaufgaben automatisieren, Transparenz schaffen und Zusammenarbeit erleichtern. Die Mitarbeitenden haben so nicht mehr Tag für Tag damit zu tun, Informationen zu suchen, händisch zu erfassen und einzeln abzulegen. Bei all diesen repetitiven Arbeitsschritten kann Technik helfen, davon ist Fabian Schüler überzeugt. Bei SIRIUS selbst sind die neuen digitalen Methoden längst eingezogen – mit großem Erfolg. \u201EWir hinterfragen, vereinfachen und probieren Neues aus. Nicht, weil wir es müssen, sondern weil es uns Spaß macht\u201C, sagt der gelernte Handelsfachwirt.
+
+*Erstveröffentlichung: [Netzwerk Südbaden](https://www.netzwerk-suedbaden.de/sirius-so-macht-arbeit-spass/), März 2026*`,
+  },
 ];
 
 export function formatDate(dateStr: string): string {
