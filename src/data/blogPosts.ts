@@ -5,6 +5,7 @@ import digitalisierungMittelstandImg from "@/assets/blog/digitalisierung-mittels
 import digitalisierungKulturImg from "@/assets/blog/digitalisierung-kultur.jpg";
 import soMachtArbeitSpassImg from "@/assets/blog/so-macht-arbeit-spass.jpg";
 import eRechnung2025Img from "@/assets/blog/e-rechnung-2025.png";
+import eRechnungDocuwareImg from "@/assets/blog/e-rechnung-docuware.png";
 
 export interface BlogPost {
   slug: string;
