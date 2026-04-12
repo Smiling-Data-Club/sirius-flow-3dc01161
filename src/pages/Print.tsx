@@ -33,23 +33,15 @@ const Print = () => (
             </div>
           </SectionReveal>
         </div>
-        <div className="relative">
+        <div className="hidden lg:block relative">
+          <div className="absolute -top-10 -right-10 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-50" />
           <SectionReveal>
-            <div className="reveal aspect-[4/5] rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(25,28,30,0.06)] scale-95 lg:scale-100 rotate-1 lg:rotate-2">
-              <img
-                src={lagerImg}
-                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 object-contain"
-                alt="Moderner Drucker in minimalistischem Workspace"
-                loading="lazy"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-card p-8 rounded-xl shadow-xl max-w-xs border-l-4 border-amber-500 hidden md:block">
-              <div className="flex items-center gap-4 mb-3">
-                <ShieldCheck className="w-5 h-5 text-amber-600" />
-                <span className="font-bold text-primary">SIRIUS zertifiziert</span>
-              </div>
-              <p className="text-sm text-muted-foreground leading-snug">Optimierte Workflows für Unternehmen mit über 50 Arbeitsplätzen.</p>
-            </div>
+            <img
+              src={lagerImg}
+              alt="Moderner Drucker in minimalistischem Workspace"
+              className="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              loading="lazy"
+            />
           </SectionReveal>
         </div>
       </div>
