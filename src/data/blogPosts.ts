@@ -1,4 +1,5 @@
 import smilingDataClubImg from "@/assets/blog/smiling-data-club.jpg";
+import stillstandRisikoImg from "@/assets/blog/stillstand-risiko.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -13,7 +14,7 @@ export interface BlogPost {
   sourceUrl?: string;
 }
 
-export const blogPosts: BlogPost[] = [
+const _blogPosts: BlogPost[] = [
   {
     slug: "digitalisierung-ist-teil-der-kultur",
     title: "Digitalisierung ist Teil der Kultur",
@@ -386,7 +387,7 @@ Die Umstellung auf E-Rechnungen mag zunächst herausfordernd erscheinen, bietet 
     title: "\u201EFür mich ist Stillstand das größte Risiko\u201C",
     date: "2026-03-31",
     excerpt: "Fabian Schüler spricht im Interview über strategische Entscheidungen, den Smiling Data Club und warum er offen mit seiner ADHS-Diagnose umgeht.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    image: stillstandRisikoImg,
     tags: ["Interview", "Fabian Schüler", "Smiling Data Club", "Strategie", "Unternehmertum"],
     author: "SIRIUS GmbH",
     source: "Netzwerk Südbaden",
@@ -436,6 +437,8 @@ Moderne digitale Werkzeuge wie DocuWare oder die cloudbasierte Business-Plattfor
 *Erstveröffentlichung: [Netzwerk Südbaden](https://www.netzwerk-suedbaden.de/sirius-so-macht-arbeit-spass/), März 2026*`,
   },
 ];
+
+export const blogPosts = _blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
