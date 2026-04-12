@@ -123,7 +123,7 @@ Viele Wissensmonopole entstehen im operativen Alltag: Kundenabsprachen bleiben i
     title: "Druckervertrieb vs. Cloud-Lösung: Ein scheinbarer Widerspruch mit System",
     date: "2025-06-24",
     excerpt: "Die Verbindung von Druckervertrieb und cloudbasierten Papierlos-Lösungen wirkt auf den ersten Blick paradox – bei SIRIUS entpuppt sie sich als strategischer Vorteil.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    image: druckervertriebCloudImg,
     tags: ["Digital Transformation", "Cloud", "Prozessoptimierung", "Druckermanagement"],
     author: "SIRIUS GmbH",
     content: `Die Verbindung von Druckervertrieb und cloudbasierten Papierlos-Lösungen wirkt auf den ersten Blick paradox – bei SIRIUS entpuppt sie sich als strategischer Vorteil. Wie ein Unternehmen gleichzeitig Hardware-Expertise und digitale Transformation verkörpert, zeigt dieser Einblick in unsere Evolution.
