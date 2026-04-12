@@ -1,5 +1,7 @@
 import smilingDataClubImg from "@/assets/blog/smiling-data-club.jpg";
 import stillstandRisikoImg from "@/assets/blog/stillstand-risiko.jpg";
+import digitaleMeilensteineImg from "@/assets/blog/digitale-meilensteine.jpg";
+import digitalisierungMittelstandImg from "@/assets/blog/digitalisierung-mittelstand.jpg";
 
 export interface BlogPost {
   slug: string;
