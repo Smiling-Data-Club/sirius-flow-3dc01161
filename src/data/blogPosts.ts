@@ -14,7 +14,7 @@ export interface BlogPost {
   sourceUrl?: string;
 }
 
-export const blogPosts: BlogPost[] = [
+const _blogPosts: BlogPost[] = [
   {
     slug: "digitalisierung-ist-teil-der-kultur",
     title: "Digitalisierung ist Teil der Kultur",
