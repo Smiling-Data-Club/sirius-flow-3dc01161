@@ -1,3 +1,5 @@
+import smilingDataClubImg from "@/assets/blog/smiling-data-club.jpg";
+
 export interface BlogPost {
   slug: string;
   title: string;
