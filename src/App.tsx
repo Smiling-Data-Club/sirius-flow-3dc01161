@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import Print from "./pages/Print";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Social from "./pages/Social";
 import About from "./pages/About";
 import Team from "./pages/Team";
