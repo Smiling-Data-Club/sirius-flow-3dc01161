@@ -3,6 +3,7 @@ import stillstandRisikoImg from "@/assets/blog/stillstand-risiko.jpg";
 import digitaleMeilensteineImg from "@/assets/blog/digitale-meilensteine.jpg";
 import digitalisierungMittelstandImg from "@/assets/blog/digitalisierung-mittelstand.jpg";
 import digitalisierungKulturImg from "@/assets/blog/digitalisierung-kultur.jpg";
+import soMachtArbeitSpassImg from "@/assets/blog/so-macht-arbeit-spass.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -420,7 +421,7 @@ Es geht nicht primär um Verkauf, sondern um Orientierung. Viele Unternehmer wis
     title: "So macht Arbeit Spaß",
     date: "2026-03-31",
     excerpt: "Bei der SIRIUS GmbH wurde früh begriffen: Langweilige Tätigkeiten sind nicht nur unnötig, sie sind auch ineffizient. Wie Fabian Schüler und sein Team Prozesse so optimieren, dass Menschen wieder gerne zur Arbeit kommen.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+    image: soMachtArbeitSpassImg,
     tags: ["Unternehmenskultur", "Digitalisierung", "Go Paperless", "DocuWare"],
     author: "SIRIUS GmbH",
     source: "Netzwerk Südbaden",
