@@ -386,7 +386,7 @@ Die Umstellung auf E-Rechnungen mag zunächst herausfordernd erscheinen, bietet 
     title: "\u201EFür mich ist Stillstand das größte Risiko\u201C",
     date: "2026-03-31",
     excerpt: "Fabian Schüler spricht im Interview über strategische Entscheidungen, den Smiling Data Club und warum er offen mit seiner ADHS-Diagnose umgeht.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    image: stillstandRisikoImg,
     tags: ["Interview", "Fabian Schüler", "Smiling Data Club", "Strategie", "Unternehmertum"],
     author: "SIRIUS GmbH",
     source: "Netzwerk Südbaden",
