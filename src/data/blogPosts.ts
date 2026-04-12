@@ -4,6 +4,7 @@ import digitaleMeilensteineImg from "@/assets/blog/digitale-meilensteine.jpg";
 import digitalisierungMittelstandImg from "@/assets/blog/digitalisierung-mittelstand.jpg";
 import digitalisierungKulturImg from "@/assets/blog/digitalisierung-kultur.jpg";
 import soMachtArbeitSpassImg from "@/assets/blog/so-macht-arbeit-spass.jpg";
+import eRechnung2025Img from "@/assets/blog/e-rechnung-2025.png";
 
 export interface BlogPost {
   slug: string;
