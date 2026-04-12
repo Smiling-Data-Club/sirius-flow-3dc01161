@@ -6,6 +6,7 @@ import digitalisierungKulturImg from "@/assets/blog/digitalisierung-kultur.jpg";
 import soMachtArbeitSpassImg from "@/assets/blog/so-macht-arbeit-spass.jpg";
 import eRechnung2025Img from "@/assets/blog/e-rechnung-2025.png";
 import eRechnungDocuwareImg from "@/assets/blog/e-rechnung-docuware.png";
+import druckervertriebCloudImg from "@/assets/blog/druckervertrieb-cloud.jpg";
 
 export interface BlogPost {
   slug: string;
