@@ -438,6 +438,8 @@ Moderne digitale Werkzeuge wie DocuWare oder die cloudbasierte Business-Plattfor
   },
 ];
 
+export const blogPosts = _blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
 export function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
   const months = [
