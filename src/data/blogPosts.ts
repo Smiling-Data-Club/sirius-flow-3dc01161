@@ -1,4 +1,5 @@
 import smilingDataClubImg from "@/assets/blog/smiling-data-club.jpg";
+import stillstandRisikoImg from "@/assets/blog/stillstand-risiko.jpg";
 
 export interface BlogPost {
   slug: string;
