@@ -41,7 +41,7 @@ Zum Kerngeschäft von SIRIUS gehört die Go-Paperless-Initiative mit der Softwar
     title: "Smiling Data Club: Spaß statt Frust",
     date: "2026-03-31",
     excerpt: "Die SIRIUS GmbH startet ein neues Format: Der Smiling Data Club ist eine Beratungs- und Communityplattform, die Unternehmen bei der Einführung neuer Technologien hilft.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    image: smilingDataClubImg,
     tags: ["Smiling Data Club", "Zoho One", "Community", "Digitalisierung"],
     author: "SIRIUS GmbH",
     source: "Netzwerk Südbaden",
