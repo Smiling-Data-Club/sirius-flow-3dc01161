@@ -2,6 +2,7 @@ import smilingDataClubImg from "@/assets/blog/smiling-data-club.jpg";
 import stillstandRisikoImg from "@/assets/blog/stillstand-risiko.jpg";
 import digitaleMeilensteineImg from "@/assets/blog/digitale-meilensteine.jpg";
 import digitalisierungMittelstandImg from "@/assets/blog/digitalisierung-mittelstand.jpg";
+import digitalisierungKulturImg from "@/assets/blog/digitalisierung-kultur.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -22,7 +23,7 @@ const _blogPosts: BlogPost[] = [
     title: "Digitalisierung ist Teil der Kultur",
     date: "2026-03-31",
     excerpt: "\u201EGo Paperless\u201C lautet das Motto der SIRIUS GmbH. Der IT-Dienstleister begleitet Unternehmen auf dem Weg in eine effiziente, sichere und zukunftsfähige Dokumentenwelt.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    image: digitalisierungKulturImg,
     tags: ["Go Paperless", "DocuWare", "KI", "Unternehmenskultur"],
     author: "SIRIUS GmbH",
     source: "Netzwerk Südbaden",
