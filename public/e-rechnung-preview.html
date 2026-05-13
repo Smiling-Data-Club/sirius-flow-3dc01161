@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>E-Rechnung: Können Sie das schon? — SIRIUS document solutions</title>
+<meta name="description" content="Seit Januar 2025 müssen deutsche B2B-Unternehmen E-Rechnungen empfangen können. SIRIUS zeigt, wie Sie das mit DocuWare lösen.">
+
+<!-- Urbanist (gleiche Schrift wie sirius-gmbh.de) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* SIRIUS Design Tokens — 1:1 aus index.css */
+  --primary: #3065AF;            /* SIRIUS Blue */
+  --primary-dark: #24508C;
+  --primary-soft: #E8EFF8;
+  --foreground: #1C1C2E;         /* hsl(240 22% 14%) */
+  --muted-fg: #6B7280;           /* hsl(215 16% 47%) */
+  --secondary: #F5F7FA;          /* hsl(216 33% 97%) */
+  --border: #E2E8F0;             /* hsl(214 32% 91%) */
+  --dark: #1A1A2E;
+  --alert: #B8341E;
+  --ok: #4A7A4A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Urbanist', system-ui, sans-serif;
+  background: #fff;
+  color: var(--foreground);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+p { text-wrap: pretty; }
+
+/* Layout */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.container-narrow {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 640px) {
+  .container, .container-narrow { padding: 0 24px; }
+  body { font-size: 15px; }
+}
+
+/* ════════════════════════════════════════
+   HEADER — Logo only, kein Menü
+   ════════════════════════════════════════ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.logo {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.logo small {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--muted-fg);
+  letter-spacing: 0;
+}
+.header-badge {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--alert);
+  padding: 6px 12px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+@media (max-width: 640px) {
+  .header-badge { font-size: 10px; padding: 5px 10px; }
+}
+
+/* ════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════ */
+.hero {
+  padding: 96px 0 112px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(48,101,175,0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--alert);
+  font-weight: 700;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 2px;
+  background: var(--alert);
+}
+
+.hero h1 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: clamp(44px, 6.5vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 28px;
+  max-width: 14ch;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.1s forwards;
+}
+.hero h1 .accent {
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--muted-fg);
+  max-width: 54ch;
+  margin-bottom: 48px;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.25s forwards;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.4s forwards;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 32px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(48,101,175,0.18);
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(48,101,175,0.28);
+}
+.btn-primary svg {
+  width: 16px; height: 16px;
+  transition: transform 0.2s ease;
+}
+.btn-primary:hover svg { transform: translateX(4px); }
+
+.hero-meta {
+  font-size: 14px;
+  color: var(--muted-fg);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* ════════════════════════════════════════
+   SECTIONS
+   ════════════════════════════════════════ */
+section.content {
+  padding: 96px 0;
+  border-top: 1px solid var(--border);
+}
+section.content.alt {
+  background: var(--secondary);
+}
+
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-label .num {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  background: var(--primary);
+  color: #fff;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 4.2vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+  max-width: 22ch;
+}
+h2 .accent { color: var(--primary); }
+
+.lead {
+  font-size: clamp(18px, 1.5vw, 20px);
+  line-height: 1.55;
+  color: var(--foreground);
+  margin-bottom: 24px;
+  max-width: 60ch;
+  font-weight: 500;
+}
+
+.body-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted-fg);
+  max-width: 60ch;
+  margin-bottom: 20px;
+}
+.body-text strong {
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.35;
+  color: var(--primary);
+  border-left: 3px solid var(--primary);
+  padding: 8px 0 8px 24px;
+  margin: 40px 0;
+  max-width: 38ch;
+  letter-spacing: -0.015em;
+}
+
+/* ════════════════════════════════════════
+   SECTION 2 — Compare
+   ════════════════════════════════════════ */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 56px;
+}
+@media (max-width: 880px) {
+  .compare-grid { grid-template-columns: 1fr; }
+}
+
+.compare-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  position: relative;
+  overflow: hidden;
+}
+.compare-card .label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.compare-card.expect .label { color: var(--ok); }
+.compare-card.reality .label { color: var(--alert); }
+.compare-card .label::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.compare-card.expect .label::before { background: var(--ok); }
+.compare-card.reality .label::before { background: var(--alert); }
+
+/* PDF mockup */
+.pdf-mockup {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #333;
+  background: #fafafa;
+  border: 1px solid #ececec;
+  padding: 20px;
+  border-radius: 4px;
+  height: 320px;
+  overflow: hidden;
+}
+.pdf-mockup .pdf-head {
+  display: flex; justify-content: space-between;
+  margin-bottom: 18px; padding-bottom: 12px;
+  border-bottom: 2px solid #333;
+}
+.pdf-mockup .pdf-head-left { font-weight: 700; font-size: 13px; }
+.pdf-mockup .pdf-head-right { text-align: right; font-size: 9px; color: #666; }
+.pdf-mockup h3 { font-size: 15px; margin-bottom: 8px; font-weight: 700; }
+.pdf-mockup .pdf-meta {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin: 14px 0; font-size: 10px;
+}
+.pdf-mockup .pdf-meta strong { display: block; color: #666; font-weight: 500; margin-bottom: 2px; }
+.pdf-mockup table {
+  width: 100%; border-collapse: collapse;
+  font-size: 10px; margin: 14px 0;
+}
+.pdf-mockup table th {
+  text-align: left; background: #eee; padding: 6px 8px;
+  font-weight: 700; font-size: 9px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.pdf-mockup table td { padding: 6px 8px; border-bottom: 1px solid #eaeaea; }
+.pdf-mockup .pdf-total {
+  text-align: right; margin-top: 14px;
+  font-weight: 700; font-size: 12px;
+}
+
+/* XML mockup */
+.xml-mockup {
+  font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.65;
+  background: #1A1A2E;
+  color: #d4d4d4;
+  padding: 20px;
+  border-radius: 4px;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+.xml-mockup .xml-tag { color: #569cd6; }
+.xml-mockup .xml-attr { color: #9cdcfe; }
+.xml-mockup .xml-val { color: #ce9178; }
+.xml-mockup .xml-text { color: #d4d4d4; }
+.xml-mockup .xml-comment { color: #6a9955; }
+.xml-mockup pre { white-space: pre-wrap; word-break: break-all; margin: 0; }
+.xml-mockup::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #1A1A2E);
+  pointer-events: none;
+}
+
+.compare-caption {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 15px;
+  color: var(--muted-fg);
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════════
+   SECTION 3 — Consequences (3 cards)
+   ════════════════════════════════════════ */
+.consequences {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+@media (max-width: 880px) {
+  .consequences { grid-template-columns: 1fr; }
+}
+
+.consequence {
+  background: #fff;
+  padding: 36px 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.consequence:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(48,101,175,0.10);
+}
+
+.consequence-num {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--primary);
+  margin-bottom: 20px;
+  letter-spacing: -0.04em;
+}
+
+.consequence h3 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+
+.consequence p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted-fg);
+}
+
+/* ════════════════════════════════════════
+   SECTION 4 — Steps
+   ════════════════════════════════════════ */
+.steps {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+  align-items: start;
+}
+.step:last-child { border-bottom: 1px solid var(--border); }
+
+@media (max-width: 720px) {
+  .step { grid-template-columns: 1fr; gap: 8px; padding: 28px 0; }
+}
+
+.step-num {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--primary);
+  letter-spacing: -0.04em;
+}
+
+.step-content h3 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.step-content p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted-fg);
+  max-width: 56ch;
+}
+
+.systems-note {
+  margin-top: 36px;
+  padding: 24px 28px;
+  background: var(--primary-soft);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+.systems-note strong {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+/* ════════════════════════════════════════
+   CTA SECTION
+   ════════════════════════════════════════ */
+.cta-section {
+  padding: 112px 0;
+  text-align: center;
+  background: var(--dark);
+  color: #fff;
+}
+.cta-section h2 {
+  color: #fff;
+  margin: 0 auto 28px;
+  text-align: center;
+  max-width: 22ch;
+}
+.cta-section h2 .accent { color: #7FA6E0; }
+.cta-section .body-text {
+  color: rgba(255,255,255,0.72);
+  max-width: 52ch;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.cta-section .btn-primary {
+  background: #fff;
+  color: var(--dark);
+  padding: 20px 36px;
+  font-size: 17px;
+}
+.cta-section .btn-primary:hover {
+  background: var(--secondary);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+}
+.cta-section .cta-meta {
+  margin-top: 28px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.05em;
+}
+
+/* ════════════════════════════════════════
+   FOOTER (analog zur Hauptseite)
+   ════════════════════════════════════════ */
+footer.site-footer {
+  background: var(--dark);
+  color: #fff;
+  padding: 56px 0 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+.footer-logo {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.footer-links {
+  display: flex; flex-direction: column; gap: 8px;
+  font-size: 14px;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-links a:hover { color: #7FA6E0; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 40px; padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(4px);
+  transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0); filter: blur(0);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">SIRIUS <small>document solutions.</small></a>
+      <span class="header-badge">Pflicht seit 01/2025</span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container-narrow">
+    <div class="hero-eyebrow">E-Rechnung in Deutschland</div>
+    <h1>Können Sie <span class="accent">E-Rechnungen</span> schon empfangen?</h1>
+    <p class="hero-sub">Seit über einem Jahr ist Ihr Unternehmen dazu verpflichtet. Nicht ab 2027 — heute. Wenn Sie auf die nächste Rechnung warten, um es herauszufinden, ist es zu spät.</p>
+    <div class="hero-cta-row">
+      <a href="https://sirius-gmbh.zohobookings.eu/#/240927000000850282" class="btn-primary" target="_blank" rel="noopener">
+        15-Minuten-Termin buchen
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
+      </a>
+      <span class="hero-meta">Keine Verkaufspräsentation. Nur eine ehrliche Einschätzung.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="content reveal">
+  <div class="container-narrow">
+    <div class="section-label"><span class="num">1</span> Die Pflicht ist schon da</div>
+    <h2>Die Pflicht ist nicht morgen. <span class="accent">Sie ist seit gestern.</span></h2>
+    <p class="lead">Seit dem 1. Januar 2025 müssen alle deutschen B2B-Unternehmen E-Rechnungen empfangen und verarbeiten können. Keine Übergangsfrist. Keine Ausnahme nach Größe.</p>
+    <p class="body-text">Wer heute eine E-Rechnung bekommt und sie nicht öffnen kann, hat ein Problem — mit dem Lieferanten und mit dem Finanzamt. Eine „Bitte schicken Sie mir die PDF"-Antwort reicht rechtlich nicht aus.</p>
+    <div class="pull-quote">Die nächste Stufe — die Versandpflicht — kommt ab 2027 für Unternehmen über 800.000 € Umsatz. Ab 2028 für alle.</div>
+    <p class="body-text">Wer den Empfang heute nicht im Griff hat, hat 2027 doppelte Baustellen.</p>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="content alt reveal">
+  <div class="container">
+    <div class="container-narrow" style="padding: 0;">
+      <div class="section-label"><span class="num">2</span> Was Sie eigentlich bekommen</div>
+      <h2>Eine PDF ist <span class="accent">keine E-Rechnung.</span></h2>
+      <p class="lead">Eine E-Rechnung ist strukturierter XML-Code. Sie ist für Maschinen gemacht, nicht für Menschen. Wer sie ohne passende Software öffnet, sieht keinen Beleg — sondern Code.</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card expect">
+        <div class="label">Was Sie sich vorstellen</div>
+        <div class="pdf-mockup">
+          <div class="pdf-head">
+            <div class="pdf-head-left">Müller Logistik GmbH</div>
+            <div class="pdf-head-right">Rechnung Nr. 2026-0847<br>04.05.2026</div>
+          </div>
+          <h3>Rechnung</h3>
+          <div class="pdf-meta">
+            <div><strong>Kunde:</strong>Mustermann AG<br>Bahnhofstraße 12<br>79098 Freiburg</div>
+            <div><strong>Leistungszeitraum:</strong>April 2026<br><strong>Fälligkeit:</strong>31.05.2026</div>
+          </div>
+          <table>
+            <tr><th>Pos.</th><th>Leistung</th><th style="text-align:right;">Betrag</th></tr>
+            <tr><td>1</td><td>Transport Berlin–Freiburg</td><td style="text-align:right;">1.240,00 €</td></tr>
+            <tr><td>2</td><td>Express-Zuschlag</td><td style="text-align:right;">180,00 €</td></tr>
+            <tr><td>3</td><td>Versicherung</td><td style="text-align:right;">95,00 €</td></tr>
+          </table>
+          <div class="pdf-total">Gesamt 1.515,00 € + 19% USt = 1.802,85 €</div>
+        </div>
+      </div>
+
+      <div class="compare-card reality">
+        <div class="label">Was tatsächlich ankommt</div>
+        <div class="xml-mockup">
+<pre><span class="xml-comment">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="xml-tag">&lt;rsm:CrossIndustryInvoice</span>
+  <span class="xml-attr">xmlns:rsm</span>=<span class="xml-val">"urn:un:unece:uncefact</span>
+  <span class="xml-val">:data:standard:CrossIndustry"</span><span class="xml-tag">&gt;</span>
+  <span class="xml-tag">&lt;rsm:ExchangedDocument&gt;</span>
+    <span class="xml-tag">&lt;ram:ID&gt;</span><span class="xml-text">2026-0847</span><span class="xml-tag">&lt;/ram:ID&gt;</span>
+    <span class="xml-tag">&lt;ram:TypeCode&gt;</span><span class="xml-text">380</span><span class="xml-tag">&lt;/ram:TypeCode&gt;</span>
+    <span class="xml-tag">&lt;ram:IssueDateTime&gt;</span>
+      <span class="xml-tag">&lt;udt:DateTimeString</span>
+      <span class="xml-attr">format</span>=<span class="xml-val">"102"</span><span class="xml-tag">&gt;</span>
+        <span class="xml-text">20260504</span>
+      <span class="xml-tag">&lt;/udt:DateTimeString&gt;</span>
+  <span class="xml-tag">&lt;rsm:SupplyChainTradeTransaction&gt;</span>
+    <span class="xml-tag">&lt;ram:IncludedTradeLineItem&gt;</span>
+      <span class="xml-tag">&lt;ram:SpecifiedTradeProduct&gt;</span>
+        <span class="xml-tag">&lt;ram:Name&gt;</span>
+          <span class="xml-text">Transport Berlin–Freiburg</span>
+        <span class="xml-tag">&lt;/ram:Name&gt;</span>
+      <span class="xml-tag">&lt;ram:GrandTotalAmount</span>
+        <span class="xml-attr">currencyID</span>=<span class="xml-val">"EUR"</span><span class="xml-tag">&gt;</span>
+        <span class="xml-text">1802.85</span></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="compare-caption">Dieselbe Rechnung. Zwei Welten. Die rechte Seite ist die rechtsverbindliche.</p>
+
+    <div class="container-narrow" style="padding: 0; margin-top: 48px;">
+      <p class="body-text"><strong>Eine PDF, die wie eine Rechnung aussieht — auch mit hübschem Layout, auch mit QR-Code — ist keine E-Rechnung.</strong> Sie ist nur ein Bild. Die offiziellen Formate heißen XRechnung und ZUGFeRD. Beide müssen Sie akzeptieren können.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="content reveal">
+  <div class="container">
+    <div class="container-narrow" style="padding: 0;">
+      <div class="section-label"><span class="num">3</span> Was das für Ihre Buchhaltung bedeutet</div>
+      <h2>Sie können sie <span class="accent">nicht ausdrucken.</span></h2>
+      <p class="lead">Eine ausgedruckte E-Rechnung ist keine E-Rechnung mehr. Sie muss im XML-Originalformat archiviert werden — revisionssicher, GoBD-konform, zehn Jahre lang.</p>
+      <p class="body-text">„Macht mein Steuerberater" gilt nicht. Die Verantwortung bleibt bei Ihnen — als Geschäftsführer, als Kaufmann.</p>
+    </div>
+
+    <div class="consequences">
+      <div class="consequence">
+        <div class="consequence-num">01</div>
+        <h3>Keine Sichtprüfung</h3>
+        <p>Sie sehen nicht mehr direkt, was auf der Rechnung steht. Sie brauchen Software, die XML lesbar darstellt.</p>
+      </div>
+      <div class="consequence">
+        <div class="consequence-num">02</div>
+        <h3>Kein Papier-Workflow</h3>
+        <p>Ausdrucken und im Ordner ablegen war einmal. Prüfung und Freigabe müssen digital ablaufen — mit Nachweis.</p>
+      </div>
+      <div class="consequence">
+        <div class="consequence-num">03</div>
+        <h3>Originalformat-Pflicht</h3>
+        <p>Archivierung im XML-Originalformat, GoBD-konform, zehn Jahre. Ein PDF-Druck reicht nicht aus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="content alt reveal">
+  <div class="container-narrow">
+    <div class="section-label"><span class="num">4</span> So lösen wir das</div>
+    <h2>Mit DocuWare. <span class="accent">In drei Schritten.</span></h2>
+    <p class="lead">SIRIUS baut Ihnen einen Workflow, der die drei Pflichten in einem Lauf erledigt — Empfang, Prüfung, Archivierung. Auf Ihrer bestehenden Systemlandschaft.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Empfang</h3>
+          <p>E-Rechnungen kommen automatisch ins System. ZUGFeRD und XRechnung werden erkannt, eingelesen und für Menschen lesbar dargestellt — Originaldaten und Visualisierung in einem.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Prüfung &amp; Freigabe</h3>
+          <p>Sachliche und rechnerische Prüfung im gewohnten Vier-Augen-Workflow. Freigaben per Klick, auch mobil. Jeder Schritt revisionssicher protokolliert.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Archivierung</h3>
+          <p>Revisionssicher, GoBD-konform, im Original-XML. Zehn Jahre garantiert auffindbar. Volltextsuche inklusive.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="systems-note">
+      <strong>Funktioniert mit Ihrem bestehenden System.</strong> DATEV, SAP, Lexware, Sage, Microsoft Dynamics — über zertifizierte Schnittstellen. Keine Insellösung, sondern eine Erweiterung dessen, was Sie schon haben.
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container-narrow">
+    <h2>15 Minuten reichen für eine <span class="accent">ehrliche Einschätzung.</span></h2>
+    <p class="body-text">Wir schauen gemeinsam, wo Sie heute stehen, welche Systeme im Spiel sind und was Sie tatsächlich brauchen. Keine Verkaufspräsentation. Kein Druck. Wenn Sie schon gut aufgestellt sind, sagen wir es Ihnen.</p>
+    <a href="https://sirius-gmbh.zohobookings.eu/#/240927000000850282" class="btn-primary" target="_blank" rel="noopener">
+      Termin direkt im Kalender buchen
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
+    </a>
+    <div class="cta-meta">SIRIUS GmbH · Freiburg · seit 1991 im Geschäft</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">SIRIUS document solutions.</div>
+      <div class="footer-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/">Startseite</a>
+      </div>
+      <div class="footer-links" style="align-items: flex-end;">
+        <a href="https://sirius-gmbh.de" target="_blank">sirius-gmbh.de</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 SIRIUS GmbH document solutions. Alle Rechte vorbehalten.</div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
