@@ -82,21 +82,17 @@ header {
   height: 80px;
 }
 .logo {
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 800;
-  font-size: 26px;
-  letter-spacing: -0.04em;
-  color: var(--primary);
-  text-decoration: none;
   display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
+  align-items: center;
+  text-decoration: none;
 }
-.logo small {
-  font-weight: 400;
-  font-size: 13px;
-  color: var(--muted-fg);
-  letter-spacing: 0;
+.logo img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 640px) {
+  .logo img { height: 44px; }
 }
 .header-badge {
   font-size: 12px;
@@ -590,12 +586,10 @@ footer.site-footer {
 @media (max-width: 720px) {
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
-.footer-logo {
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.03em;
-  color: #fff;
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 .footer-links {
   display: flex; flex-direction: column; gap: 8px;
@@ -632,7 +626,9 @@ footer.site-footer {
 <header>
   <div class="container">
     <div class="header-inner">
-      <a href="/" class="logo">SIRIUS <small>document solutions.</small></a>
+      <a href="/" class="logo" aria-label="SIRIUS document solutions — Startseite">
+        <img src="/sirius_logo_blau.svg" alt="SIRIUS document solutions">
+      </a>
       <span class="header-badge">Pflicht seit 01/2025</span>
     </div>
   </div>
@@ -818,7 +814,9 @@ footer.site-footer {
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-logo">SIRIUS document solutions.</div>
+      <div class="footer-logo">
+        <img src="/sirius_logo_weiss.svg" alt="SIRIUS document solutions">
+      </div>
       <div class="footer-links">
         <a href="/impressum">Impressum</a>
         <a href="/datenschutz">Datenschutz</a>
