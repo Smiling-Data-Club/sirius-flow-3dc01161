@@ -21,7 +21,18 @@ const BlogPost = () => {
   }
 
   return (
-    <PageLayout title={`${post.title} — SIRIUS GmbH`} description={post.excerpt}>
+    <PageLayout
+      title={`${post.title} — SIRIUS GmbH`}
+      description={post.excerpt}
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        datePublished: post.date,
+        author: { "@type": "Organization", name: post.author },
+        description: post.excerpt,
+      }}
+    >
       <article className="pt-32 pb-24 px-8 max-w-3xl mx-auto">
         <Link
           to="/blog"

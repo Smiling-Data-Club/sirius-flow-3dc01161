@@ -380,8 +380,22 @@ const ServiceCTA = () => (
    ════════════════════════════════════════════ */
 const Index = () => (
   <PageLayout
-    title="SIRIUS GmbH — Dokumentenlösungen, Digitalisierung & Managed Print Services"
+    title="SIRIUS GmbH — Dokumentenlösungen & Digitalisierung"
     description="SIRIUS verbindet Dokumentenmanagement, Drucklösungen und digitale Prozesse zu einem System, das funktioniert. Seit über 45 Jahren aus Freiburg."
+    jsonLd={{
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "SIRIUS GmbH document solutions",
+      url: "/",
+      telephone: "+49 761 4002-0",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Abrichstrasse 23",
+        addressLocality: "Freiburg",
+        postalCode: "79108",
+        addressCountry: "DE",
+      },
+    }}
   >
     <FloatingPapers />
 
