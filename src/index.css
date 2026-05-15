@@ -228,6 +228,7 @@
   border-radius: 3px;
   filter: drop-shadow(0 6px 14px rgba(0, 61, 165, 0.28)) drop-shadow(0 1px 3px rgba(0, 61, 165, 0.18));
   pointer-events: none;
+  transition: filter 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .paper-deco::before {
   content: '';
@@ -238,6 +239,25 @@
   height: 0.7rem;
   background: linear-gradient(135deg, hsl(210 20% 93%) 50%, hsl(210 15% 85%) 50%);
   border-top-left-radius: 3px;
+}
+
+/* Parallax wrapper — translateY driven by --scroll-y on container */
+.paper-parallax {
+  will-change: transform;
+  transform: translate3d(0, calc(var(--scroll-y, 0px) * var(--parallax, 0.12) * -1), 0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover affordance: subtle lift + blue glow */
+.paper-interactive {
+  cursor: default;
+}
+.paper-parallax:hover .paper-interactive {
+  filter:
+    drop-shadow(0 10px 22px rgba(0, 61, 165, 0.45))
+    drop-shadow(0 4px 10px rgba(0, 61, 165, 0.32))
+    drop-shadow(0 0 18px rgba(0, 61, 165, 0.35));
+  transform: scale(1.08) rotate(-2deg);
 }
 
 
