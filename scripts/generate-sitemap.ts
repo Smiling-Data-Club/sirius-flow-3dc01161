@@ -23,10 +23,12 @@ const staticEntries: SitemapEntry[] = [
   { path: "/datenschutz", priority: "0.3" },
 ];
 
-import { blogPosts } from "../src/data/blogPosts";
+import { readFileSync } from "fs";
 
 async function loadBlogSlugs(): Promise<string[]> {
-  return blogPosts.map((p) => p.slug);
+  const src = readFileSync(resolve("src/data/blogPosts.ts"), "utf8");
+  const matches = [...src.matchAll(/slug:\s*"([^"]+)"/g)];
+  return matches.map((m) => m[1]);
 }
 
 function generate(entries: SitemapEntry[]) {
