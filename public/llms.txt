@@ -1,0 +1,18 @@
+# SIRIUS GmbH document solutions
+
+> Dokumentenmanagement, Managed Print Services und digitale Prozesse aus Freiburg. Seit über 45 Jahren begleitet SIRIUS Unternehmen auf dem Weg zur papierlosen Organisation.
+
+## Pages
+
+- [Startseite](/): Überblick über Leistungen, Referenzen und die Go-Paperless-Initiative.
+- [Print & Managed Print Services](/print): Drucklösungen und Managed Print Services.
+- [Über uns](/ueber-uns): Unternehmensgeschichte, Werte und Standort Freiburg.
+- [Team](/ueber-uns/team): Die Menschen hinter SIRIUS.
+- [Service-Area](/service-area): Einsatzgebiet und Service-Region.
+- [Blog](/blog): Artikel zu Digitalisierung, DocuWare, E-Rechnung und Unternehmenskultur.
+- [Social Media](/social): Kanäle auf LinkedIn, Instagram, TikTok und YouTube.
+
+## Optional
+
+- [Impressum](/impressum)
+- [Datenschutz](/datenschutz)
