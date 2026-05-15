@@ -47,15 +47,21 @@ const FloatingPapers = () => {
       {papers.map((p, i) => (
         <div
           key={i}
-          className={`paper-deco paper-interactive ${p.size} animate-paper-rain pointer-events-auto`}
+          className="paper-parallax absolute pointer-events-auto"
           style={{
             left: p.left,
             top: "-80px",
-            animationDelay: p.delay,
-            animationDuration: p.duration,
             ["--parallax" as any]: p.parallax,
           }}
-        />
+        >
+          <div
+            className={`paper-deco paper-interactive ${p.size} animate-paper-rain`}
+            style={{
+              animationDelay: p.delay,
+              animationDuration: p.duration,
+            }}
+          />
+        </div>
       ))}
     </div>
   );
