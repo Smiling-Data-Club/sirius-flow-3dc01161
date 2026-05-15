@@ -23,10 +23,10 @@ const staticEntries: SitemapEntry[] = [
   { path: "/datenschutz", priority: "0.3" },
 ];
 
+import { blogPosts } from "../src/data/blogPosts";
+
 async function loadBlogSlugs(): Promise<string[]> {
-  const mod = await import("../src/data/blogPosts.ts" as string).catch(() => null);
-  if (!mod || !Array.isArray((mod as { blogPosts?: unknown[] }).blogPosts)) return [];
-  return (mod as { blogPosts: { slug: string }[] }).blogPosts.map((p) => p.slug);
+  return blogPosts.map((p) => p.slug);
 }
 
 function generate(entries: SitemapEntry[]) {
