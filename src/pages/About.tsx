@@ -163,7 +163,7 @@ const About = () => (
             <div className="reveal pt-4">
               <Link
                 to="/ueber-uns/team"
-                className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-foreground px-8 py-4 rounded-lg font-bold text-lg transition-all hover:gap-5"
+                className="inline-flex items-center gap-3 bg-sdc-pink hover:bg-sdc-pink/90 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all hover:gap-5"
               >
                 Unser Team kennenlernen →
               </Link>
