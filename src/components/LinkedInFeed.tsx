@@ -124,7 +124,7 @@ export default function LinkedInFeed() {
           .from("linkedin_posts")
           .select("*")
           .order("created_at", { ascending: false })
-          .limit(6);
+          .limit(3);
 
         if (error) throw error;
         setPosts((data as LinkedInPost[]) ?? []);
