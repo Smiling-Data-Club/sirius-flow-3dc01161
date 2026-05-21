@@ -130,7 +130,7 @@ const SDCTeaser = () => (
               Wenn Digitalisierung nicht nur funktionieren, sondern auch Spaß machen soll.
             </p>
             <a
-              href="https://smiling-datat-club.de"
+              href="https://smiling-data-club.de"
               target="_blank"
               rel="noopener noreferrer"
               className="reveal inline-flex items-center text-dark-foreground font-semibold group"
@@ -142,7 +142,7 @@ const SDCTeaser = () => (
 
           {/* Logo */}
           <div className="reveal flex justify-center items-center">
-            <a href="https://smiling-datat-club.de" target="_blank" rel="noopener noreferrer">
+            <a href="https://smiling-data-club.de" target="_blank" rel="noopener noreferrer">
               <img
                 src={sdcLogo}
                 alt="Smiling Data Club Logo"
