@@ -5,6 +5,7 @@ import SectionReveal from "@/components/SectionReveal";
 import PageHero from "@/components/PageHero";
 import werkstattImg from "@/assets/print-werkstatt.jpg";
 import lagerImg from "@/assets/print-hero.jpg";
+import serviceMitarbeiterImg from "@/assets/sirius-service-mitarbeiter.jpg";
 
 const Print = () => (
   <PageLayout
@@ -107,12 +108,15 @@ const Print = () => (
           <div>
             <SectionReveal>
               <h2 className="reveal text-4xl font-extrabold text-primary-foreground mb-6 leading-tight">Bereit für die Service Area?</h2>
-              <p className="reveal text-blue-100 text-lg mb-8 font-light">
+              <p className="reveal text-blue-100 text-lg mb-6 font-light">
                 Verwalten Sie Ihre gesamte Druckerflotte, bestellen Sie Toner und fordern Sie Techniker an — alles an einem zentralen Ort.
+              </p>
+              <p className="reveal text-blue-100/90 text-base mb-8 font-light">
+                <strong className="font-semibold text-white">Tipp:</strong> Toner nachbestellen oder eine Reparatur melden? Nutzen Sie unser zentrales Service-Formular in der Service Area — wir melden uns umgehend zurück.
               </p>
               <div className="reveal flex flex-wrap gap-4">
                 <Link to="/service-area" className="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition-colors">
-                  Zum Login
+                  Zur Service Area
                 </Link>
                 <a href="mailto:info@sirius-gmbh.de" className="border border-white/30 text-primary-foreground px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors">
                   Support kontaktieren
@@ -121,16 +125,13 @@ const Print = () => (
             </SectionReveal>
           </div>
           <div className="hidden lg:block">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-10 rounded-full bg-amber-500" />
-                <div className="h-2 w-32 bg-white/40 rounded" />
-              </div>
-              <div className="space-y-3">
-                <div className="h-10 w-full bg-white/5 rounded" />
-                <div className="h-10 w-full bg-white/5 rounded" />
-                <div className="h-10 w-3/4 bg-white/5 rounded" />
-              </div>
+            <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+              <img
+                src={serviceMitarbeiterImg}
+                alt="SIRIUS Mitarbeiter im Lager mit SHARP Druckern"
+                className="w-full h-full object-cover aspect-[4/3]"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
