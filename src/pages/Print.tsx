@@ -5,6 +5,7 @@ import SectionReveal from "@/components/SectionReveal";
 import PageHero from "@/components/PageHero";
 import werkstattImg from "@/assets/print-werkstatt.jpg";
 import lagerImg from "@/assets/print-hero.jpg";
+import serviceMitarbeiterImg from "@/assets/sirius-service-mitarbeiter.jpg";
 
 const Print = () => (
   <PageLayout
