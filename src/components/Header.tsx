@@ -38,7 +38,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8 text-lg">
           <a
-            href="https://smiling-datat-club.de"
+            href="https://smiling-data-club.de"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
@@ -110,7 +110,7 @@ const Header = () => {
         <div className="md:hidden bg-background border-t shadow-lg">
           <div className="container py-6 flex flex-col gap-4">
             <a
-              href="https://smiling-datat-club.de"
+              href="https://smiling-data-club.de"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-foreground font-medium py-2"
