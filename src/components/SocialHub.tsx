@@ -217,7 +217,7 @@ function PlatformFeed({ platform }: { platform: Exclude<Platform, "linkedin"> })
           .from(table)
           .select("*")
           .order("created_at", { ascending: false })
-          .limit(6);
+          .limit(3);
         if (err) throw err;
         setData(rows ?? []);
       } catch {
@@ -231,13 +231,13 @@ function PlatformFeed({ platform }: { platform: Exclude<Platform, "linkedin"> })
 
   if (error) return <p className="text-center text-destructive py-8">{error}</p>;
 
-  const gridCols = platform === "tiktok" ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+  const gridCols = "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
     <>
       <div className={`grid ${gridCols} gap-6`}>
         {loading
-          ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
+          ? Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)
           : data.map((item) =>
               platform === "instagram" ? <InstagramCard key={item.id} post={item} /> :
               platform === "tiktok" ? <TikTokCard key={item.id} post={item} /> :
