@@ -71,7 +71,8 @@ const followLinks: { platform: Platform; label: string; url: string; color: stri
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
-function formatViews(n: number): string {
+function formatViews(n: number | null | undefined): string {
+  if (n == null || isNaN(n)) return "0";
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(".", ",") + "M";
   if (n >= 1_000) return (n / 1_000).toFixed(1).replace(".", ",") + "K";
   return n.toLocaleString("de-DE");
