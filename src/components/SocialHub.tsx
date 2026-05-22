@@ -77,7 +77,8 @@ function formatViews(n: number): string {
   return n.toLocaleString("de-DE");
 }
 
-function truncate(text: string, max = 120) {
+function truncate(text: string | null | undefined, max = 120) {
+  if (!text) return "";
   if (text.length <= max) return text;
   return text.slice(0, max).trimEnd() + "…";
 }
