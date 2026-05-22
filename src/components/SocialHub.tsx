@@ -71,7 +71,8 @@ const followLinks: { platform: Platform; label: string; url: string; color: stri
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
-function formatViews(n: number): string {
+function formatViews(n: number | null | undefined): string {
+  if (n == null || isNaN(n)) return "0";
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(".", ",") + "M";
   if (n >= 1_000) return (n / 1_000).toFixed(1).replace(".", ",") + "K";
   return n.toLocaleString("de-DE");
@@ -123,7 +124,7 @@ function InstagramCard({ post }: { post: InstagramPost }) {
       <div className="p-4 flex-1 flex flex-col">
         <p className="text-sm text-foreground/90 leading-relaxed flex-1">{truncate(post.caption)}</p>
         <div className="mt-3 pt-3 border-t border-border/30 flex items-center justify-between text-xs text-muted-foreground">
-          {post.likes > 0 && <span>❤️ {post.likes.toLocaleString("de-DE")}</span>}
+          {(post.likes ?? 0) > 0 && <span>❤️ {post.likes!.toLocaleString("de-DE")}</span>}
           <span className="ml-auto font-semibold bg-gradient-to-r from-[#E1306C] to-[#F77737] bg-clip-text text-transparent">Ansehen →</span>
         </div>
       </div>
