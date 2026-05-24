@@ -84,6 +84,21 @@ function truncate(text: string | null | undefined, max = 120) {
   return text.slice(0, max).trimEnd() + "…";
 }
 
+// Proxy für Instagram/TikTok CDN-Bilder (umgeht Referer-Sperre, GDPR-freundlich, gecacht).
+function proxyImage(url: string | null | undefined): string | undefined {
+  if (!url) return undefined;
+  // Entity-decode (RSS liefert &amp;)
+  const clean = url.replace(/&amp;/g, "&");
+  // Protokoll entfernen, weserv erwartet "domain/path"
+  const stripped = clean.replace(/^https?:\/\//, "");
+  return `https://images.weserv.nl/?url=${encodeURIComponent(stripped)}`;
+}
+
+// YouTube-Thumbnail aus video_id konstruieren (zuverlässiger als RSS-Feed-URL).
+function youtubeThumb(videoId: string): string {
+  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+}
+
 // ─── Skeleton ─────────────────────────────────────────────────────────────────
 function SkeletonCard() {
   return (
@@ -109,7 +124,7 @@ function InstagramCard({ post }: { post: InstagramPost }) {
     >
       <div className="relative aspect-square bg-muted overflow-hidden">
         {post.media_url ? (
-          <img src={post.media_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <img src={proxyImage(post.media_url)} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" referrerPolicy="no-referrer" />
         ) : (
           <div className="w-full h-full flex items-center justify-center"><Instagram className="w-12 h-12 text-muted-foreground/30" /></div>
         )}
@@ -143,7 +158,7 @@ function TikTokCard({ post }: { post: TikTokPost }) {
     >
       <div className="relative aspect-[9/16] max-h-72 bg-[#010101] overflow-hidden">
         {post.cover_image_url ? (
-          <img src={post.cover_image_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <img src={proxyImage(post.cover_image_url)} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" referrerPolicy="no-referrer" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-white/20">
             <Play className="w-12 h-12" />
@@ -176,13 +191,12 @@ function YouTubeCard({ video }: { video: YouTubeVideo }) {
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
     >
       <div className="relative aspect-video bg-muted overflow-hidden">
-        {video.thumbnail_url ? (
-          <img src={video.thumbnail_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-[#FF0000]/10">
-            <Play className="w-12 h-12 text-[#FF0000]/30" />
-          </div>
-        )}
+        <img
+          src={video.video_id ? youtubeThumb(video.video_id) : (video.thumbnail_url ?? "")}
+          alt=""
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
         {video.duration && (
           <span className="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] font-mono px-1.5 py-0.5 rounded">
             {video.duration}
