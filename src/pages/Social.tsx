@@ -10,7 +10,7 @@ const Social = () => (
   >
     <PageHero
       topLine="Klarheit durch"
-      keyword="Social Media"
+      keyword="unsere Socials"
       subtitle="Folgen Sie uns auf LinkedIn, Instagram, TikTok und YouTube für Insights, Updates und den ein oder anderen Blick hinter die Kulissen."
     />
 
