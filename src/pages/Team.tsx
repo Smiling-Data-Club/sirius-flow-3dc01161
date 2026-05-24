@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { Linkedin } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
@@ -33,6 +34,15 @@ interface TeamMember {
   objectPos?: string;
   linkedin?: string;
 }
+
+const openExternalLink = (event: MouseEvent<HTMLAnchorElement>, url: string) => {
+  event.preventDefault();
+  try {
+    window.top?.location.assign(url);
+  } catch {
+    window.location.assign(url);
+  }
+};
 
 const salesMarketing: TeamMember[] = [
   { name: "Fabian", role: "Geschäftsführer", image: fabianImg, linkedin: "https://www.linkedin.com/in/fabian-sch%C3%BCler-6a9049159" },
@@ -84,8 +94,9 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
       {member.linkedin && (
         <a
           href={member.linkedin}
-          target="_blank"
+          target="_top"
           rel="noopener noreferrer"
+          onClick={(event) => openExternalLink(event, member.linkedin!)}
           className="inline-flex items-center justify-center w-8 h-8 mt-1 rounded-full text-muted-foreground hover:text-[#0A66C2] hover:bg-accent transition-colors"
           aria-label={`${member.name} auf LinkedIn`}
         >
