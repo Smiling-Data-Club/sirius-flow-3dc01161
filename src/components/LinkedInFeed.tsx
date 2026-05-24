@@ -4,6 +4,15 @@ import { Linkedin, ExternalLink } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 
+function openExternalLink(event: React.MouseEvent<HTMLAnchorElement>, url: string) {
+  event.preventDefault();
+  try {
+    window.top?.location.assign(url);
+  } catch {
+    window.location.assign(url);
+  }
+}
+
 interface LinkedInPost {
   id: string;
   post_id: string;
@@ -81,8 +90,9 @@ function PostCard({ post }: { post: LinkedInPost }) {
         )}
         <a
           href={post.url}
-          target="_blank"
+          target="_top"
           rel="noopener noreferrer"
+          onClick={(event) => openExternalLink(event, post.url)}
           className="text-xs text-primary font-semibold hover:underline flex items-center gap-1 ml-auto"
         >
           Auf LinkedIn ansehen
@@ -180,8 +190,9 @@ export default function LinkedInFeed() {
           <Button asChild variant="hero" size="lg">
             <a
               href="https://www.linkedin.com/company/79397257/"
-              target="_blank"
+              target="_top"
               rel="noopener noreferrer"
+              onClick={(event) => openExternalLink(event, "https://www.linkedin.com/company/79397257/")}
             >
               Alle Beiträge auf LinkedIn
               <ExternalLink className="w-4 h-4 ml-2" />
