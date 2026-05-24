@@ -14,7 +14,7 @@ const socials = [
       </svg>
     ),
   },
-  { label: "Facebook", href: "https://www.facebook.com/sirius.freiburg/", icon: <Facebook size={18} /> },
+  { label: "Facebook", href: "https://www.facebook.com/siriusgmbh", icon: <Facebook size={18} /> },
   { label: "YouTube", href: "https://www.youtube.com/@sirius.freiburg", icon: <Youtube size={18} /> },
 ];
 
