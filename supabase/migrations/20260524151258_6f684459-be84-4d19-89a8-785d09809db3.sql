@@ -1,0 +1,1 @@
+ALTER TABLE public.youtube_videos ADD CONSTRAINT youtube_videos_video_id_key UNIQUE (video_id);
