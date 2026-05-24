@@ -158,7 +158,7 @@ function TikTokCard({ post }: { post: TikTokPost }) {
     >
       <div className="relative aspect-[9/16] max-h-72 bg-[#010101] overflow-hidden">
         {post.cover_image_url ? (
-          <img src={post.cover_image_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <img src={proxyImage(post.cover_image_url)} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" referrerPolicy="no-referrer" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-white/20">
             <Play className="w-12 h-12" />
