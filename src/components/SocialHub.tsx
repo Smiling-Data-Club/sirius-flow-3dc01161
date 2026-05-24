@@ -4,6 +4,11 @@ import { Linkedin, Instagram, Play, Eye, ExternalLink } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import LinkedInFeed from "@/components/LinkedInFeed";
 
+function openExternalLink(event: React.MouseEvent<HTMLAnchorElement>, url: string) {
+  event.preventDefault();
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface InstagramPost {
   id: string;
@@ -120,6 +125,7 @@ function InstagramCard({ post }: { post: InstagramPost }) {
       href={post.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={(event) => openExternalLink(event, post.url)}
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
     >
       <div className="relative aspect-square bg-muted overflow-hidden">
@@ -155,6 +161,7 @@ function TikTokCard({ post }: { post: TikTokPost }) {
       href={post.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={(event) => openExternalLink(event, post.url)}
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
     >
       <div className="relative aspect-[9/16] max-h-72 bg-[#010101] overflow-hidden">
@@ -198,6 +205,7 @@ function YouTubeCard({ video }: { video: YouTubeVideo }) {
       href={video.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={(event) => openExternalLink(event, video.url)}
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
     >
       <div className="relative aspect-video bg-muted overflow-hidden">
@@ -329,6 +337,7 @@ export default function SocialHub() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(event) => openExternalLink(event, link.url)}
             className={`${link.color} text-white font-semibold px-6 py-3 rounded-xl text-sm inline-flex items-center gap-2 hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-md`}
           >
             {tabs.find((t) => t.key === link.platform)?.icon}
