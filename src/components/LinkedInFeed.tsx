@@ -179,7 +179,7 @@ export default function LinkedInFeed() {
         <div className="text-center mt-12">
           <Button asChild variant="hero" size="lg">
             <a
-              href="https://www.linkedin.com/in/fabian-sch%C3%BCler-6a9049159/"
+              href="https://www.linkedin.com/company/79397257/"
               target="_blank"
               rel="noopener noreferrer"
             >
