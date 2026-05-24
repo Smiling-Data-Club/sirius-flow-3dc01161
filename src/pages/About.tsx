@@ -67,7 +67,7 @@ const About = () => (
             <img
               src={visionImg}
               alt="SIRIUS Mitarbeiterin im modernen Büro"
-              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] grayscale hover:grayscale-0 transition-all duration-700"
+              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] transition-all duration-700"
               loading="lazy"
             />
           </div>
@@ -82,7 +82,7 @@ const About = () => (
             <img
               src={tabletImg}
               alt="SIRIUS Technician operating digital systems"
-              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] grayscale hover:grayscale-0 transition-all duration-700"
+              className="relative rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] transition-all duration-700"
               loading="lazy"
             />
           </div>

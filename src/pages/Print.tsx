@@ -40,7 +40,7 @@ const Print = () => (
             <img
               src={lagerImg}
               alt="Moderner Drucker in minimalistischem Workspace"
-              className="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              className="relative z-10 rounded-2xl shadow-2xl transition-all duration-700"
               loading="lazy"
             />
           </SectionReveal>
@@ -91,7 +91,7 @@ const Print = () => (
       <div className="max-w-7xl mx-auto">
         <SectionReveal>
           <p className="reveal text-center text-muted-foreground text-sm font-medium mb-12 uppercase tracking-widest opacity-60">Unsere Technologie-Partner</p>
-          <div className="reveal flex flex-wrap justify-center items-center gap-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+          <div className="reveal flex flex-wrap justify-center items-center gap-16 opacity-70 hover:opacity-100 transition-all duration-500">
             {["SHARP", "LEXMARK", "EPSON", "PAPERCUT", "GESPAGE", "DOCUWARE", "ZOHO"].map((name) => (
               <div key={name} className="font-black text-3xl tracking-tighter">{name}</div>
             ))}
@@ -107,7 +107,7 @@ const Print = () => (
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionReveal>
-              <h2 className="reveal text-4xl font-extrabold text-primary-foreground mb-6 leading-tight">Bereit für die Service Area?</h2>
+              <h2 className="reveal text-4xl font-extrabold text-primary-foreground mb-6 leading-tight">Wie können wir helfen?</h2>
               <p className="reveal text-blue-100 text-lg mb-6 font-light">
                 Verwalten Sie Ihre gesamte Druckerflotte, bestellen Sie Toner und fordern Sie Techniker an — alles an einem zentralen Ort.
               </p>
@@ -118,9 +118,6 @@ const Print = () => (
                 <Link to="/service-area" className="bg-white text-primary px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition-colors">
                   Zur Service Area
                 </Link>
-                <a href="mailto:info@sirius-gmbh.de" className="border border-white/30 text-primary-foreground px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors">
-                  Support kontaktieren
-                </a>
               </div>
             </SectionReveal>
           </div>

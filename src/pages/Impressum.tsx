@@ -1,4 +1,5 @@
-import { Building2, Phone, Mail, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Building2, Phone, Mail, FileText, Briefcase, ArrowRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 
@@ -136,6 +137,29 @@ const Impressum = () => (
             </SectionReveal>
           </aside>
         </div>
+
+        {/* Bewerbung CTA */}
+        <SectionReveal>
+          <div className="reveal mt-16 p-8 md:p-10 rounded-2xl bg-primary text-primary-foreground flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                <Briefcase className="w-6 h-6" />
+              </div>
+              <div>
+                <h2 className="text-xl md:text-2xl font-bold mb-2">Möchten Sie Teil unserer Mission werden?</h2>
+                <p className="text-blue-100 text-sm font-light max-w-xl">
+                  Bewerben Sie sich direkt über unser Bewerbungsformular auf der Team-Seite.
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/ueber-uns/team#bewerbung"
+              className="inline-flex items-center gap-2 bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors shrink-0"
+            >
+              Zum Bewerbungsformular <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </SectionReveal>
       </div>
     </div>
   </PageLayout>

@@ -2,6 +2,7 @@ import { Linkedin } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import PageHero from "@/components/PageHero";
+import ApplicationForm from "@/components/ApplicationForm";
 
 import fabianImg from "@/assets/team/fabian-schueler.jpg";
 import michaelWImg from "@/assets/team/michael-wangerowski.jpg";
@@ -68,7 +69,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
           <img
             src={member.image}
             alt={member.name}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            className="w-full h-full object-cover transition-all duration-700"
             style={{ objectPosition: member.objectPos || "center top" }}
             loading="lazy"
           />
@@ -140,15 +141,21 @@ const Team = () => (
 
         {/* CTA Section */}
         <SectionReveal>
-          <div className="reveal mt-32 p-12 bg-secondary rounded-2xl flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
-                Möchten Sie Teil unserer Mission werden?
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Wir sind immer auf der Suche nach Talenten, die Lust haben, die Grenzen des Machbaren
-                im Dokumenten-Management neu zu definieren. Werden Sie Teil eines Teams, das Innovation atmet.
-              </p>
+          <div id="bewerbung" className="reveal mt-32 p-12 bg-secondary rounded-2xl scroll-mt-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
+                  Möchten Sie Teil unserer Mission werden?
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Wir sind immer auf der Suche nach Talenten, die Lust haben, die Grenzen des Machbaren
+                  im Dokumenten-Management neu zu definieren. Werden Sie Teil eines Teams, das Innovation atmet.
+                </p>
+              </div>
+              <div className="bg-card p-8 rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)]">
+                <h3 className="text-lg font-bold mb-4 text-primary">Jetzt bewerben</h3>
+                <ApplicationForm />
+              </div>
             </div>
           </div>
         </SectionReveal>
