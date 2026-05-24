@@ -124,7 +124,7 @@ function InstagramCard({ post }: { post: InstagramPost }) {
     >
       <div className="relative aspect-square bg-muted overflow-hidden">
         {post.media_url ? (
-          <img src={post.media_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <img src={proxyImage(post.media_url)} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" referrerPolicy="no-referrer" />
         ) : (
           <div className="w-full h-full flex items-center justify-center"><Instagram className="w-12 h-12 text-muted-foreground/30" /></div>
         )}
