@@ -84,6 +84,21 @@ function truncate(text: string | null | undefined, max = 120) {
   return text.slice(0, max).trimEnd() + "…";
 }
 
+// Proxy für Instagram/TikTok CDN-Bilder (umgeht Referer-Sperre, GDPR-freundlich, gecacht).
+function proxyImage(url: string | null | undefined): string | undefined {
+  if (!url) return undefined;
+  // Entity-decode (RSS liefert &amp;)
+  const clean = url.replace(/&amp;/g, "&");
+  // Protokoll entfernen, weserv erwartet "domain/path"
+  const stripped = clean.replace(/^https?:\/\//, "");
+  return `https://images.weserv.nl/?url=${encodeURIComponent(stripped)}`;
+}
+
+// YouTube-Thumbnail aus video_id konstruieren (zuverlässiger als RSS-Feed-URL).
+function youtubeThumb(videoId: string): string {
+  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+}
+
 // ─── Skeleton ─────────────────────────────────────────────────────────────────
 function SkeletonCard() {
   return (
