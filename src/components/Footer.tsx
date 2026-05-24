@@ -20,7 +20,11 @@ const socials = [
 
 const openExternalLink = (event: React.MouseEvent<HTMLAnchorElement>, url: string) => {
   event.preventDefault();
-  window.open(url, "_blank", "noopener,noreferrer");
+  try {
+    window.top?.location.assign(url);
+  } catch {
+    window.location.assign(url);
+  }
 };
 
 const Footer = () => (
@@ -47,7 +51,7 @@ const Footer = () => (
             <a
               key={s.label}
               href={s.href}
-              target="_blank"
+              target="_top"
               rel="noopener noreferrer"
               onClick={(event) => openExternalLink(event, s.href)}
               className="p-3 rounded-full border border-dark-foreground/20 hover:border-primary hover:text-primary transition-colors"
