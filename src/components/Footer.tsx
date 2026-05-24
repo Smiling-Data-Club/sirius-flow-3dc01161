@@ -18,6 +18,11 @@ const socials = [
   { label: "YouTube", href: "https://www.youtube.com/@sirius.freiburg", icon: <Youtube size={18} /> },
 ];
 
+const openExternalLink = (event: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+  event.preventDefault();
+  window.open(url, "_blank", "noopener,noreferrer");
+};
+
 const Footer = () => (
   <footer className="bg-dark text-dark-foreground">
     <div className="container py-16">
@@ -44,6 +49,7 @@ const Footer = () => (
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(event) => openExternalLink(event, s.href)}
               className="p-3 rounded-full border border-dark-foreground/20 hover:border-primary hover:text-primary transition-colors"
               aria-label={s.label}
             >
