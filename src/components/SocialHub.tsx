@@ -149,6 +149,7 @@ function InstagramCard({ post }: { post: InstagramPost }) {
 
 // ─── TikTok Card ──────────────────────────────────────────────────────────────
 function TikTokCard({ post }: { post: TikTokPost }) {
+  const [imgFailed, setImgFailed] = useState(false);
   return (
     <a
       href={post.url}
@@ -157,11 +158,20 @@ function TikTokCard({ post }: { post: TikTokPost }) {
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
     >
       <div className="relative aspect-[9/16] max-h-72 bg-[#010101] overflow-hidden">
-        {post.cover_image_url ? (
-          <img src={proxyImage(post.cover_image_url)} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" referrerPolicy="no-referrer" />
+        {post.cover_image_url && !imgFailed ? (
+          <img
+            src={proxyImage(post.cover_image_url)}
+            alt=""
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={() => setImgFailed(true)}
+          />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-white/20">
-            <Play className="w-12 h-12" />
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#010101] via-[#1a1a1a] to-[#FE2C55]/20">
+            <svg className="w-16 h-16 text-white/40" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52V6.8a4.84 4.84 0 01-1-.11z" />
+            </svg>
           </div>
         )}
         <div className="absolute inset-0 flex items-center justify-center">
