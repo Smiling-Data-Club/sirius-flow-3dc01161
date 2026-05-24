@@ -191,13 +191,12 @@ function YouTubeCard({ video }: { video: YouTubeVideo }) {
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
     >
       <div className="relative aspect-video bg-muted overflow-hidden">
-        {video.thumbnail_url ? (
-          <img src={video.thumbnail_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-[#FF0000]/10">
-            <Play className="w-12 h-12 text-[#FF0000]/30" />
-          </div>
-        )}
+        <img
+          src={video.video_id ? youtubeThumb(video.video_id) : (video.thumbnail_url ?? "")}
+          alt=""
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
         {video.duration && (
           <span className="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] font-mono px-1.5 py-0.5 rounded">
             {video.duration}
