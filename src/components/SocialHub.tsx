@@ -6,7 +6,11 @@ import LinkedInFeed from "@/components/LinkedInFeed";
 
 function openExternalLink(event: React.MouseEvent<HTMLAnchorElement>, url: string) {
   event.preventDefault();
-  window.open(url, "_blank", "noopener,noreferrer");
+  try {
+    window.top?.location.assign(url);
+  } catch {
+    window.location.assign(url);
+  }
 }
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -123,7 +127,7 @@ function InstagramCard({ post }: { post: InstagramPost }) {
   return (
     <a
       href={post.url}
-      target="_blank"
+      target="_top"
       rel="noopener noreferrer"
       onClick={(event) => openExternalLink(event, post.url)}
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
@@ -159,7 +163,7 @@ function TikTokCard({ post }: { post: TikTokPost }) {
   return (
     <a
       href={post.url}
-      target="_blank"
+      target="_top"
       rel="noopener noreferrer"
       onClick={(event) => openExternalLink(event, post.url)}
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
@@ -203,7 +207,7 @@ function YouTubeCard({ video }: { video: YouTubeVideo }) {
   return (
     <a
       href={video.url}
-      target="_blank"
+      target="_top"
       rel="noopener noreferrer"
       onClick={(event) => openExternalLink(event, video.url)}
       className="group bg-card rounded-xl border border-border/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
@@ -335,7 +339,7 @@ export default function SocialHub() {
           <a
             key={link.platform}
             href={link.url}
-            target="_blank"
+            target="_top"
             rel="noopener noreferrer"
             onClick={(event) => openExternalLink(event, link.url)}
             className={`${link.color} text-white font-semibold px-6 py-3 rounded-xl text-sm inline-flex items-center gap-2 hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-md`}
