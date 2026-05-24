@@ -161,6 +161,39 @@ Deno.serve(async (req) => {
       }
     }
 
+    // YouTube (offizieller Channel-RSS-Feed)
+    const ytChannelId = "UCeeGDedeYKsYqMCdiHNlJXg";
+    try {
+      const ytUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${ytChannelId}`;
+      const res = await fetch(ytUrl, { headers: { "user-agent": "SIRIUS-SocialSync/1.0" } });
+      if (!res.ok) throw new Error(`YouTube feed fetch failed [${res.status}]`);
+      const xml = await res.text();
+      const items = parseFeed(xml).slice(0, 3);
+      const rows = items.map((i) => {
+        // yt:videoId is the canonical id; fallback to extracting from link
+        const videoId = (i.id.match(/video:([A-Za-z0-9_-]+)/)?.[1])
+          || (i.link.match(/[?&]v=([A-Za-z0-9_-]+)/)?.[1])
+          || i.id;
+        const thumbnail = i.image || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+        return {
+          video_id: videoId,
+          title: i.title,
+          description: i.description || "",
+          url: i.link || `https://www.youtube.com/watch?v=${videoId}`,
+          thumbnail_url: thumbnail,
+          view_count: 0,
+          created_at: toIso(i.pubDate),
+        };
+      });
+      if (rows.length) {
+        const { error } = await supabase.from("youtube_videos").upsert(rows, { onConflict: "video_id" });
+        if (error) throw error;
+      }
+      results.youtube = { synced: rows.length };
+    } catch (e) {
+      results.youtube = { synced: 0, error: String(e instanceof Error ? e.message : e) };
+    }
+
     return new Response(JSON.stringify({ ok: true, results }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
