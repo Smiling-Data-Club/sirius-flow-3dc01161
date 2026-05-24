@@ -64,7 +64,7 @@ const tabs: { key: Platform; label: string; icon: React.ReactNode }[] = [
 ];
 
 const followLinks: { platform: Platform; label: string; url: string; color: string }[] = [
-  { platform: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/fabian-sch%C3%BCler-6a9049159/", color: "bg-[#003DA5]" },
+  { platform: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/company/79397257/", color: "bg-[#003DA5]" },
   { platform: "instagram", label: "Instagram", url: "https://www.instagram.com/sirius.freiburg/", color: "bg-gradient-to-r from-[#E1306C] to-[#F77737]" },
   { platform: "tiktok", label: "TikTok", url: "https://www.tiktok.com/@gopaperlessbysirius", color: "bg-[#010101]" },
   { platform: "youtube", label: "YouTube", url: "https://www.youtube.com/@sirius.freiburg", color: "bg-[#FF0000]" },

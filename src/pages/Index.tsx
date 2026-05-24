@@ -89,7 +89,7 @@ const Hero = () => (
         <img
           src={whiteboardImg}
           alt="SIRIUS Team bei der Strategieplanung"
-          className="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+          className="relative z-10 rounded-2xl shadow-2xl transition-all duration-700"
           loading="lazy"
         />
       </div>

@@ -68,7 +68,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
           <img
             src={member.image}
             alt={member.name}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            className="w-full h-full object-cover transition-all duration-700"
             style={{ objectPosition: member.objectPos || "center top" }}
             loading="lazy"
           />
