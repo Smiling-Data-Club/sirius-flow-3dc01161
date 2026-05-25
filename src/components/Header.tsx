@@ -86,6 +86,7 @@ const Header = () => {
                 <div className="absolute top-full mt-2 left-0 bg-background border rounded-lg shadow-lg py-2 min-w-[160px] z-50">
                   <Link to="/ueber-uns" className="block px-4 py-2 hover:bg-secondary transition-colors">Kultur</Link>
                   <Link to="/ueber-uns/team" className="block px-4 py-2 hover:bg-secondary transition-colors">Team</Link>
+                  <Link to="/ueber-uns/karriere" className="block px-4 py-2 hover:bg-secondary transition-colors">Karriere</Link>
                 </div>
               </>
             )}
@@ -125,6 +126,7 @@ const Header = () => {
             <Link to="/social" className="text-foreground font-medium py-2">Social</Link>
             <Link to="/ueber-uns" className="text-foreground font-medium py-2">Kultur</Link>
             <Link to="/ueber-uns/team" className="text-foreground font-medium py-2">Team</Link>
+            <Link to="/ueber-uns/karriere" className="text-foreground font-medium py-2">Karriere</Link>
             <Button asChild variant="hero" size="lg" className="mt-2">
               <Link to="/service-area">Service Area</Link>
             </Button>

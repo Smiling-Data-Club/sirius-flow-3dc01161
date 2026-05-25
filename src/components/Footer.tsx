@@ -82,7 +82,8 @@ const Footer = () => (
             <span className="text-dark-foreground/40 text-xs uppercase tracking-wider mb-1">Über uns</span>
             <Link to="/ueber-uns" className="hover:text-primary transition-colors">Über uns</Link>
             <Link to="/ueber-uns/team" className="hover:text-primary transition-colors">Team</Link>
-            <Link to="/ueber-uns/team#bewerbung" className="hover:text-primary transition-colors">Bewerbung</Link>
+            <Link to="/ueber-uns/karriere" className="hover:text-primary transition-colors">Karriere</Link>
+            <Link to="/ueber-uns/karriere#initiativbewerbung" className="hover:text-primary transition-colors">Bewerbung</Link>
           </div>
           <div className="flex flex-col gap-2">
             <span className="text-dark-foreground/40 text-xs uppercase tracking-wider mb-1">Rechtliches</span>

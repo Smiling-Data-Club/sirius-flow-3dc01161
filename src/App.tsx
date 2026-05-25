@@ -11,6 +11,7 @@ import KeyFacts from "./pages/KeyFacts";
 import Social from "./pages/Social";
 import About from "./pages/About";
 import Team from "./pages/Team";
+import Karriere from "./pages/Karriere";
 import ServiceArea from "./pages/ServiceArea";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/social" element={<Social />} />
           <Route path="/ueber-uns" element={<About />} />
           <Route path="/ueber-uns/team" element={<Team />} />
+          <Route path="/ueber-uns/karriere" element={<Karriere />} />
           <Route path="/service-area" element={<ServiceArea />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
