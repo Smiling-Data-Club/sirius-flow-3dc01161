@@ -29,6 +29,7 @@ const App = () => (
           <Route path="/print" element={<Print />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar" element={<BlogPost />} />
           <Route path="/key-facts" element={<KeyFacts />} />
           <Route path="/social" element={<Social />} />
           <Route path="/ueber-uns" element={<About />} />
