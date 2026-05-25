@@ -64,6 +64,7 @@ const Header = () => {
                 <div className="fixed inset-0 z-40" onClick={() => setInsightsOpen(false)} />
                 <div className="absolute top-full mt-2 left-0 bg-background border rounded-lg shadow-lg py-2 min-w-[160px] z-50">
                   <Link to="/blog" className="block px-4 py-2 hover:bg-secondary transition-colors">Blog</Link>
+                  <Link to="/key-facts" className="block px-4 py-2 hover:bg-secondary transition-colors">Key Facts</Link>
                   <Link to="/social" className="block px-4 py-2 hover:bg-secondary transition-colors">Social</Link>
                 </div>
               </>
@@ -120,6 +121,7 @@ const Header = () => {
             </a>
             <Link to="/print" className="text-foreground font-medium py-2">Print</Link>
             <Link to="/blog" className="text-foreground font-medium py-2">Blog</Link>
+            <Link to="/key-facts" className="text-foreground font-medium py-2">Key Facts</Link>
             <Link to="/social" className="text-foreground font-medium py-2">Social</Link>
             <Link to="/ueber-uns" className="text-foreground font-medium py-2">Kultur</Link>
             <Link to="/ueber-uns/team" className="text-foreground font-medium py-2">Team</Link>
