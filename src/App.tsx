@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -29,6 +29,7 @@ const App = () => (
           <Route path="/print" element={<Print />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar" element={<Navigate to="/blog/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar" replace />} />
           <Route path="/key-facts" element={<KeyFacts />} />
           <Route path="/social" element={<Social />} />
           <Route path="/ueber-uns" element={<About />} />
