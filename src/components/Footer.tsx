@@ -89,6 +89,7 @@ const Footer = () => (
             <span className="text-dark-foreground/40 text-xs uppercase tracking-wider mb-1">Rechtliches</span>
             <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
             <Link to="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link>
+            <Link to="/agb" className="hover:text-primary transition-colors">AGB</Link>
             <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">sitemap.xml</a>
           </div>
         </div>
