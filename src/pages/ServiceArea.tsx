@@ -1,4 +1,4 @@
-import { Droplet, Wrench, Phone, Mail, Clock, ExternalLink } from "lucide-react";
+import { Droplet, Wrench, Phone, Mail, Clock, ExternalLink, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
@@ -6,10 +6,12 @@ import SectionReveal from "@/components/SectionReveal";
 const ZOHO_FORM_URL =
   "https://forms.zohopublic.eu/siriusgmbh1/form/ServiceAreaFormular/formperma/5ZAf6z1tCYFuMB2d4nnw1D8rlz5W95mwXMsnD_HKdU4";
 
+const TEAMVIEWER_URL = "https://get.teamviewer.com/sirius-gmbh";
+
 const ServiceArea = () => (
   <PageLayout
     title="Service Area — SIRIUS GmbH"
-    description="Toner bestellen oder Reparatur melden — schnell und direkt für unsere Managed-Print-Kunden."
+    description="Toner bestellen, Service melden oder Remote Support per TeamViewer — schnell und direkt für unsere Managed-Print-Kunden."
   >
     <section className="py-24 md:py-32">
       <div className="container">
@@ -17,16 +19,16 @@ const ServiceArea = () => (
           <div className="max-w-2xl mb-16">
             <h1 className="reveal text-3xl md:text-5xl font-bold mb-6">Service Area</h1>
             <p className="reveal text-lg text-muted-foreground">
-              Für unsere Managed-Print-Kunden: Toner bestellen oder Reparatur melden — schnell und direkt über unser
-              Online-Formular.
+              Für unsere Managed-Print-Kunden: Toner bestellen, Service melden oder Remote Support per TeamViewer — schnell
+              und direkt.
             </p>
           </div>
         </SectionReveal>
 
-        <SectionReveal>
-          <div className="reveal bg-card rounded-2xl p-10 md:p-12 shadow-sm border mb-12">
-            <div className="flex flex-col md:flex-row gap-8 md:items-center">
-              <div className="flex gap-4">
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <SectionReveal>
+            <div className="reveal bg-card rounded-2xl p-8 md:p-10 shadow-sm border h-full flex flex-col">
+              <div className="flex gap-3 mb-5">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <Droplet className="w-7 h-7 text-primary" />
                 </div>
@@ -34,14 +36,12 @@ const ServiceArea = () => (
                   <Wrench className="w-7 h-7 text-primary" />
                 </div>
               </div>
-              <div className="flex-1">
-                <h2 className="text-2xl font-semibold mb-3">Toner bestellen oder Reparatur melden</h2>
-                <p className="text-muted-foreground mb-6 md:mb-0">
-                  Egal ob Tonernachbestellung oder Störungsmeldung — nutzen Sie unser zentrales Service-Formular. Wir
-                  melden uns umgehend zurück.
-                </p>
-              </div>
-              <div className="shrink-0">
+              <h2 className="text-2xl font-semibold mb-3">Toner bestellen oder Service melden</h2>
+              <p className="text-muted-foreground mb-6 flex-1">
+                Egal ob Tonernachbestellung oder Störungsmeldung — nutzen Sie unser zentrales Service-Formular. Wir
+                melden uns umgehend zurück.
+              </p>
+              <div>
                 <Button variant="hero" size="lg" asChild>
                   <a href={ZOHO_FORM_URL} target="_blank" rel="noopener noreferrer">
                     Zum Service-Formular
@@ -50,8 +50,33 @@ const ServiceArea = () => (
                 </Button>
               </div>
             </div>
-          </div>
-        </SectionReveal>
+          </SectionReveal>
+
+          <SectionReveal>
+            <div className="reveal bg-card rounded-2xl p-8 md:p-10 shadow-sm border h-full flex flex-col">
+              <div className="flex gap-3 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Monitor className="w-7 h-7 text-primary" />
+                </div>
+              </div>
+              <h2 className="text-2xl font-semibold mb-3">Remote Support</h2>
+              <p className="text-muted-foreground mb-6 flex-1">
+                Schnelle IT-Hilfe per TeamViewer — z. B. bei Druckertreibern, Scaneinstellungen oder ähnlichen
+                Themen rund um Ihre Druck- und Scanumgebung. Starten Sie die Sitzung mit einem Klick, unser Team
+                verbindet sich direkt mit Ihnen.
+              </p>
+              <div>
+                <Button variant="hero" size="lg" asChild>
+                  <a href={TEAMVIEWER_URL} target="_blank" rel="noopener noreferrer">
+                    Remote Support starten
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
+
 
         <SectionReveal>
           <div className="reveal bg-secondary rounded-xl p-10 max-w-lg">
