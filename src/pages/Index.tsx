@@ -66,20 +66,17 @@ const Hero = () => (
           <Button
             size="lg"
             className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground px-8 py-4 shadow-lg hover:scale-105 transition-transform font-semibold"
-            onClick={() =>
-              document.getElementById("leistungen")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Lösungen entdecken
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="px-8 py-4 text-primary border-border font-semibold hover:bg-secondary"
             asChild
           >
-            <Link to="/service-area">Service Area</Link>
+            <a
+              href="https://sirius-gmbh.zohobookings.eu/#/fschuelersiriusgmbh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Termin vereinbaren
+            </a>
           </Button>
+
         </div>
       </div>
 
