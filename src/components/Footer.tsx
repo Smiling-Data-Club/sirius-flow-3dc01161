@@ -63,7 +63,37 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-dark-foreground/10 mt-12 pt-6 text-center text-xs text-dark-foreground/50">
+      <div className="border-t border-dark-foreground/10 mt-12 pt-10">
+        <h2 className="text-xs uppercase tracking-[0.2em] text-dark-foreground/50 mb-6">Sitemap</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          <div className="flex flex-col gap-2">
+            <span className="text-dark-foreground/40 text-xs uppercase tracking-wider mb-1">Start</span>
+            <Link to="/" className="hover:text-primary transition-colors">Startseite</Link>
+            <Link to="/print" className="hover:text-primary transition-colors">Print &amp; Document</Link>
+            <Link to="/service-area" className="hover:text-primary transition-colors">Service Area</Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-dark-foreground/40 text-xs uppercase tracking-wider mb-1">Insights</span>
+            <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
+            <Link to="/key-facts" className="hover:text-primary transition-colors">Key Facts</Link>
+            <Link to="/social" className="hover:text-primary transition-colors">Social Hub</Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-dark-foreground/40 text-xs uppercase tracking-wider mb-1">Über uns</span>
+            <Link to="/ueber-uns" className="hover:text-primary transition-colors">Über uns</Link>
+            <Link to="/ueber-uns/team" className="hover:text-primary transition-colors">Team</Link>
+            <Link to="/ueber-uns/team#bewerbung" className="hover:text-primary transition-colors">Bewerbung</Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-dark-foreground/40 text-xs uppercase tracking-wider mb-1">Rechtliches</span>
+            <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
+            <Link to="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link>
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">sitemap.xml</a>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-dark-foreground/10 mt-10 pt-6 text-center text-xs text-dark-foreground/50">
         © 2026 SIRIUS GmbH document solutions. Alle Rechte vorbehalten.
       </div>
     </div>
