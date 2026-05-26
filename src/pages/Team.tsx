@@ -69,7 +69,7 @@ const professionalServices: TeamMember[] = [
   { name: "Hasib", role: "Service & Maintenance", image: hasibImg },
   { name: "Hussein", role: "Service & Maintenance", image: husseinImg, linkedin: "https://www.linkedin.com/in/hussein-ahmad-48a10b340" },
   { name: "Rami", role: "Service & Maintenance", image: ramiImg, objectPos: "center 15%" },
-  { name: "Majed", role: "Professional Services" },
+  { name: "Majed", role: "Professional Services", image: majedImg, objectPos: "center 15%" },
 ];
 
 const TeamCard = ({ member }: { member: TeamMember }) => (
