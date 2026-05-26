@@ -48,13 +48,13 @@ const salesMarketing: TeamMember[] = [
   { name: "Fabian", role: "Geschäftsführer", image: fabianImg, linkedin: "https://www.linkedin.com/in/fabian-sch%C3%BCler-6a9049159" },
   { name: "Michael", role: "Geschäftsführer", image: michaelWImg, linkedin: "https://www.linkedin.com/in/michael-wangerowski-771628283" },
   { name: "Patricia", role: "Marketing & Sales Coordination", image: patriciaImg, linkedin: "https://www.linkedin.com/in/patricia-pierdel-502486221" },
-  { name: "Lara", role: "Social Media Marketing", image: laraImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/lara-k%C3%B6belin" },
+  { name: "Lara", role: "Social Media Marketing", image: laraImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/lara-jasmin-k-80b901244/" },
   { name: "Sally", role: "Account Managerin", image: sallyImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/sally-nehring-2a6138207" },
   { name: "Michael H.", role: "Account Manager", image: michaelHImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/michael-heitzmann-614971251" },
   { name: "Sena", role: "Business Development", image: senaImg, linkedin: "https://www.linkedin.com/in/sena-kaya-hammoud-0b2439211" },
-  { name: "Josefine", role: "Inside Sales", image: josefineImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/josefine-wartner" },
+  { name: "Josefine", role: "Inside Sales", image: josefineImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/josefine-wartner-005430245/" },
   { name: "Daniela", role: "Sales", image: danielaImg },
-  { name: "Angela", role: "Operations Managerin", image: angelaImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/angela-warzecha" },
+  { name: "Angela", role: "Operations Managerin", image: angelaImg, objectPos: "center 15%", linkedin: "https://www.linkedin.com/in/angela-vogtsberger-350128391/" },
   { name: "Natascha", role: "Accounting", image: nataschaImg, objectPos: "center 15%" },
 ];
 
