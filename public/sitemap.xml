@@ -103,4 +103,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>/blog/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
