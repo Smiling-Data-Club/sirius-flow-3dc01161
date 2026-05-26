@@ -76,14 +76,14 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
   <div className="reveal group relative bg-card p-8 rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] hover:scale-[1.02] transition-transform duration-300 folded-corner">
     <div className="flex flex-col items-center text-center">
       {member.image ? (
-        <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-border group-hover:border-primary/30 transition-colors duration-300 [transform:translateZ(0)] [backface-visibility:hidden]">
+        <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-border group-hover:border-primary/30 transition-colors duration-300">
           <img
             src={member.image}
             alt={member.name}
-            width={256}
-            height={256}
+            width={128}
+            height={128}
             className="w-full h-full object-cover"
-            style={{ objectPosition: member.objectPos || "center top", imageRendering: "-webkit-optimize-contrast" }}
+            style={{ objectPosition: member.objectPos || "center top" }}
             loading="lazy"
             decoding="async"
           />
