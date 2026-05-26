@@ -26,6 +26,7 @@ import vladimirImg from "@/assets/team/vladimir-korotine.jpg";
 import hasibImg from "@/assets/team/hasib-jabari.jpg";
 import husseinImg from "@/assets/team/hussein-ahmad.jpg";
 import ramiImg from "@/assets/team/rami-nouri.jpg";
+import majedImg from "@/assets/team/majed.jpg";
 
 interface TeamMember {
   name: string;
