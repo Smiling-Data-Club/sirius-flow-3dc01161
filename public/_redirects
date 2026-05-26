@@ -134,3 +134,11 @@
 # --- FALLBACK für /blog/* zu unbekannten Slugs --------------
 # (Optional: falls Backlinks auf nicht-existente Blog-URLs zeigen)
 # /blog/*                                                     /blog                                 301
+
+
+# ============================================================
+# SPA-FALLBACK — MUSS DIE LETZTE REGEL SEIN
+# Erster Treffer gewinnt: alle spezifischen 301er oben werden
+# zuerst ausgewertet, danach erst der Catch-all für React Router.
+# ============================================================
+/*                                                            /index.html                           200
