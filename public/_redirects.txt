@@ -1,0 +1,136 @@
+# ============================================================
+# Sirius GmbH — Redirect-Map (Migration alte WP-Seite → Netlify)
+# Basis: Google Search Console 24.02.–25.05.2026 (90 Tage)
+# Erstellt: 26.05.2026
+#
+# Ablage: Diese Datei muss im Build-Output-Root liegen
+# (bei Vite/Astro: public/_redirects; bei Next.js statt _redirects
+# eine next.config.js redirects() function verwenden)
+# ============================================================
+
+
+# --- TOP-SEITEN: 1:1 Mapping (höchste Klickzahlen) -----------
+/siriusteam                                                   /ueber-uns/team                       301
+/siriusteam/                                                  /ueber-uns/team                       301
+/service-area                                                 /service-area                         301
+/service-area/                                                /service-area                         301
+/impressum                                                    /impressum                            301
+/impressum/                                                   /impressum                            301
+/datenschutz                                                  /datenschutz                          301
+/datenschutz/                                                 /datenschutz                          301
+
+
+# --- LEISTUNGS-/PRODUKTSEITEN → /print -----------------------
+/siriusprint                                                  /print                                301
+/siriusprint/                                                 /print                                301
+/siriuscloud                                                  /print                                301
+/siriuscloud/                                                 /print                                301
+/sirius-ist-docuware-partner                                  /print                                301
+/sirius-ist-docuware-partner/                                 /print                                301
+/docuware-produkt-tour                                        /print                                301
+/docuware-produkt-tour/                                       /print                                301
+/go-paperless                                                 /print                                301
+/go-paperless/                                                /print                                301
+
+
+# --- BLOG-ARTIKEL: thematisches 1:1 Mapping ------------------
+/new-ways-of-working-chancen-und-herausforderungen-flexibler-arbeitsmodelle      /blog/new-ways-of-working               301
+/new-ways-of-working-chancen-und-herausforderungen-flexibler-arbeitsmodelle/     /blog/new-ways-of-working               301
+/effiziente-uebergangsloesungen-bei-mitarbeiterkuendigungen-automatisierung-als-schluessel     /blog/offboarding-automatisierung   301
+/effiziente-uebergangsloesungen-bei-mitarbeiterkuendigungen-automatisierung-als-schluessel/    /blog/offboarding-automatisierung   301
+/die-gessler-collection-und-docuware                          /blog/digitale-meilensteine           301
+/die-gessler-collection-und-docuware/                         /blog/digitale-meilensteine           301
+/e-rechnungen-ab-2025-was-unternehmen-jetzt-wissen-muessen    /blog/e-rechnung-2025-letzte-tipps    301
+/e-rechnungen-ab-2025-was-unternehmen-jetzt-wissen-muessen/   /blog/e-rechnung-2025-letzte-tipps    301
+/der-mehrwert-eines-digitalen-rechnungseingangs               /blog/e-rechnung-mit-docuware         301
+/der-mehrwert-eines-digitalen-rechnungseingangs/              /blog/e-rechnung-mit-docuware         301
+/optimierung-der-rechnungsabwicklung                          /blog/e-rechnung-mit-docuware         301
+/optimierung-der-rechnungsabwicklung/                         /blog/e-rechnung-mit-docuware         301
+/von-der-tradition-zur-digitalen-innovation                   /blog/digitalisierung-im-mittelstand  301
+/von-der-tradition-zur-digitalen-innovation/                  /blog/digitalisierung-im-mittelstand  301
+/sirius-ist-docuware-gold-partner-2023                        /blog/digitalisierung-im-mittelstand  301
+/sirius-ist-docuware-gold-partner-2023/                       /blog/digitalisierung-im-mittelstand  301
+/sirius-webinar-zur-optimierung-ihrer-dokumentenorganisation-mit-docuware     /blog                301
+/sirius-webinar-zur-optimierung-ihrer-dokumentenorganisation-mit-docuware/    /blog                301
+/tipps-fuer-papierloses-arbeiten-im-home-office               /blog                                 301
+/tipps-fuer-papierloses-arbeiten-im-home-office/              /blog                                 301
+
+
+# --- BLOG-ÜBERSICHT, KATEGORIEN, PODCAST ---------------------
+/sirius-blog                                                  /blog                                 301
+/sirius-blog/                                                 /blog                                 301
+/category/news                                                /blog                                 301
+/category/news/                                               /blog                                 301
+/podcast                                                      /blog                                 301
+/podcast/                                                     /blog                                 301
+
+
+# --- WORDPRESS-TAGS → thematisch passende Artikel ------------
+/tag/drucker-vs-cloud                                         /blog/druckervertrieb-vs-cloud-loesung    301
+/tag/drucker-vs-cloud/                                        /blog/druckervertrieb-vs-cloud-loesung    301
+/tag/druckervertrieb                                          /blog/druckervertrieb-vs-cloud-loesung    301
+/tag/druckervertrieb/                                         /blog/druckervertrieb-vs-cloud-loesung    301
+/tag/online-vertrieb                                          /blog/vom-cold-call-zum-content-value      301
+/tag/online-vertrieb/                                         /blog/vom-cold-call-zum-content-value      301
+/tag/leads-generieren                                         /blog/vom-cold-call-zum-content-value      301
+/tag/leads-generieren/                                        /blog/vom-cold-call-zum-content-value      301
+/tag/uebergang                                                /blog/offboarding-automatisierung          301
+/tag/uebergang/                                               /blog/offboarding-automatisierung          301
+/tag/kuendigung                                               /blog/offboarding-automatisierung          301
+/tag/kuendigung/                                              /blog/offboarding-automatisierung          301
+/tag/mitarbeiterwechsel                                       /blog/offboarding-automatisierung          301
+/tag/mitarbeiterwechsel/                                      /blog/offboarding-automatisierung          301
+
+# Catch-all für alle übrigen Tag-Archive
+/tag/*                                                        /blog                                 301
+
+
+# --- SEO-KRITISCH: Revisionssicherheit (9.201 Impressionen) --
+# Neuer Artikel angelegt mit identischem Slug unter /blog/
+/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar    /blog/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar    301
+/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar/   /blog/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar    301
+
+
+# --- KARRIERE: eigene Seite unter /ueber-uns/karriere -------
+/karriere                                                     /ueber-uns/karriere                   301
+/karriere/                                                    /ueber-uns/karriere                   301
+
+
+# --- ELEKTROMOBILITÄT: kein Pendant — Nische mit 9,5% CTR ----
+# Inhalt auf neuer Seite einbauen oder bewusst löschen (dann 410)
+/elektromobilitaet                                            /ueber-uns                            301
+/elektromobilitaet/                                           /ueber-uns                            301
+
+
+# --- AGB: eigene Seite unter /agb ---------------------------
+/agbs                                                         /agb                                  301
+/agbs/                                                        /agb                                  301
+
+
+# --- VERALTETE INHALTE → 410 Gone ---------------------------
+# 410 signalisiert Google "bewusst entfernt" (schneller deindexed als 404)
+/weihnachsfeier-im-kleinformat                                /                                     410
+/weihnachsfeier-im-kleinformat/                               /                                     410
+/sustain-now                                                  /                                     410
+/sustain-now/                                                 /                                     410
+
+
+# --- WORDPRESS-ASSETS → 410 ---------------------------------
+# Alte Uploads/Plugin-Pfade nicht mehr verfügbar
+/wp-content/*                                                 /                                     410
+/wp-admin/*                                                   /                                     410
+/wp-includes/*                                                /                                     410
+/wp-login.php                                                 /                                     410
+/xmlrpc.php                                                   /                                     410
+
+# --- WORDPRESS-FEEDS, KOMMENTARE, PAGINATION → /blog --------
+/feed                                                         /blog                                 301
+/feed/                                                        /blog                                 301
+/feed/*                                                       /blog                                 301
+/comments/*                                                   /blog                                 301
+/page/*                                                       /blog                                 301
+
+
+# --- FALLBACK für /blog/* zu unbekannten Slugs --------------
+# (Optional: falls Backlinks auf nicht-existente Blog-URLs zeigen)
+# /blog/*                                                     /blog                                 301
