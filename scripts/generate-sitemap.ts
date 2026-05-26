@@ -18,9 +18,11 @@ const staticEntries: SitemapEntry[] = [
   { path: "/social", changefreq: "monthly", priority: "0.6" },
   { path: "/ueber-uns", changefreq: "monthly", priority: "0.7" },
   { path: "/ueber-uns/team", changefreq: "monthly", priority: "0.6" },
+  { path: "/ueber-uns/karriere", changefreq: "monthly", priority: "0.6" },
   { path: "/service-area", changefreq: "monthly", priority: "0.6" },
   { path: "/impressum", priority: "0.3" },
   { path: "/datenschutz", priority: "0.3" },
+  { path: "/agb", priority: "0.3" },
 ];
 
 import { readFileSync } from "fs";
