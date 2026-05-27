@@ -12,12 +12,9 @@
 # --- TOP-SEITEN: 1:1 Mapping (höchste Klickzahlen) -----------
 /siriusteam                                                   /ueber-uns/team                       301
 /siriusteam/                                                  /ueber-uns/team                       301
-/service-area                                                 /service-area                         301
-/service-area/                                                /service-area                         301
-/impressum                                                    /impressum                            301
-/impressum/                                                   /impressum                            301
-/datenschutz                                                  /datenschutz                          301
-/datenschutz/                                                 /datenschutz                          301
+# /service-area, /impressum, /datenschutz sind echte React-Router-Routen
+# und werden vom SPA-Fallback (200) unten bedient. KEINE 301 auf sich selbst
+# anlegen — das erzeugt eine Endlosschleife (ERR_TOO_MANY_REDIRECTS).
 
 
 # --- LEISTUNGS-/PRODUKTSEITEN → /print -----------------------
