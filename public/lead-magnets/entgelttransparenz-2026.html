@@ -102,10 +102,33 @@ nav {
 .cta-section .btn-pdf:hover { background: #fff; color: var(--blue); }
 
 @media print {
-  .btn-primary, .btn-pdf, .btn-white, header, footer, .cta-section,
-  #meter, #checklist input { display: none !important; }
+  @page { margin: 18mm 14mm; }
+  .btn-pdf, header, #meter, #checklist input { display: none !important; }
   body { background: #fff !important; color: #000 !important; }
-  .section { page-break-inside: avoid; padding: 20px 0 !important; }
+  /* Allow long sections to break across pages but avoid breaks inside text blocks */
+  .section { page-break-inside: auto; padding: 18px 0 !important; }
+  h1, h2, h3, h4, h5, h6 { page-break-after: avoid; page-break-inside: avoid; }
+  p, li, blockquote, .pull-quote { page-break-inside: avoid; orphans: 3; widows: 3; }
+  img, table, figure { page-break-inside: avoid; max-width: 100% !important; }
+  * { overflow: visible !important; }
+  /* Keep final CTA + booking link visible at the end */
+  .cta-section { background: #fff !important; color: #000 !important; padding: 24px 0 !important; page-break-before: auto; }
+  .cta-section h2, .cta-section p { color: #000 !important; }
+  .btn-white, .cta-section .btn-primary {
+    display: inline-block !important;
+    background: transparent !important;
+    color: #003DA5 !important;
+    border: 1.5px solid #003DA5 !important;
+    padding: 10px 18px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+  }
+  .btn-white::after, .cta-section .btn-primary::after {
+    content: " — https://sirius-gmbh.zohobookings.eu/#/240927000000441067";
+    font-weight: 400; font-size: 11px; color: #555;
+  }
+  footer { display: block !important; background: #fff !important; color: #000 !important; }
+  footer a { color: #003DA5 !important; }
 }
 .hero-note {
   font-size: 13px; color: var(--muted);
