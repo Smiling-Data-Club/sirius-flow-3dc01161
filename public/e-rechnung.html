@@ -229,8 +229,16 @@ header {
 
 @media print {
   .btn-primary, .btn-pdf, .site-header, .site-footer, .hero-meta, .cta-meta { display: none !important; }
-  .hero, section { page-break-inside: avoid; padding: 16px 0 !important; }
+  .hero, section { page-break-inside: avoid; padding: 24px 0 !important; }
   body { background: #fff !important; color: #000 !important; }
+  /* Override scroll-reveal & entry animations so all content prints */
+  .reveal, .hero-eyebrow, .hero h1, .hero-sub, .hero-cta-row,
+  *[class*="reveal"] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
 }
 
 .hero-meta {
