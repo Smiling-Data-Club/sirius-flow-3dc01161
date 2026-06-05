@@ -84,6 +84,29 @@ nav {
   transition: background .15s;
 }
 .btn-primary:hover { background: var(--blue-dark); }
+
+.btn-pdf {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 12px;
+  padding: 11px 20px;
+  background: transparent;
+  color: var(--blue);
+  border: 1.5px solid var(--blue);
+  font-family: inherit; font-weight: 600; font-size: 13px;
+  border-radius: 4px; cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.btn-pdf:hover { background: var(--blue); color: #fff; }
+.btn-pdf svg { width: 14px; height: 14px; }
+.cta-section .btn-pdf { color: #fff; border-color: rgba(255,255,255,0.7); }
+.cta-section .btn-pdf:hover { background: #fff; color: var(--blue); }
+
+@media print {
+  .btn-primary, .btn-pdf, .btn-white, header, footer, .cta-section,
+  #meter, #checklist input { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .section { page-break-inside: avoid; padding: 20px 0 !important; }
+}
 .hero-note {
   font-size: 13px; color: var(--muted);
   margin-top: 12px;
@@ -505,6 +528,10 @@ footer {
            style="display:inline-block; background: var(--blue); color: white; font-size: 14px; font-weight: 700; padding: 12px 22px; border-radius: 4px; text-decoration: none; letter-spacing: 0.01em;">
           Jetzt 15-Minuten-Termin buchen →
         </a>
+        <div><button type="button" class="btn-pdf" onclick="window.print()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Diesen Bericht als PDF speichern
+        </button></div>
       </div>
     </div>
   </div>
@@ -587,6 +614,10 @@ function updateMeter() {
     <h2>15 Minuten reichen f&uuml;r eine ehrliche Einsch&auml;tzung.</h2>
     <p>Wir schauen gemeinsam, wo Sie heute stehen und was Sie konkret brauchen. Keine Verkaufspr&auml;sentation. Kein Druck. Wenn Sie schon gut aufgestellt sind, sagen wir es Ihnen.</p>
     <a href="https://sirius-gmbh.zohobookings.eu/#/240927000000441067" class="btn-white">Termin direkt im Kalender buchen</a>
+    <div><button type="button" class="btn-pdf" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Diesen Bericht als PDF speichern
+    </button></div>
   </div>
 </div>
 
