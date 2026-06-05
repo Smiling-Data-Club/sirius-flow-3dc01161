@@ -206,6 +206,33 @@ header {
 }
 .btn-primary:hover svg { transform: translateX(4px); }
 
+.btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px 22px;
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-pdf:hover { background: var(--primary); color: #fff; }
+.btn-pdf svg { width: 14px; height: 14px; }
+.cta-section .btn-pdf { color: #fff; border-color: rgba(255,255,255,0.6); }
+.cta-section .btn-pdf:hover { background: #fff; color: var(--primary); }
+
+@media print {
+  .btn-primary, .btn-pdf, .site-header, .site-footer, .hero-meta, .cta-meta { display: none !important; }
+  .hero, section { page-break-inside: avoid; padding: 16px 0 !important; }
+  body { background: #fff !important; color: #000 !important; }
+}
+
 .hero-meta {
   font-size: 14px;
   color: var(--muted-fg);
@@ -641,10 +668,16 @@ footer.site-footer {
     <h1>Können Sie <span class="accent">E-Rechnungen</span> schon empfangen?</h1>
     <p class="hero-sub">Seit über einem Jahr ist Ihr Unternehmen dazu verpflichtet. Nicht ab 2027 — heute. Wenn Sie auf die nächste Rechnung warten, um es herauszufinden, ist es zu spät.</p>
     <div class="hero-cta-row">
-      <a href="https://sirius-gmbh.zohobookings.eu/#/240927000000850282" class="btn-primary" target="_blank" rel="noopener">
-        15-Minuten-Termin buchen
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
-      </a>
+      <div style="display:flex; flex-direction:column; align-items:flex-start;">
+        <a href="https://sirius-gmbh.zohobookings.eu/#/240927000000850282" class="btn-primary" target="_blank" rel="noopener">
+          15-Minuten-Termin buchen
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
+        </a>
+        <button type="button" class="btn-pdf" onclick="window.print()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Diesen Bericht als PDF speichern
+        </button>
+      </div>
       <span class="hero-meta">Keine Verkaufspräsentation. Nur eine ehrliche Einschätzung.</span>
     </div>
   </div>
@@ -806,6 +839,10 @@ footer.site-footer {
       Termin direkt im Kalender buchen
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
     </a>
+    <div><button type="button" class="btn-pdf" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Diesen Bericht als PDF speichern
+    </button></div>
     <div class="cta-meta">SIRIUS GmbH · Freiburg · seit 1980 im Geschäft</div>
   </div>
 </section>
