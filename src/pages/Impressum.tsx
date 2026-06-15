@@ -88,8 +88,15 @@ const Impressum = () => (
                       DE 142113183
                     </p>
                   </div>
+                  <div className="pt-4 border-t border-border/20">
+                    <p className="text-sm text-muted-foreground mb-2">EORI-Nummer</p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      DE429382942623019
+                    </p>
+                  </div>
                 </div>
               </section>
+
 
               {/* Section: Disclaimers */}
               <section className="reveal space-y-8">
