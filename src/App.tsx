@@ -16,6 +16,7 @@ import ServiceArea from "./pages/ServiceArea";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
+import CultureAndCode from "./pages/CultureAndCode";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
