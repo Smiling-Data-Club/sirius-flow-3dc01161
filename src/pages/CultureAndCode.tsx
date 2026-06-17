@@ -147,8 +147,8 @@ const CultureAndCode = () => (
         position: absolute;
         inset: -20% -20% -20% -20%;
         background-image:
-          linear-gradient(to right, rgba(0, 245, 255, 0.35) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 0, 170, 0.35) 1px, transparent 1px);
+          linear-gradient(to right, rgba(94, 207, 207, 0.32) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(224, 95, 160, 0.32) 1px, transparent 1px);
         background-size: 60px 60px;
         transform: rotateX(60deg) translateZ(0);
         transform-origin: center top;
