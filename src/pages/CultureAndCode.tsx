@@ -188,8 +188,8 @@ const CultureAndCode = () => (
         font-size: 0.8rem;
         color: var(--cc-cyan);
         text-shadow:
-          0 0 6px rgba(0, 245, 255, 0.8),
-          0 0 16px rgba(0, 245, 255, 0.4);
+          0 0 6px rgba(94, 207, 207, 0.8),
+          0 0 16px rgba(94, 207, 207, 0.4);
       }
 
       .cc-headline {
