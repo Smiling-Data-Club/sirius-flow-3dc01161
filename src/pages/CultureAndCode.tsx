@@ -315,9 +315,16 @@ const CultureAndCode = () => (
       <div className="cc-scanlines" aria-hidden="true" />
 
       <div className="cc-content min-h-screen flex flex-col">
-        <header className="px-6 md:px-10 pt-8 flex items-center justify-between">
-          <span className="cc-wordmark uppercase">Smiling Data Club</span>
-          <a href="/" className="cc-back-link uppercase">← Sirius</a>
+        <header className="px-6 md:px-10 pt-10 md:pt-12 flex flex-col items-center">
+          <img
+            src="/assets/sdc-logo.png"
+            alt="Smiling Data Club"
+            width={120}
+            height={120}
+            className="cc-logo w-[120px] h-auto select-none"
+            draggable={false}
+          />
+          <a href="/" className="cc-back-link uppercase mt-6">← zurück zu Sirius</a>
         </header>
 
         <main className="flex-1 flex flex-col items-center justify-center px-6 py-16">
