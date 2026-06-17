@@ -199,9 +199,9 @@ const CultureAndCode = () => (
         line-height: 1;
         color: #fff;
         text-shadow:
-          0 0 8px rgba(0, 245, 255, 0.9),
-          0 0 24px rgba(0, 245, 255, 0.55),
-          0 0 48px rgba(255, 0, 170, 0.35);
+          0 0 8px rgba(94, 207, 207, 0.9),
+          0 0 24px rgba(94, 207, 207, 0.55),
+          0 0 48px rgba(224, 95, 160, 0.35);
         animation: cc-headline-flicker 6s ease-in-out infinite;
       }
       @keyframes cc-headline-flicker {
