@@ -98,10 +98,10 @@ const CultureAndCode = () => (
 
       .cc-root {
         --cc-bg: #0a0a1a;
-        --cc-cyan: #00f5ff;
-        --cc-magenta: #ff00aa;
-        --cc-purple: #7c3aed;
-        --cc-text: #e6e6ff;
+        --cc-cyan: #5ecfcf;
+        --cc-magenta: #e05fa0;
+        --cc-purple: #6b3fa0;
+        --cc-text: #ffffff;
         font-family: 'Silom', 'Courier New', 'Consolas', monospace;
         background-color: var(--cc-bg);
         color: var(--cc-text);
@@ -120,9 +120,9 @@ const CultureAndCode = () => (
         height: 1200px;
         background: radial-gradient(
           circle at center,
-          rgba(255, 0, 170, 0.35) 0%,
-          rgba(124, 58, 237, 0.18) 30%,
-          rgba(0, 245, 255, 0.08) 55%,
+          rgba(224, 95, 160, 0.32) 0%,
+          rgba(107, 63, 160, 0.20) 30%,
+          rgba(94, 207, 207, 0.10) 55%,
           transparent 70%
         );
         filter: blur(40px);
@@ -147,8 +147,8 @@ const CultureAndCode = () => (
         position: absolute;
         inset: -20% -20% -20% -20%;
         background-image:
-          linear-gradient(to right, rgba(0, 245, 255, 0.35) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 0, 170, 0.35) 1px, transparent 1px);
+          linear-gradient(to right, rgba(94, 207, 207, 0.32) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(224, 95, 160, 0.32) 1px, transparent 1px);
         background-size: 60px 60px;
         transform: rotateX(60deg) translateZ(0);
         transform-origin: center top;
@@ -188,8 +188,8 @@ const CultureAndCode = () => (
         font-size: 0.8rem;
         color: var(--cc-cyan);
         text-shadow:
-          0 0 6px rgba(0, 245, 255, 0.8),
-          0 0 16px rgba(0, 245, 255, 0.4);
+          0 0 6px rgba(94, 207, 207, 0.8),
+          0 0 16px rgba(94, 207, 207, 0.4);
       }
 
       .cc-headline {
@@ -199,9 +199,9 @@ const CultureAndCode = () => (
         line-height: 1;
         color: #fff;
         text-shadow:
-          0 0 8px rgba(0, 245, 255, 0.9),
-          0 0 24px rgba(0, 245, 255, 0.55),
-          0 0 48px rgba(255, 0, 170, 0.35);
+          0 0 8px rgba(94, 207, 207, 0.9),
+          0 0 24px rgba(94, 207, 207, 0.55),
+          0 0 48px rgba(224, 95, 160, 0.35);
         animation: cc-headline-flicker 6s ease-in-out infinite;
       }
       @keyframes cc-headline-flicker {
@@ -235,49 +235,49 @@ const CultureAndCode = () => (
       .cc-video-frame {
         background: linear-gradient(160deg, #0f0f24 0%, #14142b 100%);
         box-shadow:
-          0 0 0 1px rgba(0, 245, 255, 0.4),
-          0 0 24px rgba(0, 245, 255, 0.35),
-          0 0 60px rgba(255, 0, 170, 0.25),
-          inset 0 0 60px rgba(124, 58, 237, 0.15);
+          0 0 0 1px rgba(94, 207, 207, 0.45),
+          0 0 24px rgba(94, 207, 207, 0.35),
+          0 0 60px rgba(224, 95, 160, 0.25),
+          inset 0 0 60px rgba(107, 63, 160, 0.18);
         animation: cc-border-pulse 3.5s ease-in-out infinite;
       }
       @keyframes cc-border-pulse {
         0%, 100% {
           box-shadow:
-            0 0 0 1px rgba(0, 245, 255, 0.4),
-            0 0 24px rgba(0, 245, 255, 0.35),
-            0 0 60px rgba(255, 0, 170, 0.25),
-            inset 0 0 60px rgba(124, 58, 237, 0.15);
+            0 0 0 1px rgba(94, 207, 207, 0.45),
+            0 0 24px rgba(94, 207, 207, 0.35),
+            0 0 60px rgba(224, 95, 160, 0.25),
+            inset 0 0 60px rgba(107, 63, 160, 0.18);
         }
         50% {
           box-shadow:
-            0 0 0 1px rgba(255, 0, 170, 0.55),
-            0 0 32px rgba(255, 0, 170, 0.5),
-            0 0 80px rgba(0, 245, 255, 0.35),
-            inset 0 0 80px rgba(124, 58, 237, 0.22);
+            0 0 0 1px rgba(224, 95, 160, 0.6),
+            0 0 32px rgba(224, 95, 160, 0.5),
+            0 0 80px rgba(94, 207, 207, 0.35),
+            inset 0 0 80px rgba(107, 63, 160, 0.25);
         }
       }
 
       .cc-play-pulse {
-        background: rgba(0, 245, 255, 0.12);
-        border: 1px solid rgba(0, 245, 255, 0.6);
+        background: rgba(94, 207, 207, 0.12);
+        border: 1px solid rgba(94, 207, 207, 0.6);
         color: var(--cc-cyan);
         box-shadow:
-          0 0 24px rgba(0, 245, 255, 0.5),
-          inset 0 0 16px rgba(0, 245, 255, 0.25);
+          0 0 24px rgba(94, 207, 207, 0.5),
+          inset 0 0 16px rgba(94, 207, 207, 0.25);
         animation: cc-play-pulse 2.4s ease-in-out infinite;
       }
       @keyframes cc-play-pulse {
-        0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(0, 245, 255, 0.5), inset 0 0 16px rgba(0, 245, 255, 0.25); }
-        50%      { transform: scale(1.06); box-shadow: 0 0 40px rgba(255, 0, 170, 0.55), inset 0 0 22px rgba(255, 0, 170, 0.3); }
+        0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(94, 207, 207, 0.5), inset 0 0 16px rgba(94, 207, 207, 0.25); }
+        50%      { transform: scale(1.06); box-shadow: 0 0 40px rgba(224, 95, 160, 0.6), inset 0 0 22px rgba(224, 95, 160, 0.3); }
       }
 
       .cc-placeholder-title {
         font-family: 'Silom', 'Courier New', monospace;
         color: #fff;
         text-shadow:
-          0 0 8px rgba(255, 0, 170, 0.9),
-          0 0 20px rgba(255, 0, 170, 0.45);
+          0 0 8px rgba(224, 95, 160, 0.9),
+          0 0 20px rgba(224, 95, 160, 0.45);
       }
       .cc-placeholder-sub {
         font-family: 'Silom', 'Courier New', monospace;
@@ -299,6 +299,12 @@ const CultureAndCode = () => (
         color: var(--cc-cyan);
       }
 
+      .cc-logo {
+        filter:
+          drop-shadow(0 0 12px rgba(94, 207, 207, 0.45))
+          drop-shadow(0 0 24px rgba(224, 95, 160, 0.25));
+      }
+
       @media (prefers-reduced-motion: reduce) {
         .cc-grid::before,
         .cc-headline,
@@ -315,9 +321,16 @@ const CultureAndCode = () => (
       <div className="cc-scanlines" aria-hidden="true" />
 
       <div className="cc-content min-h-screen flex flex-col">
-        <header className="px-6 md:px-10 pt-8 flex items-center justify-between">
-          <span className="cc-wordmark uppercase">Smiling Data Club</span>
-          <a href="/" className="cc-back-link uppercase">← Sirius</a>
+        <header className="px-6 md:px-10 pt-10 md:pt-12 flex flex-col items-center">
+          <img
+            src="/assets/sdc-logo.png"
+            alt="Smiling Data Club"
+            width={120}
+            height={120}
+            className="cc-logo w-[120px] h-auto select-none"
+            draggable={false}
+          />
+          <a href="/" className="cc-back-link uppercase mt-6">← zurück zu Sirius</a>
         </header>
 
         <main className="flex-1 flex flex-col items-center justify-center px-6 py-16">
