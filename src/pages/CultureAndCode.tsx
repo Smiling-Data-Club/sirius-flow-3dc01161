@@ -235,41 +235,41 @@ const CultureAndCode = () => (
       .cc-video-frame {
         background: linear-gradient(160deg, #0f0f24 0%, #14142b 100%);
         box-shadow:
-          0 0 0 1px rgba(0, 245, 255, 0.4),
-          0 0 24px rgba(0, 245, 255, 0.35),
-          0 0 60px rgba(255, 0, 170, 0.25),
-          inset 0 0 60px rgba(124, 58, 237, 0.15);
+          0 0 0 1px rgba(94, 207, 207, 0.45),
+          0 0 24px rgba(94, 207, 207, 0.35),
+          0 0 60px rgba(224, 95, 160, 0.25),
+          inset 0 0 60px rgba(107, 63, 160, 0.18);
         animation: cc-border-pulse 3.5s ease-in-out infinite;
       }
       @keyframes cc-border-pulse {
         0%, 100% {
           box-shadow:
-            0 0 0 1px rgba(0, 245, 255, 0.4),
-            0 0 24px rgba(0, 245, 255, 0.35),
-            0 0 60px rgba(255, 0, 170, 0.25),
-            inset 0 0 60px rgba(124, 58, 237, 0.15);
+            0 0 0 1px rgba(94, 207, 207, 0.45),
+            0 0 24px rgba(94, 207, 207, 0.35),
+            0 0 60px rgba(224, 95, 160, 0.25),
+            inset 0 0 60px rgba(107, 63, 160, 0.18);
         }
         50% {
           box-shadow:
-            0 0 0 1px rgba(255, 0, 170, 0.55),
-            0 0 32px rgba(255, 0, 170, 0.5),
-            0 0 80px rgba(0, 245, 255, 0.35),
-            inset 0 0 80px rgba(124, 58, 237, 0.22);
+            0 0 0 1px rgba(224, 95, 160, 0.6),
+            0 0 32px rgba(224, 95, 160, 0.5),
+            0 0 80px rgba(94, 207, 207, 0.35),
+            inset 0 0 80px rgba(107, 63, 160, 0.25);
         }
       }
 
       .cc-play-pulse {
-        background: rgba(0, 245, 255, 0.12);
-        border: 1px solid rgba(0, 245, 255, 0.6);
+        background: rgba(94, 207, 207, 0.12);
+        border: 1px solid rgba(94, 207, 207, 0.6);
         color: var(--cc-cyan);
         box-shadow:
-          0 0 24px rgba(0, 245, 255, 0.5),
-          inset 0 0 16px rgba(0, 245, 255, 0.25);
+          0 0 24px rgba(94, 207, 207, 0.5),
+          inset 0 0 16px rgba(94, 207, 207, 0.25);
         animation: cc-play-pulse 2.4s ease-in-out infinite;
       }
       @keyframes cc-play-pulse {
-        0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(0, 245, 255, 0.5), inset 0 0 16px rgba(0, 245, 255, 0.25); }
-        50%      { transform: scale(1.06); box-shadow: 0 0 40px rgba(255, 0, 170, 0.55), inset 0 0 22px rgba(255, 0, 170, 0.3); }
+        0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(94, 207, 207, 0.5), inset 0 0 16px rgba(94, 207, 207, 0.25); }
+        50%      { transform: scale(1.06); box-shadow: 0 0 40px rgba(224, 95, 160, 0.6), inset 0 0 22px rgba(224, 95, 160, 0.3); }
       }
 
       .cc-placeholder-title {
