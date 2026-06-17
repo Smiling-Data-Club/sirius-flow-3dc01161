@@ -296,7 +296,15 @@ const CultureAndCode = () => (
       }
       .cc-back-link:hover {
         opacity: 1;
+      .cc-back-link:hover {
+        opacity: 1;
         color: var(--cc-cyan);
+      }
+
+      .cc-logo {
+        filter:
+          drop-shadow(0 0 12px rgba(94, 207, 207, 0.45))
+          drop-shadow(0 0 24px rgba(224, 95, 160, 0.25));
       }
 
       @media (prefers-reduced-motion: reduce) {
