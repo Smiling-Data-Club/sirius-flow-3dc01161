@@ -98,10 +98,10 @@ const CultureAndCode = () => (
 
       .cc-root {
         --cc-bg: #0a0a1a;
-        --cc-cyan: #00f5ff;
-        --cc-magenta: #ff00aa;
-        --cc-purple: #7c3aed;
-        --cc-text: #e6e6ff;
+        --cc-cyan: #5ecfcf;
+        --cc-magenta: #e05fa0;
+        --cc-purple: #6b3fa0;
+        --cc-text: #ffffff;
         font-family: 'Silom', 'Courier New', 'Consolas', monospace;
         background-color: var(--cc-bg);
         color: var(--cc-text);
