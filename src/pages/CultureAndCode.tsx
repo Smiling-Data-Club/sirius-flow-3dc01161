@@ -296,8 +296,6 @@ const CultureAndCode = () => (
       }
       .cc-back-link:hover {
         opacity: 1;
-      .cc-back-link:hover {
-        opacity: 1;
         color: var(--cc-cyan);
       }
 
