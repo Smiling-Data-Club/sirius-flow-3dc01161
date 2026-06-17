@@ -120,9 +120,9 @@ const CultureAndCode = () => (
         height: 1200px;
         background: radial-gradient(
           circle at center,
-          rgba(255, 0, 170, 0.35) 0%,
-          rgba(124, 58, 237, 0.18) 30%,
-          rgba(0, 245, 255, 0.08) 55%,
+          rgba(224, 95, 160, 0.32) 0%,
+          rgba(107, 63, 160, 0.20) 30%,
+          rgba(94, 207, 207, 0.10) 55%,
           transparent 70%
         );
         filter: blur(40px);
