@@ -276,8 +276,8 @@ const CultureAndCode = () => (
         font-family: 'Silom', 'Courier New', monospace;
         color: #fff;
         text-shadow:
-          0 0 8px rgba(255, 0, 170, 0.9),
-          0 0 20px rgba(255, 0, 170, 0.45);
+          0 0 8px rgba(224, 95, 160, 0.9),
+          0 0 20px rgba(224, 95, 160, 0.45);
       }
       .cc-placeholder-sub {
         font-family: 'Silom', 'Courier New', monospace;
