@@ -1,12 +1,26 @@
 import { Helmet } from "react-helmet-async";
+import { useRef, useState } from "react";
+
 
 /**
  * Culture & Code — hidden landing page for the SDC event series.
  * Stable URL: /culture-and-code (QR-friendly).
  */
 
-const CultureAndCode = () => (
+const CultureAndCode = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showOverlay, setShowOverlay] = useState(true);
+
+  const handlePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    setShowOverlay(false);
+    v.play().catch(() => setShowOverlay(true));
+  };
+
+  return (
   <>
+
     <Helmet>
       <title>Culture & Code — Smiling Data Club</title>
       <meta
@@ -190,6 +204,12 @@ const CultureAndCode = () => (
         padding: 8px;
         box-sizing: border-box;
       }
+      .cc-video-stage {
+        position: relative;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+      }
       .cc-video {
         display: block;
         width: 100%;
@@ -198,6 +218,50 @@ const CultureAndCode = () => (
         background: #1a1a2e;
         touch-action: pan-y;
       }
+      .cc-play-overlay {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-width: 160px;
+        min-height: 160px;
+        width: max-content;
+        height: max-content;
+        padding: 24px 32px;
+        background: rgba(10, 10, 26, 0.5);
+        border: 1px solid #5ecfcf44;
+        border-radius: 16px;
+        box-shadow: 0 0 24px rgba(94, 207, 207, 0.25);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        touch-action: manipulation;
+      }
+      .cc-play-overlay:hover,
+      .cc-play-overlay:focus-visible {
+        background: rgba(10, 10, 26, 0.65);
+        box-shadow: 0 0 36px rgba(94, 207, 207, 0.45);
+        transform: translate(0, 0) scale(1.03);
+        outline: none;
+      }
+      .cc-play-logo {
+        width: 64px;
+        height: auto;
+        filter: drop-shadow(0 0 8px rgba(94, 207, 207, 0.55));
+      }
+      .cc-play-label {
+        font-family: 'Silom', 'Courier New', monospace;
+        font-size: 18px;
+        letter-spacing: 0.2em;
+        color: #5ecfcf;
+        text-shadow: 0 0 8px rgba(94, 207, 207, 0.7);
+      }
+
 
       @media (min-width: 768px) {
         .cc-header {
@@ -255,15 +319,42 @@ const CultureAndCode = () => (
           <div className="cc-divider w-32 sm:w-40" />
 
           <div className="cc-video-wrap">
-            <video
-              src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
-              controls
-              playsInline
-              preload="auto"
-              className="cc-video"
-            >
-              Your browser does not support the video tag.
-            </video>
+            <div className="cc-video-stage">
+              <video
+                ref={videoRef}
+                src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
+                controls
+                playsInline
+                preload="auto"
+                className="cc-video"
+                onPlay={() => setShowOverlay(false)}
+                onPause={() => {
+                  const v = videoRef.current;
+                  if (v && v.currentTime === 0) setShowOverlay(true);
+                }}
+              >
+                Your browser does not support the video tag.
+              </video>
+              {showOverlay && (
+                <button
+                  type="button"
+                  onClick={handlePlay}
+                  className="cc-play-overlay"
+                  aria-label="Video abspielen"
+                >
+                  <img
+                    src="/assets/sdc-logo.png"
+                    alt=""
+                    aria-hidden="true"
+                    width={64}
+                    height={64}
+                    className="cc-play-logo"
+                    draggable={false}
+                  />
+                  <span className="cc-play-label">▶ PLAY</span>
+                </button>
+              )}
+            </div>
           </div>
         </main>
 
@@ -278,6 +369,8 @@ const CultureAndCode = () => (
       </div>
     </div>
   </>
-);
+  );
+};
 
 export default CultureAndCode;
+
