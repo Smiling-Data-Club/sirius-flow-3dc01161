@@ -38,9 +38,10 @@ const CultureAndCode = () => (
         font-family: 'Silom', 'Courier New', 'Consolas', monospace;
         background-color: var(--cc-bg);
         color: var(--cc-text);
-        min-height: 100vh;
+        min-height: 100%;
         position: relative;
-        overflow-x: hidden;
+        overflow-x: clip;
+        -webkit-overflow-scrolling: touch;
       }
 
       /* Sun glow behind the grid */
@@ -190,6 +191,7 @@ const CultureAndCode = () => (
         min-height: 200px;
         border-radius: 8px;
         background: #000;
+        touch-action: pan-y;
       }
       @media (min-width: 768px) {
         .cc-video { min-height: 360px; }
@@ -218,7 +220,7 @@ const CultureAndCode = () => (
       <div className="cc-grid" aria-hidden="true" />
       <div className="cc-scanlines" aria-hidden="true" />
 
-      <div className="cc-content min-h-screen flex flex-col">
+      <div className="cc-content flex flex-col" style={{ minHeight: "100%" }}>
         <header className="px-6 md:px-10 pt-10 md:pt-12 flex flex-col items-center">
           <img
             src="/assets/sdc-logo.png"
