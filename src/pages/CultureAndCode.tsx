@@ -10,12 +10,16 @@ import { useRef, useState } from "react";
 const CultureAndCode = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showOverlay, setShowOverlay] = useState(true);
+  const [hiding, setHiding] = useState(false);
 
   const handlePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    setShowOverlay(false);
-    v.play().catch(() => setShowOverlay(true));
+    setHiding(true);
+    v.play().catch(() => {
+      setHiding(false);
+    });
+    window.setTimeout(() => setShowOverlay(false), 300);
   };
 
   return (
@@ -221,45 +225,56 @@ const CultureAndCode = () => {
       .cc-play-overlay {
         position: absolute;
         inset: 0;
-        margin: auto;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 12px;
-        min-width: 160px;
-        min-height: 160px;
-        width: max-content;
-        height: max-content;
-        padding: 24px 32px;
-        background: rgba(10, 10, 26, 0.5);
-        border: 1px solid #5ecfcf44;
-        border-radius: 16px;
-        box-shadow: 0 0 24px rgba(94, 207, 207, 0.25);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
+        gap: 20px;
+        padding: 24px;
+        background: rgba(10, 10, 26, 0.55);
+        border: none;
+        border-radius: 12px;
         cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        opacity: 1;
+        transition: opacity 0.3s ease;
         touch-action: manipulation;
+        box-sizing: border-box;
       }
-      .cc-play-overlay:hover,
-      .cc-play-overlay:focus-visible {
-        background: rgba(10, 10, 26, 0.65);
-        box-shadow: 0 0 36px rgba(94, 207, 207, 0.45);
-        transform: translate(0, 0) scale(1.03);
-        outline: none;
+      .cc-play-overlay.is-hiding {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .cc-play-logo-wrap {
+        background: rgba(10, 10, 26, 0.7);
+        border-radius: 50%;
+        padding: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
       .cc-play-logo {
-        width: 64px;
-        height: auto;
-        filter: drop-shadow(0 0 8px rgba(94, 207, 207, 0.55));
+        width: 96px;
+        height: 96px;
+        display: block;
+        filter: drop-shadow(0 0 12px #5ecfcf88);
       }
-      .cc-play-label {
+      .cc-play-pill {
+        background: #5ecfcf;
+        color: #0a0a1a;
         font-family: 'Silom', 'Courier New', monospace;
-        font-size: 18px;
-        letter-spacing: 0.2em;
-        color: #5ecfcf;
-        text-shadow: 0 0 8px rgba(94, 207, 207, 0.7);
+        font-size: 15px;
+        letter-spacing: 0.25em;
+        border-radius: 999px;
+        padding: 10px 28px;
+        border: none;
+        transition: opacity 0.15s ease;
+      }
+      .cc-play-overlay:hover .cc-play-pill,
+      .cc-play-overlay:active .cc-play-pill,
+      .cc-play-overlay:focus-visible .cc-play-pill {
+        opacity: 0.85;
       }
 
 
@@ -327,10 +342,16 @@ const CultureAndCode = () => {
                 playsInline
                 preload="auto"
                 className="cc-video"
-                onPlay={() => setShowOverlay(false)}
+                onPlay={() => {
+                  setHiding(true);
+                  window.setTimeout(() => setShowOverlay(false), 300);
+                }}
                 onPause={() => {
                   const v = videoRef.current;
-                  if (v && v.currentTime === 0) setShowOverlay(true);
+                  if (v && v.currentTime === 0) {
+                    setHiding(false);
+                    setShowOverlay(true);
+                  }
                 }}
               >
                 Your browser does not support the video tag.
@@ -339,19 +360,21 @@ const CultureAndCode = () => {
                 <button
                   type="button"
                   onClick={handlePlay}
-                  className="cc-play-overlay"
+                  className={`cc-play-overlay${hiding ? " is-hiding" : ""}`}
                   aria-label="Video abspielen"
                 >
-                  <img
-                    src="/assets/sdc-logo.png"
-                    alt=""
-                    aria-hidden="true"
-                    width={64}
-                    height={64}
-                    className="cc-play-logo"
-                    draggable={false}
-                  />
-                  <span className="cc-play-label">▶ PLAY</span>
+                  <span className="cc-play-logo-wrap">
+                    <img
+                      src="/assets/sdc-logo.png"
+                      alt=""
+                      aria-hidden="true"
+                      width={96}
+                      height={96}
+                      className="cc-play-logo"
+                      draggable={false}
+                    />
+                  </span>
+                  <span className="cc-play-pill">▶ PLAY</span>
                 </button>
               )}
             </div>
