@@ -29,6 +29,13 @@ const CultureAndCode = () => (
         font-display: swap;
       }
 
+      html, body, #root {
+        background-color: #0a0a1a !important;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+
       .cc-root {
         --cc-bg: #0a0a1a;
         --cc-cyan: #5ecfcf;
@@ -39,8 +46,10 @@ const CultureAndCode = () => (
         background-color: var(--cc-bg);
         color: var(--cc-text);
         min-height: 100%;
+        width: 100%;
+        max-width: 100vw;
         position: relative;
-        overflow-x: clip;
+        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
       }
 
@@ -175,14 +184,15 @@ const CultureAndCode = () => (
       }
 
       .cc-video-wrap {
-        width: 90vw;
+        width: 100%;
         max-width: 800px;
         margin: 0 auto;
         background: #1a1a2e;
         border: 2px solid #5ecfcf;
         border-radius: 12px;
         box-shadow: 0 0 20px #5ecfcf44;
-        padding: 12px;
+        padding: 8px;
+        box-sizing: border-box;
       }
       .cc-video {
         display: block;
@@ -221,27 +231,27 @@ const CultureAndCode = () => (
       <div className="cc-scanlines" aria-hidden="true" />
 
       <div className="cc-content flex flex-col" style={{ minHeight: "100%" }}>
-        <header className="px-6 md:px-10 pt-10 md:pt-12 flex flex-col items-center">
+        <header className="px-4 sm:px-6 md:px-10 pt-8 md:pt-12 flex flex-col items-center">
           <img
             src="/assets/sdc-logo.png"
             alt="Smiling Data Club"
             width={120}
             height={120}
-            className="cc-logo w-[120px] h-auto select-none"
+            className="cc-logo w-[96px] sm:w-[120px] h-auto select-none"
             draggable={false}
           />
           <a href="/" className="cc-back-link uppercase mt-6">← zurück zu Sirius</a>
         </header>
 
-        <main className="flex-1 flex flex-col items-center justify-center px-6 py-16">
-          <div className="w-full max-w-4xl flex flex-col items-center text-center">
-            <span className="cc-wordmark uppercase mb-6">// Event Series</span>
+        <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-10 sm:py-16 w-full">
+          <div className="w-full max-w-4xl flex flex-col items-center text-center gap-6 sm:gap-8">
+            <span className="cc-wordmark uppercase">// Event Series</span>
 
-            <h1 className="cc-headline text-5xl md:text-7xl lg:text-8xl mb-6">
+            <h1 className="cc-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
               Culture &amp; Code
             </h1>
 
-            <div className="cc-divider w-40 mb-12" />
+            <div className="cc-divider w-32 sm:w-40" />
 
             <div className="cc-video-wrap">
               <video
