@@ -269,15 +269,42 @@ const CultureAndCode = () => {
           <div className="cc-divider w-32 sm:w-40" />
 
           <div className="cc-video-wrap">
-            <video
-              src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
-              controls
-              playsInline
-              preload="auto"
-              className="cc-video"
-            >
-              Your browser does not support the video tag.
-            </video>
+            <div className="cc-video-stage">
+              <video
+                ref={videoRef}
+                src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
+                controls
+                playsInline
+                preload="auto"
+                className="cc-video"
+                onPlay={() => setShowOverlay(false)}
+                onPause={() => {
+                  const v = videoRef.current;
+                  if (v && v.currentTime === 0) setShowOverlay(true);
+                }}
+              >
+                Your browser does not support the video tag.
+              </video>
+              {showOverlay && (
+                <button
+                  type="button"
+                  onClick={handlePlay}
+                  className="cc-play-overlay"
+                  aria-label="Video abspielen"
+                >
+                  <img
+                    src="/assets/sdc-logo.png"
+                    alt=""
+                    aria-hidden="true"
+                    width={64}
+                    height={64}
+                    className="cc-play-logo"
+                    draggable={false}
+                  />
+                  <span className="cc-play-label">▶ PLAY</span>
+                </button>
+              )}
+            </div>
           </div>
         </main>
 
@@ -292,6 +319,8 @@ const CultureAndCode = () => {
       </div>
     </div>
   </>
-);
+  );
+};
 
 export default CultureAndCode;
+
