@@ -172,6 +172,28 @@ const CultureAndCode = () => (
         opacity: 0.55;
         transition: opacity 0.2s ease, color 0.2s ease;
       }
+
+      .cc-video-wrap {
+        width: 90vw;
+        max-width: 800px;
+        margin: 0 auto;
+        background: #1a1a2e;
+        border: 2px solid #5ecfcf;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #5ecfcf44;
+        padding: 12px;
+      }
+      .cc-video {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        border-radius: 8px;
+        background: #000;
+      }
+      @media (min-width: 768px) {
+        .cc-video { min-height: 360px; }
+      }
       .cc-back-link:hover {
         opacity: 1;
         color: var(--cc-cyan);
