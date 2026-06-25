@@ -204,6 +204,12 @@ const CultureAndCode = () => {
         padding: 8px;
         box-sizing: border-box;
       }
+      .cc-video-stage {
+        position: relative;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+      }
       .cc-video {
         display: block;
         width: 100%;
@@ -212,6 +218,50 @@ const CultureAndCode = () => {
         background: #1a1a2e;
         touch-action: pan-y;
       }
+      .cc-play-overlay {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-width: 160px;
+        min-height: 160px;
+        width: max-content;
+        height: max-content;
+        padding: 24px 32px;
+        background: rgba(10, 10, 26, 0.5);
+        border: 1px solid #5ecfcf44;
+        border-radius: 16px;
+        box-shadow: 0 0 24px rgba(94, 207, 207, 0.25);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        touch-action: manipulation;
+      }
+      .cc-play-overlay:hover,
+      .cc-play-overlay:focus-visible {
+        background: rgba(10, 10, 26, 0.65);
+        box-shadow: 0 0 36px rgba(94, 207, 207, 0.45);
+        transform: translate(0, 0) scale(1.03);
+        outline: none;
+      }
+      .cc-play-logo {
+        width: 64px;
+        height: auto;
+        filter: drop-shadow(0 0 8px rgba(94, 207, 207, 0.55));
+      }
+      .cc-play-label {
+        font-family: 'Silom', 'Courier New', monospace;
+        font-size: 18px;
+        letter-spacing: 0.2em;
+        color: #5ecfcf;
+        text-shadow: 0 0 8px rgba(94, 207, 207, 0.7);
+      }
+
 
       @media (min-width: 768px) {
         .cc-header {
