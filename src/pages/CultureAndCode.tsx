@@ -29,11 +29,23 @@ const CultureAndCode = () => (
         font-display: swap;
       }
 
-      html, body, #root {
-        background-color: #0a0a1a !important;
+      html,
+      body,
+      #root,
+      .app-wrapper {
+        background: #0a0a1a !important;
       }
+
+      html {
+        min-height: 100%;
+      }
+
       body {
-        overscroll-behavior: none;
+        min-height: 100%;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior-y: none;
       }
 
       .cc-root {
@@ -49,80 +61,55 @@ const CultureAndCode = () => (
         width: 100%;
         max-width: 100vw;
         position: relative;
-        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
       }
 
-      /* Sun glow behind the grid */
-      .cc-sun {
-        position: absolute;
-        left: 50%;
-        bottom: -10%;
-        transform: translateX(-50%);
-        width: 1200px;
-        height: 1200px;
-        background: radial-gradient(
-          circle at center,
-          rgba(224, 95, 160, 0.32) 0%,
-          rgba(107, 63, 160, 0.20) 30%,
-          rgba(94, 207, 207, 0.10) 55%,
-          transparent 70%
-        );
-        filter: blur(40px);
-        pointer-events: none;
-        z-index: 0;
+      .cc-page {
+        width: 100%;
+        max-width: 100vw;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background:
+          radial-gradient(circle at 50% 22%, rgba(94, 207, 207, 0.16), transparent 34rem),
+          radial-gradient(circle at 50% 100%, rgba(224, 95, 160, 0.14), transparent 28rem),
+          #0a0a1a;
+        box-sizing: border-box;
       }
 
-      /* Perspective synthwave grid */
-      .cc-grid {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 55vh;
-        perspective: 600px;
-        pointer-events: none;
-        z-index: 0;
-        overflow: hidden;
-      }
-      .cc-grid::before {
-        content: '';
-        position: absolute;
-        inset: -20% -20% -20% -20%;
-        background-image:
-          linear-gradient(to right, rgba(94, 207, 207, 0.32) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(224, 95, 160, 0.32) 1px, transparent 1px);
-        background-size: 60px 60px;
-        transform: rotateX(60deg) translateZ(0);
-        transform-origin: center top;
-        animation: cc-grid-scroll 12s linear infinite;
-        mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
-        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
-      }
-      @keyframes cc-grid-scroll {
-        from { background-position: 0 0; }
-        to   { background-position: 0 60px; }
+      .cc-section {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
       }
 
-      /* Scanlines */
-      .cc-scanlines {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 1;
-        background-image: repeating-linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.03) 0px,
-          rgba(255, 255, 255, 0.03) 1px,
-          transparent 1px,
-          transparent 3px
-        );
-        mix-blend-mode: overlay;
+      .cc-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding-top: 32px;
       }
 
-      .cc-content {
-        position: relative;
-        z-index: 2;
+      .cc-main {
+        display: flex;
+        flex: 1 0 auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding-top: 24px;
+        padding-bottom: 40px;
+        text-align: center;
+      }
+
+      .cc-footer {
+        flex: 0 0 auto;
+        padding-top: 24px;
+        padding-bottom: 32px;
+        text-align: center;
+        background: #0a0a1a;
       }
 
       .cc-wordmark {
@@ -140,7 +127,11 @@ const CultureAndCode = () => (
         font-weight: 700;
         letter-spacing: 0.04em;
         line-height: 1;
+        padding: 0 16px;
+        word-break: keep-all;
+        overflow-wrap: normal;
         color: #fff;
+        font-size: clamp(2.5rem, 12vw, 4.75rem);
         text-shadow:
           0 0 8px rgba(94, 207, 207, 0.9),
           0 0 24px rgba(94, 207, 207, 0.55),
@@ -181,6 +172,11 @@ const CultureAndCode = () => (
         color: var(--cc-text);
         opacity: 0.55;
         transition: opacity 0.2s ease, color 0.2s ease;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        touch-action: manipulation;
       }
 
       .cc-video-wrap {
@@ -198,13 +194,25 @@ const CultureAndCode = () => (
         display: block;
         width: 100%;
         height: auto;
-        min-height: 200px;
         border-radius: 8px;
-        background: #000;
+        background: #1a1a2e;
         touch-action: pan-y;
       }
+
       @media (min-width: 768px) {
-        .cc-video { min-height: 360px; }
+        .cc-header {
+          padding-top: 48px;
+        }
+
+        .cc-main {
+          gap: 32px;
+          padding-top: 32px;
+          padding-bottom: 56px;
+        }
+
+        .cc-headline {
+          font-size: clamp(4.5rem, 8vw, 8rem);
+        }
       }
       .cc-back-link:hover {
         opacity: 1;
@@ -218,7 +226,6 @@ const CultureAndCode = () => (
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .cc-grid::before,
         .cc-headline {
           animation: none !important;
         }
@@ -226,12 +233,8 @@ const CultureAndCode = () => (
     `}</style>
 
     <div className="cc-root">
-      <div className="cc-sun" aria-hidden="true" />
-      <div className="cc-grid" aria-hidden="true" />
-      <div className="cc-scanlines" aria-hidden="true" />
-
-      <div className="cc-content flex flex-col" style={{ minHeight: "100%" }}>
-        <header className="px-4 sm:px-6 md:px-10 pt-8 md:pt-12 flex flex-col items-center">
+      <div className="cc-page">
+        <header className="cc-section cc-header">
           <img
             src="/assets/sdc-logo.png"
             alt="Smiling Data Club"
@@ -240,37 +243,37 @@ const CultureAndCode = () => (
             className="cc-logo w-[96px] sm:w-[120px] h-auto select-none"
             draggable={false}
           />
-          <a href="/" className="cc-back-link uppercase mt-6">← zurück zu Sirius</a>
         </header>
 
-        <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-10 sm:py-16 w-full">
-          <div className="w-full max-w-4xl flex flex-col items-center text-center gap-6 sm:gap-8">
-            <span className="cc-wordmark uppercase">// Event Series</span>
+        <main className="cc-section cc-main">
+          <span className="cc-wordmark uppercase">// Event Series</span>
 
-            <h1 className="cc-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl">
-              Culture &amp; Code
-            </h1>
+          <h1 className="cc-headline">
+            Culture &amp; Code
+          </h1>
 
-            <div className="cc-divider w-32 sm:w-40" />
+          <div className="cc-divider w-32 sm:w-40" />
 
-            <div className="cc-video-wrap">
-              <video
-                src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
-                controls
-                playsInline
-                preload="auto"
-                className="cc-video"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
+          <div className="cc-video-wrap">
+            <video
+              src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
+              controls
+              playsInline
+              preload="auto"
+              className="cc-video"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </main>
 
-        <footer className="px-6 md:px-10 pb-8 pt-4 flex items-center justify-center">
+        <footer className="cc-section cc-footer">
           <span className="cc-wordmark uppercase opacity-60">
             Smiling Data Club &nbsp;·&nbsp; Culture &amp; Code
           </span>
+          <div>
+            <a href="/" className="cc-back-link uppercase">← zurück zu Sirius</a>
+          </div>
         </footer>
       </div>
     </div>
