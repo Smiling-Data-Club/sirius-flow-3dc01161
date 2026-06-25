@@ -354,19 +354,21 @@ const CultureAndCode = () => {
                 <button
                   type="button"
                   onClick={handlePlay}
-                  className="cc-play-overlay"
+                  className={`cc-play-overlay${hiding ? " is-hiding" : ""}`}
                   aria-label="Video abspielen"
                 >
-                  <img
-                    src="/assets/sdc-logo.png"
-                    alt=""
-                    aria-hidden="true"
-                    width={64}
-                    height={64}
-                    className="cc-play-logo"
-                    draggable={false}
-                  />
-                  <span className="cc-play-label">▶ PLAY</span>
+                  <span className="cc-play-logo-wrap">
+                    <img
+                      src="/assets/sdc-logo.png"
+                      alt=""
+                      aria-hidden="true"
+                      width={96}
+                      height={96}
+                      className="cc-play-logo"
+                      draggable={false}
+                    />
+                  </span>
+                  <span className="cc-play-pill">▶ PLAY</span>
                 </button>
               )}
             </div>
