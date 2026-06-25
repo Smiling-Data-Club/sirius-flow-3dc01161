@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import videoAsset from "@/assets/edits-fabius-kopf-20260625-111710.mp4.asset.json";
 
 /**
  * Culture & Code — hidden landing page for the SDC event series.
@@ -222,7 +221,7 @@ const CultureAndCode = () => (
 
             <div className="w-full">
               <video
-                src={videoAsset.url}
+                src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
                 controls
                 playsInline
                 preload="auto"
