@@ -29,6 +29,13 @@ const CultureAndCode = () => (
         font-display: swap;
       }
 
+      html, body, #root {
+        background-color: #0a0a1a !important;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+
       .cc-root {
         --cc-bg: #0a0a1a;
         --cc-cyan: #5ecfcf;
@@ -39,8 +46,10 @@ const CultureAndCode = () => (
         background-color: var(--cc-bg);
         color: var(--cc-text);
         min-height: 100%;
+        width: 100%;
+        max-width: 100vw;
         position: relative;
-        overflow-x: clip;
+        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
       }
 
