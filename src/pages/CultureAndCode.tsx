@@ -7,8 +7,20 @@ import { useRef, useState } from "react";
  * Stable URL: /culture-and-code (QR-friendly).
  */
 
-const CultureAndCode = () => (
+const CultureAndCode = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showOverlay, setShowOverlay] = useState(true);
+
+  const handlePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    setShowOverlay(false);
+    v.play().catch(() => setShowOverlay(true));
+  };
+
+  return (
   <>
+
     <Helmet>
       <title>Culture & Code — Smiling Data Club</title>
       <meta
