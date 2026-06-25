@@ -342,10 +342,16 @@ const CultureAndCode = () => {
                 playsInline
                 preload="auto"
                 className="cc-video"
-                onPlay={() => setShowOverlay(false)}
+                onPlay={() => {
+                  setHiding(true);
+                  window.setTimeout(() => setShowOverlay(false), 300);
+                }}
                 onPause={() => {
                   const v = videoRef.current;
-                  if (v && v.currentTime === 0) setShowOverlay(true);
+                  if (v && v.currentTime === 0) {
+                    setHiding(false);
+                    setShowOverlay(true);
+                  }
                 }}
               >
                 Your browser does not support the video tag.
