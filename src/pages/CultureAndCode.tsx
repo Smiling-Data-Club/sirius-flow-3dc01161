@@ -1,26 +1,10 @@
 import { Helmet } from "react-helmet-async";
+import videoAsset from "@/assets/edits-fabius-kopf-20260625-111710.mp4.asset.json";
 
 /**
  * Culture & Code — hidden landing page for the SDC event series.
  * Stable URL: /culture-and-code (QR-friendly).
  */
-
-import cultureAndCodeVideo from "@/assets/culture-and-code-01.mp4.asset.json";
-const videoSrc: string = cultureAndCodeVideo.url;
-
-const VideoArea = () => (
-  <div className="relative w-full rounded-2xl overflow-hidden bg-black">
-    <video
-      controls
-      playsInline
-      preload="metadata"
-      style={{ maxWidth: "100%", height: "auto", display: "block", width: "100%" }}
-    >
-      <source src={videoSrc} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-);
 
 const CultureAndCode = () => (
   <>
@@ -181,61 +165,6 @@ const CultureAndCode = () => (
         opacity: 0.7;
       }
 
-      /* Video frame with pulsing neon border */
-      .cc-video-frame {
-        background: linear-gradient(160deg, #0f0f24 0%, #14142b 100%);
-        box-shadow:
-          0 0 0 1px rgba(94, 207, 207, 0.45),
-          0 0 24px rgba(94, 207, 207, 0.35),
-          0 0 60px rgba(224, 95, 160, 0.25),
-          inset 0 0 60px rgba(107, 63, 160, 0.18);
-        animation: cc-border-pulse 3.5s ease-in-out infinite;
-      }
-      @keyframes cc-border-pulse {
-        0%, 100% {
-          box-shadow:
-            0 0 0 1px rgba(94, 207, 207, 0.45),
-            0 0 24px rgba(94, 207, 207, 0.35),
-            0 0 60px rgba(224, 95, 160, 0.25),
-            inset 0 0 60px rgba(107, 63, 160, 0.18);
-        }
-        50% {
-          box-shadow:
-            0 0 0 1px rgba(224, 95, 160, 0.6),
-            0 0 32px rgba(224, 95, 160, 0.5),
-            0 0 80px rgba(94, 207, 207, 0.35),
-            inset 0 0 80px rgba(107, 63, 160, 0.25);
-        }
-      }
-
-      .cc-play-pulse {
-        background: rgba(94, 207, 207, 0.12);
-        border: 1px solid rgba(94, 207, 207, 0.6);
-        color: var(--cc-cyan);
-        box-shadow:
-          0 0 24px rgba(94, 207, 207, 0.5),
-          inset 0 0 16px rgba(94, 207, 207, 0.25);
-        animation: cc-play-pulse 2.4s ease-in-out infinite;
-      }
-      @keyframes cc-play-pulse {
-        0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(94, 207, 207, 0.5), inset 0 0 16px rgba(94, 207, 207, 0.25); }
-        50%      { transform: scale(1.06); box-shadow: 0 0 40px rgba(224, 95, 160, 0.6), inset 0 0 22px rgba(224, 95, 160, 0.3); }
-      }
-
-      .cc-placeholder-title {
-        font-family: 'Silom', 'Courier New', monospace;
-        color: #fff;
-        text-shadow:
-          0 0 8px rgba(224, 95, 160, 0.9),
-          0 0 20px rgba(224, 95, 160, 0.45);
-      }
-      .cc-placeholder-sub {
-        font-family: 'Silom', 'Courier New', monospace;
-        color: var(--cc-cyan);
-        opacity: 0.85;
-        letter-spacing: 0.18em;
-      }
-
       .cc-back-link {
         font-family: 'Silom', 'Courier New', monospace;
         letter-spacing: 0.25em;
@@ -257,9 +186,7 @@ const CultureAndCode = () => (
 
       @media (prefers-reduced-motion: reduce) {
         .cc-grid::before,
-        .cc-headline,
-        .cc-video-frame,
-        .cc-play-pulse {
+        .cc-headline {
           animation: none !important;
         }
       }
@@ -294,7 +221,21 @@ const CultureAndCode = () => (
             <div className="cc-divider w-40 mb-12" />
 
             <div className="w-full">
-              <VideoArea />
+              <video
+                src={videoAsset.url}
+                controls
+                playsInline
+                preload="auto"
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: "12px",
+                }}
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </main>
