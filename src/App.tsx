@@ -27,24 +27,26 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/print" element={<Print />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar" element={<Navigate to="/blog/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar" replace />} />
-          <Route path="/key-facts" element={<KeyFacts />} />
-          <Route path="/social" element={<Social />} />
-          <Route path="/ueber-uns" element={<About />} />
-          <Route path="/ueber-uns/team" element={<Team />} />
-          <Route path="/ueber-uns/karriere" element={<Karriere />} />
-          <Route path="/service-area" element={<ServiceArea />} />
-          <Route path="/impressum" element={<Impressum />} />
-          <Route path="/datenschutz" element={<Datenschutz />} />
-          <Route path="/agb" element={<AGB />} />
-          <Route path="/culture-and-code" element={<CultureAndCode />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="app-wrapper">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/print" element={<Print />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar" element={<Navigate to="/blog/was-bedeutet-revisionssicherheit-wo-ist-sie-unverzichtbar" replace />} />
+            <Route path="/key-facts" element={<KeyFacts />} />
+            <Route path="/social" element={<Social />} />
+            <Route path="/ueber-uns" element={<About />} />
+            <Route path="/ueber-uns/team" element={<Team />} />
+            <Route path="/ueber-uns/karriere" element={<Karriere />} />
+            <Route path="/service-area" element={<ServiceArea />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
+            <Route path="/agb" element={<AGB />} />
+            <Route path="/culture-and-code" element={<CultureAndCode />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
