@@ -291,10 +291,6 @@ const CultureAndCode = () => (
               Culture &amp; Code
             </h1>
 
-            <p className="cc-subline text-sm md:text-base uppercase mb-10">
-              Das Video folgt in Kürze.
-            </p>
-
             <div className="cc-divider w-40 mb-12" />
 
             <div className="w-full">
