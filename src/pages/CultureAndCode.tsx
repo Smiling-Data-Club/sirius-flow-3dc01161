@@ -184,14 +184,15 @@ const CultureAndCode = () => (
       }
 
       .cc-video-wrap {
-        width: 90vw;
+        width: 100%;
         max-width: 800px;
         margin: 0 auto;
         background: #1a1a2e;
         border: 2px solid #5ecfcf;
         border-radius: 12px;
         box-shadow: 0 0 20px #5ecfcf44;
-        padding: 12px;
+        padding: 8px;
+        box-sizing: border-box;
       }
       .cc-video {
         display: block;
