@@ -230,7 +230,7 @@ const CultureAndCode = () => {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 16px;
+        gap: 24px;
         padding: 0;
         background: rgba(10, 10, 26, 0.35);
         border: none;
@@ -239,25 +239,29 @@ const CultureAndCode = () => {
         transition: opacity 0.3s ease;
         touch-action: manipulation;
         box-sizing: border-box;
+        z-index: 2;
       }
       .cc-play-overlay.is-hiding {
         opacity: 0;
         pointer-events: none;
       }
+      .cc-video-stage:has(.cc-play-overlay:not(.is-hiding)) .cc-video {
+        pointer-events: none;
+      }
       .cc-play-logo {
-        width: 100px;
+        width: 140px;
         height: auto;
         display: block;
-        filter: drop-shadow(0 0 12px #5ecfcf88);
+        filter: drop-shadow(0 0 14px #5ecfcf88);
       }
       .cc-play-pill {
         background: #5ecfcf;
         color: #0a0a1a;
         font-family: 'Silom', 'Courier New', monospace;
-        font-size: 15px;
+        font-size: 17px;
         letter-spacing: 0.25em;
         border-radius: 999px;
-        padding: 10px 32px;
+        padding: 14px 48px;
         border: none;
         transition: opacity 0.15s ease;
       }
@@ -328,7 +332,7 @@ const CultureAndCode = () => {
               <video
                 ref={videoRef}
                 src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
-                controls
+                controls={!showOverlay}
                 playsInline
                 preload="auto"
                 className="cc-video"
@@ -357,8 +361,8 @@ const CultureAndCode = () => {
                     src="/assets/sdc-logo.png"
                     alt=""
                     aria-hidden="true"
-                    width={100}
-                    height={100}
+                    width={140}
+                    height={140}
                     className="cc-play-logo"
                     draggable={false}
                   />
