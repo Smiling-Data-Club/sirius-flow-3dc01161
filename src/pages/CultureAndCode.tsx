@@ -353,17 +353,15 @@ const CultureAndCode = () => {
                   className={`cc-play-overlay${hiding ? " is-hiding" : ""}`}
                   aria-label="Video abspielen"
                 >
-                  <span className="cc-play-logo-wrap">
-                    <img
-                      src="/assets/sdc-logo.png"
-                      alt=""
-                      aria-hidden="true"
-                      width={96}
-                      height={96}
-                      className="cc-play-logo"
-                      draggable={false}
-                    />
-                  </span>
+                  <img
+                    src="/assets/sdc-logo.png"
+                    alt=""
+                    aria-hidden="true"
+                    width={100}
+                    height={100}
+                    className="cc-play-logo"
+                    draggable={false}
+                  />
                   <span className="cc-play-pill">▶ PLAY</span>
                 </button>
               )}
