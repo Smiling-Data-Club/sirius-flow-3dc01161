@@ -10,12 +10,16 @@ import { useRef, useState } from "react";
 const CultureAndCode = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showOverlay, setShowOverlay] = useState(true);
+  const [hiding, setHiding] = useState(false);
 
   const handlePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    setShowOverlay(false);
-    v.play().catch(() => setShowOverlay(true));
+    setHiding(true);
+    v.play().catch(() => {
+      setHiding(false);
+    });
+    window.setTimeout(() => setShowOverlay(false), 300);
   };
 
   return (
