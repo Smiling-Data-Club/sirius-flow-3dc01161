@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet-async";
+import { useRef, useState } from "react";
+
 
 /**
  * Culture & Code — hidden landing page for the SDC event series.
