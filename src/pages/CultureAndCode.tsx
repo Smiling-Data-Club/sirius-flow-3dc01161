@@ -1,77 +1,26 @@
-import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Play } from "lucide-react";
 
 /**
  * Culture & Code — hidden landing page for the SDC event series.
  * Stable URL: /culture-and-code (QR-friendly).
- *
- * Immersive synthwave layout — bypasses the regular header/footer
- * to keep the SDC atmosphere uninterrupted.
- *
- * To swap in the real video later:
- *   1. Drop file into /public/videos/ (e.g. culture-and-code-01.mp4)
- *   2. Set `videoSrc` below.
  */
 
-// VIDEO_PLACEHOLDER: replace src here once the file is uploaded to /public/videos/
 import cultureAndCodeVideo from "@/assets/culture-and-code-01.mp4.asset.json";
-const videoSrc: string | undefined = cultureAndCodeVideo.url;
-const videoPoster: string | undefined = undefined;
+const videoSrc: string = cultureAndCodeVideo.url;
 
-const VideoArea = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [hasPlayed, setHasPlayed] = useState(false);
-
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el || !videoSrc || hasPlayed) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting && e.intersectionRatio >= 0.6) {
-            el.play().catch(() => {});
-            setHasPlayed(true);
-          }
-        });
-      },
-      { threshold: [0, 0.6, 1] }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [hasPlayed]);
-
-  if (!videoSrc) {
-    return (
-      <div className="cc-video-frame relative aspect-video w-full rounded-2xl overflow-hidden flex flex-col items-center justify-center">
-        <div className="cc-play-pulse w-24 h-24 rounded-full flex items-center justify-center mb-8">
-          <Play className="w-9 h-9" fill="currentColor" />
-        </div>
-        <p className="cc-placeholder-title text-2xl md:text-3xl font-bold tracking-wider text-center px-6">
-          COMING SOON
-        </p>
-        <p className="cc-placeholder-sub mt-3 text-sm md:text-base text-center px-6">
-          Das Video folgt in Kürze.
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="cc-video-frame relative aspect-video w-full rounded-2xl overflow-hidden">
-      <video
-        ref={videoRef}
-        src={videoSrc}
-        poster={videoPoster}
-        controls
-        playsInline
-        muted
-        preload="metadata"
-        className="w-full h-full bg-black"
-      />
-    </div>
-  );
-};
+const VideoArea = () => (
+  <div className="relative w-full rounded-2xl overflow-hidden bg-black">
+    <video
+      controls
+      playsInline
+      preload="metadata"
+      style={{ maxWidth: "100%", height: "auto", display: "block", width: "100%" }}
+    >
+      <source src={videoSrc} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+);
 
 const CultureAndCode = () => (
   <>
@@ -341,10 +290,6 @@ const CultureAndCode = () => (
             <h1 className="cc-headline text-5xl md:text-7xl lg:text-8xl mb-6">
               Culture &amp; Code
             </h1>
-
-            <p className="cc-subline text-sm md:text-base uppercase mb-10">
-              Das Video folgt in Kürze.
-            </p>
 
             <div className="cc-divider w-40 mb-12" />
 
