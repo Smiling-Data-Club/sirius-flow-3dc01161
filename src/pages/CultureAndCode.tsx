@@ -328,7 +328,7 @@ const CultureAndCode = () => {
               <video
                 ref={videoRef}
                 src="/videos/Edits_Fabius_Kopf_20260625_111710.mp4"
-                controls
+                controls={!showOverlay}
                 playsInline
                 preload="auto"
                 className="cc-video"
