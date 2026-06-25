@@ -191,6 +191,7 @@ const CultureAndCode = () => (
         min-height: 200px;
         border-radius: 8px;
         background: #000;
+        touch-action: pan-y;
       }
       @media (min-width: 768px) {
         .cc-video { min-height: 360px; }
