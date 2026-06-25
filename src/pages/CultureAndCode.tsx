@@ -15,7 +15,8 @@ import { Play } from "lucide-react";
  */
 
 // VIDEO_PLACEHOLDER: replace src here once the file is uploaded to /public/videos/
-const videoSrc: string | undefined = undefined;
+import cultureAndCodeVideo from "@/assets/culture-and-code-01.mp4.asset.json";
+const videoSrc: string | undefined = cultureAndCodeVideo.url;
 const videoPoster: string | undefined = undefined;
 
 const VideoArea = () => {
