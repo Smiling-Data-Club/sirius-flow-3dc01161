@@ -361,8 +361,8 @@ const CultureAndCode = () => {
                     src="/assets/sdc-logo.png"
                     alt=""
                     aria-hidden="true"
-                    width={100}
-                    height={100}
+                    width={140}
+                    height={140}
                     className="cc-play-logo"
                     draggable={false}
                   />
