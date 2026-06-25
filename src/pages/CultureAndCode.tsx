@@ -38,9 +38,10 @@ const CultureAndCode = () => (
         font-family: 'Silom', 'Courier New', 'Consolas', monospace;
         background-color: var(--cc-bg);
         color: var(--cc-text);
-        min-height: 100vh;
+        min-height: 100%;
         position: relative;
-        overflow-x: hidden;
+        overflow-x: clip;
+        -webkit-overflow-scrolling: touch;
       }
 
       /* Sun glow behind the grid */
