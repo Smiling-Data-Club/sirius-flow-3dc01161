@@ -220,7 +220,7 @@ const CultureAndCode = () => (
       <div className="cc-grid" aria-hidden="true" />
       <div className="cc-scanlines" aria-hidden="true" />
 
-      <div className="cc-content min-h-screen flex flex-col">
+      <div className="cc-content flex flex-col" style={{ minHeight: "100%" }}>
         <header className="px-6 md:px-10 pt-10 md:pt-12 flex flex-col items-center">
           <img
             src="/assets/sdc-logo.png"
