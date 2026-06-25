@@ -198,44 +198,42 @@ const CultureAndCode = () => {
       }
 
       .cc-video-wrap {
+        position: relative;
         width: 100%;
-        max-width: 800px;
+        max-width: 480px;
         margin: 0 auto;
-        background: #1a1a2e;
-        border: 2px solid #5ecfcf;
+        overflow: hidden;
         border-radius: 12px;
+        border: 2px solid #5ecfcf;
         box-shadow: 0 0 20px #5ecfcf44;
-        padding: 8px;
+        background: #1a1a2e;
         box-sizing: border-box;
       }
       .cc-video-stage {
         position: relative;
         width: 100%;
-        border-radius: 8px;
-        overflow: hidden;
+        aspect-ratio: 9 / 16;
       }
       .cc-video {
-        display: block;
         width: 100%;
-        height: auto;
-        border-radius: 8px;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 9 / 16;
         background: #1a1a2e;
         touch-action: pan-y;
       }
       .cc-play-overlay {
         position: absolute;
         inset: 0;
-        width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-        padding: 24px;
-        background: rgba(10, 10, 26, 0.55);
+        gap: 16px;
+        padding: 0;
+        background: rgba(10, 10, 26, 0.35);
         border: none;
-        border-radius: 12px;
         cursor: pointer;
         opacity: 1;
         transition: opacity 0.3s ease;
@@ -246,17 +244,9 @@ const CultureAndCode = () => {
         opacity: 0;
         pointer-events: none;
       }
-      .cc-play-logo-wrap {
-        background: rgba(10, 10, 26, 0.7);
-        border-radius: 50%;
-        padding: 16px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
       .cc-play-logo {
-        width: 96px;
-        height: 96px;
+        width: 100px;
+        height: auto;
         display: block;
         filter: drop-shadow(0 0 12px #5ecfcf88);
       }
@@ -267,7 +257,7 @@ const CultureAndCode = () => {
         font-size: 15px;
         letter-spacing: 0.25em;
         border-radius: 999px;
-        padding: 10px 28px;
+        padding: 10px 32px;
         border: none;
         transition: opacity 0.15s ease;
       }
