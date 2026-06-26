@@ -265,6 +265,44 @@ const CultureAndCode = () => {
         border: none;
         transition: opacity 0.15s ease;
       }
+      .cc-notice {
+        width: 100%;
+        max-width: 480px;
+        margin: 32px auto 0;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(94, 207, 207, 0.3);
+        border-radius: 12px;
+        padding: 24px;
+        box-sizing: border-box;
+        text-align: left;
+      }
+      .cc-notice-eyebrow {
+        font-family: 'Silom', 'Courier New', monospace;
+        color: #5ecfcf;
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin: 0 0 8px;
+      }
+      .cc-notice-sub {
+        font-family: 'Silom', 'Courier New', monospace;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 0 0 12px;
+        line-height: 1.4;
+      }
+      .cc-notice-body {
+        color: #cccccc;
+        font-size: 14px;
+        line-height: 1.7;
+        font-family: 'Inter', system-ui, sans-serif;
+        margin: 0;
+      }
+      @media (max-width: 480px) {
+        .cc-notice { padding: 20px; }
+      }
+
       .cc-play-overlay:hover .cc-play-pill,
       .cc-play-overlay:active .cc-play-pill,
       .cc-play-overlay:focus-visible .cc-play-pill {
