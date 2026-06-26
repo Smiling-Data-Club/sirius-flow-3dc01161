@@ -279,16 +279,20 @@ const CultureAndCode = () => {
       .cc-notice-eyebrow {
         font-family: 'Silom', 'Courier New', monospace;
         color: #5ecfcf;
-        font-size: 0.75rem;
-        letter-spacing: 0.3em;
+        font-size: 11px;
+        letter-spacing: 0.35em;
+        font-weight: 700;
         text-transform: uppercase;
-        margin: 0 0 8px;
+        margin: 0 0 10px;
+        border-left: 3px solid #5ecfcf;
+        padding-left: 10px;
+        text-shadow: 0 0 10px #5ecfcfbb;
       }
       .cc-notice-sub {
         font-family: 'Silom', 'Courier New', monospace;
         color: #ffffff;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.25rem;
         margin: 0 0 12px;
         line-height: 1.4;
       }
