@@ -409,6 +409,14 @@ const CultureAndCode = () => {
               )}
             </div>
           </div>
+
+          <aside className="cc-notice" aria-label="Hinweis zu Foto- und Videoaufnahmen">
+            <p className="cc-notice-eyebrow">Hinweis</p>
+            <p className="cc-notice-sub">📷 🎥 Hier werden Fotos und Videos gemacht!</p>
+            <p className="cc-notice-body">
+              Während dieser Veranstaltung werden Fotos und Videoaufnahmen gemacht und diese zum Teil für lokale Medien (Presse), in Flyern und Anzeigen sowie im Internet auf unseren Webseiten und in Sozialen Medien veröffentlicht. Gegenstand der Fotos und Videos ist die Veranstaltung als solche und nicht die beteiligten Personen (Art. 6 Abs. 1 lit. f DS-GVO).
+            </p>
+          </aside>
         </main>
 
         <footer className="cc-section cc-footer">
