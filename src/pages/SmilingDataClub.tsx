@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
+import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg.asset.json";
 
 const galleryItems = [
-  { n: 1, label: "Ankommen & Empfang" },
-  { n: 2, label: "Opening Keynote" },
-  { n: 3, label: "Impulsvortrag" },
-  { n: 4, label: "Deep Dives / Expert Lounge" },
-  { n: 5, label: "Abschluss-Keynote" },
-  { n: 6, label: "Übergang in den offenen Teil" },
-  { n: 7, label: "Public Viewing & Ausklang" },
+  { n: 1, label: "Ankommen & Empfang", src: photoArrival.url },
+  { n: 2, label: "Opening Keynote", src: photoKeynote.url },
+  { n: 3, label: "Impulsvortrag", src: photoStage.url },
+  { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon.url },
+  { n: 5, label: "Ausklang & echte Momente", src: photoHug.url },
 ];
 
 
@@ -353,15 +356,29 @@ const SmilingDataClub = () => {
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 40 }}>
             so hat sich der tag angefühlt
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
             {galleryItems.map((g) => (
-              <div key={g.n} className="sdc-placeholder">
-                <div className="num">0{g.n}</div>
-                <div className="lbl">{g.label}</div>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 10, color: "var(--sdc-text-dim)", letterSpacing: "0.2em" }}>
-                  BILD FOLGT
-                </div>
-              </div>
+              <figure
+                key={g.n}
+                style={{
+                  margin: 0,
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  border: "1px solid rgba(0,240,255,0.25)",
+                  boxShadow: "0 0 24px rgba(255,45,146,0.15), 0 0 40px rgba(0,240,255,0.12)",
+                  background: "var(--bg-mid)",
+                }}
+              >
+                <img
+                  src={g.src}
+                  alt={g.label}
+                  loading="lazy"
+                  style={{ display: "block", width: "100%", height: 260, objectFit: "cover" }}
+                />
+                <figcaption style={{ padding: "12px 14px", fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.2em", color: "var(--sdc-text-dim)", textTransform: "uppercase" }}>
+                  0{g.n} · {g.label}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </section>
