@@ -89,29 +89,20 @@ const SmilingDataClub = () => {
           padding-left: 10px;
           text-shadow: 0 0 10px rgba(0,240,255,0.5);
         }
-        /* Headlines — EIN durchgehender Gradient über den GESAMTEN mehrzeiligen
-           Textblock. display:inline-block + box-decoration-break:slice sorgt dafür,
-           dass der Gradient sich über alle Zeilen als ein einziges Bild spannt und
-           nicht pro Zeile/Wort neu startet. */
-        .sdc-grad-headline,
-        .sdc-grad-pc {
-          display: inline-block;
-          -webkit-background-clip: text !important;
-          background-clip: text !important;
-          -webkit-text-fill-color: transparent;
-          color: transparent;
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          background-position: 0 0;
-          -webkit-box-decoration-break: slice;
-          box-decoration-break: slice;
-        }
+        /* Headlines — eine einzige Vollfarbe, dezenter Neon-Glow. Kein Gradient. */
         .sdc-grad-headline {
-          background-image: linear-gradient(135deg, #ff2d92 0%, #ffd700 50%, #00f0ff 100%);
+          color: #ffffff;
+          text-shadow:
+            0 0 18px rgba(255,45,146,0.45),
+            0 0 40px rgba(255,45,146,0.25);
         }
         .sdc-grad-pc {
-          background-image: linear-gradient(135deg, #ff2d92 0%, #00f0ff 100%);
+          color: #ff2d92;
+          text-shadow:
+            0 0 16px rgba(0,240,255,0.35),
+            0 0 32px rgba(255,45,146,0.25);
         }
+
 
 
         /* perspektivisches Neon-Grid */
