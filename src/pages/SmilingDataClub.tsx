@@ -424,7 +424,7 @@ const SmilingDataClub = () => {
           </p>
 
           <div className="sdc-save-date" style={{ marginBottom: 40 }}>
-            <img src={sdcLogo} alt="" style={{ width: 60, marginBottom: 16, filter: "drop-shadow(0 0 12px rgba(255,45,146,0.6))" }} />
+            <SdcLogo variant="sticker" size={96} style={{ marginBottom: 16, filter: "drop-shadow(0 0 12px rgba(255,45,146,0.55))" }} />
             <div className="sdc-label" style={{ display: "inline-block", borderLeft: "none", paddingLeft: 0, color: "var(--sdc-pink)", textShadow: "0 0 10px rgba(255,45,146,0.6)", marginBottom: 12 }}>
               SAVE THE DATE
             </div>
