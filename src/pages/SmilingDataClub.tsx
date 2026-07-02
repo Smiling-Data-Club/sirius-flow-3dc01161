@@ -419,22 +419,6 @@ const SmilingDataClub = () => {
               Ein Tag zwischen KI, echten Gesprächen und einem Innenhof voller Leute, die geblieben sind, bis das Licht ausging.
             </p>
 
-            {/* Welcome video placeholder */}
-            <div style={{ width: "100%", maxWidth: 720, marginTop: 24 }}>
-              <div style={{
-                aspectRatio: "16/9",
-                borderRadius: 16,
-                border: "1.5px solid var(--sdc-cyan)",
-                boxShadow: "0 0 30px rgba(0,240,255,0.35)",
-                background: "linear-gradient(135deg, rgba(255,45,146,0.15), rgba(0,240,255,0.15)), var(--sdc-bg-mid)",
-                display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 10, padding: 24,
-              }}>
-                <div style={{ fontFamily: "'Major Mono Display', monospace", fontSize: 22, color: "var(--sdc-cyan)" }}>▶ welcome</div>
-                <div className="sdc-label" style={{ borderLeft: "none", paddingLeft: 0, color: "var(--sdc-text-dim)" }}>
-                  SDC_Welcome_Folie_Culture_and_Code.mp4 — hier einbinden
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
