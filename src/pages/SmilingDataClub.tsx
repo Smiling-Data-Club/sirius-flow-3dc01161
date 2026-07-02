@@ -356,15 +356,29 @@ const SmilingDataClub = () => {
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 40 }}>
             so hat sich der tag angefühlt
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
             {galleryItems.map((g) => (
-              <div key={g.n} className="sdc-placeholder">
-                <div className="num">0{g.n}</div>
-                <div className="lbl">{g.label}</div>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 10, color: "var(--sdc-text-dim)", letterSpacing: "0.2em" }}>
-                  BILD FOLGT
-                </div>
-              </div>
+              <figure
+                key={g.n}
+                style={{
+                  margin: 0,
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  border: "1px solid rgba(0,240,255,0.25)",
+                  boxShadow: "0 0 24px rgba(255,45,146,0.15), 0 0 40px rgba(0,240,255,0.12)",
+                  background: "var(--bg-mid)",
+                }}
+              >
+                <img
+                  src={g.src}
+                  alt={g.label}
+                  loading="lazy"
+                  style={{ display: "block", width: "100%", height: 260, objectFit: "cover" }}
+                />
+                <figcaption style={{ padding: "12px 14px", fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.2em", color: "var(--sdc-text-dim)", textTransform: "uppercase" }}>
+                  0{g.n} · {g.label}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </section>
