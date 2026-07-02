@@ -104,7 +104,7 @@ const SmilingDataClub = () => {
           background-position: 0 0;
           -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
-ина
+
         }
         .sdc-grad-headline {
           background-image: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-yellow) 50%, var(--neon-cyan) 100%);
