@@ -86,11 +86,13 @@ const SmilingDataClub = () => {
           padding-left: 10px;
           text-shadow: 0 0 10px rgba(0,240,255,0.5);
         }
-        /* Hero headline — EIN durchgehender Gradient über den GESAMTEN Textblock,
-           nicht pro Zeile/Wort. box-decoration-break sorgt dafür, dass mehrzeiliger
-           Text als ein einziges Bild behandelt wird. */
+        /* Headlines — EIN durchgehender Gradient über den GESAMTEN mehrzeiligen
+           Textblock. display:inline-block + box-decoration-break:slice sorgt dafür,
+           dass der Gradient sich über alle Zeilen als ein einziges Bild spannt und
+           nicht pro Zeile/Wort neu startet. */
         .sdc-grad-headline,
         .sdc-grad-pc {
+          display: inline-block;
           -webkit-background-clip: text !important;
           background-clip: text !important;
           -webkit-text-fill-color: transparent;
@@ -98,16 +100,16 @@ const SmilingDataClub = () => {
           background-repeat: no-repeat;
           background-size: 100% 100%;
           background-position: 0 0;
-          -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-
+          -webkit-box-decoration-break: slice;
+          box-decoration-break: slice;
         }
         .sdc-grad-headline {
-          background-image: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-yellow) 50%, var(--neon-cyan) 100%);
+          background-image: linear-gradient(135deg, #ff2d92 0%, #ffd700 50%, #00f0ff 100%);
         }
         .sdc-grad-pc {
-          background-image: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-cyan) 100%);
+          background-image: linear-gradient(135deg, #ff2d92 0%, #00f0ff 100%);
         }
+
 
         /* perspektivisches Neon-Grid */
         .sdc-grid {
