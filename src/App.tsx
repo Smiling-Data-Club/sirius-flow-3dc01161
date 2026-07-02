@@ -45,6 +45,7 @@ const App = () => (
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/agb" element={<AGB />} />
             <Route path="/culture-and-code" element={<CultureAndCode />} />
+            <Route path="/smiling-data-club" element={<SmilingDataClub />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
