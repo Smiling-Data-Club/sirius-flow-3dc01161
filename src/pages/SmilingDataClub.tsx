@@ -10,8 +10,8 @@ import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_golden
 
 const galleryItems = [
   { n: 1, label: "Ankommen & Empfang", src: photoArrival },
-  { n: 2, label: "Opening Keynote", src: photoKeynote },
-  { n: 3, label: "Impulsvortrag", src: photoStage },
+  { n: 2, label: "Opening Keynote", src: photoStage },
+  { n: 3, label: "Impulsvortrag", src: photoKeynote },
   { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon },
   { n: 5, label: "Ausklang & echte Momente", src: photoHug },
 ];
@@ -392,19 +392,20 @@ const SmilingDataClub = () => {
           />
           {/* Grid (reduziert) */}
           <div className="sdc-grid"><div className="sdc-grid-inner" /></div>
-          {/* Bergsilhouette */}
+          {/* Bergsilhouette — dezent, oben im Hero, rein dekorativ */}
           <svg
             aria-hidden
             viewBox="0 0 1200 200"
             preserveAspectRatio="none"
             style={{
-              position: "absolute", left: 0, right: 0, bottom: "38%", width: "100%", height: 120,
-              pointerEvents: "none", zIndex: 1, filter: "drop-shadow(0 0 10px rgba(0,240,255,0.5))",
+              position: "absolute", left: 0, right: 0, top: "8%", width: "100%", height: 70,
+              pointerEvents: "none", zIndex: 0, opacity: 0.28,
+              filter: "drop-shadow(0 0 6px rgba(0,240,255,0.25))",
             }}
           >
             <polyline
               points="0,180 90,120 160,150 240,70 320,140 410,90 500,150 590,60 690,140 780,100 870,160 960,80 1060,150 1140,110 1200,170"
-              fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinejoin="round"
+              fill="none" stroke="#00f0ff" strokeWidth="1.5" strokeLinejoin="round"
             />
           </svg>
 
@@ -418,22 +419,6 @@ const SmilingDataClub = () => {
               Ein Tag zwischen KI, echten Gesprächen und einem Innenhof voller Leute, die geblieben sind, bis das Licht ausging.
             </p>
 
-            {/* Welcome video placeholder */}
-            <div style={{ width: "100%", maxWidth: 720, marginTop: 24 }}>
-              <div style={{
-                aspectRatio: "16/9",
-                borderRadius: 16,
-                border: "1.5px solid var(--sdc-cyan)",
-                boxShadow: "0 0 30px rgba(0,240,255,0.35)",
-                background: "linear-gradient(135deg, rgba(255,45,146,0.15), rgba(0,240,255,0.15)), var(--sdc-bg-mid)",
-                display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 10, padding: 24,
-              }}>
-                <div style={{ fontFamily: "'Major Mono Display', monospace", fontSize: 22, color: "var(--sdc-cyan)" }}>▶ welcome</div>
-                <div className="sdc-label" style={{ borderLeft: "none", paddingLeft: 0, color: "var(--sdc-text-dim)" }}>
-                  SDC_Welcome_Folie_Culture_and_Code.mp4 — hier einbinden
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
