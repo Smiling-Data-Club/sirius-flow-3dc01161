@@ -17,6 +17,7 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import CultureAndCode from "./pages/CultureAndCode";
+import SmilingDataClub from "./pages/SmilingDataClub";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/agb" element={<AGB />} />
             <Route path="/culture-and-code" element={<CultureAndCode />} />
+            <Route path="/smiling-data-club" element={<SmilingDataClub />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
