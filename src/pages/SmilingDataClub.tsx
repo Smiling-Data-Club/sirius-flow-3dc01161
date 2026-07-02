@@ -264,6 +264,116 @@ const SmilingDataClub = () => {
           box-shadow: 0 0 40px rgba(255,45,146,0.2);
           text-align: center;
         }
+
+        /* ========= TIMETABLE ========= */
+        .sdc-timetable {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+          margin-bottom: 40px;
+        }
+        @media (max-width: 780px) {
+          .sdc-timetable { grid-template-columns: 1fr; gap: 32px; }
+        }
+        .sdc-tt-head {
+          font-family: 'Space Mono', monospace;
+          font-size: 13px;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          color: var(--sdc-cyan);
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid rgba(0,240,255,0.35);
+          text-shadow: 0 0 12px rgba(0,240,255,0.4);
+        }
+        .sdc-tt-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+        .sdc-tt-item { display: grid; grid-template-columns: 72px 1fr; column-gap: 16px; row-gap: 4px; align-items: baseline; }
+        .sdc-tt-time {
+          font-family: 'Space Mono', monospace;
+          font-size: 14px;
+          color: var(--sdc-cyan);
+          letter-spacing: 0.05em;
+          grid-row: 1 / span 2;
+          padding-top: 2px;
+        }
+        .sdc-tt-title {
+          font-family: 'Outfit', sans-serif;
+          font-weight: 600;
+          font-size: 17px;
+          color: #ffffff;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px;
+          line-height: 1.35;
+        }
+        .sdc-tt-sub {
+          font-family: 'Outfit', sans-serif;
+          font-size: 13px;
+          color: var(--sdc-text-dim);
+          line-height: 1.5;
+          grid-column: 2;
+        }
+        .sdc-tt-item-highlight {
+          border: 1px solid var(--sdc-pink);
+          border-radius: 12px;
+          padding: 14px 16px;
+          background: rgba(255,45,146,0.06);
+          box-shadow: 0 0 24px rgba(255,45,146,0.18);
+        }
+        .sdc-tt-item-highlight .sdc-tt-time { padding-top: 0; }
+
+        .sdc-pill {
+          display: inline-flex;
+          align-items: center;
+          font-family: 'Space Mono', monospace;
+          font-size: 10px;
+          letter-spacing: 0.2em;
+          text-transform: lowercase;
+          padding: 3px 9px;
+          border-radius: 999px;
+          border: 1px solid;
+          white-space: nowrap;
+        }
+        .sdc-pill-keynote { color: var(--sdc-pink); border-color: var(--sdc-pink); }
+        .sdc-pill-impuls { color: #ff8ac2; border-color: #ff8ac2; }
+        .sdc-pill-closing {
+          color: #ffffff;
+          background: var(--sdc-pink);
+          border-color: var(--sdc-pink);
+          box-shadow: 0 0 14px rgba(255,45,146,0.6);
+        }
+
+        /* ========= SESSIONS BOX ========= */
+        .sdc-sessions-box {
+          border: 1px solid var(--sdc-pink);
+          border-radius: 16px;
+          padding: 24px 28px;
+          background: rgba(255,45,146,0.04);
+          box-shadow: 0 0 26px rgba(255,45,146,0.18);
+        }
+        .sdc-sessions-head {
+          font-family: 'Outfit', sans-serif;
+          font-weight: 600;
+          font-size: 18px;
+          color: var(--sdc-pink);
+          margin-bottom: 18px;
+          display: flex;
+          gap: 8px;
+          align-items: baseline;
+        }
+        .sdc-sessions-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+        .sdc-session {
+          border-left: 3px solid var(--sdc-cyan);
+          padding: 4px 0 4px 14px;
+        }
+        .sdc-session-title {
+          font-family: 'Outfit', sans-serif;
+          font-weight: 600;
+          color: #ffffff;
+          font-size: 15px;
+          margin-bottom: 3px;
+        }
       `}</style>
 
       <div className="sdc-page">
@@ -392,27 +502,105 @@ const SmilingDataClub = () => {
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 24 }}>
             was an dem tag passiert ist
           </h2>
-          <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 820, marginBottom: 40 }}>
-            Los ging's mit Fabians Vision für den Smiling Data Club, gefolgt von Betül Hanischs Impuls zu wertschätzender
-            Führung in der Transformation. Am Nachmittag drei parallele Deep Dives — von der DocuWare-Live-Demo bis zu
-            Neurodivergenz im Business. Den Schlusspunkt setzte Prof. Dr. Hannah Bast von der Uni Freiburg mit einem Blick
-            auf KI, Algorithmen und den Menschen dahinter. Ab 17 Uhr wurde es dann familiär: WM-Public-Viewing im Hof,
-            Musik, und ein Ausklang, den sich niemand hat nehmen lassen wollen.
-          </p>
-
-          {/* Timetable video placeholder */}
-          <div style={{
-            aspectRatio: "16/9",
-            borderRadius: 16,
-            border: "1.5px solid var(--sdc-pink)",
-            boxShadow: "0 0 30px rgba(255,45,146,0.3)",
-            background: "linear-gradient(135deg, rgba(255,45,146,0.18), rgba(181,55,242,0.15)), var(--sdc-bg-mid)",
-            display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 10, padding: 24,
-          }}>
-            <div style={{ fontFamily: "'Major Mono Display', monospace", fontSize: 22, color: "var(--sdc-pink)" }}>▶ timetable</div>
-            <div className="sdc-label" style={{ borderLeft: "none", paddingLeft: 0, color: "var(--sdc-text-dim)" }}>
-              SDC_Timetable_Culture_and_Code.mp4 — hier einbinden
+          {/* Timetable — zweispaltig Vormittag / Nachmittag */}
+          <div className="sdc-timetable">
+            {/* VORMITTAG */}
+            <div className="sdc-tt-col">
+              <div className="sdc-tt-head">Vormittag</div>
+              <ul className="sdc-tt-list">
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">11:00</div>
+                  <div className="sdc-tt-title">Warm-up & Ankommen</div>
+                  <div className="sdc-tt-sub">30 Min · Empfang im Innenhof</div>
+                </li>
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">11:30</div>
+                  <div className="sdc-tt-title">
+                    <span className="sdc-pill sdc-pill-keynote">keynote</span>
+                    Das Lächeln zurückbringen
+                  </div>
+                  <div className="sdc-tt-sub">Fabian Schüler (CEO SIRIUS GmbH) & Bahadir Alaz · 30 Min</div>
+                </li>
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">12:00</div>
+                  <div className="sdc-tt-title">
+                    <span className="sdc-pill sdc-pill-impuls">impuls</span>
+                    Der Mensch nach der Maschine
+                  </div>
+                  <div className="sdc-tt-sub">Betül Hanisch · 45 Min</div>
+                </li>
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">12:45</div>
+                  <div className="sdc-tt-title">Brain-Food Break</div>
+                  <div className="sdc-tt-sub">30 Min · Coffee Bike & Fingerfood</div>
+                </li>
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">13:15</div>
+                  <div className="sdc-tt-title">Parallele Sessions</div>
+                  <div className="sdc-tt-sub">Siehe Session-Box unten</div>
+                </li>
+              </ul>
             </div>
+
+            {/* NACHMITTAG */}
+            <div className="sdc-tt-col">
+              <div className="sdc-tt-head">Nachmittag</div>
+              <ul className="sdc-tt-list">
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">14:20</div>
+                  <div className="sdc-tt-title">
+                    <span className="sdc-pill sdc-pill-impuls">impuls</span>
+                    AI meets EQ
+                  </div>
+                  <div className="sdc-tt-sub">Josef R. Schneider · 20 Min</div>
+                </li>
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">14:40</div>
+                  <div className="sdc-tt-title">Coffee & Switch Break</div>
+                  <div className="sdc-tt-sub">50 Min</div>
+                </li>
+                <li className="sdc-tt-item sdc-tt-item-highlight">
+                  <div className="sdc-tt-time">15:30</div>
+                  <div className="sdc-tt-title">
+                    <span className="sdc-pill sdc-pill-closing">★ closing keynote</span>
+                    Prof. Dr. Hannah Bast
+                  </div>
+                  <div className="sdc-tt-sub">Universität Freiburg · KI, Algorithmen & der Mensch dahinter · 45 Min</div>
+                </li>
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">16:15</div>
+                  <div className="sdc-tt-title">Q&A mit Prof. Dr. Hannah Bast</div>
+                  <div className="sdc-tt-sub">15 Min</div>
+                </li>
+                <li className="sdc-tt-item">
+                  <div className="sdc-tt-time">16:30</div>
+                  <div className="sdc-tt-title">Ausklang & Networking</div>
+                  <div className="sdc-tt-sub">Open End · WM-Public-Viewing im Hof</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* PARALLELE SESSIONS */}
+          <div className="sdc-sessions-box">
+            <div className="sdc-sessions-head">
+              <span className="sdc-tt-time" style={{ fontSize: 15 }}>13:15</span>
+              <span>· Parallele Sessions</span>
+            </div>
+            <ul className="sdc-sessions-list">
+              <li className="sdc-session" style={{ borderLeftColor: "#b537f2" }}>
+                <div className="sdc-session-title">Ask-the-Expert-Lounge: Zoho MCP live</div>
+                <div className="sdc-tt-sub">Bahadir Alaz · 1 Std 15 Min</div>
+              </li>
+              <li className="sdc-session" style={{ borderLeftColor: "var(--sdc-cyan)" }}>
+                <div className="sdc-session-title">Deep Dive A — The NEW DocuWare</div>
+                <div className="sdc-tt-sub">Live-Demo · 1 Std</div>
+              </li>
+              <li className="sdc-session" style={{ borderLeftColor: "var(--sdc-pink)" }}>
+                <div className="sdc-session-title">Deep Dive B — Leadership-Workshop</div>
+                <div className="sdc-tt-sub">Betül Hanisch · 1 Std 30 Min</div>
+              </li>
+            </ul>
           </div>
         </section>
 
