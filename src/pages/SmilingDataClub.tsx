@@ -90,19 +90,27 @@ const SmilingDataClub = () => {
           padding-left: 10px;
           text-shadow: 0 0 10px rgba(0,240,255,0.5);
         }
-        /* Hero headline — 3-stop diagonal gradient across the whole text */
-        .sdc-grad-headline {
-          background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-yellow) 50%, var(--neon-cyan) 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-        /* Slide headlines — 2-stop diagonal gradient */
+        /* Hero headline — EIN durchgehender Gradient über den GESAMTEN Textblock,
+           nicht pro Zeile/Wort. box-decoration-break sorgt dafür, dass mehrzeiliger
+           Text als ein einziges Bild behandelt wird. */
+        .sdc-grad-headline,
         .sdc-grad-pc {
-          background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-cyan) 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
+          -webkit-background-clip: text !important;
+          background-clip: text !important;
+          -webkit-text-fill-color: transparent;
           color: transparent;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-position: 0 0;
+          -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+
+        }
+        .sdc-grad-headline {
+          background-image: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-yellow) 50%, var(--neon-cyan) 100%);
+        }
+        .sdc-grad-pc {
+          background-image: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-cyan) 100%);
         }
 
         /* perspektivisches Neon-Grid */
