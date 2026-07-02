@@ -130,16 +130,16 @@ const SmilingDataClub = () => {
           top: 0;
           bottom: -50%;
           background-image:
-            linear-gradient(to right, rgba(255,45,146,0.5) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,240,255,0.5) 1px, transparent 1px);
-          background-size: 60px 60px;
+            linear-gradient(to right, rgba(255,45,146,0.28) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,240,255,0.28) 1px, transparent 1px);
+          background-size: 100px 100px;
           transform: rotateX(60deg);
           transform-origin: 50% 0%;
-          animation: sdc-grid-scroll 12s linear infinite;
+          animation: sdc-grid-scroll 14s linear infinite;
         }
         @keyframes sdc-grid-scroll {
           from { background-position: 0 0; }
-          to   { background-position: 0 60px; }
+          to   { background-position: 0 100px; }
         }
         .sdc-glow {
           position: absolute;
