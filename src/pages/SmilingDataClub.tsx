@@ -2,18 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
-import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg";
+import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg";
+import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg";
+import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg";
+import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg";
 
 const galleryItems = [
-  { n: 1, label: "Ankommen & Empfang", src: photoArrival.url },
-  { n: 2, label: "Opening Keynote", src: photoKeynote.url },
-  { n: 3, label: "Impulsvortrag", src: photoStage.url },
-  { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon.url },
-  { n: 5, label: "Ausklang & echte Momente", src: photoHug.url },
+  { n: 1, label: "Ankommen & Empfang", src: photoArrival },
+  { n: 2, label: "Opening Keynote", src: photoKeynote },
+  { n: 3, label: "Impulsvortrag", src: photoStage },
+  { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon },
+  { n: 5, label: "Ausklang & echte Momente", src: photoHug },
 ];
 
 
@@ -412,7 +412,7 @@ const SmilingDataClub = () => {
             <SdcLogo size={200} style={{ filter: "drop-shadow(0 0 20px rgba(0,240,255,0.35))" }} />
             <div className="sdc-label">// KICK-OFF · 01.07.2026 · FREIBURG</div>
             <h1 className="sdc-grad-headline" style={{ fontSize: "clamp(28px, 5.5vw, 56px)", lineHeight: 1.15, maxWidth: 900, margin: 0 }}>
-              gestern war smiling data club. und es war genau das, was wir uns erträumt haben.
+              gestern war culture & code. unser erstes smiling data club event — und es war genau das, was wir uns erträumt haben.
             </h1>
             <p style={{ fontSize: "clamp(16px, 2vw, 20px)", color: "var(--sdc-text-soft)", maxWidth: 640, lineHeight: 1.6, margin: 0 }}>
               Ein Tag zwischen KI, echten Gesprächen und einem Innenhof voller Leute, die geblieben sind, bis das Licht ausging.
@@ -523,7 +523,7 @@ const SmilingDataClub = () => {
             das war der anfang
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780, marginBottom: 48 }}>
-            Smiling Data Club war kein einmaliges Ding. Der nächste Termin steht noch nicht fest — wird aber kommen. Trag
+            Culture & Code war kein einmaliges Ding. Der nächste Smiling Data Club Termin steht noch nicht fest — wird aber kommen. Trag
             dich ein, dann bist du der/die Erste, die/der Bescheid bekommt.
           </p>
 
@@ -533,7 +533,7 @@ const SmilingDataClub = () => {
               SAVE THE DATE
             </div>
             <h3 className="sdc-grad-pc" style={{ fontSize: "clamp(24px, 3.5vw, 36px)", margin: "0 0 12px" }}>
-              nächster smiling data club
+              nächstes smiling data club event
             </h3>
             <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 14, color: "var(--sdc-text-soft)", letterSpacing: "0.1em" }}>
               Termin: folgt in Kürze
