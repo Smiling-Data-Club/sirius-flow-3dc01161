@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
+import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg.asset.json";
 
 const galleryItems = [
-  { n: 1, label: "Ankommen & Empfang" },
-  { n: 2, label: "Opening Keynote" },
-  { n: 3, label: "Impulsvortrag" },
-  { n: 4, label: "Deep Dives / Expert Lounge" },
-  { n: 5, label: "Abschluss-Keynote" },
-  { n: 6, label: "Übergang in den offenen Teil" },
-  { n: 7, label: "Public Viewing & Ausklang" },
+  { n: 1, label: "Ankommen & Empfang", src: photoArrival.url },
+  { n: 2, label: "Opening Keynote", src: photoKeynote.url },
+  { n: 3, label: "Impulsvortrag", src: photoStage.url },
+  { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon.url },
+  { n: 5, label: "Ausklang & echte Momente", src: photoHug.url },
 ];
 
 
