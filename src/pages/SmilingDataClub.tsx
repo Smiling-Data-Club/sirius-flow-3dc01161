@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
-import sdcLogo from "@/assets/sdc-logo.png";
+import SdcLogo from "@/components/SdcLogo";
 
 const galleryItems = [
   { n: 1, label: "Ankommen & Empfang" },
