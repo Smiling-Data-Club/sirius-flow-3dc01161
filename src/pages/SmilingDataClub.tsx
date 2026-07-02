@@ -533,7 +533,7 @@ const SmilingDataClub = () => {
               SAVE THE DATE
             </div>
             <h3 className="sdc-grad-pc" style={{ fontSize: "clamp(24px, 3.5vw, 36px)", margin: "0 0 12px" }}>
-              nächster smiling data club
+              nächstes smiling data club event
             </h3>
             <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 14, color: "var(--sdc-text-soft)", letterSpacing: "0.1em" }}>
               Termin: folgt in Kürze
