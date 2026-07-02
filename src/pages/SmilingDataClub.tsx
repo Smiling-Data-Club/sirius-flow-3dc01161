@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
-import sdcLogo from "@/assets/sdc-logo.png";
+import SdcLogo from "@/components/SdcLogo";
 
 const galleryItems = [
   { n: 1, label: "Ankommen & Empfang" },
@@ -130,16 +130,16 @@ const SmilingDataClub = () => {
           top: 0;
           bottom: -50%;
           background-image:
-            linear-gradient(to right, rgba(255,45,146,0.5) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,240,255,0.5) 1px, transparent 1px);
-          background-size: 60px 60px;
+            linear-gradient(to right, rgba(255,45,146,0.28) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,240,255,0.28) 1px, transparent 1px);
+          background-size: 100px 100px;
           transform: rotateX(60deg);
           transform-origin: 50% 0%;
-          animation: sdc-grid-scroll 12s linear infinite;
+          animation: sdc-grid-scroll 14s linear infinite;
         }
         @keyframes sdc-grid-scroll {
           from { background-position: 0 0; }
-          to   { background-position: 0 60px; }
+          to   { background-position: 0 100px; }
         }
         .sdc-glow {
           position: absolute;
@@ -266,12 +266,47 @@ const SmilingDataClub = () => {
       <div className="sdc-page">
         {/* HERO */}
         <section className="sdc-section" style={{ paddingTop: 60, paddingBottom: 40, textAlign: "center", minHeight: "80vh" }}>
-          <div className="sdc-glow" style={{ width: 500, height: 500, background: "var(--sdc-pink)", top: -100, left: "50%", transform: "translateX(-50%)" }} />
+          {/* Radialer Glow von unten/mitte */}
+          <div
+            aria-hidden
+            style={{
+              position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+              background:
+                "radial-gradient(60% 45% at 50% 78%, rgba(255,45,146,0.28), transparent 70%), radial-gradient(50% 35% at 50% 95%, rgba(181,55,242,0.35), transparent 70%)",
+            }}
+          />
+          {/* Sterne */}
+          <div
+            aria-hidden
+            style={{
+              position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, opacity: 0.7,
+              backgroundImage:
+                "radial-gradient(1px 1px at 12% 18%, #fff, transparent 50%), radial-gradient(1.2px 1.2px at 78% 12%, #fff, transparent 50%), radial-gradient(1px 1px at 32% 32%, #fff, transparent 50%), radial-gradient(1px 1px at 88% 40%, #fff, transparent 50%), radial-gradient(1.4px 1.4px at 22% 55%, #fff, transparent 50%), radial-gradient(1px 1px at 65% 22%, #fff, transparent 50%), radial-gradient(1px 1px at 50% 8%, #fff, transparent 50%)",
+              maskImage: "linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%)",
+            }}
+          />
+          {/* Grid (reduziert) */}
           <div className="sdc-grid"><div className="sdc-grid-inner" /></div>
+          {/* Bergsilhouette */}
+          <svg
+            aria-hidden
+            viewBox="0 0 1200 200"
+            preserveAspectRatio="none"
+            style={{
+              position: "absolute", left: 0, right: 0, bottom: "38%", width: "100%", height: 120,
+              pointerEvents: "none", zIndex: 1, filter: "drop-shadow(0 0 10px rgba(0,240,255,0.5))",
+            }}
+          >
+            <polyline
+              points="0,180 90,120 160,150 240,70 320,140 410,90 500,150 590,60 690,140 780,100 870,160 960,80 1060,150 1140,110 1200,170"
+              fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinejoin="round"
+            />
+          </svg>
 
           <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 32 }}>
-            <img src={sdcLogo} alt="Smiling Data Club" style={{ width: 120, filter: "drop-shadow(0 0 20px rgba(0,240,255,0.5))" }} />
-            <div className="sdc-label">SIRIUS presents · Culture & Code · 01.07.2026</div>
+            <SdcLogo size={200} style={{ filter: "drop-shadow(0 0 20px rgba(0,240,255,0.35))" }} />
+            <div className="sdc-label">// KICK-OFF · 01.07.2026 · FREIBURG</div>
             <h1 className="sdc-grad-headline" style={{ fontSize: "clamp(28px, 5.5vw, 56px)", lineHeight: 1.15, maxWidth: 900, margin: 0 }}>
               gestern war smiling data club. und es war genau das, was wir uns erträumt haben.
             </h1>
@@ -389,7 +424,7 @@ const SmilingDataClub = () => {
           </p>
 
           <div className="sdc-save-date" style={{ marginBottom: 40 }}>
-            <img src={sdcLogo} alt="" style={{ width: 60, marginBottom: 16, filter: "drop-shadow(0 0 12px rgba(255,45,146,0.6))" }} />
+            <SdcLogo variant="sticker" size={96} style={{ marginBottom: 16, filter: "drop-shadow(0 0 12px rgba(255,45,146,0.55))" }} />
             <div className="sdc-label" style={{ display: "inline-block", borderLeft: "none", paddingLeft: 0, color: "var(--sdc-pink)", textShadow: "0 0 10px rgba(255,45,146,0.6)", marginBottom: 12 }}>
               SAVE THE DATE
             </div>
