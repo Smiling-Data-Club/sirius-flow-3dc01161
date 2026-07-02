@@ -89,29 +89,20 @@ const SmilingDataClub = () => {
           padding-left: 10px;
           text-shadow: 0 0 10px rgba(0,240,255,0.5);
         }
-        /* Headlines — EIN durchgehender Gradient über den GESAMTEN mehrzeiligen
-           Textblock. display:inline-block + box-decoration-break:slice sorgt dafür,
-           dass der Gradient sich über alle Zeilen als ein einziges Bild spannt und
-           nicht pro Zeile/Wort neu startet. */
-        .sdc-grad-headline,
-        .sdc-grad-pc {
-          display: inline-block;
-          -webkit-background-clip: text !important;
-          background-clip: text !important;
-          -webkit-text-fill-color: transparent;
-          color: transparent;
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          background-position: 0 0;
-          -webkit-box-decoration-break: slice;
-          box-decoration-break: slice;
-        }
+        /* Headlines — eine einzige Vollfarbe, dezenter Neon-Glow. Kein Gradient. */
         .sdc-grad-headline {
-          background-image: linear-gradient(135deg, #ff2d92 0%, #ffd700 50%, #00f0ff 100%);
+          color: #ffffff;
+          text-shadow:
+            0 0 18px rgba(255,45,146,0.45),
+            0 0 40px rgba(255,45,146,0.25);
         }
         .sdc-grad-pc {
-          background-image: linear-gradient(135deg, #ff2d92 0%, #00f0ff 100%);
+          color: #ff2d92;
+          text-shadow:
+            0 0 16px rgba(0,240,255,0.35),
+            0 0 32px rgba(255,45,146,0.25);
         }
+
 
 
         /* perspektivisches Neon-Grid */
@@ -502,107 +493,15 @@ const SmilingDataClub = () => {
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 24 }}>
             was an dem tag passiert ist
           </h2>
-          {/* Timetable — zweispaltig Vormittag / Nachmittag */}
-          <div className="sdc-timetable">
-            {/* VORMITTAG */}
-            <div className="sdc-tt-col">
-              <div className="sdc-tt-head">Vormittag</div>
-              <ul className="sdc-tt-list">
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">11:00</div>
-                  <div className="sdc-tt-title">Warm-up & Ankommen</div>
-                  <div className="sdc-tt-sub">30 Min · Empfang im Innenhof</div>
-                </li>
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">11:30</div>
-                  <div className="sdc-tt-title">
-                    <span className="sdc-pill sdc-pill-keynote">keynote</span>
-                    Das Lächeln zurückbringen
-                  </div>
-                  <div className="sdc-tt-sub">Fabian Schüler (CEO SIRIUS GmbH) & Bahadir Alaz · 30 Min</div>
-                </li>
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">12:00</div>
-                  <div className="sdc-tt-title">
-                    <span className="sdc-pill sdc-pill-impuls">impuls</span>
-                    Der Mensch nach der Maschine
-                  </div>
-                  <div className="sdc-tt-sub">Betül Hanisch · 45 Min</div>
-                </li>
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">12:45</div>
-                  <div className="sdc-tt-title">Brain-Food Break</div>
-                  <div className="sdc-tt-sub">30 Min · Coffee Bike & Fingerfood</div>
-                </li>
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">13:15</div>
-                  <div className="sdc-tt-title">Parallele Sessions</div>
-                  <div className="sdc-tt-sub">Siehe Session-Box unten</div>
-                </li>
-              </ul>
-            </div>
-
-            {/* NACHMITTAG */}
-            <div className="sdc-tt-col">
-              <div className="sdc-tt-head">Nachmittag</div>
-              <ul className="sdc-tt-list">
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">14:20</div>
-                  <div className="sdc-tt-title">
-                    <span className="sdc-pill sdc-pill-impuls">impuls</span>
-                    AI meets EQ
-                  </div>
-                  <div className="sdc-tt-sub">Josef R. Schneider · 20 Min</div>
-                </li>
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">14:40</div>
-                  <div className="sdc-tt-title">Coffee & Switch Break</div>
-                  <div className="sdc-tt-sub">50 Min</div>
-                </li>
-                <li className="sdc-tt-item sdc-tt-item-highlight">
-                  <div className="sdc-tt-time">15:30</div>
-                  <div className="sdc-tt-title">
-                    <span className="sdc-pill sdc-pill-closing">★ closing keynote</span>
-                    Prof. Dr. Hannah Bast
-                  </div>
-                  <div className="sdc-tt-sub">Universität Freiburg · KI, Algorithmen & der Mensch dahinter · 45 Min</div>
-                </li>
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">16:15</div>
-                  <div className="sdc-tt-title">Q&A mit Prof. Dr. Hannah Bast</div>
-                  <div className="sdc-tt-sub">15 Min</div>
-                </li>
-                <li className="sdc-tt-item">
-                  <div className="sdc-tt-time">16:30</div>
-                  <div className="sdc-tt-title">Ausklang & Networking</div>
-                  <div className="sdc-tt-sub">Open End · WM-Public-Viewing im Hof</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* PARALLELE SESSIONS */}
-          <div className="sdc-sessions-box">
-            <div className="sdc-sessions-head">
-              <span className="sdc-tt-time" style={{ fontSize: 15 }}>13:15</span>
-              <span>· Parallele Sessions</span>
-            </div>
-            <ul className="sdc-sessions-list">
-              <li className="sdc-session" style={{ borderLeftColor: "#b537f2" }}>
-                <div className="sdc-session-title">Ask-the-Expert-Lounge: Zoho MCP live</div>
-                <div className="sdc-tt-sub">Bahadir Alaz · 1 Std 15 Min</div>
-              </li>
-              <li className="sdc-session" style={{ borderLeftColor: "var(--sdc-cyan)" }}>
-                <div className="sdc-session-title">Deep Dive A — The NEW DocuWare</div>
-                <div className="sdc-tt-sub">Live-Demo · 1 Std</div>
-              </li>
-              <li className="sdc-session" style={{ borderLeftColor: "var(--sdc-pink)" }}>
-                <div className="sdc-session-title">Deep Dive B — Leadership-Workshop</div>
-                <div className="sdc-tt-sub">Betül Hanisch · 1 Std 30 Min</div>
-              </li>
-            </ul>
-          </div>
+          <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780 }}>
+            Zwei Keynotes, drei Impulse, parallele Deep-Dives und viel Zeit dazwischen. Fabian Schüler und Bahadir Alaz
+            haben eröffnet, Betül Hanisch hat über den Menschen nach der Maschine gesprochen, Josef R. Schneider über AI &
+            EQ. Prof. Dr. Hannah Bast von der Uni Freiburg hat den Tag mit einer Closing-Keynote über KI, Algorithmen und
+            den Menschen dahinter geschlossen. Ausgeklungen ist der Tag im Innenhof — mit WM-Public-Viewing, Coffee Bike
+            und offenen Gesprächen bis das Licht ausging.
+          </p>
         </section>
+
 
         {/* DANKE */}
         <section className="sdc-section" style={{ textAlign: "center" }}>
