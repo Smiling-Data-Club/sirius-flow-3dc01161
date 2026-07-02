@@ -13,12 +13,8 @@ const galleryItems = [
   { n: 7, label: "Public Viewing & Ausklang" },
 ];
 
-const quotes = [
-  { text: "Endlich mal ein Event, das sich nicht wie ein Event angefühlt hat.", author: "Teilnehmerin, Mittelstand" },
-  { text: "Ehrlich, warm, tech — die Mischung habe ich so noch nirgends erlebt.", author: "Gast aus Freiburg" },
-  { text: "Ich bin nur für zwei Stunden gekommen. Geblieben bin ich, bis das Licht ausging.", author: "IT-Leiter" },
-  { text: "Man hat gespürt, dass hier Menschen mit Herzblut etwas gebaut haben.", author: "Speaker-Kollegin" },
-];
+
+
 
 const SmilingDataClub = () => {
   const [email, setEmail] = useState("");
