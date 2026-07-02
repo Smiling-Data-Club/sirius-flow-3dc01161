@@ -523,7 +523,7 @@ const SmilingDataClub = () => {
             das war der anfang
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780, marginBottom: 48 }}>
-            Smiling Data Club war kein einmaliges Ding. Der nächste Termin steht noch nicht fest — wird aber kommen. Trag
+            Culture & Code war kein einmaliges Ding. Der nächste Smiling Data Club Termin steht noch nicht fest — wird aber kommen. Trag
             dich ein, dann bist du der/die Erste, die/der Bescheid bekommt.
           </p>
 
