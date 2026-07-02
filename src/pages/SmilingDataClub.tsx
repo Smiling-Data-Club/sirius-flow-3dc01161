@@ -333,26 +333,8 @@ const SmilingDataClub = () => {
           </div>
         </section>
 
-        {/* ZITATE */}
-        <section className="sdc-section">
-          <div className="sdc-label" style={{ marginBottom: 16 }}>03 · Was gesagt wurde</div>
-          <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 40 }}>
-            das kam bei euch an
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
-            {quotes.map((q, i) => (
-              <div key={i} className="sdc-card">
-                <div style={{ fontFamily: "'Major Mono Display', monospace", fontSize: 40, color: "var(--sdc-pink)", lineHeight: 0.8, marginBottom: 8 }}>„</div>
-                <p style={{ fontSize: 17, lineHeight: 1.6, color: "var(--sdc-text)", margin: 0, marginBottom: 20 }}>
-                  {q.text}
-                </p>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, letterSpacing: "0.15em", color: "var(--sdc-cyan)", textTransform: "uppercase" }}>
-                  — {q.author}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+
+
 
         {/* PROGRAMM-RECAP */}
         <section className="sdc-section">
