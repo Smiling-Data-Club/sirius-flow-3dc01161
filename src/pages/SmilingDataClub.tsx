@@ -10,8 +10,8 @@ import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_golden
 
 const galleryItems = [
   { n: 1, label: "Ankommen & Empfang", src: photoArrival },
-  { n: 2, label: "Opening Keynote", src: photoKeynote },
-  { n: 3, label: "Impulsvortrag", src: photoStage },
+  { n: 2, label: "Opening Keynote", src: photoStage },
+  { n: 3, label: "Impulsvortrag", src: photoKeynote },
   { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon },
   { n: 5, label: "Ausklang & echte Momente", src: photoHug },
 ];
