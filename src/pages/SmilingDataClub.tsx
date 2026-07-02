@@ -38,48 +38,68 @@ const SmilingDataClub = () => {
         @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;700&display=swap');
 
         .sdc-page {
-          --sdc-bg-deep: #0a0420;
-          --sdc-bg-mid: #1a0b3d;
-          --sdc-bg-hi: #2d0f5e;
-          --sdc-pink: #ff2d92;
-          --sdc-cyan: #00f0ff;
-          --sdc-purple: #b537f2;
-          --sdc-yellow: #ffd700;
-          --sdc-green: #00ff88;
-          --sdc-text: #ffffff;
-          --sdc-text-soft: #e0d4ff;
-          --sdc-text-dim: #9d8bc7;
-          background: var(--sdc-bg-deep);
-          color: var(--sdc-text);
+          --bg-deep: #0a0420;
+          --bg-mid: #1a0b3d;
+          --bg-light: #2d0f5e;
+          --neon-pink: #ff2d92;
+          --neon-cyan: #00f0ff;
+          --neon-purple: #b537f2;
+          --neon-yellow: #ffd700;
+          --neon-green: #00ff88;
+          --text-bright: #ffffff;
+          --text-soft: #e0d4ff;
+          --text-dim: #9d8bc7;
+
+          /* Legacy aliases (kept so existing rules below keep working) */
+          --sdc-bg-deep: var(--bg-deep);
+          --sdc-bg-mid: var(--bg-mid);
+          --sdc-bg-hi: var(--bg-light);
+          --sdc-pink: var(--neon-pink);
+          --sdc-cyan: var(--neon-cyan);
+          --sdc-purple: var(--neon-purple);
+          --sdc-yellow: var(--neon-yellow);
+          --sdc-green: var(--neon-green);
+          --sdc-text: var(--text-bright);
+          --sdc-text-soft: var(--text-soft);
+          --sdc-text-dim: var(--text-dim);
+
+          background: var(--bg-deep);
+          color: var(--text-bright);
           font-family: 'Outfit', system-ui, sans-serif;
           font-weight: 300;
           position: relative;
           overflow-x: clip;
         }
-        .sdc-page h1, .sdc-page h2, .sdc-page h3 {
+        .sdc-page h1, .sdc-page h2, .sdc-page h3,
+        .sdc-page h4, .sdc-page h5, .sdc-page h6 {
           font-family: 'Major Mono Display', monospace;
           text-transform: lowercase;
           font-weight: 400;
-          letter-spacing: 0.01em;
+          letter-spacing: 0.04em;
+        }
+        .sdc-page p, .sdc-page li, .sdc-page span, .sdc-page a, .sdc-page div {
+          font-family: 'Outfit', system-ui, sans-serif;
         }
         .sdc-label {
           font-family: 'Space Mono', monospace;
           font-size: 11px;
           letter-spacing: 0.35em;
           text-transform: uppercase;
-          color: var(--sdc-cyan);
-          border-left: 3px solid var(--sdc-cyan);
+          color: var(--neon-cyan);
+          border-left: 3px solid var(--neon-cyan);
           padding-left: 10px;
           text-shadow: 0 0 10px rgba(0,240,255,0.5);
         }
+        /* Hero headline — 3-stop diagonal gradient across the whole text */
         .sdc-grad-headline {
-          background: linear-gradient(90deg, var(--sdc-pink), var(--sdc-yellow), var(--sdc-cyan));
+          background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-yellow) 50%, var(--neon-cyan) 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
         }
+        /* Slide headlines — 2-stop diagonal gradient */
         .sdc-grad-pc {
-          background: linear-gradient(90deg, var(--sdc-pink), var(--sdc-cyan));
+          background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-cyan) 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
