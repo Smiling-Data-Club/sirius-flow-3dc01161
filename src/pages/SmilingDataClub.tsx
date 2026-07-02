@@ -2,18 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
-import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg.asset.json";
-import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg.asset.json";
+import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg";
+import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg";
+import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg";
+import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg";
+import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg";
 
 const galleryItems = [
-  { n: 1, label: "Ankommen & Empfang", src: photoArrival.url },
-  { n: 2, label: "Opening Keynote", src: photoKeynote.url },
-  { n: 3, label: "Impulsvortrag", src: photoStage.url },
-  { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon.url },
-  { n: 5, label: "Ausklang & echte Momente", src: photoHug.url },
+  { n: 1, label: "Ankommen & Empfang", src: photoArrival },
+  { n: 2, label: "Opening Keynote", src: photoKeynote },
+  { n: 3, label: "Impulsvortrag", src: photoStage },
+  { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon },
+  { n: 5, label: "Ausklang & echte Momente", src: photoHug },
 ];
 
 
