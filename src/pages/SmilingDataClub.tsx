@@ -264,6 +264,116 @@ const SmilingDataClub = () => {
           box-shadow: 0 0 40px rgba(255,45,146,0.2);
           text-align: center;
         }
+
+        /* ========= TIMETABLE ========= */
+        .sdc-timetable {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+          margin-bottom: 40px;
+        }
+        @media (max-width: 780px) {
+          .sdc-timetable { grid-template-columns: 1fr; gap: 32px; }
+        }
+        .sdc-tt-head {
+          font-family: 'Space Mono', monospace;
+          font-size: 13px;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          color: var(--sdc-cyan);
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid rgba(0,240,255,0.35);
+          text-shadow: 0 0 12px rgba(0,240,255,0.4);
+        }
+        .sdc-tt-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+        .sdc-tt-item { display: grid; grid-template-columns: 72px 1fr; column-gap: 16px; row-gap: 4px; align-items: baseline; }
+        .sdc-tt-time {
+          font-family: 'Space Mono', monospace;
+          font-size: 14px;
+          color: var(--sdc-cyan);
+          letter-spacing: 0.05em;
+          grid-row: 1 / span 2;
+          padding-top: 2px;
+        }
+        .sdc-tt-title {
+          font-family: 'Outfit', sans-serif;
+          font-weight: 600;
+          font-size: 17px;
+          color: #ffffff;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px;
+          line-height: 1.35;
+        }
+        .sdc-tt-sub {
+          font-family: 'Outfit', sans-serif;
+          font-size: 13px;
+          color: var(--sdc-text-dim);
+          line-height: 1.5;
+          grid-column: 2;
+        }
+        .sdc-tt-item-highlight {
+          border: 1px solid var(--sdc-pink);
+          border-radius: 12px;
+          padding: 14px 16px;
+          background: rgba(255,45,146,0.06);
+          box-shadow: 0 0 24px rgba(255,45,146,0.18);
+        }
+        .sdc-tt-item-highlight .sdc-tt-time { padding-top: 0; }
+
+        .sdc-pill {
+          display: inline-flex;
+          align-items: center;
+          font-family: 'Space Mono', monospace;
+          font-size: 10px;
+          letter-spacing: 0.2em;
+          text-transform: lowercase;
+          padding: 3px 9px;
+          border-radius: 999px;
+          border: 1px solid;
+          white-space: nowrap;
+        }
+        .sdc-pill-keynote { color: var(--sdc-pink); border-color: var(--sdc-pink); }
+        .sdc-pill-impuls { color: #ff8ac2; border-color: #ff8ac2; }
+        .sdc-pill-closing {
+          color: #ffffff;
+          background: var(--sdc-pink);
+          border-color: var(--sdc-pink);
+          box-shadow: 0 0 14px rgba(255,45,146,0.6);
+        }
+
+        /* ========= SESSIONS BOX ========= */
+        .sdc-sessions-box {
+          border: 1px solid var(--sdc-pink);
+          border-radius: 16px;
+          padding: 24px 28px;
+          background: rgba(255,45,146,0.04);
+          box-shadow: 0 0 26px rgba(255,45,146,0.18);
+        }
+        .sdc-sessions-head {
+          font-family: 'Outfit', sans-serif;
+          font-weight: 600;
+          font-size: 18px;
+          color: var(--sdc-pink);
+          margin-bottom: 18px;
+          display: flex;
+          gap: 8px;
+          align-items: baseline;
+        }
+        .sdc-sessions-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+        .sdc-session {
+          border-left: 3px solid var(--sdc-cyan);
+          padding: 4px 0 4px 14px;
+        }
+        .sdc-session-title {
+          font-family: 'Outfit', sans-serif;
+          font-weight: 600;
+          color: #ffffff;
+          font-size: 15px;
+          margin-bottom: 3px;
+        }
       `}</style>
 
       <div className="sdc-page">
