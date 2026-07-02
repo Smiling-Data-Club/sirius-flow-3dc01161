@@ -412,7 +412,7 @@ const SmilingDataClub = () => {
             <SdcLogo size={200} style={{ filter: "drop-shadow(0 0 20px rgba(0,240,255,0.35))" }} />
             <div className="sdc-label">// KICK-OFF · 01.07.2026 · FREIBURG</div>
             <h1 className="sdc-grad-headline" style={{ fontSize: "clamp(28px, 5.5vw, 56px)", lineHeight: 1.15, maxWidth: 900, margin: 0 }}>
-              gestern war smiling data club. und es war genau das, was wir uns erträumt haben.
+              gestern war culture & code. unser erstes smiling data club event — und es war genau das, was wir uns erträumt haben.
             </h1>
             <p style={{ fontSize: "clamp(16px, 2vw, 20px)", color: "var(--sdc-text-soft)", maxWidth: 640, lineHeight: 1.6, margin: 0 }}>
               Ein Tag zwischen KI, echten Gesprächen und einem Innenhof voller Leute, die geblieben sind, bis das Licht ausging.
