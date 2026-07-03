@@ -410,15 +410,49 @@ const SmilingDataClub = () => {
           </svg>
 
           <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 32 }}>
-            <SdcLogo size={200} style={{ filter: "drop-shadow(0 0 20px rgba(0,240,255,0.35))" }} />
             <div className="sdc-label">// KICK-OFF · 01.07.2026 · FREIBURG</div>
             <h1 className="sdc-grad-headline" style={{ fontSize: "clamp(28px, 5.5vw, 56px)", lineHeight: 1.15, maxWidth: 900, margin: 0 }}>
               gestern war culture & code. unser erstes smiling data club event — und es war genau das, was wir uns erträumt haben.
             </h1>
-            <p style={{ fontSize: "clamp(16px, 2vw, 20px)", color: "var(--sdc-text-soft)", maxWidth: 640, lineHeight: 1.6, margin: 0 }}>
-              Ein Tag zwischen KI, echten Gesprächen und einem Innenhof voller Leute, die geblieben sind, bis das Licht ausging.
-            </p>
 
+            <div
+              style={{
+                width: "100%",
+                maxWidth: 720,
+                aspectRatio: "16 / 9",
+                border: "2px solid #00f0ff",
+                borderRadius: 14,
+                background: "rgba(0, 240, 255, 0.04)",
+                boxShadow: "0 0 24px rgba(0,240,255,0.35), inset 0 0 40px rgba(0,240,255,0.08)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 12,
+                padding: 24,
+              }}
+              aria-label="Aftermovie folgt in Kürze"
+            >
+              <div style={{
+                fontFamily: "'Major Mono Display', 'Courier New', monospace",
+                fontSize: "clamp(28px, 4vw, 44px)",
+                color: "#00f0ff",
+                textShadow: "0 0 16px rgba(0,240,255,0.6)",
+                letterSpacing: "0.04em",
+                lineHeight: 1,
+              }}>
+                ▶ aftermovie
+              </div>
+              <div style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 13,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.55)",
+              }}>
+                Kommt in Kürze
+              </div>
+            </div>
           </div>
         </section>
 
