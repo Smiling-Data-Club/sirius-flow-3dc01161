@@ -545,9 +545,11 @@ const SmilingDataClub = () => {
             danke.
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780, margin: "0 auto" }}>
-            An Fabian, Betül und Hannah Bast fürs Teilen ihres Wissens. An Bahadir und das ganze Team für den Einsatz vor,
-            während und nach dem Tag. An Sharp für die Technik, an Golden Cut Media für Ton, Bild und Licht. Und an jede
-            und jeden, die/der da war — ihr habt den Tag gemacht, nicht wir.
+            Dieser Tag hat vor allem zwei Menschen ordentlich gefordert: Fabian und ich (Patricia) haben Culture & Code
+            von der ersten Idee bis zum letzten Handgriff geplant — und es war jede Minute wert. Danke an Betül und
+            Hannah Bast fürs Teilen ihres Wissens, an Bahadir und das ganze Team für den Einsatz vor, während und nach
+            dem Tag, an Sharp für die Technik und an Golden Cut Media für Ton, Bild und Licht. Und an jede und jeden,
+            die/der da war — ihr habt den Tag gemacht, nicht wir.
           </p>
         </section>
 
@@ -563,8 +565,7 @@ const SmilingDataClub = () => {
           </p>
 
           <div className="sdc-save-date" style={{ marginBottom: 40 }}>
-            <SdcLogo variant="sticker" size={96} style={{ marginBottom: 16, filter: "drop-shadow(0 0 12px rgba(255,45,146,0.55))" }} />
-            <div className="sdc-label" style={{ display: "inline-block", borderLeft: "none", paddingLeft: 0, color: "var(--sdc-pink)", textShadow: "0 0 10px rgba(255,45,146,0.6)", marginBottom: 12 }}>
+            <div className="sdc-label" style={{ display: "inline-block", borderLeft: "none", paddingLeft: 0, color: "var(--sdc-pink)", textShadow: "0 0 10px rgba(255,45,146,0.6)", marginBottom: 16 }}>
               SAVE THE DATE
             </div>
             <h3 className="sdc-grad-pc" style={{ fontSize: "clamp(24px, 3.5vw, 36px)", margin: "0 0 12px" }}>
