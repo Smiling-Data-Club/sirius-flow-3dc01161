@@ -545,11 +545,11 @@ const SmilingDataClub = () => {
             danke.
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780, margin: "0 auto" }}>
-            Dieser Tag hat vor allem zwei Menschen ordentlich gefordert: Fabian und ich (Patricia) haben Culture & Code
-            von der ersten Idee bis zum letzten Handgriff geplant — und es war jede Minute wert. Danke an Betül und
-            Hannah Bast fürs Teilen ihres Wissens, an Bahadir und das ganze Team für den Einsatz vor, während und nach
-            dem Tag, an Sharp für die Technik und an Golden Cut Media für Ton, Bild und Licht. Und an jede und jeden,
-            die/der da war — ihr habt den Tag gemacht, nicht wir.
+            Dieser Tag hat vor allem unserem kleinen Orga-Team einiges abverlangt — von der ersten Idee bis zum letzten
+            Handgriff. Und es war jede Minute wert. Danke an Betül und Hannah Bast fürs Teilen ihres Wissens, an Bahadir
+            und das ganze Team für den Einsatz vor, während und nach dem Tag, an Sharp für die Technik und an Golden
+            Cut Media für Ton, Bild und Licht. Und an jede und jeden, die/der da war — ihr habt den Tag gemacht, nicht
+            wir.
           </p>
         </section>
 
