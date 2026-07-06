@@ -7,7 +7,7 @@ import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutm
 import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg";
 import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg";
 import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg";
-import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png.asset.json";
+import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
 
 const galleryItems = [
   { n: 1, label: "Ankommen & Empfang", src: photoArrival },
@@ -434,7 +434,7 @@ const SmilingDataClub = () => {
                 }}
               />
               <img
-                src={sdcLogoFull.url}
+                src={sdcLogoFull}
                 alt="Smiling Data Club"
                 width={150}
                 height={150}
