@@ -410,6 +410,19 @@ const SmilingDataClub = () => {
           </svg>
 
           <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 32 }}>
+            <img
+              src={photoNeon}
+              alt="Neon-Schild Culture & Code"
+              style={{
+                width: 120,
+                height: 120,
+                objectFit: "cover",
+                borderRadius: "50%",
+                border: "1px solid rgba(0,240,255,0.4)",
+                boxShadow: "0 0 24px rgba(0,240,255,0.35)",
+                marginBottom: 18,
+              }}
+            />
             <div
               style={{
                 fontFamily: '"Major Mono Display", monospace',
