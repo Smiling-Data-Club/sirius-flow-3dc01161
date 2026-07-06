@@ -489,7 +489,7 @@ const SmilingDataClub = () => {
         {/* DER TAG IN BILDERN */}
         <section className="sdc-section">
           <div className="sdc-label" style={{ marginBottom: 16 }}>02 · Der Tag in Bildern</div>
-          <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 40 }}>
+          <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 28 }}>
             so hat sich der tag angefühlt
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
