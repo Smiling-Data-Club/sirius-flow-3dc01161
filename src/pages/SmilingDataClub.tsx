@@ -410,19 +410,54 @@ const SmilingDataClub = () => {
           </svg>
 
           <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 32 }}>
-            <img
-              src={photoNeon}
-              alt="Neon-Schild Culture & Code"
+            <div
               style={{
-                width: 120,
-                height: 120,
-                objectFit: "cover",
-                borderRadius: "50%",
-                border: "1px solid rgba(0,240,255,0.4)",
-                boxShadow: "0 0 24px rgba(0,240,255,0.35)",
-                marginBottom: 18,
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: 20,
               }}
-            />
+            >
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  width: 160,
+                  height: 160,
+                  borderRadius: "50%",
+                  background:
+                    "radial-gradient(circle, rgba(0,240,255,0.35) 0%, rgba(255,45,146,0.2) 40%, transparent 70%)",
+                  filter: "blur(20px)",
+                  zIndex: 0,
+                }}
+              />
+              <svg
+                viewBox="0 0 96 96"
+                width="110"
+                height="110"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  position: "relative",
+                  zIndex: 1,
+                  filter:
+                    "drop-shadow(0 0 12px rgba(0,240,255,0.6)) drop-shadow(0 0 20px rgba(255,45,146,0.4))",
+                }}
+              >
+                <defs>
+                  <clipPath id="sdcBadgeClip">
+                    <rect x="0" y="0" width="96" height="96" rx="20" />
+                  </clipPath>
+                </defs>
+                <g clipPath="url(#sdcBadgeClip)">
+                  <rect x="0" y="0" width="96" height="96" fill="#00f0ff" />
+                  <polygon points="96,0 96,96 0,96" fill="#ff2d92" />
+                </g>
+                <rect x="60" y="55" width="6" height="6" rx="1" fill="#ffffff" />
+                <rect x="76" y="55" width="6" height="6" rx="1" fill="#ffffff" />
+                <path d="M58 70 Q70 80 84 68" stroke="#ffffff" strokeWidth="4" fill="none" strokeLinecap="round" />
+              </svg>
+            </div>
             <div
               style={{
                 fontFamily: '"Major Mono Display", monospace',
