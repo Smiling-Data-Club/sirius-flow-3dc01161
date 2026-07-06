@@ -145,12 +145,12 @@ const SmilingDataClub = () => {
 
         .sdc-section {
           position: relative;
-          padding: 80px 20px;
+          padding: 40px 20px;
           max-width: 1100px;
           margin: 0 auto;
         }
         @media (min-width: 768px) {
-          .sdc-section { padding: 120px 40px; }
+          .sdc-section { padding: 64px 40px; }
         }
 
         .sdc-btn {
