@@ -145,12 +145,12 @@ const SmilingDataClub = () => {
 
         .sdc-section {
           position: relative;
-          padding: 80px 20px;
+          padding: 40px 20px;
           max-width: 1100px;
           margin: 0 auto;
         }
         @media (min-width: 768px) {
-          .sdc-section { padding: 120px 40px; }
+          .sdc-section { padding: 64px 40px; }
         }
 
         .sdc-btn {
@@ -489,7 +489,7 @@ const SmilingDataClub = () => {
         {/* DER TAG IN BILDERN */}
         <section className="sdc-section">
           <div className="sdc-label" style={{ marginBottom: 16 }}>02 · Der Tag in Bildern</div>
-          <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 40 }}>
+          <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 28 }}>
             so hat sich der tag angefühlt
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
@@ -554,17 +554,17 @@ const SmilingDataClub = () => {
         </section>
 
         {/* WAS KOMMT ALS NÄCHSTES */}
-        <section className="sdc-section" style={{ paddingBottom: 140 }}>
+        <section className="sdc-section" style={{ paddingBottom: 80 }}>
           <div className="sdc-label" style={{ marginBottom: 16 }}>06 · Was kommt als nächstes</div>
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 24 }}>
             das war der anfang
           </h2>
-          <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780, marginBottom: 48 }}>
+          <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780, marginBottom: 32 }}>
             Culture & Code war kein einmaliges Ding. Der nächste Smiling Data Club Termin steht noch nicht fest — wird aber kommen. Trag
             dich ein, dann bist du der/die Erste, die/der Bescheid bekommt.
           </p>
 
-          <div className="sdc-save-date" style={{ marginBottom: 40 }}>
+          <div className="sdc-save-date" style={{ marginBottom: 28 }}>
             <div className="sdc-label" style={{ display: "inline-block", borderLeft: "none", paddingLeft: 0, color: "var(--sdc-pink)", textShadow: "0 0 10px rgba(255,45,146,0.6)", marginBottom: 16 }}>
               SAVE THE DATE
             </div>
@@ -597,7 +597,7 @@ const SmilingDataClub = () => {
             </p>
           )}
 
-          <div style={{ textAlign: "center", marginTop: 60 }}>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
             <Link to="/" className="sdc-btn">← zurück zur homepage</Link>
           </div>
         </section>
