@@ -434,8 +434,8 @@ const SmilingDataClub = () => {
               />
               <svg
                 viewBox="0 0 96 96"
-                width="110"
-                height="110"
+                width="120"
+                height="120"
                 xmlns="http://www.w3.org/2000/svg"
                 style={{
                   position: "relative",
@@ -444,19 +444,14 @@ const SmilingDataClub = () => {
                     "drop-shadow(0 0 12px rgba(0,240,255,0.6)) drop-shadow(0 0 20px rgba(255,45,146,0.4))",
                 }}
               >
-                <defs>
-                  <clipPath id="sdcBadgeClip">
-                    <rect x="0" y="0" width="96" height="96" rx="20" />
-                  </clipPath>
-                </defs>
-                <g clipPath="url(#sdcBadgeClip)">
-                  <rect x="0" y="0" width="96" height="96" fill="#00f0ff" />
-                  <polygon points="96,0 96,96 0,96" fill="#ff2d92" />
-                </g>
-                <rect x="60" y="55" width="6" height="6" rx="1" fill="#ffffff" />
-                <rect x="76" y="55" width="6" height="6" rx="1" fill="#ffffff" />
-                <path d="M58 70 Q70 80 84 68" stroke="#ffffff" strokeWidth="4" fill="none" strokeLinecap="round" />
+                <polygon points="48,6 86,28 48,50 10,28" fill="#b537f2" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" />
+                <polygon points="10,28 48,50 48,92 10,70" fill="#00f0ff" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" />
+                <polygon points="48,50 86,28 86,70 48,92" fill="#ff2d92" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" />
+                <rect x="58" y="54" width="6" height="6" rx="1" fill="#ffffff" />
+                <rect x="72" y="50" width="6" height="6" rx="1" fill="#ffffff" />
+                <path d="M56 66 Q68 76 82 62" stroke="#ffffff" strokeWidth="4" fill="none" strokeLinecap="round" />
               </svg>
+
             </div>
             <div
               style={{
