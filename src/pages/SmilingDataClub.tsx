@@ -7,6 +7,7 @@ import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutm
 import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg";
 import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg";
 import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg";
+import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png.asset.json";
 
 const galleryItems = [
   { n: 1, label: "Ankommen & Empfang", src: photoArrival },
@@ -432,43 +433,20 @@ const SmilingDataClub = () => {
                   zIndex: 0,
                 }}
               />
-              <svg
-                viewBox="0 0 96 96"
-                width="120"
-                height="120"
-                xmlns="http://www.w3.org/2000/svg"
+              <img
+                src={sdcLogoFull.url}
+                alt="Smiling Data Club"
+                width={150}
+                height={150}
                 style={{
                   position: "relative",
                   zIndex: 1,
+                  width: 150,
+                  height: "auto",
                   filter:
-                    "drop-shadow(0 0 12px rgba(0,240,255,0.6)) drop-shadow(0 0 20px rgba(255,45,146,0.4))",
+                    "drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
                 }}
-              >
-                <polygon points="48,6 86,28 48,50 10,28" fill="#b537f2" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" />
-                <polygon points="10,28 48,50 48,92 10,70" fill="#00f0ff" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" />
-                <polygon points="48,50 86,28 86,70 48,92" fill="#ff2d92" stroke="#ffffff" strokeWidth="2" strokeLinejoin="round" />
-                <rect x="58" y="54" width="6" height="6" rx="1" fill="#ffffff" />
-                <rect x="72" y="50" width="6" height="6" rx="1" fill="#ffffff" />
-                <path d="M56 66 Q68 76 82 62" stroke="#ffffff" strokeWidth="4" fill="none" strokeLinecap="round" />
-              </svg>
-
-            </div>
-            <div
-              style={{
-                fontFamily: '"Major Mono Display", monospace',
-                fontSize: "clamp(32px, 5.5vw, 56px)",
-                lineHeight: 1,
-                letterSpacing: "0.02em",
-                textAlign: "center",
-                textTransform: "lowercase",
-                marginBottom: 20,
-              }}
-            >
-              <span style={{ color: "#00f0ff", textShadow: "0 0 18px rgba(0,240,255,0.75), 0 0 36px rgba(0,240,255,0.4)" }}>smiling</span>
-              {" "}
-              <span style={{ color: "#ff2d92", textShadow: "0 0 18px rgba(255,45,146,0.75), 0 0 36px rgba(255,45,146,0.4)" }}>data</span>
-              {" "}
-              <span style={{ color: "#b537f2", textShadow: "0 0 18px rgba(181,55,242,0.75), 0 0 36px rgba(181,55,242,0.4)" }}>club</span>
+              />
             </div>
             <div
               className="sdc-label"
