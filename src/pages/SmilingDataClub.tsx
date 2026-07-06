@@ -433,6 +433,17 @@ const SmilingDataClub = () => {
                   zIndex: 0,
                 }}
               />
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  width: 155,
+                  height: 155,
+                  borderRadius: "50%",
+                  background: "rgba(10,4,32,0.85)",
+                  zIndex: 0,
+                }}
+              />
               <img
                 src={sdcLogoFull}
                 alt="Smiling Data Club"
