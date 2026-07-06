@@ -393,22 +393,8 @@ const SmilingDataClub = () => {
           />
           {/* Grid (reduziert) */}
           <div className="sdc-grid"><div className="sdc-grid-inner" /></div>
-          {/* Bergsilhouette — dezent, oben im Hero, rein dekorativ */}
-          <svg
-            aria-hidden
-            viewBox="0 0 1200 200"
-            preserveAspectRatio="none"
-            style={{
-              position: "absolute", left: 0, right: 0, top: "17%", width: "100%", height: 70,
-              pointerEvents: "none", zIndex: 0, opacity: 0.28,
-              filter: "drop-shadow(0 0 6px rgba(0,240,255,0.25))",
-            }}
-          >
-            <polyline
-              points="0,175 90,145 160,160 240,120 320,155 410,130 500,160 590,115 690,155 780,135 870,165 960,125 1060,158 1140,140 1200,170"
-              fill="none" stroke="#00f0ff" strokeWidth="1.5" strokeLinejoin="round"
-            />
-          </svg>
+
+
 
           <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 32 }}>
             <div
