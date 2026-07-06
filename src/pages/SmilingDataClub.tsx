@@ -399,13 +399,13 @@ const SmilingDataClub = () => {
             viewBox="0 0 1200 200"
             preserveAspectRatio="none"
             style={{
-              position: "absolute", left: 0, right: 0, top: "8%", width: "100%", height: 70,
+              position: "absolute", left: 0, right: 0, top: "17%", width: "100%", height: 70,
               pointerEvents: "none", zIndex: 0, opacity: 0.28,
               filter: "drop-shadow(0 0 6px rgba(0,240,255,0.25))",
             }}
           >
             <polyline
-              points="0,180 90,120 160,150 240,70 320,140 410,90 500,150 590,60 690,140 780,100 870,160 960,80 1060,150 1140,110 1200,170"
+              points="0,175 90,145 160,160 240,120 320,155 410,130 500,160 590,115 690,155 780,135 870,165 960,125 1060,158 1140,140 1200,170"
               fill="none" stroke="#00f0ff" strokeWidth="1.5" strokeLinejoin="round"
             />
           </svg>
@@ -430,6 +430,17 @@ const SmilingDataClub = () => {
                   background:
                     "radial-gradient(circle, rgba(0,240,255,0.35) 0%, rgba(255,45,146,0.2) 40%, transparent 70%)",
                   filter: "blur(20px)",
+                  zIndex: 0,
+                }}
+              />
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  width: 155,
+                  height: 155,
+                  borderRadius: "50%",
+                  background: "rgba(10,4,32,0.85)",
                   zIndex: 0,
                 }}
               />
