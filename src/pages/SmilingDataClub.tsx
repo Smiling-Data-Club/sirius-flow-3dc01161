@@ -413,21 +413,35 @@ const SmilingDataClub = () => {
             <div
               style={{
                 fontFamily: '"Major Mono Display", monospace',
-                fontSize: "clamp(20px, 3vw, 32px)",
+                fontSize: "clamp(32px, 5.5vw, 56px)",
                 lineHeight: 1,
                 letterSpacing: "0.02em",
                 textAlign: "center",
                 textTransform: "lowercase",
+                marginBottom: 20,
               }}
             >
-              <span style={{ color: "#00f0ff", textShadow: "0 0 12px rgba(0,240,255,0.45)" }}>smiling</span>
+              <span style={{ color: "#00f0ff", textShadow: "0 0 18px rgba(0,240,255,0.75), 0 0 36px rgba(0,240,255,0.4)" }}>smiling</span>
               {" "}
-              <span style={{ color: "#ff2d92", textShadow: "0 0 12px rgba(255,45,146,0.45)" }}>data</span>
+              <span style={{ color: "#ff2d92", textShadow: "0 0 18px rgba(255,45,146,0.75), 0 0 36px rgba(255,45,146,0.4)" }}>data</span>
               {" "}
-              <span style={{ color: "#b537f2", textShadow: "0 0 12px rgba(181,55,242,0.45)" }}>club</span>
+              <span style={{ color: "#b537f2", textShadow: "0 0 18px rgba(181,55,242,0.75), 0 0 36px rgba(181,55,242,0.4)" }}>club</span>
             </div>
-            <div className="sdc-label">// KICK-OFF · 01.07.2026 · FREIBURG</div>
-            <h1 className="sdc-grad-headline" style={{ fontSize: "clamp(28px, 5.5vw, 56px)", lineHeight: 1.15, maxWidth: 900, margin: 0 }}>
+            <div
+              className="sdc-label"
+              style={{
+                fontSize: 13,
+                color: "#7ff5ff",
+                background: "rgba(0,240,255,0.08)",
+                borderLeft: "none",
+                padding: "8px 16px",
+                borderRadius: 999,
+                textShadow: "0 0 12px rgba(0,240,255,0.7)",
+              }}
+            >
+              // KICK-OFF · 01.07.2026 · FREIBURG
+            </div>
+            <h1 className="sdc-grad-headline" style={{ fontSize: "clamp(22px, 4.2vw, 42px)", lineHeight: 1.2, maxWidth: 900, margin: 0 }}>
               das war culture & code. unser erstes smiling data club event — und es war genau das, was wir uns erträumt haben.
             </h1>
 
