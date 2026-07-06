@@ -109,7 +109,9 @@ const SmilingDataClub = () => {
         /* perspektivisches Neon-Grid */
         .sdc-grid {
           position: absolute;
-          left: 0; right: 0; bottom: 0;
+          left: 50%; right: auto; bottom: 0;
+          width: 100vw;
+          transform: translateX(-50%);
           height: 55vh;
           pointer-events: none;
           perspective: 500px;
