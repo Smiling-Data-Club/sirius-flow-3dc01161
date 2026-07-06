@@ -597,7 +597,7 @@ const SmilingDataClub = () => {
             </p>
           )}
 
-          <div style={{ textAlign: "center", marginTop: 60 }}>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
             <Link to="/" className="sdc-btn">← zurück zur homepage</Link>
           </div>
         </section>
