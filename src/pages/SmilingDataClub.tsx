@@ -564,7 +564,7 @@ const SmilingDataClub = () => {
             dich ein, dann bist du der/die Erste, die/der Bescheid bekommt.
           </p>
 
-          <div className="sdc-save-date" style={{ marginBottom: 40 }}>
+          <div className="sdc-save-date" style={{ marginBottom: 28 }}>
             <div className="sdc-label" style={{ display: "inline-block", borderLeft: "none", paddingLeft: 0, color: "var(--sdc-pink)", textShadow: "0 0 10px rgba(255,45,146,0.6)", marginBottom: 16 }}>
               SAVE THE DATE
             </div>
