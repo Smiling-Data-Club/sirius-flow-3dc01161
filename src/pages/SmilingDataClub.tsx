@@ -554,7 +554,7 @@ const SmilingDataClub = () => {
         </section>
 
         {/* WAS KOMMT ALS NÄCHSTES */}
-        <section className="sdc-section" style={{ paddingBottom: 140 }}>
+        <section className="sdc-section" style={{ paddingBottom: 80 }}>
           <div className="sdc-label" style={{ marginBottom: 16 }}>06 · Was kommt als nächstes</div>
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 24 }}>
             das war der anfang
