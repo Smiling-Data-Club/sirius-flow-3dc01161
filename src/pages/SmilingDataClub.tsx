@@ -606,8 +606,57 @@ const SmilingDataClub = () => {
           </div>
         </section>
 
-
-
+        {/* IN BEWEGUNG — Video-Reels */}
+        <section className="sdc-section">
+          <div className="sdc-label" style={{ marginBottom: 16 }}>03 · In Bewegung</div>
+          <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 24 }}>
+            momente in bewegung
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--sdc-text-soft)", maxWidth: 720, marginBottom: 28 }}>
+            Drei kurze Reels vom Tag — Stimmen, Statements und Momente aus dem Innenhof.
+          </p>
+          <div className="sdc-reels-grid">
+            {reelItems.map((r) => (
+              <figure
+                key={r.videoSrc}
+                style={{
+                  margin: 0,
+                  borderRadius: 14,
+                  overflow: "hidden",
+                  border: "1px solid rgba(0,240,255,0.25)",
+                  boxShadow: "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)",
+                  background: "var(--bg-mid)",
+                }}
+              >
+                <div style={{ position: "relative", background: "#000" }}>
+                  <video
+                    src={r.videoSrc}
+                    poster={r.poster}
+                    controls
+                    playsInline
+                    preload="none"
+                    style={{ display: "block", width: "100%", height: "auto", aspectRatio: "9 / 16", objectFit: "cover" }}
+                  />
+                </div>
+                <figcaption
+                  style={{
+                    padding: "12px 14px",
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.15em",
+                    color: "var(--sdc-text-dim)",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span style={{ color: "#00f0ff" }}>{r.title}</span>
+                  <span style={{ display: "block", marginTop: 6, textTransform: "none", letterSpacing: "0.02em", color: "var(--sdc-text-soft)", fontSize: 12 }}>
+                    {r.caption}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
 
 
         {/* PROGRAMM-RECAP */}
