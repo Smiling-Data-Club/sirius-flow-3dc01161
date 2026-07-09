@@ -258,6 +258,10 @@ const SmilingDataClub = () => {
         @media (max-width: 780px) {
           .sdc-timetable { grid-template-columns: 1fr; gap: 32px; }
         }
+        .sdc-masonry { column-count: 3; column-gap: 16px; }
+        @media (max-width: 1000px) { .sdc-masonry { column-count: 2; } }
+        @media (max-width: 620px) { .sdc-masonry { column-count: 1; } }
+
         .sdc-tt-head {
           font-family: 'Space Mono', monospace;
           font-size: 13px;
