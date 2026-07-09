@@ -677,8 +677,8 @@ const SmilingDataClub = () => {
             Zwei Keynotes, drei Impulse, parallele Deep-Dives und viel Zeit dazwischen. Fabian Schüler und Bahadir Alaz
             haben eröffnet, Betül Hanisch hat über den Menschen nach der Maschine gesprochen, Josef R. Schneider über AI &
             EQ. Prof. Dr. Hannah Bast von der Uni Freiburg hat den Tag mit einer Closing-Keynote über KI, Algorithmen und
-            den Menschen dahinter geschlossen. Ausgeklungen ist der Tag im Innenhof — mit WM-Public-Viewing, Coffee Bike
-            und offenen Gesprächen bis das Licht ausging.
+            den Menschen dahinter geschlossen. Ausgeklungen ist der Tag im Innenhof — mit Coffee Bike, offenen
+            Gesprächen und Musik, bis das Licht ausging.
           </p>
         </section>
 
@@ -691,10 +691,9 @@ const SmilingDataClub = () => {
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--sdc-text-soft)", maxWidth: 780, margin: "0 auto" }}>
             Dieser Tag hat vor allem unserem kleinen Orga-Team einiges abverlangt — von der ersten Idee bis zum letzten
-            Handgriff. Und es war jede Minute wert. Danke an Betül und Hannah Bast fürs Teilen ihres Wissens, an Bahadir
-            und das ganze Team für den Einsatz vor, während und nach dem Tag, an Sharp für die Technik und an Golden
-            Cut Media für Ton, Bild und Licht. Und an jede und jeden, die/der da war — ihr habt den Tag gemacht, nicht
-            wir.
+            Handgriff. Und es war jede Minute wert. Danke an Betül und Hannah Bast fürs Teilen ihres Wissens, an das
+            ganze Team für den Einsatz vor, während und nach dem Tag, an Sharp für die Technik und an Golden
+            Cut Media für Ton, Bild und Licht. Und an jede und jeden, die/der da war — schön, dass ihr dabei wart.
           </p>
         </section>
 
