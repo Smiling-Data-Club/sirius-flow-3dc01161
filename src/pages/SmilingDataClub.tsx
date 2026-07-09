@@ -161,23 +161,23 @@ const SmilingDataClub = () => {
         }
         @keyframes sdc-logo-glitch {
           0%, 92%, 100% {
-            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(0 0 10px #0a0420) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
+            filter: drop-shadow(0 0 4px rgba(10,4,32,0.55)) drop-shadow(0 0 8px rgba(10,4,32,0.45)) drop-shadow(0 0 14px rgba(10,4,32,0.35)) drop-shadow(0 0 22px rgba(10,4,32,0.25)) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
             transform: translateX(0);
           }
           93% {
-            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(3px 0 0 rgba(255,45,146,0.8)) drop-shadow(-3px 0 0 rgba(0,240,255,0.8));
+            filter: drop-shadow(0 0 4px rgba(10,4,32,0.55)) drop-shadow(0 0 8px rgba(10,4,32,0.45)) drop-shadow(0 0 14px rgba(10,4,32,0.35)) drop-shadow(0 0 22px rgba(10,4,32,0.25)) drop-shadow(3px 0 0 rgba(255,45,146,0.8)) drop-shadow(-3px 0 0 rgba(0,240,255,0.8));
             transform: translateX(-2px);
           }
           94% {
-            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(-3px 0 0 rgba(255,45,146,0.8)) drop-shadow(3px 0 0 rgba(0,240,255,0.8));
+            filter: drop-shadow(0 0 4px rgba(10,4,32,0.55)) drop-shadow(0 0 8px rgba(10,4,32,0.45)) drop-shadow(0 0 14px rgba(10,4,32,0.35)) drop-shadow(0 0 22px rgba(10,4,32,0.25)) drop-shadow(-3px 0 0 rgba(255,45,146,0.8)) drop-shadow(3px 0 0 rgba(0,240,255,0.8));
             transform: translateX(2px);
           }
           95% {
-            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(2px 0 0 rgba(255,45,146,0.8)) drop-shadow(-2px 0 0 rgba(0,240,255,0.8));
+            filter: drop-shadow(0 0 4px rgba(10,4,32,0.55)) drop-shadow(0 0 8px rgba(10,4,32,0.45)) drop-shadow(0 0 14px rgba(10,4,32,0.35)) drop-shadow(0 0 22px rgba(10,4,32,0.25)) drop-shadow(2px 0 0 rgba(255,45,146,0.8)) drop-shadow(-2px 0 0 rgba(0,240,255,0.8));
             transform: translateX(-1px);
           }
           96% {
-            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(0 0 10px #0a0420) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
+            filter: drop-shadow(0 0 4px rgba(10,4,32,0.55)) drop-shadow(0 0 8px rgba(10,4,32,0.45)) drop-shadow(0 0 14px rgba(10,4,32,0.35)) drop-shadow(0 0 22px rgba(10,4,32,0.25)) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
             transform: translateX(0);
           }
         }
