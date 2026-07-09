@@ -175,7 +175,9 @@ export const galleryItems: GalleryItem[] = [
   { src: photoBackstageSelfie, alt: "Backstage-Selfie mit dem Orga-Team", category: "networking" },
 
   // Atmosphäre im Innenhof
+  { src: photoTeamGroupNeon, alt: "Gruppenfoto vor dem SDC-Neon-Logo und der Pflanzenwand", category: "atmosphere", featured: true },
   { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "atmosphere" },
+  
   
 ];
 
