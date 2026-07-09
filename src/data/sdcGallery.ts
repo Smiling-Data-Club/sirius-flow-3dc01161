@@ -133,15 +133,15 @@ export const galleryItems: GalleryItem[] = [
   { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking" },
   { src: photoGuestsCoffeeBike, alt: "Zwei Gäste im Gespräch an der roten Coffee Bike", category: "networking" },
 
-  // Sessions — Captions nur mit Name + Talk
+  // Sessions — chronologische Agenda-Reihenfolge (Opening → Impuls Betül → Impuls Josef → Closing)
   { src: photoOpeningDuo, alt: "Opening Keynote — Fabian Schüler und Bahadir Alaz auf der Bühne", category: "opening", caption: "Fabian Schüler & Bahadir Alaz — Opening Keynote" },
-  { src: photoStage, alt: "Bahadir Alaz während der Opening Keynote", category: "opening", caption: "Bahadir Alaz — Opening Keynote" },
+  { src: photoStage, alt: "Fabian Schüler und Bahadir Alaz während der Opening Keynote", category: "opening", caption: "Fabian Schüler & Bahadir Alaz — Opening Keynote" },
   { src: photoKeynote, alt: "Betül Hanisch beim Impulsvortrag „Der Mensch nach der Maschine“", category: "impulse", caption: "Betül Hanisch — Der Mensch nach der Maschine" },
   { src: photoSpeakerMic, alt: "Betül Hanisch im Austausch mit dem Publikum", category: "impulse", caption: "Betül Hanisch — Der Mensch nach der Maschine" },
   { src: photoRetroCube, alt: "Betül Hanisch mit Würfel-Motiv beim Impulsvortrag", category: "impulse", caption: "Betül Hanisch — Der Mensch nach der Maschine" },
+  { src: photoSpeakerPortrait, alt: "Josef R. Schneider — Portrait während des Impulsvortrags", category: "impulse", caption: "Josef R. Schneider — AI meets EQ" },
   { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
   { src: photoAudienceListening, alt: "Publikum verfolgt die Keynote auf der Bühne", category: "impulse" },
-  { src: photoSpeakerPortrait, alt: "Josef R. Schneider — Portrait während des Impulsvortrags", category: "impulse", caption: "Josef R. Schneider — AI meets EQ" },
   { src: photoAudienceNeon, alt: "Publikum in der Session vor der Neon-Greenwall", category: "impulse" },
   { src: photoSpeakerHannah, alt: "Prof. Dr. Hannah Bast bei der Closing Keynote", category: "closing", caption: "Prof. Dr. Hannah Bast — Closing Keynote" },
   { src: photoSpeakerClaude, alt: "Prof. Dr. Hannah Bast während der Closing Keynote mit Live-Demo", category: "closing", caption: "Prof. Dr. Hannah Bast — Closing Keynote" },
