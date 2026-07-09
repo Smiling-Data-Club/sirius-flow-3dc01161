@@ -636,7 +636,7 @@ const SmilingDataClub = () => {
                     poster={r.poster}
                     controls
                     playsInline
-                    preload="none"
+                    preload="metadata"
                     style={{ display: "block", width: "100%", height: "auto", aspectRatio: "9 / 16", objectFit: "cover" }}
                   />
                 </div>
