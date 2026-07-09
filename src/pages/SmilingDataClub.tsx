@@ -619,10 +619,10 @@ const SmilingDataClub = () => {
         <section className="sdc-section">
           <div className="sdc-label" style={{ marginBottom: 16 }}>03 · In Bewegung</div>
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 24 }}>
-            momente in bewegung
+            seht selbst.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--sdc-text-soft)", maxWidth: 720, marginBottom: 28 }}>
-            Drei kurze Reels vom Tag — Stimmen, Statements und Momente aus dem Innenhof.
+            Manche Momente muss man einfach gesehen haben — hier ein paar Ausschnitte aus dem Innenhof.
           </p>
           <div className="sdc-reels-grid">
             {reelItems.map((r) => (
