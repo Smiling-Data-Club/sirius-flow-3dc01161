@@ -821,18 +821,38 @@ const SmilingDataClub = () => {
               gap: 14,
             }}
           >
-            <img
-              src={galleryItems[lightboxIndex].src}
-              alt={galleryItems[lightboxIndex].alt}
-              style={{
-                maxWidth: "100%",
-                maxHeight: "78vh",
-                objectFit: "contain",
-                borderRadius: 12,
-                border: "1px solid rgba(0,240,255,0.3)",
-                boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
-              }}
-            />
+            {galleryItems[lightboxIndex].type === "video" ? (
+              <video
+                key={galleryItems[lightboxIndex].videoSrc}
+                src={galleryItems[lightboxIndex].videoSrc}
+                poster={galleryItems[lightboxIndex].src}
+                controls
+                autoPlay
+                playsInline
+                preload="metadata"
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "78vh",
+                  borderRadius: 12,
+                  border: "1px solid rgba(0,240,255,0.3)",
+                  boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
+                  background: "#000",
+                }}
+              />
+            ) : (
+              <img
+                src={galleryItems[lightboxIndex].src}
+                alt={galleryItems[lightboxIndex].alt}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "78vh",
+                  objectFit: "contain",
+                  borderRadius: 12,
+                  border: "1px solid rgba(0,240,255,0.3)",
+                  boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
+                }}
+              />
+            )}
             <figcaption
               style={{
                 fontFamily: "'Space Mono', monospace",
