@@ -632,13 +632,15 @@ const SmilingDataClub = () => {
               >
                 <div style={{ position: "relative", background: "#000" }}>
                   <video
-                    src={r.videoSrc}
                     poster={r.poster}
                     controls
                     playsInline
                     preload="metadata"
                     style={{ display: "block", width: "100%", height: "auto", aspectRatio: "9 / 16", objectFit: "cover" }}
-                  />
+                  >
+                    <source src={r.videoSrcVp9} type='video/mp4; codecs="vp09.00.10.08"' />
+                    <source src={r.videoSrc} type="video/mp4" />
+                  </video>
                 </div>
                 <figcaption
                   style={{
