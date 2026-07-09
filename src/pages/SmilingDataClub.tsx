@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
@@ -12,11 +12,39 @@ import { galleryItems, GALLERY_CATEGORIES, type GalleryCategoryKey } from "@/dat
 const SmilingDataClub = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) setSubmitted(true);
   };
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const showPrev = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + galleryItems.length) % galleryItems.length)),
+    []
+  );
+  const showNext = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % galleryItems.length)),
+    []
+  );
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "ArrowRight") showNext();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxIndex, closeLightbox, showPrev, showNext]);
+
 
   return (
     <PageLayout
@@ -529,6 +557,7 @@ const SmilingDataClub = () => {
             {galleryItems.map((g, i) => (
               <figure
                 key={`${g.src}-${i}`}
+                onClick={() => setLightboxIndex(i)}
                 style={{
                   margin: "0 0 16px",
                   breakInside: "avoid",
@@ -538,6 +567,7 @@ const SmilingDataClub = () => {
                   boxShadow: "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)",
                   background: "var(--bg-mid)",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                  cursor: "zoom-in",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-2px)";
@@ -658,6 +688,133 @@ const SmilingDataClub = () => {
           </div>
         </section>
       </div>
+
+      {lightboxIndex !== null && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Foto-Galerie"
+          onClick={closeLightbox}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            background: "rgba(5,4,20,0.92)",
+            backdropFilter: "blur(8px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "clamp(16px, 4vw, 48px)",
+          }}
+        >
+          {/* Close */}
+          <button
+            aria-label="Schließen"
+            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+            style={{
+              position: "absolute",
+              top: 20,
+              right: 20,
+              width: 48,
+              height: 48,
+              borderRadius: "50%",
+              border: "1px solid rgba(0,240,255,0.5)",
+              background: "rgba(5,4,20,0.7)",
+              color: "#00f0ff",
+              fontSize: 22,
+              lineHeight: 1,
+              cursor: "pointer",
+              boxShadow: "0 0 20px rgba(0,240,255,0.4)",
+              fontFamily: "'Space Mono', monospace",
+            }}
+          >×</button>
+
+          {/* Prev */}
+          <button
+            aria-label="Vorheriges Foto"
+            onClick={(e) => { e.stopPropagation(); showPrev(); }}
+            style={{
+              position: "absolute",
+              left: 20,
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: 52,
+              height: 52,
+              borderRadius: "50%",
+              border: "1px solid rgba(255,45,146,0.55)",
+              background: "rgba(5,4,20,0.7)",
+              color: "#ff2d92",
+              fontSize: 24,
+              cursor: "pointer",
+              boxShadow: "0 0 20px rgba(255,45,146,0.4)",
+              fontFamily: "'Space Mono', monospace",
+            }}
+          >‹</button>
+
+          {/* Next */}
+          <button
+            aria-label="Nächstes Foto"
+            onClick={(e) => { e.stopPropagation(); showNext(); }}
+            style={{
+              position: "absolute",
+              right: 20,
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: 52,
+              height: 52,
+              borderRadius: "50%",
+              border: "1px solid rgba(255,45,146,0.55)",
+              background: "rgba(5,4,20,0.7)",
+              color: "#ff2d92",
+              fontSize: 24,
+              cursor: "pointer",
+              boxShadow: "0 0 20px rgba(255,45,146,0.4)",
+              fontFamily: "'Space Mono', monospace",
+            }}
+          >›</button>
+
+          <figure
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              margin: 0,
+              maxWidth: "min(1200px, 92vw)",
+              maxHeight: "88vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 14,
+            }}
+          >
+            <img
+              src={galleryItems[lightboxIndex].src}
+              alt={galleryItems[lightboxIndex].alt}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "78vh",
+                objectFit: "contain",
+                borderRadius: 12,
+                border: "1px solid rgba(0,240,255,0.3)",
+                boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
+              }}
+            />
+            <figcaption
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: "0.25em",
+                textTransform: "uppercase",
+                color: "#00f0ff",
+                textAlign: "center",
+              }}
+            >
+              {GALLERY_CATEGORIES[galleryItems[lightboxIndex].category]}
+              <span style={{ color: "rgba(255,255,255,0.4)", marginLeft: 12 }}>
+                {lightboxIndex + 1} / {galleryItems.length}
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </PageLayout>
   );
 };
