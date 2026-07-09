@@ -91,17 +91,26 @@ export const galleryItems: GalleryItem[] = [
   { src: photoKeynote, alt: "Impulsvortrag", category: "impulse" },
   { src: photoSpeakerMic, alt: "Speakerin im Dialog mit dem Publikum", category: "impulse" },
   { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
+  { src: photoSpeakerAuto, alt: "Impulsvortrag — Speaker mit Slide „Das Auto\"", category: "impulse" },
+  { src: photoSpeakerPortrait, alt: "Speaker-Portrait im Gespräch", category: "impulse" },
+  { src: photoAudienceNeon, alt: "Publikum vor der Neon-Greenwall", category: "impulse" },
 
   // Details
   { src: photoLanyardProgram, alt: "Programm-Lanyard mit Timetable in der Hand", category: "details" },
+  { src: photoNikeSdc, alt: "Custom Nike-Sneaker mit SDC-Stick", category: "details" },
 
   // Catering
   { src: photoBellyBun, alt: "Belly & Bun — Food Truck-Signet", category: "catering" },
   { src: photoChefPlating, alt: "Anrichten am Food Truck", category: "catering" },
   { src: photoChefSprinkle, alt: "Finishing Touch am Food Truck", category: "catering" },
   { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "catering" },
+  { src: photoGuestFries, alt: "Gast mit Pulled-Beef-Fritten am Foodtruck", category: "catering" },
+  { src: photoCupcakeTrayClose, alt: "Tablett mit SDC-Cupcakes", category: "catering" },
+  { src: photoCupcakeServer, alt: "SDC-Cupcakes werden serviert", category: "catering" },
+  { src: photoCupcakeBite, alt: "Erster Bissen — Cupcake mit Buttercreme", category: "catering" },
 
-  // Ausklang
+  // Ausklang & Networking
+  { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking" },
   { src: photoNeon, alt: "Neon-Signet Smiling Data Club im Innenhof", category: "details" },
   { src: photoTeamNeonWall, alt: "SDC-Team vor der Neon-Greenwall", category: "publicviewing" },
   { src: photoNeonGroup, alt: "SDC-Team vor dem Neon-Signet", category: "publicviewing" },
