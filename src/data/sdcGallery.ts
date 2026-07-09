@@ -152,4 +152,16 @@ export const galleryItems: GalleryItem[] = [
   { src: photoSpeakerHands, alt: "Speakerin gestikuliert vor Code-Screen", category: "impulse" },
   { src: photoApplause, alt: "Applaus im Publikum", category: "impulse" },
   { src: photoPosterDanke, alt: "„Danke, Helmut\" — Abschieds-Poster wird betrachtet", category: "publicviewing" },
+
+  // Batch 06
+  { src: photoCoffeeBikeDuo, alt: "Fabian & Bahadir vor der Coffee Bike", category: "catering" },
+  { src: photoBellyBunPrep, alt: "Belly & Bun — Bao wird zubereitet", category: "catering" },
+  { src: photoKalteSofieServe, alt: "Kalte Sofie wird serviert", category: "catering" },
+  { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly & Bun-Truck", category: "catering" },
+  { src: photoKalteSofieMan, alt: "Gast mit Kalter Sofie im SDC-Shirt", category: "networking" },
+  { src: photoNetworkChat, alt: "Networking-Gespräch am Stehtisch", category: "networking" },
+  { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "networking" },
+  { src: photoBackstageSelfie, alt: "Backstage-Selfie mit dem Orga-Team", category: "publicviewing" },
+  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "publicviewing" },
+  { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "publicviewing" },
 ];
