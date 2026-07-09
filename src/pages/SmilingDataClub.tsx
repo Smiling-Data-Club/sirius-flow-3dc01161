@@ -155,6 +155,44 @@ const SmilingDataClub = () => {
           from { background-position: 0 0; }
           to   { background-position: 0 100px; }
         }
+        @keyframes sdc-logo-float {
+          0%, 100% { transform: translateY(0px); }
+          50%      { transform: translateY(-8px); }
+        }
+        @keyframes sdc-logo-glitch {
+          0%, 92%, 100% {
+            filter: drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
+            transform: translateX(0);
+          }
+          93% {
+            filter: drop-shadow(3px 0 0 rgba(255,45,146,0.8)) drop-shadow(-3px 0 0 rgba(0,240,255,0.8));
+            transform: translateX(-2px);
+          }
+          94% {
+            filter: drop-shadow(-3px 0 0 rgba(255,45,146,0.8)) drop-shadow(3px 0 0 rgba(0,240,255,0.8));
+            transform: translateX(2px);
+          }
+          95% {
+            filter: drop-shadow(2px 0 0 rgba(255,45,146,0.8)) drop-shadow(-2px 0 0 rgba(0,240,255,0.8));
+            transform: translateX(-1px);
+          }
+          96% {
+            filter: drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
+            transform: translateX(0);
+          }
+        }
+        .sdc-hero-logo-float {
+          animation: sdc-logo-float 4s ease-in-out infinite;
+          will-change: transform;
+        }
+        .sdc-hero-logo-glitch {
+          animation: sdc-logo-glitch 7s steps(1) infinite;
+          will-change: filter, transform;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .sdc-hero-logo-float,
+          .sdc-hero-logo-glitch { animation: none !important; }
+        }
         .sdc-glow {
           position: absolute;
           border-radius: 50%;
@@ -455,20 +493,22 @@ const SmilingDataClub = () => {
                   zIndex: 0,
                 }}
               />
-              <img
-                src={sdcLogoFull}
-                alt="Smiling Data Club"
-                width={150}
-                height={150}
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  width: 150,
-                  height: "auto",
-                  filter:
-                    "drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
-                }}
-              />
+              <div className="sdc-hero-logo-float" style={{ position: "relative", zIndex: 1, display: "inline-block" }}>
+                <img
+                  src={sdcLogoFull}
+                  alt="Smiling Data Club"
+                  width={150}
+                  height={150}
+                  className="sdc-hero-logo-glitch"
+                  style={{
+                    display: "block",
+                    width: 150,
+                    height: "auto",
+                    filter:
+                      "drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
+                  }}
+                />
+              </div>
             </div>
             <div
               className="sdc-label"
