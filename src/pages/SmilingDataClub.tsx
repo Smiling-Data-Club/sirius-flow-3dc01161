@@ -494,7 +494,7 @@ const SmilingDataClub = () => {
                     width: 195,
                     height: "auto",
                     filter:
-                      "drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(0 0 10px #0a0420) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
+                      "drop-shadow(0 0 4px rgba(10,4,32,0.55)) drop-shadow(0 0 8px rgba(10,4,32,0.45)) drop-shadow(0 0 14px rgba(10,4,32,0.35)) drop-shadow(0 0 22px rgba(10,4,32,0.25)) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
                   }}
                 />
               </div>
