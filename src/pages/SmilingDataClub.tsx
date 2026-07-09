@@ -565,21 +565,28 @@ const SmilingDataClub = () => {
                   breakInside: "avoid",
                   borderRadius: 14,
                   overflow: "hidden",
-                  border: "1px solid rgba(0,240,255,0.25)",
-                  boxShadow: "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)",
+                  border: g.featured
+                    ? "1px solid rgba(255,45,146,0.6)"
+                    : "1px solid rgba(0,240,255,0.25)",
+                  boxShadow: g.featured
+                    ? "0 0 32px rgba(255,45,146,0.4), 0 0 56px rgba(0,240,255,0.28)"
+                    : "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)",
                   background: "var(--bg-mid)",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
                   cursor: "zoom-in",
+                  transform: g.featured ? "scale(1.01)" : undefined,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.borderColor = "rgba(0,240,255,0.55)";
-                  e.currentTarget.style.boxShadow = "0 0 28px rgba(255,45,146,0.28), 0 0 44px rgba(0,240,255,0.28)";
+                  e.currentTarget.style.transform = g.featured ? "translateY(-2px) scale(1.015)" : "translateY(-2px)";
+                  e.currentTarget.style.borderColor = g.featured ? "rgba(255,45,146,0.85)" : "rgba(0,240,255,0.55)";
+                  e.currentTarget.style.boxShadow = "0 0 28px rgba(255,45,146,0.42), 0 0 52px rgba(0,240,255,0.32)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "";
-                  e.currentTarget.style.borderColor = "rgba(0,240,255,0.25)";
-                  e.currentTarget.style.boxShadow = "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)";
+                  e.currentTarget.style.transform = g.featured ? "scale(1.01)" : "";
+                  e.currentTarget.style.borderColor = g.featured ? "rgba(255,45,146,0.6)" : "rgba(0,240,255,0.25)";
+                  e.currentTarget.style.boxShadow = g.featured
+                    ? "0 0 32px rgba(255,45,146,0.4), 0 0 56px rgba(0,240,255,0.28)"
+                    : "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)";
                 }}
               >
                 <img
