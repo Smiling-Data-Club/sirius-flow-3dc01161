@@ -473,8 +473,8 @@ const SmilingDataClub = () => {
                 aria-hidden
                 style={{
                   position: "absolute",
-                  width: 160,
-                  height: 160,
+                  width: 220,
+                  height: 220,
                   borderRadius: "50%",
                   background:
                     "radial-gradient(circle, rgba(0,240,255,0.35) 0%, rgba(255,45,146,0.2) 40%, transparent 70%)",
