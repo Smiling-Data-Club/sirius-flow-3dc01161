@@ -597,7 +597,7 @@ const SmilingDataClub = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  {GALLERY_CATEGORIES[g.category]}
+                  {g.caption ?? GALLERY_CATEGORIES[g.category]}
                 </figcaption>
               </figure>
             ))}
@@ -807,7 +807,9 @@ const SmilingDataClub = () => {
                 textAlign: "center",
               }}
             >
-              {GALLERY_CATEGORIES[galleryItems[lightboxIndex].category]}
+              {galleryItems[lightboxIndex].caption
+                ? `${galleryItems[lightboxIndex].caption} · ${GALLERY_CATEGORIES[galleryItems[lightboxIndex].category]}`
+                : GALLERY_CATEGORIES[galleryItems[lightboxIndex].category]}
               <span style={{ color: "rgba(255,255,255,0.4)", marginLeft: 12 }}>
                 {lightboxIndex + 1} / {galleryItems.length}
               </span>
