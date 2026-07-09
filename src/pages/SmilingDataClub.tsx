@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
-import { galleryItems, GALLERY_CATEGORIES, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
+import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
 
 
 
@@ -289,6 +289,8 @@ const SmilingDataClub = () => {
         .sdc-masonry { column-count: 3; column-gap: 16px; }
         @media (max-width: 1000px) { .sdc-masonry { column-count: 2; } }
         @media (max-width: 620px) { .sdc-masonry { column-count: 1; } }
+        .sdc-reels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 900px) { .sdc-reels-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
 
         .sdc-tt-head {
           font-family: 'Space Mono', monospace;
