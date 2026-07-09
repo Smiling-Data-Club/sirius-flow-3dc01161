@@ -557,6 +557,7 @@ const SmilingDataClub = () => {
             {galleryItems.map((g, i) => (
               <figure
                 key={`${g.src}-${i}`}
+                onClick={() => setLightboxIndex(i)}
                 style={{
                   margin: "0 0 16px",
                   breakInside: "avoid",
@@ -566,6 +567,7 @@ const SmilingDataClub = () => {
                   boxShadow: "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)",
                   background: "var(--bg-mid)",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                  cursor: "zoom-in",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-2px)";
