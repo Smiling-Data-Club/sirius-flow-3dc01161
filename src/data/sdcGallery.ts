@@ -35,6 +35,7 @@ import photoSpeakerPortrait from "@/assets/sdc/166_culture_code_2026_08124_20260
 import photoAudienceListening from "@/assets/sdc/061_culture_code_2026_07580_20260701_goldencutmedia_2026.jpg";
 import photoGuestSmilingFood from "@/assets/sdc/233_culture_code_2026_08400_20260701_goldencutmedia_2026.jpg";
 import photoGuestsCoffeeBike from "@/assets/sdc/237_culture_code_2026_08413_20260701_goldencutmedia_2026.jpg";
+import photoTeamGroupNeon from "@/assets/sdc/058_culture_code_2026_07575_20260701_goldencutmedia_2026.jpg";
 
 // Batch 05 — Reportage
 import photoSlushMachine from "@/assets/sdc/175_culture_code_2026_08156_20260701_goldencutmedia_2026.jpg";
@@ -174,7 +175,9 @@ export const galleryItems: GalleryItem[] = [
   { src: photoBackstageSelfie, alt: "Backstage-Selfie mit dem Orga-Team", category: "networking" },
 
   // Atmosphäre im Innenhof
+  { src: photoTeamGroupNeon, alt: "Gruppenfoto vor dem SDC-Neon-Logo und der Pflanzenwand", category: "atmosphere", featured: true },
   { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "atmosphere" },
+  
   
 ];
 
