@@ -11,14 +11,12 @@ import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_golden
 
 // Batch 02 — Reportage
 import photoNeonGroup from "@/assets/sdc/059_culture_code_2026_07576_20260701_goldencutmedia_2026.jpg";
-import photoOpeningStage from "@/assets/sdc/061_culture_code_2026_07580_20260701_goldencutmedia_2026.jpg";
 import photoSpeakerMic from "@/assets/sdc/070_culture_code_2026_07605_20260701_goldencutmedia_2026.jpg";
 import photoRetroCube from "@/assets/sdc/079_culture_code_2026_07629_20260701_goldencutmedia_2026.jpg";
 import photoAudienceLaughing from "@/assets/sdc/095_culture_code_2026_07673_20260701_goldencutmedia_2026.jpg";
 import photoCourtyardMural from "@/assets/sdc/103_culture_code_2026_07699_20260701_goldencutmedia_2026.jpg";
 import photoFriesHand from "@/assets/sdc/109_culture_code_2026_07727_20260701_goldencutmedia_2026.jpg";
 import photoChefPlating from "@/assets/sdc/110_culture_code_2026_07730_20260701_goldencutmedia_2026.jpg";
-import photoChefSprinkle from "@/assets/sdc/111_culture_code_2026_07732_20260701_goldencutmedia_2026.jpg";
 import photoBellyBun from "@/assets/sdc/119_culture_code_2026_07752_20260701_goldencutmedia_2026.jpg";
 
 // Batch 03 — Reportage
@@ -28,7 +26,6 @@ import photoCoffeeChat from "@/assets/sdc/030_culture_code_2026_07486_20260701_g
 import photoHandshakeGroup from "@/assets/sdc/033_culture_code_2026_07492_20260701_goldencutmedia_2026.jpg";
 import photoOpeningDuo from "@/assets/sdc/043_culture_code_2026_07520_20260701_goldencutmedia_2026.jpg";
 import photoLanyardProgram from "@/assets/sdc/057_culture_code_2026_07572_20260701_goldencutmedia_2026.jpg";
-import photoTeamNeonWall from "@/assets/sdc/058_culture_code_2026_07575_20260701_goldencutmedia_2026.jpg";
 
 // Batch 04 — Reportage
 import photoStepBahadirLaugh from "@/assets/sdc/120_culture_code_2026_07755_20260701_goldencutmedia_2026.jpg";
@@ -108,56 +105,49 @@ export const galleryItems: GalleryItem[] = [
   { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking" },
 
   // Sessions
-  { src: photoOpeningDuo, alt: "Willkommen — Fabian & Bahadir auf der Bühne", category: "opening" },
-  { src: photoStage, alt: "Blick auf die Bühne beim Opening", category: "opening" },
-  { src: photoOpeningStage, alt: "Opening Keynote auf der Leinwand", category: "opening" },
-  { src: photoRetroCube, alt: "Speakerin mit Würfel — Today's complexity. Retro simplicity.", category: "opening" },
-  { src: photoKeynote, alt: "Impulsvortrag", category: "impulse" },
-  { src: photoSpeakerMic, alt: "Speakerin im Dialog mit dem Publikum", category: "impulse" },
+  { src: photoOpeningDuo, alt: "Opening Keynote — Fabian Schüler und Bahadir Alaz auf der Bühne", category: "opening" },
+  { src: photoStage, alt: "Bahadir Alaz während der Opening Keynote", category: "opening" },
+  { src: photoKeynote, alt: "Betül Hanisch beim Impulsvortrag „Der Mensch nach der Maschine“", category: "impulse" },
+  { src: photoSpeakerMic, alt: "Betül Hanisch im Austausch mit dem Publikum", category: "impulse" },
+  { src: photoRetroCube, alt: "Betül Hanisch mit Würfel-Motiv beim Impulsvortrag", category: "impulse" },
   { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
-  { src: photoSpeakerAuto, alt: "Impulsvortrag — Speaker mit Slide „Das Auto\"", category: "impulse" },
-  { src: photoSpeakerPortrait, alt: "Speaker-Portrait im Gespräch", category: "impulse" },
-  { src: photoAudienceNeon, alt: "Publikum vor der Neon-Greenwall", category: "impulse" },
+  { src: photoSpeakerAuto, alt: "Josef R. Schneider beim Impulsvortrag „AI meets EQ“", category: "impulse" },
+  { src: photoSpeakerPortrait, alt: "Josef R. Schneider — Portrait während des Impulsvortrags", category: "impulse" },
+  { src: photoAudienceNeon, alt: "Publikum in der Session vor der Neon-Greenwall", category: "impulse" },
+  { src: photoSpeakerHannah, alt: "Prof. Dr. Hannah Bast bei der Closing Keynote", category: "closing" },
+  { src: photoSpeakerClaude, alt: "Prof. Dr. Hannah Bast während der Closing Keynote mit Live-Demo", category: "closing" },
+  { src: photoSpeakerHands, alt: "Prof. Dr. Hannah Bast im Q&A nach der Closing Keynote", category: "closing" },
+  { src: photoApplause, alt: "Applaus nach der Closing Keynote", category: "closing" },
 
   // Details
   { src: photoLanyardProgram, alt: "Programm-Lanyard mit Timetable in der Hand", category: "details" },
   { src: photoNikeSdc, alt: "Custom Nike-Sneaker mit SDC-Stick", category: "details" },
+  { src: photoNeon, alt: "Neon-Signet Smiling Data Club im Innenhof", category: "details" },
 
   // Catering
   { src: photoBellyBun, alt: "Belly & Bun — Food Truck-Signet", category: "catering" },
   { src: photoChefPlating, alt: "Anrichten am Food Truck", category: "catering" },
-  { src: photoChefSprinkle, alt: "Finishing Touch am Food Truck", category: "catering" },
   { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "catering" },
   { src: photoGuestFries, alt: "Gast mit Pulled-Beef-Fritten am Foodtruck", category: "catering" },
   { src: photoCupcakeTrayClose, alt: "Tablett mit SDC-Cupcakes", category: "catering" },
   { src: photoCupcakeServer, alt: "SDC-Cupcakes werden serviert", category: "catering" },
   { src: photoCupcakeBite, alt: "Erster Bissen — Cupcake mit Buttercreme", category: "catering" },
-
-  // Ausklang & Networking
-  { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking" },
-  { src: photoNeon, alt: "Neon-Signet Smiling Data Club im Innenhof", category: "details" },
-  { src: photoTeamNeonWall, alt: "SDC-Team vor der Neon-Greenwall", category: "publicviewing" },
-  { src: photoNeonGroup, alt: "SDC-Team vor dem Neon-Signet", category: "publicviewing" },
-  { src: photoHugSdcShirt, alt: "Umarmung — Moment im SDC-Shirt", category: "publicviewing" },
-  { src: photoHug, alt: "Persönlicher Moment beim Ausklang", category: "publicviewing" },
-
-  // Batch 05
-  { src: photoSofaPhone, alt: "SDC-Team auf dem Sofa im Innenhof", category: "networking" },
-  { src: photoNeonTable, alt: "Gespräch am Stehtisch vor der Neon-Greenwall", category: "networking" },
   { src: photoBaristaBike, alt: "Barista an der roten Coffee Bike", category: "catering" },
   { src: photoEspressoPour, alt: "Espresso läuft — Detail an der Coffee Bike", category: "catering" },
   { src: photoSlushMachine, alt: "Slush-Maschine im Innenhof — ohne Alkohol", category: "catering" },
-  { src: photoSpeakerHannah, alt: "Speakerin im Impulsvortrag", category: "impulse" },
-  { src: photoSpeakerClaude, alt: "Live-Demo mit Claude auf der Bühne", category: "impulse" },
-  { src: photoSpeakerHands, alt: "Speakerin gestikuliert vor Code-Screen", category: "impulse" },
-  { src: photoApplause, alt: "Applaus im Publikum", category: "impulse" },
-  { src: photoPosterDanke, alt: "„Danke, Helmut\" — Abschieds-Poster wird betrachtet", category: "publicviewing" },
-
-  // Batch 06
-  { src: photoCoffeeBikeDuo, alt: "Fabian & Bahadir vor der Coffee Bike", category: "catering" },
+  { src: photoCoffeeBikeDuo, alt: "Fabian Schüler und Bahadir Alaz vor der Coffee Bike", category: "catering" },
   { src: photoBellyBunPrep, alt: "Belly & Bun — Bao wird zubereitet", category: "catering" },
   { src: photoKalteSofieServe, alt: "Kalte Sofie wird serviert", category: "catering" },
-  { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly & Bun-Truck", category: "catering" },
+  { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly-&-Bun-Truck", category: "catering" },
+
+  // Ausklang & Networking
+  { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking" },
+  { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "publicviewing" },
+  { src: photoHugSdcShirt, alt: "Umarmung — Moment im SDC-Shirt", category: "publicviewing" },
+  { src: photoHug, alt: "Persönlicher Moment beim Ausklang", category: "publicviewing" },
+  { src: photoSofaPhone, alt: "SDC-Team auf dem Sofa im Innenhof", category: "networking" },
+  { src: photoNeonTable, alt: "Gespräch am Stehtisch vor der Neon-Greenwall", category: "networking" },
+  { src: photoPosterDanke, alt: "„Danke, Helmut" — Abschieds-Poster wird betrachtet", category: "publicviewing" },
   { src: photoKalteSofieMan, alt: "Gast mit Kalter Sofie im SDC-Shirt", category: "networking" },
   { src: photoNetworkChat, alt: "Networking-Gespräch am Stehtisch", category: "networking" },
   { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "networking" },
