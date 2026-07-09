@@ -161,23 +161,23 @@ const SmilingDataClub = () => {
         }
         @keyframes sdc-logo-glitch {
           0%, 92%, 100% {
-            filter: drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
+            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(0 0 10px #0a0420) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
             transform: translateX(0);
           }
           93% {
-            filter: drop-shadow(3px 0 0 rgba(255,45,146,0.8)) drop-shadow(-3px 0 0 rgba(0,240,255,0.8));
+            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(3px 0 0 rgba(255,45,146,0.8)) drop-shadow(-3px 0 0 rgba(0,240,255,0.8));
             transform: translateX(-2px);
           }
           94% {
-            filter: drop-shadow(-3px 0 0 rgba(255,45,146,0.8)) drop-shadow(3px 0 0 rgba(0,240,255,0.8));
+            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(-3px 0 0 rgba(255,45,146,0.8)) drop-shadow(3px 0 0 rgba(0,240,255,0.8));
             transform: translateX(2px);
           }
           95% {
-            filter: drop-shadow(2px 0 0 rgba(255,45,146,0.8)) drop-shadow(-2px 0 0 rgba(0,240,255,0.8));
+            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(2px 0 0 rgba(255,45,146,0.8)) drop-shadow(-2px 0 0 rgba(0,240,255,0.8));
             transform: translateX(-1px);
           }
           96% {
-            filter: drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
+            filter: drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(0 0 10px #0a0420) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4));
             transform: translateX(0);
           }
         }
@@ -473,8 +473,8 @@ const SmilingDataClub = () => {
                 aria-hidden
                 style={{
                   position: "absolute",
-                  width: 160,
-                  height: 160,
+                  width: 220,
+                  height: 220,
                   borderRadius: "50%",
                   background:
                     "radial-gradient(circle, rgba(0,240,255,0.35) 0%, rgba(255,45,146,0.2) 40%, transparent 70%)",
@@ -482,30 +482,19 @@ const SmilingDataClub = () => {
                   zIndex: 0,
                 }}
               />
-              <div
-                aria-hidden
-                style={{
-                  position: "absolute",
-                  width: 155,
-                  height: 155,
-                  borderRadius: "50%",
-                  background: "rgba(10,4,32,0.85)",
-                  zIndex: 0,
-                }}
-              />
               <div className="sdc-hero-logo-float" style={{ position: "relative", zIndex: 1, display: "inline-block" }}>
                 <img
                   src={sdcLogoFull}
                   alt="Smiling Data Club"
-                  width={150}
-                  height={150}
+                  width={195}
+                  height={195}
                   className="sdc-hero-logo-glitch"
                   style={{
                     display: "block",
-                    width: 150,
+                    width: 195,
                     height: "auto",
                     filter:
-                      "drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
+                      "drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(0 0 10px #0a0420) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
                   }}
                 />
               </div>
