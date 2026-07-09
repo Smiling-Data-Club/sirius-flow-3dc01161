@@ -493,20 +493,22 @@ const SmilingDataClub = () => {
                   zIndex: 0,
                 }}
               />
-              <img
-                src={sdcLogoFull}
-                alt="Smiling Data Club"
-                width={150}
-                height={150}
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  width: 150,
-                  height: "auto",
-                  filter:
-                    "drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
-                }}
-              />
+              <div className="sdc-hero-logo-float" style={{ position: "relative", zIndex: 1, display: "inline-block" }}>
+                <img
+                  src={sdcLogoFull}
+                  alt="Smiling Data Club"
+                  width={150}
+                  height={150}
+                  className="sdc-hero-logo-glitch"
+                  style={{
+                    display: "block",
+                    width: 150,
+                    height: "auto",
+                    filter:
+                      "drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
+                  }}
+                />
+              </div>
             </div>
             <div
               className="sdc-label"
