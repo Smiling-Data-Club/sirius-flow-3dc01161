@@ -28,9 +28,13 @@ import photoLanyardProgram from "@/assets/sdc/057_culture_code_2026_07572_202607
 import photoStepBahadirLaugh from "@/assets/sdc/120_culture_code_2026_07755_20260701_goldencutmedia_2026.jpg";
 import photoNikeSdc from "@/assets/sdc/127_culture_code_2026_07777_20260701_goldencutmedia_2026.jpg";
 import photoCupcakeBite from "@/assets/sdc/135_culture_code_2026_08029_20260701_goldencutmedia_2026.jpg";
-import photoSpeakerAuto from "@/assets/sdc/150_culture_code_2026_08065_20260701_goldencutmedia_2026.jpg";
 import photoAudienceNeon from "@/assets/sdc/159_culture_code_2026_08094_20260701_goldencutmedia_2026.jpg";
 import photoSpeakerPortrait from "@/assets/sdc/166_culture_code_2026_08124_20260701_goldencutmedia_2026.jpg";
+
+// Batch 07 — Gäste / Publikum (ergänzt)
+import photoAudienceListening from "@/assets/sdc/061_culture_code_2026_07580_20260701_goldencutmedia_2026.jpg";
+import photoGuestSmilingFood from "@/assets/sdc/233_culture_code_2026_08400_20260701_goldencutmedia_2026.jpg";
+import photoGuestsCoffeeBike from "@/assets/sdc/237_culture_code_2026_08413_20260701_goldencutmedia_2026.jpg";
 
 // Batch 05 — Reportage
 import photoSlushMachine from "@/assets/sdc/175_culture_code_2026_08156_20260701_goldencutmedia_2026.jpg";
