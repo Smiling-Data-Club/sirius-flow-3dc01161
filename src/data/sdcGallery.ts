@@ -9,7 +9,7 @@ import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencu
 import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg";
 
 // Batch 02 — Reportage
-import photoNeonGroup from "@/assets/sdc/059_culture_code_2026_07576_20260701_goldencutmedia_2026.jpg";
+
 import photoSpeakerMic from "@/assets/sdc/070_culture_code_2026_07605_20260701_goldencutmedia_2026.jpg";
 import photoRetroCube from "@/assets/sdc/079_culture_code_2026_07629_20260701_goldencutmedia_2026.jpg";
 import photoAudienceLaughing from "@/assets/sdc/095_culture_code_2026_07673_20260701_goldencutmedia_2026.jpg";
@@ -175,7 +175,7 @@ export const galleryItems: GalleryItem[] = [
 
   // Atmosphäre im Innenhof
   { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "atmosphere" },
-  { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "atmosphere" },
+  
 ];
 
 // Video-Reels als eigenständiger Abschnitt (nicht in der Foto-Masonry).
