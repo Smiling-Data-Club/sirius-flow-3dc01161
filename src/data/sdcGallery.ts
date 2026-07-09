@@ -164,4 +164,31 @@ export const galleryItems: GalleryItem[] = [
   { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "atmosphere", caption: "Team vor dem Neon-Signet" },
   { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere", caption: "Orga-Team vor der Neon-Wall" },
   { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "atmosphere", caption: "Grimassen-Edition" },
+
+  // Vox-Pop Reels — Kurzclips, in der Lightbox abspielbar
+  {
+    src: reelHighlightPoster.url,
+    videoSrc: reelHighlight.url,
+    type: "video",
+    alt: "Reel — Vox-Pop: Dein Highlight vom Culture and Code",
+    category: "reels",
+    caption: "Dein Highlight vom Tag",
+  },
+  {
+    src: reelTagEinWortPoster.url,
+    videoSrc: reelTagEinWort.url,
+    type: "video",
+    alt: "Reel — Vox-Pop: Culture and Code in einem Wort",
+    category: "reels",
+    caption: "Culture & Code in einem Wort",
+  },
+  {
+    src: reelLaechelnPoster.url,
+    videoSrc: reelLaecheln.url,
+    type: "video",
+    alt: "Reel — Momente des Lächelns beim Culture and Code",
+    category: "reels",
+    caption: "Momente des Lächelns",
+  },
 ];
+
