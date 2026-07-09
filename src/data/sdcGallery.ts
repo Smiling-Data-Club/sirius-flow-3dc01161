@@ -4,7 +4,7 @@
 
 // Batch 01 — Reportage
 import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg";
-import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg";
+
 import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg";
 import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg";
 import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg";
@@ -144,7 +144,7 @@ export const galleryItems: GalleryItem[] = [
   { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking" },
   { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "publicviewing" },
   { src: photoHugSdcShirt, alt: "Umarmung — Moment im SDC-Shirt", category: "publicviewing" },
-  { src: photoHug, alt: "Persönlicher Moment beim Ausklang", category: "publicviewing" },
+  
   { src: photoSofaPhone, alt: "SDC-Team auf dem Sofa im Innenhof", category: "networking" },
   { src: photoNeonTable, alt: "Gespräch am Stehtisch vor der Neon-Greenwall", category: "networking" },
   { src: photoPosterDanke, alt: "Danke-Poster wird betrachtet", category: "publicviewing" },
