@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
-import { galleryItems, GALLERY_CATEGORIES, type GalleryCategoryKey } from "@/data/sdcGallery";
+import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
 
 
 
@@ -289,6 +289,8 @@ const SmilingDataClub = () => {
         .sdc-masonry { column-count: 3; column-gap: 16px; }
         @media (max-width: 1000px) { .sdc-masonry { column-count: 2; } }
         @media (max-width: 620px) { .sdc-masonry { column-count: 1; } }
+        .sdc-reels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 900px) { .sdc-reels-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
 
         .sdc-tt-head {
           font-family: 'Space Mono', monospace;
@@ -580,68 +582,83 @@ const SmilingDataClub = () => {
                   e.currentTarget.style.boxShadow = "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)";
                 }}
               >
-                <div style={{ position: "relative" }}>
-                  <img
-                    src={g.src}
-                    alt={g.alt}
-                    loading="lazy"
-                    decoding="async"
-                    style={{ display: "block", width: "100%", height: "auto", objectFit: "cover" }}
-                  />
-                  {g.type === "video" && (
-                    <div
-                      aria-hidden="true"
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: "linear-gradient(180deg, rgba(5,4,20,0.15) 0%, rgba(5,4,20,0.55) 100%)",
-                        pointerEvents: "none",
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: 68,
-                          height: 68,
-                          borderRadius: "50%",
-                          background: "rgba(5,4,20,0.75)",
-                          border: "2px solid #00f0ff",
-                          boxShadow: "0 0 24px rgba(0,240,255,0.65), 0 0 48px rgba(0,240,255,0.35)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          color: "#00f0ff",
-                          fontSize: 26,
-                          paddingLeft: 6,
-                          fontFamily: "'Space Mono', monospace",
-                        }}
-                      >
-                        ▶
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <figcaption
-                  style={{
-                    padding: "10px 12px",
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 10,
-                    letterSpacing: "0.2em",
-                    color: "var(--sdc-text-dim)",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {g.caption ?? GALLERY_CATEGORIES[g.category]}
-                </figcaption>
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ display: "block", width: "100%", height: "auto", objectFit: "cover" }}
+                />
+                {g.caption && (
+                  <figcaption
+                    style={{
+                      padding: "10px 12px",
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 10,
+                      letterSpacing: "0.2em",
+                      color: "var(--sdc-text-dim)",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {g.caption}
+                  </figcaption>
+                )}
               </figure>
             ))}
           </div>
         </section>
 
-
-
+        {/* IN BEWEGUNG — Video-Reels */}
+        <section className="sdc-section">
+          <div className="sdc-label" style={{ marginBottom: 16 }}>03 · In Bewegung</div>
+          <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 24 }}>
+            momente in bewegung
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--sdc-text-soft)", maxWidth: 720, marginBottom: 28 }}>
+            Drei kurze Reels vom Tag — Stimmen, Statements und Momente aus dem Innenhof.
+          </p>
+          <div className="sdc-reels-grid">
+            {reelItems.map((r) => (
+              <figure
+                key={r.videoSrc}
+                style={{
+                  margin: 0,
+                  borderRadius: 14,
+                  overflow: "hidden",
+                  border: "1px solid rgba(0,240,255,0.25)",
+                  boxShadow: "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)",
+                  background: "var(--bg-mid)",
+                }}
+              >
+                <div style={{ position: "relative", background: "#000" }}>
+                  <video
+                    src={r.videoSrc}
+                    poster={r.poster}
+                    controls
+                    playsInline
+                    preload="none"
+                    style={{ display: "block", width: "100%", height: "auto", aspectRatio: "9 / 16", objectFit: "cover" }}
+                  />
+                </div>
+                <figcaption
+                  style={{
+                    padding: "12px 14px",
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.15em",
+                    color: "var(--sdc-text-dim)",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span style={{ color: "#00f0ff" }}>{r.title}</span>
+                  <span style={{ display: "block", marginTop: 6, textTransform: "none", letterSpacing: "0.02em", color: "var(--sdc-text-soft)", fontSize: 12 }}>
+                    {r.caption}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
 
 
         {/* PROGRAMM-RECAP */}
@@ -821,38 +838,18 @@ const SmilingDataClub = () => {
               gap: 14,
             }}
           >
-            {galleryItems[lightboxIndex].type === "video" ? (
-              <video
-                key={galleryItems[lightboxIndex].videoSrc}
-                src={galleryItems[lightboxIndex].videoSrc}
-                poster={galleryItems[lightboxIndex].src}
-                controls
-                autoPlay
-                playsInline
-                preload="metadata"
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "78vh",
-                  borderRadius: 12,
-                  border: "1px solid rgba(0,240,255,0.3)",
-                  boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
-                  background: "#000",
-                }}
-              />
-            ) : (
-              <img
-                src={galleryItems[lightboxIndex].src}
-                alt={galleryItems[lightboxIndex].alt}
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "78vh",
-                  objectFit: "contain",
-                  borderRadius: 12,
-                  border: "1px solid rgba(0,240,255,0.3)",
-                  boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
-                }}
-              />
-            )}
+            <img
+              src={galleryItems[lightboxIndex].src}
+              alt={galleryItems[lightboxIndex].alt}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "78vh",
+                objectFit: "contain",
+                borderRadius: 12,
+                border: "1px solid rgba(0,240,255,0.3)",
+                boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
+              }}
+            />
             <figcaption
               style={{
                 fontFamily: "'Space Mono', monospace",
@@ -863,10 +860,10 @@ const SmilingDataClub = () => {
                 textAlign: "center",
               }}
             >
-              {galleryItems[lightboxIndex].caption
-                ? `${galleryItems[lightboxIndex].caption} · ${GALLERY_CATEGORIES[galleryItems[lightboxIndex].category]}`
-                : GALLERY_CATEGORIES[galleryItems[lightboxIndex].category]}
-              <span style={{ color: "rgba(255,255,255,0.4)", marginLeft: 12 }}>
+              {galleryItems[lightboxIndex].caption && (
+                <span style={{ marginRight: 12 }}>{galleryItems[lightboxIndex].caption}</span>
+              )}
+              <span style={{ color: "rgba(255,255,255,0.4)" }}>
                 {lightboxIndex + 1} / {galleryItems.length}
               </span>
             </figcaption>
