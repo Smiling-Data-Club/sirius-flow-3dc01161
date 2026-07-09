@@ -116,6 +116,8 @@ export type GalleryItem = {
   type?: "photo" | "video";
   /** Nur bei type="video": MP4-URL für die Lightbox-Wiedergabe. */
   videoSrc?: string;
+  /** Optional: hebt das Bild in der Masonry visuell hervor (stärkerer Neon-Rahmen, prominenter Platz). */
+  featured?: boolean;
 };
 
 // Reihenfolge folgt grob dem Tagesablauf — Ankommen → Sessions → Catering → Ausklang.
