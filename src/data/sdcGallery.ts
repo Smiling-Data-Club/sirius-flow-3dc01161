@@ -57,6 +57,9 @@ import photoKalteSofieCheers from "@/assets/sdc/249_culture_code_2026_08452_2026
 import reelHighlightH264 from "@/assets/sdc/event_highlight_h264.mp4";
 import reelLaechelnH264 from "@/assets/sdc/laecheln_h264.mp4";
 import reelTagEinWortH264 from "@/assets/sdc/tag_ein_wort_h264.mp4";
+import reelHighlightWebm from "@/assets/sdc/event_highlight.webm";
+import reelLaechelnWebm from "@/assets/sdc/laecheln.webm";
+import reelTagEinWortWebm from "@/assets/sdc/tag_ein_wort.webm";
 import reelHighlightPoster from "@/assets/sdc/event_highlight_poster.jpg";
 import reelLaechelnPoster from "@/assets/sdc/laecheln_poster.jpg";
 import reelTagEinWortPoster from "@/assets/sdc/tag_ein_wort_poster.jpg";
@@ -169,6 +172,7 @@ export const galleryItems: GalleryItem[] = [
 
 // Video-Reels als eigenständiger Abschnitt (nicht in der Foto-Masonry).
 export type ReelItem = {
+  videoSrcWebm: string;
   videoSrc: string;
   poster: string;
   title: string;
@@ -177,18 +181,21 @@ export type ReelItem = {
 
 export const reelItems: ReelItem[] = [
   {
+    videoSrcWebm: reelHighlightWebm,
     videoSrc: reelHighlightH264,
     poster: reelHighlightPoster,
     title: "Dein Highlight vom Tag",
     caption: "Vox-Pop mit Gästen — was ist heute hängen geblieben?",
   },
   {
+    videoSrcWebm: reelTagEinWortWebm,
     videoSrc: reelTagEinWortH264,
     poster: reelTagEinWortPoster,
     title: "Culture & Code in einem Wort",
     caption: "Ein-Wort-Statements der Teilnehmenden.",
   },
   {
+    videoSrcWebm: reelLaechelnWebm,
     videoSrc: reelLaechelnH264,
     poster: reelLaechelnPoster,
     title: "Momente des Lächelns",
