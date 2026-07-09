@@ -2,20 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
-import photoArrival from "@/assets/sdc/004_culture_code_01_07431_20260701_goldencutmedia_2026.jpg";
-import photoHug from "@/assets/sdc/012_culture_code_01_07470_20260701_goldencutmedia_2026.jpg";
-import photoNeon from "@/assets/sdc/015_culture_code_01_07483_20260701_goldencutmedia_2026.jpg";
-import photoStage from "@/assets/sdc/019_culture_code_01_07510_20260701_goldencutmedia_2026.jpg";
-import photoKeynote from "@/assets/sdc/037_culture_code_01_07689_20260701_goldencutmedia_2026.jpg";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
+import { galleryItems, GALLERY_CATEGORIES, type GalleryCategoryKey } from "@/data/sdcGallery";
 
-const galleryItems = [
-  { n: 1, label: "Ankommen & Empfang", src: photoArrival },
-  { n: 2, label: "Opening Keynote", src: photoStage },
-  { n: 3, label: "Impulsvortrag", src: photoKeynote },
-  { n: 4, label: "Neon-Signet im Innenhof", src: photoNeon },
-  { n: 5, label: "Ausklang & echte Momente", src: photoHug },
-];
 
 
 
@@ -269,6 +258,10 @@ const SmilingDataClub = () => {
         @media (max-width: 780px) {
           .sdc-timetable { grid-template-columns: 1fr; gap: 32px; }
         }
+        .sdc-masonry { column-count: 3; column-gap: 16px; }
+        @media (max-width: 1000px) { .sdc-masonry { column-count: 2; } }
+        @media (max-width: 620px) { .sdc-masonry { column-count: 1; } }
+
         .sdc-tt-head {
           font-family: 'Space Mono', monospace;
           font-size: 13px;
@@ -526,32 +519,61 @@ const SmilingDataClub = () => {
           <h2 className="sdc-grad-pc" style={{ fontSize: "clamp(28px, 4vw, 44px)", marginTop: 0, marginBottom: 28 }}>
             so hat sich der tag angefühlt
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 20 }}>
-            {galleryItems.map((g) => (
+          <div
+            style={{
+              columnCount: 3,
+              columnGap: 16,
+            }}
+            className="sdc-masonry"
+          >
+            {galleryItems.map((g, i) => (
               <figure
-                key={g.n}
+                key={`${g.src}-${i}`}
                 style={{
-                  margin: 0,
-                  borderRadius: 16,
+                  margin: "0 0 16px",
+                  breakInside: "avoid",
+                  borderRadius: 14,
                   overflow: "hidden",
                   border: "1px solid rgba(0,240,255,0.25)",
-                  boxShadow: "0 0 24px rgba(255,45,146,0.15), 0 0 40px rgba(0,240,255,0.12)",
+                  boxShadow: "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)",
                   background: "var(--bg-mid)",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.borderColor = "rgba(0,240,255,0.55)";
+                  e.currentTarget.style.boxShadow = "0 0 28px rgba(255,45,146,0.28), 0 0 44px rgba(0,240,255,0.28)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "";
+                  e.currentTarget.style.borderColor = "rgba(0,240,255,0.25)";
+                  e.currentTarget.style.boxShadow = "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)";
                 }}
               >
                 <img
                   src={g.src}
-                  alt={g.label}
+                  alt={g.alt}
                   loading="lazy"
-                  style={{ display: "block", width: "100%", height: 260, objectFit: "cover" }}
+                  decoding="async"
+                  style={{ display: "block", width: "100%", height: "auto", objectFit: "cover" }}
                 />
-                <figcaption style={{ padding: "12px 14px", fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: "0.2em", color: "var(--sdc-text-dim)", textTransform: "uppercase" }}>
-                  0{g.n} · {g.label}
+                <figcaption
+                  style={{
+                    padding: "10px 12px",
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 10,
+                    letterSpacing: "0.2em",
+                    color: "var(--sdc-text-dim)",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {GALLERY_CATEGORIES[g.category]}
                 </figcaption>
               </figure>
             ))}
           </div>
         </section>
+
 
 
 
