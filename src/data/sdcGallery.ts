@@ -21,6 +21,15 @@ import photoChefPlating from "@/assets/sdc/110_culture_code_2026_07730_20260701_
 import photoChefSprinkle from "@/assets/sdc/111_culture_code_2026_07732_20260701_goldencutmedia_2026.jpg";
 import photoBellyBun from "@/assets/sdc/119_culture_code_2026_07752_20260701_goldencutmedia_2026.jpg";
 
+// Batch 03 — Reportage
+import photoCoffeeBikeGreet from "@/assets/sdc/003_culture_code_2026_07429_20260701_goldencutmedia_2026.jpg";
+import photoHugSdcShirt from "@/assets/sdc/024_culture_code_2026_07469_20260701_goldencutmedia_2026.jpg";
+import photoCoffeeChat from "@/assets/sdc/030_culture_code_2026_07486_20260701_goldencutmedia_2026.jpg";
+import photoHandshakeGroup from "@/assets/sdc/033_culture_code_2026_07492_20260701_goldencutmedia_2026.jpg";
+import photoOpeningDuo from "@/assets/sdc/043_culture_code_2026_07520_20260701_goldencutmedia_2026.jpg";
+import photoLanyardProgram from "@/assets/sdc/057_culture_code_2026_07572_20260701_goldencutmedia_2026.jpg";
+import photoTeamNeonWall from "@/assets/sdc/058_culture_code_2026_07575_20260701_goldencutmedia_2026.jpg";
+
 export type GalleryCategoryKey =
   | "arrival"
   | "opening"
@@ -59,14 +68,21 @@ export const galleryItems: GalleryItem[] = [
   // Ankommen
   { src: photoArrival, alt: "Ankommen im Innenhof", category: "arrival" },
   { src: photoCourtyardMural, alt: "Innenhof mit Smiling-Data-Club-Mural und Coffee Bike", category: "arrival" },
+  { src: photoHandshakeGroup, alt: "Networking beim Ankommen auf dem Parkplatz", category: "arrival" },
+  { src: photoCoffeeBikeGreet, alt: "Begrüßung an der Coffee Bike", category: "networking" },
+  { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking" },
 
   // Sessions
+  { src: photoOpeningDuo, alt: "Willkommen — Fabian & Bahadir auf der Bühne", category: "opening" },
   { src: photoStage, alt: "Blick auf die Bühne beim Opening", category: "opening" },
   { src: photoOpeningStage, alt: "Opening Keynote auf der Leinwand", category: "opening" },
   { src: photoRetroCube, alt: "Speakerin mit Würfel — Today's complexity. Retro simplicity.", category: "opening" },
   { src: photoKeynote, alt: "Impulsvortrag", category: "impulse" },
   { src: photoSpeakerMic, alt: "Speakerin im Dialog mit dem Publikum", category: "impulse" },
   { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
+
+  // Details
+  { src: photoLanyardProgram, alt: "Programm-Lanyard mit Timetable in der Hand", category: "details" },
 
   // Catering
   { src: photoBellyBun, alt: "Belly & Bun — Food Truck-Signet", category: "catering" },
@@ -76,6 +92,8 @@ export const galleryItems: GalleryItem[] = [
 
   // Ausklang
   { src: photoNeon, alt: "Neon-Signet Smiling Data Club im Innenhof", category: "details" },
+  { src: photoTeamNeonWall, alt: "SDC-Team vor der Neon-Greenwall", category: "publicviewing" },
   { src: photoNeonGroup, alt: "SDC-Team vor dem Neon-Signet", category: "publicviewing" },
+  { src: photoHugSdcShirt, alt: "Umarmung — Moment im SDC-Shirt", category: "publicviewing" },
   { src: photoHug, alt: "Persönlicher Moment beim Ausklang", category: "publicviewing" },
 ];
