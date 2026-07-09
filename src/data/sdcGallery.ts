@@ -52,6 +52,14 @@ import photoKalteSofieMan from "@/assets/sdc/244_culture_code_2026_08436_2026070
 import photoNetworkChat from "@/assets/sdc/246_culture_code_2026_08442_20260701_goldencutmedia_2026.jpg";
 import photoKalteSofieCheers from "@/assets/sdc/249_culture_code_2026_08452_20260701_goldencutmedia_2026.jpg";
 
+// Video-Reels (Aftermovie-Kurzclips)
+import reelHighlight from "@/assets/sdc-reels/event_highlight.mp4.asset.json";
+import reelHighlightPoster from "@/assets/sdc-reels/event_highlight_poster.jpg.asset.json";
+import reelLaecheln from "@/assets/sdc-reels/laecheln.mp4.asset.json";
+import reelLaechelnPoster from "@/assets/sdc-reels/laecheln_poster.jpg.asset.json";
+import reelTagEinWort from "@/assets/sdc-reels/tag_ein_wort.mp4.asset.json";
+import reelTagEinWortPoster from "@/assets/sdc-reels/tag_ein_wort_poster.jpg.asset.json";
+
 export type GalleryCategoryKey =
   | "arrival"
   | "opening"
@@ -67,7 +75,8 @@ export type GalleryCategoryKey =
   | "coldsofie"
   | "cupcakes"
   | "atmosphere"
-  | "details";
+  | "details"
+  | "reels";
 
 export const GALLERY_CATEGORIES: Record<GalleryCategoryKey, string> = {
   arrival: "Ankommen & Empfang",
@@ -85,15 +94,22 @@ export const GALLERY_CATEGORIES: Record<GalleryCategoryKey, string> = {
   cupcakes: "Cupcakes",
   atmosphere: "Stimmung im Innenhof",
   details: "Details — Neon, Sticker, Merch",
+  reels: "Vox-Pop Reels",
 };
 
 export type GalleryItem = {
+  /** Für Fotos: Bild-URL. Für Videos: Poster-URL (Vorschau im Grid). */
   src: string;
   alt: string;
   category: GalleryCategoryKey;
   /** Kurzer, individueller Bildtitel — wird in der Galerie/Lightbox angezeigt statt der Kategorie. */
   caption?: string;
+  /** Default "photo". "video" rendert im Grid mit Play-Overlay und in der Lightbox als <video controls>. */
+  type?: "photo" | "video";
+  /** Nur bei type="video": MP4-URL für die Lightbox-Wiedergabe. */
+  videoSrc?: string;
 };
+
 
 // Reihenfolge folgt grob dem Tagesablauf — Ankommen → Sessions → Catering → Ausklang.
 export const galleryItems: GalleryItem[] = [
@@ -148,4 +164,31 @@ export const galleryItems: GalleryItem[] = [
   { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "atmosphere", caption: "Team vor dem Neon-Signet" },
   { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere", caption: "Orga-Team vor der Neon-Wall" },
   { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "atmosphere", caption: "Grimassen-Edition" },
+
+  // Vox-Pop Reels — Kurzclips, in der Lightbox abspielbar
+  {
+    src: reelHighlightPoster.url,
+    videoSrc: reelHighlight.url,
+    type: "video",
+    alt: "Reel — Vox-Pop: Dein Highlight vom Culture and Code",
+    category: "reels",
+    caption: "Dein Highlight vom Tag",
+  },
+  {
+    src: reelTagEinWortPoster.url,
+    videoSrc: reelTagEinWort.url,
+    type: "video",
+    alt: "Reel — Vox-Pop: Culture and Code in einem Wort",
+    category: "reels",
+    caption: "Culture & Code in einem Wort",
+  },
+  {
+    src: reelLaechelnPoster.url,
+    videoSrc: reelLaecheln.url,
+    type: "video",
+    alt: "Reel — Momente des Lächelns beim Culture and Code",
+    category: "reels",
+    caption: "Momente des Lächelns",
+  },
 ];
+

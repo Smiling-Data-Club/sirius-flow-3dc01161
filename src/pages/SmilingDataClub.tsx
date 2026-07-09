@@ -580,13 +580,49 @@ const SmilingDataClub = () => {
                   e.currentTarget.style.boxShadow = "0 0 20px rgba(255,45,146,0.12), 0 0 32px rgba(0,240,255,0.1)";
                 }}
               >
-                <img
-                  src={g.src}
-                  alt={g.alt}
-                  loading="lazy"
-                  decoding="async"
-                  style={{ display: "block", width: "100%", height: "auto", objectFit: "cover" }}
-                />
+                <div style={{ position: "relative" }}>
+                  <img
+                    src={g.src}
+                    alt={g.alt}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ display: "block", width: "100%", height: "auto", objectFit: "cover" }}
+                  />
+                  {g.type === "video" && (
+                    <div
+                      aria-hidden="true"
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "linear-gradient(180deg, rgba(5,4,20,0.15) 0%, rgba(5,4,20,0.55) 100%)",
+                        pointerEvents: "none",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: 68,
+                          height: 68,
+                          borderRadius: "50%",
+                          background: "rgba(5,4,20,0.75)",
+                          border: "2px solid #00f0ff",
+                          boxShadow: "0 0 24px rgba(0,240,255,0.65), 0 0 48px rgba(0,240,255,0.35)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "#00f0ff",
+                          fontSize: 26,
+                          paddingLeft: 6,
+                          fontFamily: "'Space Mono', monospace",
+                        }}
+                      >
+                        ▶
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <figcaption
                   style={{
                     padding: "10px 12px",
@@ -785,18 +821,38 @@ const SmilingDataClub = () => {
               gap: 14,
             }}
           >
-            <img
-              src={galleryItems[lightboxIndex].src}
-              alt={galleryItems[lightboxIndex].alt}
-              style={{
-                maxWidth: "100%",
-                maxHeight: "78vh",
-                objectFit: "contain",
-                borderRadius: 12,
-                border: "1px solid rgba(0,240,255,0.3)",
-                boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
-              }}
-            />
+            {galleryItems[lightboxIndex].type === "video" ? (
+              <video
+                key={galleryItems[lightboxIndex].videoSrc}
+                src={galleryItems[lightboxIndex].videoSrc}
+                poster={galleryItems[lightboxIndex].src}
+                controls
+                autoPlay
+                playsInline
+                preload="metadata"
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "78vh",
+                  borderRadius: 12,
+                  border: "1px solid rgba(0,240,255,0.3)",
+                  boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
+                  background: "#000",
+                }}
+              />
+            ) : (
+              <img
+                src={galleryItems[lightboxIndex].src}
+                alt={galleryItems[lightboxIndex].alt}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "78vh",
+                  objectFit: "contain",
+                  borderRadius: 12,
+                  border: "1px solid rgba(0,240,255,0.3)",
+                  boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
+                }}
+              />
+            )}
             <figcaption
               style={{
                 fontFamily: "'Space Mono', monospace",
