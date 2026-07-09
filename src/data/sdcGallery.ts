@@ -50,7 +50,7 @@ import photoNeonTable from "@/assets/sdc/224_culture_code_2026_08338_20260701_go
 // Batch 06 — Reportage
 import photoBackstageSelfie from "@/assets/sdc/225_culture_code_2026_08341_20260701_goldencutmedia_2026.jpg";
 import photoTeamGroupNeon from "@/assets/sdc/226_culture_code_2026_08362_20260701_goldencutmedia_2026.jpg";
-import photoTeamGroupFunny from "@/assets/sdc/227_culture_code_2026_08370_20260701_goldencutmedia_2026.jpg";
+
 import photoGuestBottle from "@/assets/sdc/230_culture_code_2026_08386_20260701_goldencutmedia_2026.jpg";
 import photoKalteSofieMan from "@/assets/sdc/244_culture_code_2026_08436_20260701_goldencutmedia_2026.jpg";
 import photoNetworkChat from "@/assets/sdc/246_culture_code_2026_08442_20260701_goldencutmedia_2026.jpg";
