@@ -482,30 +482,19 @@ const SmilingDataClub = () => {
                   zIndex: 0,
                 }}
               />
-              <div
-                aria-hidden
-                style={{
-                  position: "absolute",
-                  width: 155,
-                  height: 155,
-                  borderRadius: "50%",
-                  background: "rgba(10,4,32,0.85)",
-                  zIndex: 0,
-                }}
-              />
               <div className="sdc-hero-logo-float" style={{ position: "relative", zIndex: 1, display: "inline-block" }}>
                 <img
                   src={sdcLogoFull}
                   alt="Smiling Data Club"
-                  width={150}
-                  height={150}
+                  width={195}
+                  height={195}
                   className="sdc-hero-logo-glitch"
                   style={{
                     display: "block",
-                    width: 150,
+                    width: 195,
                     height: "auto",
                     filter:
-                      "drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
+                      "drop-shadow(0 0 3px #0a0420) drop-shadow(0 0 6px #0a0420) drop-shadow(0 0 10px #0a0420) drop-shadow(0 0 14px rgba(0,240,255,0.6)) drop-shadow(0 0 22px rgba(255,45,146,0.4))",
                   }}
                 />
               </div>
