@@ -160,9 +160,9 @@ export const galleryItems: GalleryItem[] = [
   { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "foodtruck" },
   { src: photoGuestSmilingFood, alt: "Lächelnder Gast mit Food-Bowl vor dem Belly-&-Bun-Truck", category: "networking" },
   { src: photoBaristaBike, alt: "Barista an der roten Coffee Bike", category: "coffeebike" },
-  { src: photoSlushMachine, alt: "Slush-Eis wird an der Slush-Maschine gezapft", category: "slush" },
   { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly-&-Bun-Truck", category: "coldsofie" },
   { src: photoCupcakeBite, alt: "Erster Bissen — Cupcake mit Buttercreme", category: "cupcakes" },
+  { src: photoSlushMachine, alt: "Slush-Eis wird an der Slush-Maschine gezapft", category: "slush" },
 
   // Networking & Ausklang
   { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking" },
