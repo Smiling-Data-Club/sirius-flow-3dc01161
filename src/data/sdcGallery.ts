@@ -147,7 +147,7 @@ export const galleryItems: GalleryItem[] = [
   { src: photoHug, alt: "Persönlicher Moment beim Ausklang", category: "publicviewing" },
   { src: photoSofaPhone, alt: "SDC-Team auf dem Sofa im Innenhof", category: "networking" },
   { src: photoNeonTable, alt: "Gespräch am Stehtisch vor der Neon-Greenwall", category: "networking" },
-  { src: photoPosterDanke, alt: "„Danke, Helmut" — Abschieds-Poster wird betrachtet", category: "publicviewing" },
+  { src: photoPosterDanke, alt: "Danke-Poster wird betrachtet", category: "publicviewing" },
   { src: photoKalteSofieMan, alt: "Gast mit Kalter Sofie im SDC-Shirt", category: "networking" },
   { src: photoNetworkChat, alt: "Networking-Gespräch am Stehtisch", category: "networking" },
   { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "networking" },
