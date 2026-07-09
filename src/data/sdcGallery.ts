@@ -41,6 +41,18 @@ import photoSpeakerAuto from "@/assets/sdc/150_culture_code_2026_08065_20260701_
 import photoAudienceNeon from "@/assets/sdc/159_culture_code_2026_08094_20260701_goldencutmedia_2026.jpg";
 import photoSpeakerPortrait from "@/assets/sdc/166_culture_code_2026_08124_20260701_goldencutmedia_2026.jpg";
 
+// Batch 05 — Reportage
+import photoSlushMachine from "@/assets/sdc/175_culture_code_2026_08156_20260701_goldencutmedia_2026.jpg";
+import photoSofaPhone from "@/assets/sdc/176_culture_code_2026_08157_20260701_goldencutmedia_2026.jpg";
+import photoBaristaBike from "@/assets/sdc/183_culture_code_2026_08185_20260701_goldencutmedia_2026.jpg";
+import photoEspressoPour from "@/assets/sdc/185_culture_code_2026_08194_20260701_goldencutmedia_2026.jpg";
+import photoSpeakerHannah from "@/assets/sdc/201_culture_code_2026_08250_20260701_goldencutmedia_2026.jpg";
+import photoSpeakerClaude from "@/assets/sdc/204_culture_code_2026_08265_20260701_goldencutmedia_2026.jpg";
+import photoSpeakerHands from "@/assets/sdc/207_culture_code_2026_08273_20260701_goldencutmedia_2026.jpg";
+import photoApplause from "@/assets/sdc/221_culture_code_2026_08327_20260701_goldencutmedia_2026.jpg";
+import photoPosterDanke from "@/assets/sdc/222_culture_code_2026_08332_20260701_goldencutmedia_2026.jpg";
+import photoNeonTable from "@/assets/sdc/224_culture_code_2026_08338_20260701_goldencutmedia_2026.jpg";
+
 export type GalleryCategoryKey =
   | "arrival"
   | "opening"
