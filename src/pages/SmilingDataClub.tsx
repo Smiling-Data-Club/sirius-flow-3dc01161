@@ -688,6 +688,133 @@ const SmilingDataClub = () => {
           </div>
         </section>
       </div>
+
+      {lightboxIndex !== null && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Foto-Galerie"
+          onClick={closeLightbox}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            background: "rgba(5,4,20,0.92)",
+            backdropFilter: "blur(8px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "clamp(16px, 4vw, 48px)",
+          }}
+        >
+          {/* Close */}
+          <button
+            aria-label="Schließen"
+            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+            style={{
+              position: "absolute",
+              top: 20,
+              right: 20,
+              width: 48,
+              height: 48,
+              borderRadius: "50%",
+              border: "1px solid rgba(0,240,255,0.5)",
+              background: "rgba(5,4,20,0.7)",
+              color: "#00f0ff",
+              fontSize: 22,
+              lineHeight: 1,
+              cursor: "pointer",
+              boxShadow: "0 0 20px rgba(0,240,255,0.4)",
+              fontFamily: "'Space Mono', monospace",
+            }}
+          >×</button>
+
+          {/* Prev */}
+          <button
+            aria-label="Vorheriges Foto"
+            onClick={(e) => { e.stopPropagation(); showPrev(); }}
+            style={{
+              position: "absolute",
+              left: 20,
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: 52,
+              height: 52,
+              borderRadius: "50%",
+              border: "1px solid rgba(255,45,146,0.55)",
+              background: "rgba(5,4,20,0.7)",
+              color: "#ff2d92",
+              fontSize: 24,
+              cursor: "pointer",
+              boxShadow: "0 0 20px rgba(255,45,146,0.4)",
+              fontFamily: "'Space Mono', monospace",
+            }}
+          >‹</button>
+
+          {/* Next */}
+          <button
+            aria-label="Nächstes Foto"
+            onClick={(e) => { e.stopPropagation(); showNext(); }}
+            style={{
+              position: "absolute",
+              right: 20,
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: 52,
+              height: 52,
+              borderRadius: "50%",
+              border: "1px solid rgba(255,45,146,0.55)",
+              background: "rgba(5,4,20,0.7)",
+              color: "#ff2d92",
+              fontSize: 24,
+              cursor: "pointer",
+              boxShadow: "0 0 20px rgba(255,45,146,0.4)",
+              fontFamily: "'Space Mono', monospace",
+            }}
+          >›</button>
+
+          <figure
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              margin: 0,
+              maxWidth: "min(1200px, 92vw)",
+              maxHeight: "88vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 14,
+            }}
+          >
+            <img
+              src={galleryItems[lightboxIndex].src}
+              alt={galleryItems[lightboxIndex].alt}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "78vh",
+                objectFit: "contain",
+                borderRadius: 12,
+                border: "1px solid rgba(0,240,255,0.3)",
+                boxShadow: "0 0 40px rgba(255,45,146,0.25), 0 0 60px rgba(0,240,255,0.2)",
+              }}
+            />
+            <figcaption
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: "0.25em",
+                textTransform: "uppercase",
+                color: "#00f0ff",
+                textAlign: "center",
+              }}
+            >
+              {GALLERY_CATEGORIES[galleryItems[lightboxIndex].category]}
+              <span style={{ color: "rgba(255,255,255,0.4)", marginLeft: 12 }}>
+                {lightboxIndex + 1} / {galleryItems.length}
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </PageLayout>
   );
 };
