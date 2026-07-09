@@ -33,6 +33,7 @@ import photoAudienceNeon from "@/assets/sdc/159_culture_code_2026_08094_20260701
 import photoSpeakerPortrait from "@/assets/sdc/166_culture_code_2026_08124_20260701_goldencutmedia_2026.jpg";
 
 // Batch 05 — Reportage
+import photoSlushMachine from "@/assets/sdc/175_culture_code_2026_08156_20260701_goldencutmedia_2026.jpg";
 import photoSofaPhone from "@/assets/sdc/176_culture_code_2026_08157_20260701_goldencutmedia_2026.jpg";
 import photoBaristaBike from "@/assets/sdc/183_culture_code_2026_08185_20260701_goldencutmedia_2026.jpg";
 import photoSpeakerHannah from "@/assets/sdc/201_culture_code_2026_08250_20260701_goldencutmedia_2026.jpg";
@@ -57,9 +58,14 @@ export type GalleryCategoryKey =
   | "impulse"
   | "deepdives"
   | "closing"
+  | "moments"
   | "transition"
   | "networking"
-  | "catering"
+  | "foodtruck"
+  | "coffeebike"
+  | "slush"
+  | "coldsofie"
+  | "cupcakes"
   | "atmosphere"
   | "details";
 
@@ -69,9 +75,14 @@ export const GALLERY_CATEGORIES: Record<GalleryCategoryKey, string> = {
   impulse: "Impulsvortrag",
   deepdives: "Deep Dives / Expert Lounge",
   closing: "Abschluss-Keynote",
+  moments: "Persönliche Momente",
   transition: "Übergang in den offenen Teil",
   networking: "Networking & Gespräche",
-  catering: "Coffee Bike & Catering",
+  foodtruck: "Foodtruck Belly & Bun",
+  coffeebike: "Coffee Bike",
+  slush: "Slush-Eis",
+  coldsofie: "Kalte Sofie",
+  cupcakes: "Cupcakes",
   atmosphere: "Stimmung im Innenhof",
   details: "Details — Neon, Sticker, Merch",
 };
@@ -80,56 +91,61 @@ export type GalleryItem = {
   src: string;
   alt: string;
   category: GalleryCategoryKey;
+  /** Kurzer, individueller Bildtitel — wird in der Galerie/Lightbox angezeigt statt der Kategorie. */
+  caption?: string;
 };
 
 // Reihenfolge folgt grob dem Tagesablauf — Ankommen → Sessions → Catering → Ausklang.
 export const galleryItems: GalleryItem[] = [
   // Ankommen
-  { src: photoArrival, alt: "Ankommen im Innenhof", category: "arrival" },
-  { src: photoCourtyardMural, alt: "Innenhof mit Smiling-Data-Club-Mural und Coffee Bike", category: "arrival" },
-  { src: photoHandshakeGroup, alt: "Networking beim Ankommen auf dem Parkplatz", category: "arrival" },
-  { src: photoCoffeeBikeGreet, alt: "Begrüßung an der Coffee Bike", category: "networking" },
-  { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking" },
+  { src: photoArrival, alt: "Ankommen im Innenhof", category: "arrival", caption: "Ankommen im Innenhof" },
+  { src: photoCourtyardMural, alt: "Innenhof mit Smiling-Data-Club-Mural und Coffee Bike", category: "arrival", caption: "Innenhof mit Mural" },
+  { src: photoHandshakeGroup, alt: "Networking beim Ankommen auf dem Parkplatz", category: "arrival", caption: "Erste Handshakes" },
+  { src: photoCoffeeBikeGreet, alt: "Begrüßung an der Coffee Bike", category: "networking", caption: "Herzlich willkommen" },
+  { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking", caption: "Espresso vor dem Kick-off" },
 
   // Sessions
-  { src: photoOpeningDuo, alt: "Opening Keynote — Fabian Schüler und Bahadir Alaz auf der Bühne", category: "opening" },
-  { src: photoStage, alt: "Bahadir Alaz während der Opening Keynote", category: "opening" },
-  { src: photoKeynote, alt: "Betül Hanisch beim Impulsvortrag „Der Mensch nach der Maschine“", category: "impulse" },
-  { src: photoSpeakerMic, alt: "Betül Hanisch im Austausch mit dem Publikum", category: "impulse" },
-  { src: photoRetroCube, alt: "Betül Hanisch mit Würfel-Motiv beim Impulsvortrag", category: "impulse" },
-  { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
-  { src: photoSpeakerAuto, alt: "Josef R. Schneider beim Impulsvortrag „AI meets EQ“", category: "impulse" },
-  { src: photoSpeakerPortrait, alt: "Josef R. Schneider — Portrait während des Impulsvortrags", category: "impulse" },
-  { src: photoAudienceNeon, alt: "Publikum in der Session vor der Neon-Greenwall", category: "impulse" },
-  { src: photoSpeakerHannah, alt: "Prof. Dr. Hannah Bast bei der Closing Keynote", category: "closing" },
-  { src: photoSpeakerClaude, alt: "Prof. Dr. Hannah Bast während der Closing Keynote mit Live-Demo", category: "closing" },
-  { src: photoSpeakerHands, alt: "Prof. Dr. Hannah Bast im Q&A nach der Closing Keynote", category: "closing" },
-  { src: photoApplause, alt: "Applaus nach der Closing Keynote", category: "closing" },
-  { src: photoPosterDanke, alt: "Danke-Poster wird nach der Closing Keynote betrachtet", category: "closing" },
+  { src: photoOpeningDuo, alt: "Opening Keynote — Fabian Schüler und Bahadir Alaz auf der Bühne", category: "opening", caption: "Fabian & Bahadir auf der Bühne" },
+  { src: photoStage, alt: "Bahadir Alaz während der Opening Keynote", category: "opening", caption: "Bahadir eröffnet den Tag" },
+  { src: photoKeynote, alt: "Betül Hanisch beim Impulsvortrag „Der Mensch nach der Maschine“", category: "impulse", caption: "Betül Hanisch — „Der Mensch nach der Maschine“" },
+  { src: photoSpeakerMic, alt: "Betül Hanisch im Austausch mit dem Publikum", category: "impulse", caption: "Im Austausch mit dem Publikum" },
+  { src: photoRetroCube, alt: "Betül Hanisch mit Würfel-Motiv beim Impulsvortrag", category: "impulse", caption: "Retro-Cube-Moment" },
+  { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse", caption: "Lachendes Publikum" },
+  { src: photoSpeakerAuto, alt: "Josef R. Schneider beim Impulsvortrag „AI meets EQ“", category: "impulse", caption: "Josef R. Schneider — „AI meets EQ“" },
+  { src: photoSpeakerPortrait, alt: "Josef R. Schneider — Portrait während des Impulsvortrags", category: "impulse", caption: "Portrait — Josef R. Schneider" },
+  { src: photoAudienceNeon, alt: "Publikum in der Session vor der Neon-Greenwall", category: "impulse", caption: "Publikum vor der Neon-Wall" },
+  { src: photoSpeakerHannah, alt: "Prof. Dr. Hannah Bast bei der Closing Keynote", category: "closing", caption: "Prof. Dr. Hannah Bast" },
+  { src: photoSpeakerClaude, alt: "Prof. Dr. Hannah Bast während der Closing Keynote mit Live-Demo", category: "closing", caption: "Live-Demo in der Closing Keynote" },
+  { src: photoSpeakerHands, alt: "Prof. Dr. Hannah Bast im Q&A nach der Closing Keynote", category: "closing", caption: "Q&A mit Hannah Bast" },
+  { src: photoApplause, alt: "Applaus nach der Closing Keynote", category: "closing", caption: "Applaus nach der Keynote" },
+
+  // Persönliche Momente (Abschied in den Ruhestand)
+  { src: photoPosterDanke, alt: "Abschied in den Ruhestand — Kollegen mit Danke-Poster", category: "moments", caption: "Abschied in den Ruhestand" },
 
   // Details
-  { src: photoLanyardProgram, alt: "Programm-Lanyard mit Timetable in der Hand", category: "details" },
-  { src: photoNikeSdc, alt: "Custom Nike-Sneaker mit SDC-Stick", category: "details" },
-  { src: photoNeon, alt: "Neon-Signet Smiling Data Club im Innenhof", category: "details" },
+  { src: photoLanyardProgram, alt: "Programm-Lanyard mit Timetable in der Hand", category: "details", caption: "Programm-Lanyard" },
+  { src: photoNikeSdc, alt: "Custom Nike-Sneaker mit SDC-Stick", category: "details", caption: "Custom SDC-Sneaker" },
+  { src: photoNeon, alt: "Neon-Signet Smiling Data Club im Innenhof", category: "details", caption: "Neon-Signet im Innenhof" },
 
-  // Catering — max. 1 pro Station
-  { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "catering" },
-  { src: photoBaristaBike, alt: "Barista an der roten Coffee Bike", category: "catering" },
-  { src: photoCupcakeBite, alt: "Erster Bissen — Cupcake mit Buttercreme", category: "catering" },
-  { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie — Slush-Getränke am Belly-&-Bun-Truck", category: "catering" },
+  // Catering — pro Station eine eigene Kategorie
+  { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "foodtruck", caption: "Pulled Beef Fritten" },
+  { src: photoBaristaBike, alt: "Barista an der roten Coffee Bike", category: "coffeebike", caption: "Barista an der Coffee Bike" },
+  { src: photoSlushMachine, alt: "Slush-Eis wird an der Slush-Maschine gezapft", category: "slush", caption: "Frisch gezapftes Slush-Eis" },
+  { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly-&-Bun-Truck", category: "coldsofie", caption: "Cheers mit Kalter Sofie" },
+  { src: photoCupcakeBite, alt: "Erster Bissen — Cupcake mit Buttercreme", category: "cupcakes", caption: "SDC-Cupcake, frisch angebissen" },
 
-  // Networking & Ausklang
-  { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking" },
-  { src: photoHugSdcShirt, alt: "Umarmung — Moment im SDC-Shirt", category: "networking" },
-  { src: photoSofaPhone, alt: "SDC-Team auf dem Sofa im Innenhof", category: "networking" },
-  { src: photoNeonTable, alt: "Gespräch am Stehtisch vor der Neon-Greenwall", category: "networking" },
-  { src: photoKalteSofieMan, alt: "Gast mit Kalter Sofie im SDC-Shirt", category: "networking" },
-  { src: photoNetworkChat, alt: "Networking-Gespräch am Stehtisch", category: "networking" },
-  { src: photoBackstageSelfie, alt: "Backstage-Selfie mit dem Orga-Team", category: "networking" },
+  // Networking & Ausklang — mit individuellen Captions
+  { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking", caption: "Lachen zwischendurch" },
+  { src: photoHugSdcShirt, alt: "Umarmung — Moment im SDC-Shirt", category: "networking", caption: "Umarmung im SDC-Shirt" },
+  { src: photoSofaPhone, alt: "SDC-Team auf dem Sofa im Innenhof", category: "networking", caption: "Kurze Pause auf dem Sofa" },
+  { src: photoNeonTable, alt: "Gespräch am Stehtisch vor der Neon-Greenwall", category: "networking", caption: "Gespräch vor der Neon-Wall" },
+  { src: photoKalteSofieMan, alt: "Gast mit Kalter Sofie im hellblauen Hemd", category: "networking", caption: "Anstoßen auf den Tag" },
+  { src: photoNetworkChat, alt: "Networking-Gespräch am Stehtisch", category: "networking", caption: "Im Gespräch am Stehtisch" },
+  { src: photoBackstageSelfie, alt: "Backstage-Selfie mit dem Orga-Team", category: "networking", caption: "Backstage mit dem Orga-Team" },
 
   // Atmosphäre im Innenhof
-  { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "atmosphere" },
-  { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "atmosphere" },
-  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere" },
-  { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "atmosphere" },
+  { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "atmosphere", caption: "Gute Laune beim Ausklang" },
+  { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "atmosphere", caption: "Team vor dem Neon-Signet" },
+  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere", caption: "Orga-Team vor der Neon-Wall" },
+  { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "atmosphere", caption: "Grimassen-Edition" },
 ];
