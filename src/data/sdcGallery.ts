@@ -126,9 +126,12 @@ export const galleryItems: GalleryItem[] = [
   // Ankommen
   { src: photoArrival, alt: "Ankommen im Innenhof", category: "arrival" },
   { src: photoCourtyardMural, alt: "Innenhof mit Smiling-Data-Club-Mural und Coffee Bike", category: "arrival" },
+  // Gruppenfoto prominent im oberen Grid-Bereich
+  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere", featured: true },
   { src: photoHandshakeGroup, alt: "Networking beim Ankommen auf dem Parkplatz", category: "arrival" },
   { src: photoCoffeeBikeGreet, alt: "Begrüßung an der Coffee Bike", category: "networking" },
   { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking" },
+  { src: photoGuestsCoffeeBike, alt: "Zwei Gäste im Gespräch an der roten Coffee Bike", category: "networking" },
 
   // Sessions — Captions nur mit Name + Talk
   { src: photoOpeningDuo, alt: "Opening Keynote — Fabian Schüler und Bahadir Alaz auf der Bühne", category: "opening", caption: "Fabian Schüler & Bahadir Alaz — Opening Keynote" },
@@ -137,7 +140,7 @@ export const galleryItems: GalleryItem[] = [
   { src: photoSpeakerMic, alt: "Betül Hanisch im Austausch mit dem Publikum", category: "impulse", caption: "Betül Hanisch — Der Mensch nach der Maschine" },
   { src: photoRetroCube, alt: "Betül Hanisch mit Würfel-Motiv beim Impulsvortrag", category: "impulse", caption: "Betül Hanisch — Der Mensch nach der Maschine" },
   { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
-  { src: photoSpeakerAuto, alt: "Josef R. Schneider beim Impulsvortrag „AI meets EQ“", category: "impulse", caption: "Josef R. Schneider — AI meets EQ" },
+  { src: photoAudienceListening, alt: "Publikum verfolgt die Keynote auf der Bühne", category: "impulse" },
   { src: photoSpeakerPortrait, alt: "Josef R. Schneider — Portrait während des Impulsvortrags", category: "impulse", caption: "Josef R. Schneider — AI meets EQ" },
   { src: photoAudienceNeon, alt: "Publikum in der Session vor der Neon-Greenwall", category: "impulse" },
   { src: photoSpeakerHannah, alt: "Prof. Dr. Hannah Bast bei der Closing Keynote", category: "closing", caption: "Prof. Dr. Hannah Bast — Closing Keynote" },
@@ -155,6 +158,7 @@ export const galleryItems: GalleryItem[] = [
 
   // Catering
   { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "foodtruck" },
+  { src: photoGuestSmilingFood, alt: "Lächelnder Gast mit Food-Bowl vor dem Belly-&-Bun-Truck", category: "networking" },
   { src: photoBaristaBike, alt: "Barista an der roten Coffee Bike", category: "coffeebike" },
   { src: photoSlushMachine, alt: "Slush-Eis wird an der Slush-Maschine gezapft", category: "slush" },
   { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly-&-Bun-Truck", category: "coldsofie" },
@@ -172,8 +176,6 @@ export const galleryItems: GalleryItem[] = [
   // Atmosphäre im Innenhof
   { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "atmosphere" },
   { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "atmosphere" },
-  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere" },
-  { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "atmosphere" },
 ];
 
 // Video-Reels als eigenständiger Abschnitt (nicht in der Foto-Masonry).
