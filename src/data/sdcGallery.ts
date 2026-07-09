@@ -53,6 +53,18 @@ import photoApplause from "@/assets/sdc/221_culture_code_2026_08327_20260701_gol
 import photoPosterDanke from "@/assets/sdc/222_culture_code_2026_08332_20260701_goldencutmedia_2026.jpg";
 import photoNeonTable from "@/assets/sdc/224_culture_code_2026_08338_20260701_goldencutmedia_2026.jpg";
 
+// Batch 06 — Reportage
+import photoBackstageSelfie from "@/assets/sdc/225_culture_code_2026_08341_20260701_goldencutmedia_2026.jpg";
+import photoTeamGroupNeon from "@/assets/sdc/226_culture_code_2026_08362_20260701_goldencutmedia_2026.jpg";
+import photoTeamGroupFunny from "@/assets/sdc/227_culture_code_2026_08370_20260701_goldencutmedia_2026.jpg";
+import photoGuestBottle from "@/assets/sdc/230_culture_code_2026_08386_20260701_goldencutmedia_2026.jpg";
+import photoCoffeeBikeDuo from "@/assets/sdc/233_culture_code_2026_08400_20260701_goldencutmedia_2026.jpg";
+import photoBellyBunPrep from "@/assets/sdc/237_culture_code_2026_08413_20260701_goldencutmedia_2026.jpg";
+import photoKalteSofieMan from "@/assets/sdc/244_culture_code_2026_08436_20260701_goldencutmedia_2026.jpg";
+import photoNetworkChat from "@/assets/sdc/246_culture_code_2026_08442_20260701_goldencutmedia_2026.jpg";
+import photoKalteSofieServe from "@/assets/sdc/248_culture_code_2026_08450_20260701_goldencutmedia_2026.jpg";
+import photoKalteSofieCheers from "@/assets/sdc/249_culture_code_2026_08452_20260701_goldencutmedia_2026.jpg";
+
 export type GalleryCategoryKey =
   | "arrival"
   | "opening"
@@ -140,4 +152,16 @@ export const galleryItems: GalleryItem[] = [
   { src: photoSpeakerHands, alt: "Speakerin gestikuliert vor Code-Screen", category: "impulse" },
   { src: photoApplause, alt: "Applaus im Publikum", category: "impulse" },
   { src: photoPosterDanke, alt: "„Danke, Helmut\" — Abschieds-Poster wird betrachtet", category: "publicviewing" },
+
+  // Batch 06
+  { src: photoCoffeeBikeDuo, alt: "Fabian & Bahadir vor der Coffee Bike", category: "catering" },
+  { src: photoBellyBunPrep, alt: "Belly & Bun — Bao wird zubereitet", category: "catering" },
+  { src: photoKalteSofieServe, alt: "Kalte Sofie wird serviert", category: "catering" },
+  { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly & Bun-Truck", category: "catering" },
+  { src: photoKalteSofieMan, alt: "Gast mit Kalter Sofie im SDC-Shirt", category: "networking" },
+  { src: photoNetworkChat, alt: "Networking-Gespräch am Stehtisch", category: "networking" },
+  { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "networking" },
+  { src: photoBackstageSelfie, alt: "Backstage-Selfie mit dem Orga-Team", category: "publicviewing" },
+  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "publicviewing" },
+  { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "publicviewing" },
 ];
