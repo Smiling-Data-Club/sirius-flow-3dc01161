@@ -128,4 +128,16 @@ export const galleryItems: GalleryItem[] = [
   { src: photoNeonGroup, alt: "SDC-Team vor dem Neon-Signet", category: "publicviewing" },
   { src: photoHugSdcShirt, alt: "Umarmung — Moment im SDC-Shirt", category: "publicviewing" },
   { src: photoHug, alt: "Persönlicher Moment beim Ausklang", category: "publicviewing" },
+
+  // Batch 05
+  { src: photoSofaPhone, alt: "SDC-Team auf dem Sofa im Innenhof", category: "networking" },
+  { src: photoNeonTable, alt: "Gespräch am Stehtisch vor der Neon-Greenwall", category: "networking" },
+  { src: photoBaristaBike, alt: "Barista an der roten Coffee Bike", category: "catering" },
+  { src: photoEspressoPour, alt: "Espresso läuft — Detail an der Coffee Bike", category: "catering" },
+  { src: photoSlushMachine, alt: "Slush-Maschine im Innenhof — ohne Alkohol", category: "catering" },
+  { src: photoSpeakerHannah, alt: "Speakerin im Impulsvortrag", category: "impulse" },
+  { src: photoSpeakerClaude, alt: "Live-Demo mit Claude auf der Bühne", category: "impulse" },
+  { src: photoSpeakerHands, alt: "Speakerin gestikuliert vor Code-Screen", category: "impulse" },
+  { src: photoApplause, alt: "Applaus im Publikum", category: "impulse" },
+  { src: photoPosterDanke, alt: "„Danke, Helmut\" — Abschieds-Poster wird betrachtet", category: "publicviewing" },
 ];
