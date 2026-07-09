@@ -30,6 +30,17 @@ import photoOpeningDuo from "@/assets/sdc/043_culture_code_2026_07520_20260701_g
 import photoLanyardProgram from "@/assets/sdc/057_culture_code_2026_07572_20260701_goldencutmedia_2026.jpg";
 import photoTeamNeonWall from "@/assets/sdc/058_culture_code_2026_07575_20260701_goldencutmedia_2026.jpg";
 
+// Batch 04 — Reportage
+import photoStepBahadirLaugh from "@/assets/sdc/120_culture_code_2026_07755_20260701_goldencutmedia_2026.jpg";
+import photoCupcakeTrayClose from "@/assets/sdc/122_culture_code_2026_07758_20260701_goldencutmedia_2026.jpg";
+import photoCupcakeServer from "@/assets/sdc/123_culture_code_2026_07760_20260701_goldencutmedia_2026.jpg";
+import photoGuestFries from "@/assets/sdc/126_culture_code_2026_07772_20260701_goldencutmedia_2026.jpg";
+import photoNikeSdc from "@/assets/sdc/127_culture_code_2026_07777_20260701_goldencutmedia_2026.jpg";
+import photoCupcakeBite from "@/assets/sdc/135_culture_code_2026_08029_20260701_goldencutmedia_2026.jpg";
+import photoSpeakerAuto from "@/assets/sdc/150_culture_code_2026_08065_20260701_goldencutmedia_2026.jpg";
+import photoAudienceNeon from "@/assets/sdc/159_culture_code_2026_08094_20260701_goldencutmedia_2026.jpg";
+import photoSpeakerPortrait from "@/assets/sdc/166_culture_code_2026_08124_20260701_goldencutmedia_2026.jpg";
+
 export type GalleryCategoryKey =
   | "arrival"
   | "opening"
@@ -80,17 +91,26 @@ export const galleryItems: GalleryItem[] = [
   { src: photoKeynote, alt: "Impulsvortrag", category: "impulse" },
   { src: photoSpeakerMic, alt: "Speakerin im Dialog mit dem Publikum", category: "impulse" },
   { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
+  { src: photoSpeakerAuto, alt: "Impulsvortrag — Speaker mit Slide „Das Auto\"", category: "impulse" },
+  { src: photoSpeakerPortrait, alt: "Speaker-Portrait im Gespräch", category: "impulse" },
+  { src: photoAudienceNeon, alt: "Publikum vor der Neon-Greenwall", category: "impulse" },
 
   // Details
   { src: photoLanyardProgram, alt: "Programm-Lanyard mit Timetable in der Hand", category: "details" },
+  { src: photoNikeSdc, alt: "Custom Nike-Sneaker mit SDC-Stick", category: "details" },
 
   // Catering
   { src: photoBellyBun, alt: "Belly & Bun — Food Truck-Signet", category: "catering" },
   { src: photoChefPlating, alt: "Anrichten am Food Truck", category: "catering" },
   { src: photoChefSprinkle, alt: "Finishing Touch am Food Truck", category: "catering" },
   { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "catering" },
+  { src: photoGuestFries, alt: "Gast mit Pulled-Beef-Fritten am Foodtruck", category: "catering" },
+  { src: photoCupcakeTrayClose, alt: "Tablett mit SDC-Cupcakes", category: "catering" },
+  { src: photoCupcakeServer, alt: "SDC-Cupcakes werden serviert", category: "catering" },
+  { src: photoCupcakeBite, alt: "Erster Bissen — Cupcake mit Buttercreme", category: "catering" },
 
-  // Ausklang
+  // Ausklang & Networking
+  { src: photoStepBahadirLaugh, alt: "Lachender Austausch am Stehtisch — STEP & SDC", category: "networking" },
   { src: photoNeon, alt: "Neon-Signet Smiling Data Club im Innenhof", category: "details" },
   { src: photoTeamNeonWall, alt: "SDC-Team vor der Neon-Greenwall", category: "publicviewing" },
   { src: photoNeonGroup, alt: "SDC-Team vor dem Neon-Signet", category: "publicviewing" },
