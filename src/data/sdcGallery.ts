@@ -49,7 +49,7 @@ import photoNeonTable from "@/assets/sdc/224_culture_code_2026_08338_20260701_go
 
 // Batch 06 — Reportage
 import photoBackstageSelfie from "@/assets/sdc/225_culture_code_2026_08341_20260701_goldencutmedia_2026.jpg";
-import photoTeamGroupNeon from "@/assets/sdc/058_culture_code_2026_07575_20260701_goldencutmedia_2026.jpg";
+
 
 import photoGuestBottle from "@/assets/sdc/230_culture_code_2026_08386_20260701_goldencutmedia_2026.jpg";
 import photoKalteSofieMan from "@/assets/sdc/244_culture_code_2026_08436_20260701_goldencutmedia_2026.jpg";
@@ -127,7 +127,7 @@ export const galleryItems: GalleryItem[] = [
   { src: photoArrival, alt: "Ankommen im Innenhof", category: "arrival" },
   { src: photoCourtyardMural, alt: "Innenhof mit Smiling-Data-Club-Mural und Coffee Bike", category: "arrival" },
   // Gruppenfoto prominent im oberen Grid-Bereich
-  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere", featured: true },
+  
   { src: photoHandshakeGroup, alt: "Networking beim Ankommen auf dem Parkplatz", category: "arrival" },
   { src: photoCoffeeBikeGreet, alt: "Begrüßung an der Coffee Bike", category: "networking" },
   { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking" },
