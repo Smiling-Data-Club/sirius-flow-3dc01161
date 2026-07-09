@@ -28,9 +28,13 @@ import photoLanyardProgram from "@/assets/sdc/057_culture_code_2026_07572_202607
 import photoStepBahadirLaugh from "@/assets/sdc/120_culture_code_2026_07755_20260701_goldencutmedia_2026.jpg";
 import photoNikeSdc from "@/assets/sdc/127_culture_code_2026_07777_20260701_goldencutmedia_2026.jpg";
 import photoCupcakeBite from "@/assets/sdc/135_culture_code_2026_08029_20260701_goldencutmedia_2026.jpg";
-import photoSpeakerAuto from "@/assets/sdc/150_culture_code_2026_08065_20260701_goldencutmedia_2026.jpg";
 import photoAudienceNeon from "@/assets/sdc/159_culture_code_2026_08094_20260701_goldencutmedia_2026.jpg";
 import photoSpeakerPortrait from "@/assets/sdc/166_culture_code_2026_08124_20260701_goldencutmedia_2026.jpg";
+
+// Batch 07 — Gäste / Publikum (ergänzt)
+import photoAudienceListening from "@/assets/sdc/061_culture_code_2026_07580_20260701_goldencutmedia_2026.jpg";
+import photoGuestSmilingFood from "@/assets/sdc/233_culture_code_2026_08400_20260701_goldencutmedia_2026.jpg";
+import photoGuestsCoffeeBike from "@/assets/sdc/237_culture_code_2026_08413_20260701_goldencutmedia_2026.jpg";
 
 // Batch 05 — Reportage
 import photoSlushMachine from "@/assets/sdc/175_culture_code_2026_08156_20260701_goldencutmedia_2026.jpg";
@@ -46,7 +50,7 @@ import photoNeonTable from "@/assets/sdc/224_culture_code_2026_08338_20260701_go
 // Batch 06 — Reportage
 import photoBackstageSelfie from "@/assets/sdc/225_culture_code_2026_08341_20260701_goldencutmedia_2026.jpg";
 import photoTeamGroupNeon from "@/assets/sdc/226_culture_code_2026_08362_20260701_goldencutmedia_2026.jpg";
-import photoTeamGroupFunny from "@/assets/sdc/227_culture_code_2026_08370_20260701_goldencutmedia_2026.jpg";
+
 import photoGuestBottle from "@/assets/sdc/230_culture_code_2026_08386_20260701_goldencutmedia_2026.jpg";
 import photoKalteSofieMan from "@/assets/sdc/244_culture_code_2026_08436_20260701_goldencutmedia_2026.jpg";
 import photoNetworkChat from "@/assets/sdc/246_culture_code_2026_08442_20260701_goldencutmedia_2026.jpg";
@@ -112,6 +116,8 @@ export type GalleryItem = {
   type?: "photo" | "video";
   /** Nur bei type="video": MP4-URL für die Lightbox-Wiedergabe. */
   videoSrc?: string;
+  /** Optional: hebt das Bild in der Masonry visuell hervor (stärkerer Neon-Rahmen, prominenter Platz). */
+  featured?: boolean;
 };
 
 // Reihenfolge folgt grob dem Tagesablauf — Ankommen → Sessions → Catering → Ausklang.
@@ -120,9 +126,12 @@ export const galleryItems: GalleryItem[] = [
   // Ankommen
   { src: photoArrival, alt: "Ankommen im Innenhof", category: "arrival" },
   { src: photoCourtyardMural, alt: "Innenhof mit Smiling-Data-Club-Mural und Coffee Bike", category: "arrival" },
+  // Gruppenfoto prominent im oberen Grid-Bereich
+  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere", featured: true },
   { src: photoHandshakeGroup, alt: "Networking beim Ankommen auf dem Parkplatz", category: "arrival" },
   { src: photoCoffeeBikeGreet, alt: "Begrüßung an der Coffee Bike", category: "networking" },
   { src: photoCoffeeChat, alt: "Gespräch bei Kaffee und Espresso vor dem Opening", category: "networking" },
+  { src: photoGuestsCoffeeBike, alt: "Zwei Gäste im Gespräch an der roten Coffee Bike", category: "networking" },
 
   // Sessions — Captions nur mit Name + Talk
   { src: photoOpeningDuo, alt: "Opening Keynote — Fabian Schüler und Bahadir Alaz auf der Bühne", category: "opening", caption: "Fabian Schüler & Bahadir Alaz — Opening Keynote" },
@@ -131,7 +140,7 @@ export const galleryItems: GalleryItem[] = [
   { src: photoSpeakerMic, alt: "Betül Hanisch im Austausch mit dem Publikum", category: "impulse", caption: "Betül Hanisch — Der Mensch nach der Maschine" },
   { src: photoRetroCube, alt: "Betül Hanisch mit Würfel-Motiv beim Impulsvortrag", category: "impulse", caption: "Betül Hanisch — Der Mensch nach der Maschine" },
   { src: photoAudienceLaughing, alt: "Lachendes Publikum in der Session", category: "impulse" },
-  { src: photoSpeakerAuto, alt: "Josef R. Schneider beim Impulsvortrag „AI meets EQ“", category: "impulse", caption: "Josef R. Schneider — AI meets EQ" },
+  { src: photoAudienceListening, alt: "Publikum verfolgt die Keynote auf der Bühne", category: "impulse" },
   { src: photoSpeakerPortrait, alt: "Josef R. Schneider — Portrait während des Impulsvortrags", category: "impulse", caption: "Josef R. Schneider — AI meets EQ" },
   { src: photoAudienceNeon, alt: "Publikum in der Session vor der Neon-Greenwall", category: "impulse" },
   { src: photoSpeakerHannah, alt: "Prof. Dr. Hannah Bast bei der Closing Keynote", category: "closing", caption: "Prof. Dr. Hannah Bast — Closing Keynote" },
@@ -149,6 +158,7 @@ export const galleryItems: GalleryItem[] = [
 
   // Catering
   { src: photoFriesHand, alt: "Pulled Beef auf Fritten — Belly & Bun", category: "foodtruck" },
+  { src: photoGuestSmilingFood, alt: "Lächelnder Gast mit Food-Bowl vor dem Belly-&-Bun-Truck", category: "networking" },
   { src: photoBaristaBike, alt: "Barista an der roten Coffee Bike", category: "coffeebike" },
   { src: photoSlushMachine, alt: "Slush-Eis wird an der Slush-Maschine gezapft", category: "slush" },
   { src: photoKalteSofieCheers, alt: "Cheers mit Kalter Sofie am Belly-&-Bun-Truck", category: "coldsofie" },
@@ -166,8 +176,6 @@ export const galleryItems: GalleryItem[] = [
   // Atmosphäre im Innenhof
   { src: photoGuestBottle, alt: "Lächelnder Gast beim Ausklang im Innenhof", category: "atmosphere" },
   { src: photoNeonGroup, alt: "Team vor dem Neon-Signet", category: "atmosphere" },
-  { src: photoTeamGroupNeon, alt: "Orga-Team-Foto vor der Neon-Greenwall", category: "atmosphere" },
-  { src: photoTeamGroupFunny, alt: "Orga-Team — Grimassen-Version vor der Neon-Wall", category: "atmosphere" },
 ];
 
 // Video-Reels als eigenständiger Abschnitt (nicht in der Foto-Masonry).
