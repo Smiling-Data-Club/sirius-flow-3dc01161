@@ -660,9 +660,6 @@ const SmilingDataClub = () => {
                   }}
                 >
                   <span style={{ color: "#00f0ff" }}>{r.title}</span>
-                  <span style={{ display: "block", marginTop: 6, textTransform: "none", letterSpacing: "0.02em", color: "var(--sdc-text-soft)", fontSize: 12 }}>
-                    {r.caption}
-                  </span>
                 </figcaption>
               </figure>
             ))}
