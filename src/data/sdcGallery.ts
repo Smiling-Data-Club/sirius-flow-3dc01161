@@ -21,6 +21,15 @@ import photoChefPlating from "@/assets/sdc/110_culture_code_2026_07730_20260701_
 import photoChefSprinkle from "@/assets/sdc/111_culture_code_2026_07732_20260701_goldencutmedia_2026.jpg";
 import photoBellyBun from "@/assets/sdc/119_culture_code_2026_07752_20260701_goldencutmedia_2026.jpg";
 
+// Batch 03 — Reportage
+import photoCoffeeBikeGreet from "@/assets/sdc/003_culture_code_2026_07429_20260701_goldencutmedia_2026.jpg";
+import photoHugSdcShirt from "@/assets/sdc/024_culture_code_2026_07469_20260701_goldencutmedia_2026.jpg";
+import photoCoffeeChat from "@/assets/sdc/030_culture_code_2026_07486_20260701_goldencutmedia_2026.jpg";
+import photoHandshakeGroup from "@/assets/sdc/033_culture_code_2026_07492_20260701_goldencutmedia_2026.jpg";
+import photoOpeningDuo from "@/assets/sdc/043_culture_code_2026_07520_20260701_goldencutmedia_2026.jpg";
+import photoLanyardProgram from "@/assets/sdc/057_culture_code_2026_07572_20260701_goldencutmedia_2026.jpg";
+import photoTeamNeonWall from "@/assets/sdc/058_culture_code_2026_07575_20260701_goldencutmedia_2026.jpg";
+
 export type GalleryCategoryKey =
   | "arrival"
   | "opening"
