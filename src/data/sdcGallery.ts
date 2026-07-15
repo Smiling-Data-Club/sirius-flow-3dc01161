@@ -146,7 +146,7 @@ export const galleryItems: GalleryItem[] = [
   { src: photoAudienceNeon, alt: "Publikum in der Session vor der Neon-Greenwall", category: "impulse" },
   { src: photoSpeakerHannah, alt: "Prof. Dr. Hannah Bast bei der Closing Keynote", category: "closing", caption: "Prof. Dr. Hannah Bast — Closing Keynote" },
   { src: photoSpeakerClaude, alt: "Prof. Dr. Hannah Bast während der Closing Keynote mit Live-Demo", category: "closing", caption: "Prof. Dr. Hannah Bast — Closing Keynote" },
-  { src: photoSpeakerHands, alt: "Prof. Dr. Hannah Bast im Q&A nach der Closing Keynote", category: "closing", caption: "Prof. Dr. Hannah Bast — Closing Keynote" },
+  { src: photoGuestFoodSmile, alt: "Lächelnder Gast mit Pulled-Beef-Fritten am Belly-&-Bun-Foodtruck", category: "networking", caption: "Gast am Foodtruck" },
   { src: photoApplause, alt: "Applaus nach der Closing Keynote", category: "closing" },
 
   // Persönliche Momente (Abschied in den Ruhestand)
