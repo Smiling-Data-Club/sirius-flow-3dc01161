@@ -771,15 +771,20 @@ const SmilingDataClub = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="sdc-input"
               style={{ flex: "1 1 240px" }}
-              disabled={submitted}
+              disabled={submitted || submitting}
             />
-            <button type="submit" className="sdc-btn sdc-btn-pink" disabled={submitted}>
-              {submitted ? "✓ Eingetragen" : "Eintragen"}
+            <button type="submit" className="sdc-btn sdc-btn-pink" disabled={submitted || submitting}>
+              {submitted ? "✓ Eingetragen" : submitting ? "Sende..." : "Eintragen"}
             </button>
           </form>
           {submitted && (
             <p style={{ textAlign: "center", marginTop: 20, color: "var(--sdc-green)", fontFamily: "'Space Mono', monospace", fontSize: 14, letterSpacing: "0.1em" }}>
               Danke, du bekommst Bescheid!
+            </p>
+          )}
+          {errorMsg && (
+            <p style={{ textAlign: "center", marginTop: 20, color: "var(--sdc-pink)", fontFamily: "'Space Mono', monospace", fontSize: 14, letterSpacing: "0.1em" }}>
+              {errorMsg}
             </p>
           )}
 
