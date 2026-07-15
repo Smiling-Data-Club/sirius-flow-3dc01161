@@ -77,6 +77,30 @@ export type Database = {
         }
         Relationships: []
       }
+      sdc_newsletter_signups: {
+        Row: {
+          created_at: string
+          email: string
+          exported_to_zoho: boolean
+          id: string
+          source: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          exported_to_zoho?: boolean
+          id?: string
+          source?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          exported_to_zoho?: boolean
+          id?: string
+          source?: string | null
+        }
+        Relationships: []
+      }
       tiktok_posts: {
         Row: {
           cover_image_url: string | null
