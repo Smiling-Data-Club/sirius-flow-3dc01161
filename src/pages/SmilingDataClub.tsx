@@ -4,19 +4,32 @@ import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
-
-
-
-
+import { supabase } from "@/integrations/supabase/client";
 
 const SmilingDataClub = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) setSubmitted(true);
+    if (!email || submitting) return;
+    setSubmitting(true);
+    setErrorMsg(null);
+    try {
+      const { error } = await supabase
+        .from("sdc_newsletter_signups")
+        .insert({ email, source: "smiling-data-club-page" });
+      if (error) throw error;
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Newsletter signup failed", err);
+      setErrorMsg("Da ist etwas schiefgelaufen. Bitte versuch es später erneut.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
