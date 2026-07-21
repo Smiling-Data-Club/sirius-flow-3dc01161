@@ -10,6 +10,11 @@ import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
 import { supabase } from "@/integrations/supabase/client";
 
+const resolveAftermovieUrl = (path: string) =>
+  window.location.hostname === "localhost"
+    ? `https://id-preview--dcccc61e-ef91-4ea4-880f-52f0edb86a1c.lovable.app${path}`
+    : path;
+
 const SmilingDataClub = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -553,8 +558,8 @@ const SmilingDataClub = () => {
                 preload="metadata"
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
               >
-                <source src={aftermovieWebmAsset.url} type="video/webm" />
-                <source src={aftermovieAsset.url} type="video/mp4" />
+                <source src={resolveAftermovieUrl(aftermovieWebmAsset.url)} type="video/webm" />
+                <source src={resolveAftermovieUrl(aftermovieAsset.url)} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
