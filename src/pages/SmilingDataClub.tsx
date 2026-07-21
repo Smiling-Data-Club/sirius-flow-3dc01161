@@ -569,7 +569,7 @@ const SmilingDataClub = () => {
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
               >
                 <source src={aftermovieVideo} type="video/mp4" />
-                <source src={aftermovieWebm} type="video/webm" />
+                
                 Your browser does not support the video tag.
               </video>
               {!aftermovieStarted && (
