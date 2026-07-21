@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
 import aftermovieVideo from "@/assets/sdc/aftermovie.mp4";
+import aftermovieWebm from "@/assets/sdc/aftermovie.webm";
 import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
@@ -558,7 +559,6 @@ const SmilingDataClub = () => {
             >
               <video
                 ref={aftermovieRef}
-                src={aftermovieVideo}
                 poster={aftermoviePoster}
                 controls
                 playsInline
@@ -567,6 +567,8 @@ const SmilingDataClub = () => {
                 onEnded={() => setAftermovieStarted(false)}
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
               >
+                <source src={aftermovieWebm} type="video/webm" />
+                <source src={aftermovieVideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               {!aftermovieStarted && (
