@@ -1,5 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { useRef, useState } from "react";
+import aftermovieAsset from "@/assets/sdc/aftermovie.mp4.asset.json";
+import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
+
 
 
 /**
