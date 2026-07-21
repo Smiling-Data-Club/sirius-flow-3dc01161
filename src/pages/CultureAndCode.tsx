@@ -1,5 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { useRef, useState } from "react";
+import aftermovieAsset from "@/assets/sdc/aftermovie.mp4.asset.json";
+import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
+
 
 
 /**
@@ -209,10 +212,16 @@ const CultureAndCode = () => {
         background: #1a1a2e;
         box-sizing: border-box;
       }
+      .cc-video-wrap.is-wide {
+        max-width: 960px;
+      }
       .cc-video-stage {
         position: relative;
         width: 100%;
         aspect-ratio: 9 / 16;
+      }
+      .cc-video-stage.is-wide {
+        aspect-ratio: 16 / 9;
       }
       .cc-video {
         width: 100%;
@@ -223,6 +232,18 @@ const CultureAndCode = () => {
         background: #1a1a2e;
         touch-action: pan-y;
       }
+      .cc-video-stage.is-wide .cc-video {
+        aspect-ratio: 16 / 9;
+      }
+      .cc-section-label {
+        font-family: 'Silom', 'Courier New', monospace;
+        letter-spacing: 0.35em;
+        font-size: 0.75rem;
+        color: #e05fa0;
+        text-shadow: 0 0 8px rgba(224, 95, 160, 0.7);
+        margin-top: 24px;
+      }
+
       .cc-play-overlay {
         position: absolute;
         inset: 0;
@@ -368,6 +389,27 @@ const CultureAndCode = () => {
           </h1>
 
           <div className="cc-divider w-32 sm:w-40" />
+
+          <span className="cc-section-label uppercase">// Aftermovie</span>
+
+          <div className="cc-video-wrap is-wide">
+            <div className="cc-video-stage is-wide">
+              <video
+                src={aftermovieAsset.url}
+                poster={aftermoviePoster}
+                controls
+                playsInline
+                preload="metadata"
+                className="cc-video"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <span className="cc-section-label uppercase" style={{ marginTop: 40 }}>// Vertical Cut</span>
+
+
 
           <div className="cc-video-wrap">
             <div className="cc-video-stage">
