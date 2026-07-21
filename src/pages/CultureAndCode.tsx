@@ -390,6 +390,27 @@ const CultureAndCode = () => {
 
           <div className="cc-divider w-32 sm:w-40" />
 
+          <span className="cc-section-label uppercase">// Aftermovie</span>
+
+          <div className="cc-video-wrap is-wide">
+            <div className="cc-video-stage is-wide">
+              <video
+                src={aftermovieAsset.url}
+                poster={aftermoviePoster}
+                controls
+                playsInline
+                preload="metadata"
+                className="cc-video"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <span className="cc-section-label uppercase" style={{ marginTop: 40 }}>// Vertical Cut</span>
+
+
+
           <div className="cc-video-wrap">
             <div className="cc-video-stage">
               <video
