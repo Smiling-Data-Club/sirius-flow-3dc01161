@@ -212,10 +212,16 @@ const CultureAndCode = () => {
         background: #1a1a2e;
         box-sizing: border-box;
       }
+      .cc-video-wrap.is-wide {
+        max-width: 960px;
+      }
       .cc-video-stage {
         position: relative;
         width: 100%;
         aspect-ratio: 9 / 16;
+      }
+      .cc-video-stage.is-wide {
+        aspect-ratio: 16 / 9;
       }
       .cc-video {
         width: 100%;
@@ -226,6 +232,18 @@ const CultureAndCode = () => {
         background: #1a1a2e;
         touch-action: pan-y;
       }
+      .cc-video-stage.is-wide .cc-video {
+        aspect-ratio: 16 / 9;
+      }
+      .cc-section-label {
+        font-family: 'Silom', 'Courier New', monospace;
+        letter-spacing: 0.35em;
+        font-size: 0.75rem;
+        color: #e05fa0;
+        text-shadow: 0 0 8px rgba(224, 95, 160, 0.7);
+        margin-top: 24px;
+      }
+
       .cc-play-overlay {
         position: absolute;
         inset: 0;
