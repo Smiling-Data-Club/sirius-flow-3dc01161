@@ -139,15 +139,21 @@ const Header = () => {
       {mobileOpen && (
         <div className="md:hidden bg-background border-t shadow-lg">
           <div className="container py-6 flex flex-col gap-4">
+            <div className="flex items-center gap-2 text-foreground font-semibold pt-2">
+              <img src={sdcLogo} alt="SDC" className="w-5 h-5" />
+              Smiling Data Club
+            </div>
             <a
               href="https://smiling-data-club.de"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-foreground font-medium py-2"
+              className="text-foreground py-1 pl-7"
             >
-              <img src={sdcLogo} alt="SDC" className="w-5 h-5" />
-              Smiling Data Club
+              Website
             </a>
+            <Link to="/smiling-data-club" className="text-foreground py-1 pl-7">Community-Hub</Link>
+            <Link to="/culture-and-code" className="text-foreground py-1 pl-7">Culture & Code</Link>
+
             <Link to="/print" className="text-foreground font-medium py-2">Print</Link>
             <Link to="/blog" className="text-foreground font-medium py-2">Blog</Link>
             <Link to="/key-facts" className="text-foreground font-medium py-2">Key Facts</Link>
