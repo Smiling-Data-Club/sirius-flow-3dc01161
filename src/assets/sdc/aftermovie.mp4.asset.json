@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "43368c90-70cb-4fce-924c-d5aa485eff7c",
+  "asset_id": "4b8d9455-a26c-4455-8ca7-fe6222ed2fe2",
   "project_id": "dcccc61e-ef91-4ea4-880f-52f0edb86a1c",
-  "url": "/__l5e/assets-v1/43368c90-70cb-4fce-924c-d5aa485eff7c/culture-code-aftermovie-1080p-v2.mp4",
-  "r2_key": "a/v1/dcccc61e-ef91-4ea4-880f-52f0edb86a1c/43368c90-70cb-4fce-924c-d5aa485eff7c/culture-code-aftermovie-1080p-v2.mp4",
-  "original_filename": "culture-code-aftermovie-1080p-v2.mp4",
-  "size": 58878111,
+  "url": "/__l5e/assets-v1/4b8d9455-a26c-4455-8ca7-fe6222ed2fe2/culture-code-aftermovie-compatible.mp4",
+  "r2_key": "a/v1/dcccc61e-ef91-4ea4-880f-52f0edb86a1c/4b8d9455-a26c-4455-8ca7-fe6222ed2fe2/culture-code-aftermovie-compatible.mp4",
+  "original_filename": "culture-code-aftermovie-compatible.mp4",
+  "size": 30674620,
   "content_type": "video/mp4",
-  "created_at": "2026-07-21T08:22:51Z"
+  "created_at": "2026-07-21T09:53:26Z"
 }
