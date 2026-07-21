@@ -3,17 +3,11 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
-import aftermovieAsset from "@/assets/sdc/aftermovie.mp4.asset.json";
-import aftermovieWebmAsset from "@/assets/sdc/aftermovie.webm.asset.json";
+import aftermovieVideo from "@/assets/sdc/aftermovie.mp4";
 import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
 import { supabase } from "@/integrations/supabase/client";
-
-const resolveAftermovieUrl = (path: string) =>
-  window.location.hostname === "localhost"
-    ? `https://id-preview--dcccc61e-ef91-4ea4-880f-52f0edb86a1c.lovable.app${path}`
-    : path;
 
 const SmilingDataClub = () => {
   const aftermovieRef = useRef<HTMLVideoElement>(null);
@@ -28,15 +22,8 @@ const SmilingDataClub = () => {
     const video = aftermovieRef.current;
     if (!video) return;
 
-    try {
-      await video.play();
-      setAftermovieStarted(true);
-    } catch {
-      video.src = resolveAftermovieUrl(aftermovieAsset.url);
-      video.load();
-      await video.play();
-      setAftermovieStarted(true);
-    }
+    await video.play();
+    setAftermovieStarted(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -571,6 +558,7 @@ const SmilingDataClub = () => {
             >
               <video
                 ref={aftermovieRef}
+                src={aftermovieVideo}
                 poster={aftermoviePoster}
                 controls
                 playsInline
@@ -579,8 +567,6 @@ const SmilingDataClub = () => {
                 onEnded={() => setAftermovieStarted(false)}
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
               >
-                <source src={resolveAftermovieUrl(aftermovieWebmAsset.url)} type="video/webm" />
-                <source src={resolveAftermovieUrl(aftermovieAsset.url)} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               {!aftermovieStarted && (
