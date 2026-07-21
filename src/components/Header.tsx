@@ -149,7 +149,7 @@ const Header = () => {
               Website
             </a>
             <Link to="/smiling-data-club" className="text-foreground py-1 pl-7">Community-Hub</Link>
-            <Link to="/culture-and-code" className="text-foreground py-1 pl-7">Culture & Code</Link>
+            
 
             <Link to="/print" className="text-foreground font-medium py-2">Print</Link>
             <Link to="/blog" className="text-foreground font-medium py-2">Blog</Link>
