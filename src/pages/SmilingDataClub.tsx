@@ -547,7 +547,6 @@ const SmilingDataClub = () => {
               }}
             >
               <video
-                src={aftermovieAsset.url}
                 poster={aftermoviePoster}
                 controls
                 playsInline
