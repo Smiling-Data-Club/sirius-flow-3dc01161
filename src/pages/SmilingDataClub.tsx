@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
@@ -16,11 +16,28 @@ const resolveAftermovieUrl = (path: string) =>
     : path;
 
 const SmilingDataClub = () => {
+  const aftermovieRef = useRef<HTMLVideoElement>(null);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [aftermovieStarted, setAftermovieStarted] = useState(false);
+
+  const playAftermovie = async () => {
+    const video = aftermovieRef.current;
+    if (!video) return;
+
+    try {
+      await video.play();
+      setAftermovieStarted(true);
+    } catch {
+      video.src = resolveAftermovieUrl(aftermovieAsset.url);
+      video.load();
+      await video.play();
+      setAftermovieStarted(true);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -552,16 +569,45 @@ const SmilingDataClub = () => {
               }}
             >
               <video
+                ref={aftermovieRef}
                 poster={aftermoviePoster}
                 controls
                 playsInline
                 preload="metadata"
+                onPlay={() => setAftermovieStarted(true)}
+                onEnded={() => setAftermovieStarted(false)}
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
               >
                 <source src={resolveAftermovieUrl(aftermovieWebmAsset.url)} type="video/webm" />
                 <source src={resolveAftermovieUrl(aftermovieAsset.url)} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              {!aftermovieStarted && (
+                <button
+                  type="button"
+                  onClick={playAftermovie}
+                  aria-label="Aftermovie abspielen"
+                  title="Aftermovie abspielen"
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    margin: "auto",
+                    width: 76,
+                    height: 76,
+                    borderRadius: "50%",
+                    border: "2px solid var(--sdc-cyan)",
+                    background: "rgba(10,4,32,0.88)",
+                    color: "var(--sdc-cyan)",
+                    fontSize: 30,
+                    lineHeight: 1,
+                    cursor: "pointer",
+                    boxShadow: "0 0 24px rgba(0,240,255,0.65), 0 0 42px rgba(255,45,146,0.35)",
+                    zIndex: 2,
+                  }}
+                >
+                  ▶
+                </button>
+              )}
             </div>
           </div>
         </section>
