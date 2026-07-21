@@ -10,6 +10,8 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [insightsOpen, setInsightsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [sdcOpen, setSdcOpen] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -22,7 +24,9 @@ const Header = () => {
     setMobileOpen(false);
     setInsightsOpen(false);
     setAboutOpen(false);
+    setSdcOpen(false);
   }, [location]);
+
 
   return (
     <header
@@ -37,15 +41,39 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8 text-lg">
-          <a
-            href="https://smiling-data-club.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
-          >
-            <img src={sdcLogo} alt="SDC" className="w-5 h-5 shrink-0" />
-            Smiling Data Club
-          </a>
+          {/* SDC Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => { setSdcOpen(!sdcOpen); setInsightsOpen(false); setAboutOpen(false); }}
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
+            >
+              <img src={sdcLogo} alt="SDC" className="w-5 h-5 shrink-0" />
+              Smiling Data Club
+              <ChevronDown className={`w-4 h-4 transition-transform ${sdcOpen ? "rotate-180" : ""}`} />
+            </button>
+            {sdcOpen && (
+              <>
+                <div className="fixed inset-0 z-40" onClick={() => setSdcOpen(false)} />
+                <div className="absolute top-full mt-2 left-0 bg-background border rounded-lg shadow-lg py-2 min-w-[200px] z-50">
+                  <a
+                    href="https://smiling-data-club.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 hover:bg-secondary transition-colors"
+                  >
+                    Website
+                  </a>
+                  <Link to="/smiling-data-club" className="block px-4 py-2 hover:bg-secondary transition-colors">
+                    Community-Hub
+                  </Link>
+                  <Link to="/culture-and-code" className="block px-4 py-2 hover:bg-secondary transition-colors">
+                    Culture &amp; Code
+                  </Link>
+                </div>
+              </>
+            )}
+          </div>
+
           <Link to="/print" className="text-foreground hover:text-primary transition-colors font-medium">
             Print
           </Link>
@@ -111,15 +139,21 @@ const Header = () => {
       {mobileOpen && (
         <div className="md:hidden bg-background border-t shadow-lg">
           <div className="container py-6 flex flex-col gap-4">
+            <div className="flex items-center gap-2 text-foreground font-semibold pt-2">
+              <img src={sdcLogo} alt="SDC" className="w-5 h-5" />
+              Smiling Data Club
+            </div>
             <a
               href="https://smiling-data-club.de"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-foreground font-medium py-2"
+              className="text-foreground py-1 pl-7"
             >
-              <img src={sdcLogo} alt="SDC" className="w-5 h-5" />
-              Smiling Data Club
+              Website
             </a>
+            <Link to="/smiling-data-club" className="text-foreground py-1 pl-7">Community-Hub</Link>
+            <Link to="/culture-and-code" className="text-foreground py-1 pl-7">Culture & Code</Link>
+
             <Link to="/print" className="text-foreground font-medium py-2">Print</Link>
             <Link to="/blog" className="text-foreground font-medium py-2">Blog</Link>
             <Link to="/key-facts" className="text-foreground font-medium py-2">Key Facts</Link>
