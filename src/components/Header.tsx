@@ -10,6 +10,8 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [insightsOpen, setInsightsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [sdcOpen, setSdcOpen] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
