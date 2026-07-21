@@ -564,6 +564,7 @@ const SmilingDataClub = () => {
                 border: "2px solid #00f0ff",
                 borderRadius: 14,
                 overflow: "hidden",
+                position: "relative",
                 background: "#000",
                 boxShadow: "0 0 24px rgba(0,240,255,0.35), inset 0 0 40px rgba(0,240,255,0.08)",
               }}
