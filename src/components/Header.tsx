@@ -66,9 +66,6 @@ const Header = () => {
                   <Link to="/smiling-data-club" className="block px-4 py-2 hover:bg-secondary transition-colors">
                     Community-Hub
                   </Link>
-                  <Link to="/culture-and-code" className="block px-4 py-2 hover:bg-secondary transition-colors">
-                    Culture &amp; Code
-                  </Link>
                 </div>
               </>
             )}
