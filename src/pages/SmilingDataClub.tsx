@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
-import aftermovieMp4Asset from "@/assets/sdc/aftermovie.mp4.asset.json";
+import aftermovieMp4Asset from "@/assets/sdc/aftermovie-browser.mp4.asset.json";
 import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 
 // On the Lovable sandbox dev host (localhost) the /__l5e/ CDN route is not
@@ -37,8 +37,11 @@ const SmilingDataClub = () => {
     const video = aftermovieRef.current;
     if (!video) return;
 
-    await video.play();
-    setAftermovieStarted(true);
+    try {
+      await video.play();
+    } catch (error) {
+      console.error("Aftermovie playback failed", error);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -576,7 +579,7 @@ const SmilingDataClub = () => {
                 poster={aftermoviePoster}
                 controls
                 playsInline
-                preload="metadata"
+                preload="auto"
                 onPlay={() => setAftermovieStarted(true)}
                 onEnded={() => setAftermovieStarted(false)}
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
