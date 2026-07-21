@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
-import aftermovieMp4Asset from "@/assets/sdc/aftermovie-browser.mp4.asset.json";
+import aftermovieMp4Asset from "@/assets/sdc/aftermovie-fixed.mp4.asset.json";
 import aftermovieWebmAsset from "@/assets/sdc/aftermovie-browser.webm.asset.json";
 import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 
