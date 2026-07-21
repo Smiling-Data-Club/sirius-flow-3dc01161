@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
-import aftermovieMp4Asset from "@/assets/sdc/aftermovie-browser.mp4.asset.json";
+import aftermovieMp4Asset from "@/assets/sdc/aftermovie-fixed.mp4.asset.json";
 import aftermovieWebmAsset from "@/assets/sdc/aftermovie-browser.webm.asset.json";
 import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 
@@ -27,25 +27,11 @@ import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGall
 import { supabase } from "@/integrations/supabase/client";
 
 const SmilingDataClub = () => {
-  const aftermovieRef = useRef<HTMLVideoElement>(null);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [aftermovieStarted, setAftermovieStarted] = useState(false);
-
-  const playAftermovie = async () => {
-    const video = aftermovieRef.current;
-    if (!video) return;
-
-    try {
-      await video.play();
-    } catch (error) {
-      console.error("Aftermovie playback failed", error);
-    }
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || submitting) return;
@@ -577,46 +563,16 @@ const SmilingDataClub = () => {
               }}
             >
               <video
-                ref={aftermovieRef}
                 poster={aftermoviePoster}
                 controls
                 playsInline
                 preload="auto"
-                onPlay={() => setAftermovieStarted(true)}
-                onEnded={() => setAftermovieStarted(false)}
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
               >
                 <source src={aftermovieVideo} type="video/mp4" />
                 <source src={aftermovieWebm} type="video/webm" />
-                
                 Your browser does not support the video tag.
               </video>
-              {!aftermovieStarted && (
-                <button
-                  type="button"
-                  onClick={playAftermovie}
-                  aria-label="Aftermovie abspielen"
-                  title="Aftermovie abspielen"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    margin: "auto",
-                    width: 76,
-                    height: 76,
-                    borderRadius: "50%",
-                    border: "2px solid var(--sdc-cyan)",
-                    background: "rgba(10,4,32,0.88)",
-                    color: "var(--sdc-cyan)",
-                    fontSize: 30,
-                    lineHeight: 1,
-                    cursor: "pointer",
-                    boxShadow: "0 0 24px rgba(0,240,255,0.65), 0 0 42px rgba(255,45,146,0.35)",
-                    zIndex: 2,
-                  }}
-                >
-                  ▶
-                </button>
-              )}
             </div>
           </div>
         </section>
