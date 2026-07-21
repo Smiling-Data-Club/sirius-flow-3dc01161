@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
 import aftermovieAsset from "@/assets/sdc/aftermovie.mp4.asset.json";
+import aftermovieWebmAsset from "@/assets/sdc/aftermovie.webm.asset.json";
 import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
@@ -553,6 +554,8 @@ const SmilingDataClub = () => {
                 preload="metadata"
                 style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
               >
+                <source src={aftermovieWebmAsset.url} type="video/webm" />
+                <source src={aftermovieAsset.url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
