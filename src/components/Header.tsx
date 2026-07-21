@@ -24,7 +24,9 @@ const Header = () => {
     setMobileOpen(false);
     setInsightsOpen(false);
     setAboutOpen(false);
+    setSdcOpen(false);
   }, [location]);
+
 
   return (
     <header
