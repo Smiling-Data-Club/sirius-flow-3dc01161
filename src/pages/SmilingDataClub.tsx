@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
+import aftermovieAsset from "@/assets/sdc/aftermovie.mp4.asset.json";
+import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
+
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -533,43 +536,29 @@ const SmilingDataClub = () => {
             <div
               style={{
                 width: "100%",
-                maxWidth: 720,
+                maxWidth: 960,
                 aspectRatio: "16 / 9",
                 border: "2px solid #00f0ff",
                 borderRadius: 14,
-                background: "rgba(0, 240, 255, 0.04)",
+                overflow: "hidden",
+                background: "#000",
                 boxShadow: "0 0 24px rgba(0,240,255,0.35), inset 0 0 40px rgba(0,240,255,0.08)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 12,
-                padding: 24,
               }}
-              aria-label="Aftermovie folgt in Kürze"
             >
-              <div style={{
-                fontFamily: "'Major Mono Display', 'Courier New', monospace",
-                fontSize: "clamp(28px, 4vw, 44px)",
-                color: "#00f0ff",
-                textShadow: "0 0 16px rgba(0,240,255,0.6)",
-                letterSpacing: "0.04em",
-                lineHeight: 1,
-              }}>
-                ▶ aftermovie
-              </div>
-              <div style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 13,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.55)",
-              }}>
-                Kommt in Kürze
-              </div>
+              <video
+                src={aftermovieAsset.url}
+                poster={aftermoviePoster}
+                controls
+                playsInline
+                preload="metadata"
+                style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </section>
+
 
         {/* GESCHICHTE */}
         <section className="sdc-section">
