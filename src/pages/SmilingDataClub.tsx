@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import SdcLogo from "@/components/SdcLogo";
 import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
+import aftermovieAsset from "@/assets/sdc/aftermovie.mp4.asset.json";
+import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
+
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
 import { supabase } from "@/integrations/supabase/client";
 
