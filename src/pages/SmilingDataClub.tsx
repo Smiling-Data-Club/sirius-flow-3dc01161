@@ -6,7 +6,20 @@ import sdcLogoFull from "@/assets/sdc/sdc-logo-full.png";
 import aftermovieMp4Asset from "@/assets/sdc/aftermovie.mp4.asset.json";
 import aftermoviePoster from "@/assets/sdc/aftermovie_poster.jpg";
 
-const aftermovieVideo = aftermovieMp4Asset.url;
+// On the Lovable sandbox dev host (localhost) the /__l5e/ CDN route is not
+// proxied and returns the SPA HTML instead of the video bytes, which breaks
+// playback in the in-editor preview. In dev we therefore rewrite the URL to
+// the public preview host that does serve the CDN. In production the relative
+// path works as-is.
+const resolveAssetUrl = (path: string) => {
+  if (typeof window === "undefined") return path;
+  const host = window.location.hostname;
+  if (host === "localhost" || host === "127.0.0.1" || host.endsWith(".local")) {
+    return `https://id-preview--dcccc61e-ef91-4ea4-880f-52f0edb86a1c.lovable.app${path}`;
+  }
+  return path;
+};
+const aftermovieVideo = resolveAssetUrl(aftermovieMp4Asset.url);
 
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
 import { supabase } from "@/integrations/supabase/client";
