@@ -838,12 +838,12 @@ const SmilingDataClub = () => {
               >
                 <input
                   type="text" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL"
-                  changeitem="SIGNUP_FORM_FIELD" placeholder="deine@email.de"
+                  {...({ changeitem: "SIGNUP_FORM_FIELD" } as any)} placeholder="deine@email.de"
                   className="sdc-input" style={{ flex: "1 1 240px" }}
                 />
                 <input
                   type="text" name="LASTNAME" id="EMBED_FORM_NAME_LABEL"
-                  changeitem="SIGNUP_FORM_FIELD" style={{ display: "none" }}
+                  {...({ changeitem: "SIGNUP_FORM_FIELD" } as any)} style={{ display: "none" }}
                 />
                 <input
                   type="button" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin"
