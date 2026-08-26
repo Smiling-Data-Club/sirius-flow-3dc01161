@@ -16,15 +16,13 @@ const aftermovieVideo = resolveAssetUrl(aftermovieMp4Asset.url);
 const aftermovieWebm = resolveAssetUrl(aftermovieWebmAsset.url);
 
 import { galleryItems, reelItems, type GalleryCategoryKey } from "@/data/sdcGallery";
-import { supabase } from "@/integrations/supabase/client";
+
+const ZOHO_FORM_ID =
+  "sf3zd909cefe6afeefe9362d8e06d2e97b9ec901db0e6bcd304f4daa2914671362f4";
 
 const SmilingDataClub = () => {
   const aftermovieRef = useRef<HTMLVideoElement>(null);
   const [aftermovieStarted, setAftermovieStarted] = useState(false);
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const playAftermovie = async () => {
     const video = aftermovieRef.current;
@@ -36,24 +34,19 @@ const SmilingDataClub = () => {
       console.error("Aftermovie playback failed", error);
     }
   };
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || submitting) return;
-    setSubmitting(true);
-    setErrorMsg(null);
-    try {
-      const { error } = await supabase
-        .from("sdc_newsletter_signups")
-        .insert({ email, source: "smiling-data-club-page" });
-      if (error) throw error;
-      setSubmitted(true);
-    } catch (err) {
-      console.error("Newsletter signup failed", err);
-      setErrorMsg("Da ist etwas schiefgelaufen. Bitte versuch es später erneut.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
+
+  useEffect(() => {
+    (window as any)[`runOnFormSubmit_${ZOHO_FORM_ID}`] = () => {};
+    const s = document.createElement("script");
+    s.src = "https://ma.zoho.eu/js/optin.min.js";
+    s.async = true;
+    s.onload = () => {
+      (window as any).setupSF?.(ZOHO_FORM_ID, "ZCFORMVIEW", false, "light");
+    };
+    document.body.appendChild(s);
+    return () => { s.remove(); };
+  }, []);
+
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const showPrev = useCallback(
@@ -337,6 +330,21 @@ const SmilingDataClub = () => {
         .sdc-input:focus {
           box-shadow: 0 0 18px rgba(0,240,255,0.5);
         }
+
+        #EMBED_FORM_EMAIL_LABEL.sdc-input {
+          background: rgba(10,4,32,0.8) !important;
+          border: 1.5px solid var(--sdc-cyan) !important;
+          color: var(--sdc-text) !important;
+          border-radius: 999px !important;
+          font-family: 'Space Mono', monospace !important;
+        }
+        #zcWebOptin.sdc-btn-pink {
+          background: var(--sdc-pink) !important;
+          color: var(--sdc-bg-deep) !important;
+          border: 1.5px solid var(--sdc-pink) !important;
+          border-radius: 999px !important;
+        }
+
 
         .sdc-save-date {
           border: 1.5px solid var(--sdc-pink);
@@ -814,31 +822,60 @@ const SmilingDataClub = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} style={{ display: "flex", gap: 12, flexWrap: "wrap", maxWidth: 520, margin: "0 auto" }}>
-            <input
-              type="email"
-              required
-              placeholder="deine@email.de"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="sdc-input"
-              style={{ flex: "1 1 240px" }}
-              disabled={submitted || submitting}
-            />
-            <button type="submit" className="sdc-btn sdc-btn-pink" disabled={submitted || submitting}>
-              {submitted ? "✓ Eingetragen" : submitting ? "Sende..." : "Eintragen"}
-            </button>
-          </form>
-          {submitted && (
-            <p style={{ textAlign: "center", marginTop: 20, color: "var(--sdc-green)", fontFamily: "'Space Mono', monospace", fontSize: 14, letterSpacing: "0.1em" }}>
-              Danke, du bekommst Bescheid!
+          <div style={{ maxWidth: 520, margin: "0 auto" }}>
+            <input type="hidden" id="signupTmplName" value="quick_form_13" readOnly />
+            <input type="hidden" id="recapThemeOptin" value="0" readOnly />
+            <input type="hidden" id="orgNameFull" value="SIRIUS GmbH" readOnly />
+
+            <div id={ZOHO_FORM_ID} data-type="signupform">
+              <div id="Zc_SignupSuccess" style={{ display: "none" }} />
+              <form
+                method="POST"
+                id="zcampaignOptinForm"
+                target="_zcSignup"
+                action="https://dpze-zcmp.maillist-manage.eu/weboptin.zc"
+                style={{ display: "flex", gap: 12, flexWrap: "wrap" }}
+              >
+                <input
+                  type="text" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL"
+                  {...({ changeitem: "SIGNUP_FORM_FIELD" } as any)} placeholder="deine@email.de"
+                  className="sdc-input" style={{ flex: "1 1 240px" }}
+                />
+                <input
+                  type="text" name="LASTNAME" id="EMBED_FORM_NAME_LABEL"
+                  {...({ changeitem: "SIGNUP_FORM_FIELD" } as any)} style={{ display: "none" }}
+                />
+                <input
+                  type="button" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin"
+                  value="Eintragen" className="sdc-btn sdc-btn-pink"
+                />
+
+                <input type="hidden" name="submitType" value="optinCustomView" readOnly />
+                <input type="hidden" name="formType" value="QuickForm" readOnly />
+                <input type="hidden" name="zx" id="cmpZuid" value="14aebe7636" readOnly />
+                <input type="hidden" name="zcvers" value="2.0" readOnly />
+                <input type="hidden" name="mode" id="mode" value="OptinCreateView" readOnly />
+                <input type="hidden" name="zctd" id="zctd" value="134c7bccd3c1c159" readOnly />
+                <input type="hidden" id="zc_Url" value="qxuw-zcmp.maillist-manage.eu" readOnly />
+                <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW" readOnly />
+                <input type="hidden" name="zc_formIx" value={ZOHO_FORM_ID.slice(2)} readOnly />
+                <input type="hidden" id="viewFrom" value="URL_ACTION" readOnly />
+                <span style={{ display: "none" }} id="dt_CONTACT_EMAIL">1,true,6,Lead-E-Mal,2</span>
+                <span style={{ display: "none" }} id="dt_LASTNAME">1,false,1,Nachname,2</span>
+              </form>
+            </div>
+
+            <p style={{
+              marginTop: 14, fontSize: 12, lineHeight: 1.6,
+              color: "var(--sdc-text-dim)", textAlign: "center",
+            }}>
+              Wir verwenden deine Adresse ausschließlich, um dich über kommende Smiling
+              Data Club Events zu informieren. Du bekommst zuerst eine Bestätigungsmail –
+              erst nach deinem Klick bist du eingetragen. Abmeldung jederzeit möglich.
+              Mehr dazu in unserer <Link to="/datenschutz" style={{ color: "var(--sdc-cyan)" }}>Datenschutzerklärung</Link>.
             </p>
-          )}
-          {errorMsg && (
-            <p style={{ textAlign: "center", marginTop: 20, color: "var(--sdc-pink)", fontFamily: "'Space Mono', monospace", fontSize: 14, letterSpacing: "0.1em" }}>
-              {errorMsg}
-            </p>
-          )}
+          </div>
+
 
           <div style={{ textAlign: "center", marginTop: 40 }}>
             <Link to="/" className="sdc-btn">← zurück zur homepage</Link>
