@@ -869,8 +869,8 @@ const SmilingDataClub = () => {
               marginTop: 14, fontSize: 12, lineHeight: 1.6,
               color: "var(--sdc-text-dim)", textAlign: "center",
             }}>
-              Wir verwenden deine Adresse ausschließlich, um dich über kommende Smiling
-              Data Club Events zu informieren. Du bekommst zuerst eine Bestätigungsmail –
+              Wir verwenden deine Adresse, um dich über kommende Smiling Data Club Events
+              und Neuigkeiten aus dem Club zu informieren. Du bekommst zuerst eine Bestätigungsmail –
               erst nach deinem Klick bist du eingetragen. Abmeldung jederzeit möglich.
               Mehr dazu in unserer <Link to="/datenschutz" style={{ color: "var(--sdc-cyan)" }}>Datenschutzerklärung</Link>.
             </p>
