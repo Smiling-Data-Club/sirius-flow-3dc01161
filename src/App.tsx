@@ -15,7 +15,9 @@ import Karriere from "./pages/Karriere";
 import ServiceArea from "./pages/ServiceArea";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
-import AGB from "./pages/AGB";
+import AGBUebersicht from "./pages/AGBUebersicht";
+import AGBAllgemein from "./pages/AGBAllgemein";
+import AGBLeistungen from "./pages/AGBLeistungen";
 import CultureAndCode from "./pages/CultureAndCode";
 import SmilingDataClub from "./pages/SmilingDataClub";
 import NotFound from "./pages/NotFound";
@@ -43,7 +45,10 @@ const App = () => (
             <Route path="/service-area" element={<ServiceArea />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
-            <Route path="/agb" element={<AGB />} />
+            <Route path="/agb" element={<AGBUebersicht />} />
+            <Route path="/agb/allgemein" element={<AGBAllgemein />} />
+            <Route path="/agb/leistungen" element={<AGBLeistungen />} />
+            <Route path="/allgemeine-geschaeftsbedingungen" element={<Navigate to="/agb/allgemein" replace />} />
             <Route path="/culture-and-code" element={<CultureAndCode />} />
             <Route path="/smiling-data-club" element={<SmilingDataClub />} />
             <Route path="*" element={<NotFound />} />

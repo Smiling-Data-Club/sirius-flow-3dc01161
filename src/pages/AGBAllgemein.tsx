@@ -88,18 +88,27 @@ const sections: { title: string; body: React.ReactNode }[] = [
 
 const AGB = () => (
   <PageLayout
-    title="AGB — SIRIUS GmbH"
+    title="AGB Lieferung & Service — SIRIUS GmbH"
     description="Allgemeine Geschäftsbedingungen der SIRIUS GmbH document solutions, Freiburg."
   >
-    <div className="pt-12 pb-24 px-6">
+    <div className="pt-12 pb-24 px-6 agb-doc">
       <div className="max-w-4xl mx-auto">
         <SectionReveal>
           <header className="mb-16">
+            <Link
+              to="/agb"
+              className="reveal no-print inline-block text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+            >
+              ← Zur Übersicht
+            </Link>
             <h1 className="reveal text-5xl font-extrabold text-primary mb-4 tracking-tight">
               Allgemeine Geschäftsbedingungen
             </h1>
             <div className="reveal h-1 w-24 bg-amber-500" />
             <p className="reveal text-muted-foreground mt-6 leading-relaxed">
+              Lieferung, Hardware, Lizenzerwerb, Service und Reparatur
+            </p>
+            <p className="reveal text-muted-foreground leading-relaxed">
               SIRIUS GmbH document solutions, Freiburg-Hochdorf
             </p>
           </header>
