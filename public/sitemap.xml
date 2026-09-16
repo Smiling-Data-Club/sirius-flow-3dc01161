@@ -53,6 +53,14 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>/agb/allgemein</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>/agb/leistungen</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>/blog/digitalisierung-ist-teil-der-kultur</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

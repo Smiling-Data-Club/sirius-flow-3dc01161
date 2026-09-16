@@ -45,7 +45,10 @@ const App = () => (
             <Route path="/service-area" element={<ServiceArea />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
-            <Route path="/agb" element={<AGB />} />
+            <Route path="/agb" element={<AGBUebersicht />} />
+            <Route path="/agb/allgemein" element={<AGBAllgemein />} />
+            <Route path="/agb/leistungen" element={<AGBLeistungen />} />
+            <Route path="/allgemeine-geschaeftsbedingungen" element={<Navigate to="/agb/allgemein" replace />} />
             <Route path="/culture-and-code" element={<CultureAndCode />} />
             <Route path="/smiling-data-club" element={<SmilingDataClub />} />
             <Route path="*" element={<NotFound />} />
