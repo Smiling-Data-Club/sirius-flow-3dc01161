@@ -308,3 +308,64 @@ footer > * {
     filter: none;
   }
 }
+
+/* ═══════════════════════════════════════════
+   Print — AGB-Dokumentseiten (A4)
+   ═══════════════════════════════════════════ */
+@page {
+  margin: 2cm;
+}
+
+@media print {
+  body:has(.agb-doc) header,
+  body:has(.agb-doc) nav,
+  body:has(.agb-doc) footer,
+  .agb-doc .no-print,
+  .no-print {
+    display: none !important;
+  }
+
+  .agb-doc,
+  .agb-doc * {
+    color: #000 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+  }
+
+  .agb-doc main,
+  .agb-doc {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .agb-doc .reveal,
+  .agb-doc .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .agb-doc .folded-corner::after,
+  .agb-doc .folded-corner::before {
+    display: none !important;
+  }
+
+  .agb-doc section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: none !important;
+    padding: 0 0 0.6cm 0 !important;
+  }
+
+  .agb-doc h1 {
+    font-size: 18pt !important;
+  }
+
+  .agb-doc h2 {
+    font-size: 13pt !important;
+  }
+}
