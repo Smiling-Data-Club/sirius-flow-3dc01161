@@ -114,6 +114,7 @@
 
 # --- WORDPRESS-ASSETS → 410 ---------------------------------
 # Alte Uploads/Plugin-Pfade nicht mehr verfügbar
+/wp-content/uploads/2025/06/Anleitung-zum-Auslesen-von-Zaehlern-01.06.2025.pdf  /downloads/Anleitung-zum-Auslesen-von-Zaehlern-01.06.2026.pdf  301
 /wp-content/*                                                 /                                     410
 /wp-admin/*                                                   /                                     410
 /wp-includes/*                                                /                                     410
