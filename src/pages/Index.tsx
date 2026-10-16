@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Printer, FileText, Settings, Check } from "lucide-react";
-import FloatingPapers from "@/components/FloatingPapers";
+import PaperFlock from "@/components/PaperFlock";
 import PageLayout from "@/components/PageLayout";
 import SectionReveal from "@/components/SectionReveal";
 import { useCountUp } from "@/hooks/useCountUp";
@@ -29,7 +29,8 @@ import waldhausLogo from "@/assets/referenzen/waldhaus.png";
    ════════════════════════════════════════════ */
 const Hero = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-20">
-    
+    <PaperFlock />
+
     <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Text */}
       <div>
@@ -394,8 +395,6 @@ const Index = () => (
       },
     }}
   >
-    <FloatingPapers />
-
     <Hero />
     <SDCTeaser />
     <Testimonials />
