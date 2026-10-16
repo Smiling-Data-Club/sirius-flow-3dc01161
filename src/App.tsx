@@ -18,8 +18,6 @@ import Datenschutz from "./pages/Datenschutz";
 import AGBUebersicht from "./pages/AGBUebersicht";
 import AGBAllgemein from "./pages/AGBAllgemein";
 import AGBLeistungen from "./pages/AGBLeistungen";
-import CultureAndCode from "./pages/CultureAndCode";
-import SmilingDataClub from "./pages/SmilingDataClub";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,8 +47,6 @@ const App = () => (
             <Route path="/agb/allgemein" element={<AGBAllgemein />} />
             <Route path="/agb/leistungen" element={<AGBLeistungen />} />
             <Route path="/allgemeine-geschaeftsbedingungen" element={<Navigate to="/agb/allgemein" replace />} />
-            <Route path="/culture-and-code" element={<CultureAndCode />} />
-            <Route path="/smiling-data-club" element={<SmilingDataClub />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

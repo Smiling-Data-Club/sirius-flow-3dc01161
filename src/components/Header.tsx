@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SiriusLogo from "./SiriusLogo";
 import sdcLogo from "@/assets/sdc-logo.png";
@@ -10,7 +10,6 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [insightsOpen, setInsightsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [sdcOpen, setSdcOpen] = useState(false);
 
   const location = useLocation();
 
@@ -24,7 +23,6 @@ const Header = () => {
     setMobileOpen(false);
     setInsightsOpen(false);
     setAboutOpen(false);
-    setSdcOpen(false);
   }, [location]);
 
 
@@ -41,35 +39,17 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8 text-lg">
-          {/* SDC Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => { setSdcOpen(!sdcOpen); setInsightsOpen(false); setAboutOpen(false); }}
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
-            >
-              <img src={sdcLogo} alt="SDC" className="w-5 h-5 shrink-0" />
-              Smiling Data Club
-              <ChevronDown className={`w-4 h-4 transition-transform ${sdcOpen ? "rotate-180" : ""}`} />
-            </button>
-            {sdcOpen && (
-              <>
-                <div className="fixed inset-0 z-40" onClick={() => setSdcOpen(false)} />
-                <div className="absolute top-full mt-2 left-0 bg-background border rounded-lg shadow-lg py-2 min-w-[200px] z-50">
-                  <a
-                    href="https://smiling-data-club.de"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 hover:bg-secondary transition-colors"
-                  >
-                    Website
-                  </a>
-                  <Link to="/smiling-data-club" className="block px-4 py-2 hover:bg-secondary transition-colors">
-                    Community-Hub
-                  </Link>
-                </div>
-              </>
-            )}
-          </div>
+          {/* Smiling Data Club – eigene Marke, eigene Website */}
+          <a
+            href="https://smiling-data-club.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
+          >
+            <img src={sdcLogo} alt="" className="w-5 h-5 shrink-0" />
+            Smiling Data Club
+            <ExternalLink className="w-4 h-4" aria-hidden="true" />
+          </a>
 
           <Link to="/print" className="text-foreground hover:text-primary transition-colors font-medium">
             Print
@@ -136,21 +116,16 @@ const Header = () => {
       {mobileOpen && (
         <div className="md:hidden bg-background border-t shadow-lg">
           <div className="container py-6 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-foreground font-semibold pt-2">
-              <img src={sdcLogo} alt="SDC" className="w-5 h-5" />
-              Smiling Data Club
-            </div>
             <a
               href="https://smiling-data-club.de"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground py-1 pl-7"
+              className="flex items-center gap-2 text-foreground font-medium py-2"
             >
-              Website
+              <img src={sdcLogo} alt="" className="w-5 h-5" />
+              Smiling Data Club
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
             </a>
-            <Link to="/smiling-data-club" className="text-foreground py-1 pl-7">Community-Hub</Link>
-            
-
             <Link to="/print" className="text-foreground font-medium py-2">Print</Link>
             <Link to="/blog" className="text-foreground font-medium py-2">Blog</Link>
             <Link to="/key-facts" className="text-foreground font-medium py-2">Key Facts</Link>

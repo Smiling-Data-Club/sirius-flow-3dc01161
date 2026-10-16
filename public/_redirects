@@ -134,6 +134,14 @@
 # /blog/*                                                     /blog                                 301
 
 
+# --- SMILING DATA CLUB: Event-Rückblick ist umgezogen ----------
+# Seit Oktober 2026 auf der SDC-Website (Repo Smiling-Data-Club/smilingdataclub)
+/smiling-data-club        https://www.smiling-data-club.de/events/culture-and-code-26   301
+/smiling-data-club/       https://www.smiling-data-club.de/events/culture-and-code-26   301
+/culture-and-code         https://www.smiling-data-club.de/events/culture-and-code-26   301
+/culture-and-code/        https://www.smiling-data-club.de/events/culture-and-code-26   301
+
+
 # ============================================================
 # SPA-FALLBACK — MUSS DIE LETZTE REGEL SEIN
 # Erster Treffer gewinnt: alle spezifischen 301er oben werden
