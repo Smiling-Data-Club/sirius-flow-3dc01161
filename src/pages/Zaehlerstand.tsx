@@ -53,8 +53,19 @@ const Aufklapper = ({
     onToggle={(e) => onToggle(id, (e.currentTarget as HTMLDetailsElement).open)}
     className={`group rounded-xl border bg-card shadow-sm scroll-mt-28 ${hervorheben ? "border-primary/40" : ""}`}
   >
-    <summary className="flex cursor-pointer list-none items-start justify-between gap-4 p-5 md:p-6 font-semibold [&::-webkit-details-marker]:hidden">
-      <span className="leading-relaxed">{titel}</span>
+    <summary className="flex cursor-pointer list-none items-start justify-between gap-4 p-5 md:p-6 text-sm md:text-base font-semibold [&::-webkit-details-marker]:hidden">
+      {/* Jeder Modellname bleibt zusammen; umgebrochen wird nur nach dem Komma. */}
+      <span className="min-w-0 leading-relaxed">
+        {titel.split(", ").map((teil, i, alle) => (
+          <span key={i}>
+            <span className="whitespace-nowrap">
+              {teil}
+              {i < alle.length - 1 ? "," : ""}
+            </span>
+            {i < alle.length - 1 ? " " : ""}
+          </span>
+        ))}
+      </span>
       <ChevronDown className="mt-1 h-5 w-5 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden />
     </summary>
     <div className="border-t px-5 pb-6 pt-5 md:px-6">{children}</div>
@@ -280,7 +291,7 @@ const Zaehlerstand = () => {
             <h2 className="text-xl font-semibold mb-2">Fragen?</h2>
             <p className="mb-4 text-muted-foreground">Ihr Modell ist nicht dabei oder es klappt nicht? Wir helfen gern.</p>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="tel:+497617040700" className="flex items-center gap-3 hover:text-primary transition-colors">
+              <a href="tel:+49761704070" className="flex items-center gap-3 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4 text-primary" aria-hidden /> (0761) 704070
               </a>
               <a href="mailto:info@sirius-gmbh.de" className="flex items-center gap-3 hover:text-primary transition-colors">

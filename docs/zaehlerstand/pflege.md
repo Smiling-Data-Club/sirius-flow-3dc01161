@@ -78,6 +78,9 @@ Prüfen Sie zuerst: **Wird das neue Modell genauso bedient wie ein Modell, das s
 #### Schritt 1 – Bilder vorbereiten
 
 1. Machen Sie gut lesbare Fotos oder Screenshots, **ein Bild pro Schritt**.
+   **Markierungen gehören direkt ins Bild.** Kreise und Pfeile, die man in Word über ein Bild legt, sind kein Teil der Bilddatei. Die Webseite zeigt sie deshalb nicht. So geht es:
+   - Bild in PowerPoint einfügen, Kreis oder Pfeil darüberlegen (Farbe wie bisher: Orange oder Rot), beides markieren, **Rechtsklick** → **„Als Grafik speichern…“** → PNG.
+   - Oder Claude bitten, die Markierung einzuzeichnen (siehe Abschnitt D).
 2. Wandeln Sie jedes Bild in **WebP** um und verkleinern Sie es auf **höchstens 1200 Pixel Breite**.
    - Einfacher Weg: https://squoosh.app im Browser öffnen, Bild hineinziehen, rechts als Format **WebP** wählen, bei „Resize“ eine Breite von höchstens 1200 eintragen und auf **Download** klicken.
    - **[prüfen]** Ob dieses Werkzeug genutzt werden darf, bitte vorher intern klären. Kundendaten gehören auf keinen Fall auf die Fotos (siehe unten).
@@ -193,6 +196,18 @@ Das PDF heißt **immer** `anleitung-zaehlerstaende.pdf`, ohne Datum im Namen. Da
 5. Speichern Sie wie in Abschnitt A, Schritte 7 bis 10.
 
 Solange der Platzhalter `[PORTAL-URL]` dort steht, zeigt die Seite keinen Button, sondern nur den Satz „Nutzen Sie den persönlichen Link aus unserer E-Mail.“
+
+---
+
+## D. Mit Claude oder Claude Code pflegen
+
+Statt die Datei selbst zu bearbeiten, können Sie die Änderung auch von Claude Code machen lassen. Claude Code braucht dafür Zugriff auf das Repository `Smiling-Data-Club/sirius-flow-3dc01161`. Beschreiben Sie die Änderung in normalen Worten, zum Beispiel:
+
+- „Ergänze auf der Seite /zaehlerstand das Modell **MX-2615** in der Sharp-Gruppe mit **MX-C301W**. Halte dich an docs/zaehlerstand/pflege.md.“
+- „Ich habe Fotos für den **Sharp BP-70M** hochgeladen. Lege eine neue Modellgruppe mit diesen Schritten an: … Zeichne auf Bild 2 einen orangen Kreis um den Button ‚Drucken‘. Wandle alle Bilder in WebP um.“
+- „Tausche das PDF der Zählerstand-Anleitung gegen die angehängte Datei aus. Der Link soll gleich bleiben.“
+
+Lassen Sie Claude die Änderung als **Pull Request** anlegen, nicht direkt veröffentlichen. Dann kann jemand drüberschauen, bevor sie live geht. Claude prüft die Änderung mit den automatischen Tests (`npm test`) und sagt Ihnen, ob alles passt.
 
 ---
 

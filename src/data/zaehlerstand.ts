@@ -106,7 +106,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-b350p-schritt-2.webp",
-                alt: "Display mit der Anzeige „Simulation – Input main code“, darunter Zifferntasten und OK-Taste",
+                alt: "Display mit der Anzeige „Simulation – Input main code“, darunter Zifferntasten und OK-Taste; die Taste 2 und die OK-Taste sind rot umkreist",
               },
             ],
           },
@@ -115,7 +115,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-b350p-schritt-3.webp",
-                alt: "Display mit der Anzeige „Sim22 COUNTER&DATA DISPLAY“ und der Eingabe 06",
+                alt: "Display mit der Anzeige „Sim22 COUNTER&DATA DISPLAY“ und der Eingabe 06; die Taste 6 und die OK-Taste sind rot umkreist",
               },
             ],
           },
@@ -124,7 +124,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-b350p-schritt-4.webp",
-                alt: "Display mit der Anzeige „Sim22-06 DATA PRINT MODE“, Auswahl 1; Hinweis: OK-Taste zweimal drücken",
+                alt: "Display mit der Anzeige „Sim22-06 DATA PRINT MODE“, Auswahl 1; Hinweis: OK-Taste zweimal drücken; die Taste 1 und die OK-Taste sind rot umkreist",
               },
             ],
           },
@@ -140,7 +140,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-b355w-schritt-1.webp",
-                alt: "Startbildschirm des Touchdisplays; in der unteren Leiste das Symbol „Einstellungen“ mit Schraubenzieher und Schraubenschlüssel",
+                alt: "Startbildschirm des Touchdisplays; in der unteren Leiste das Symbol „Einstellungen“ mit Schraubenzieher und Schraubenschlüssel; das Symbol ist orange umkreist",
               },
             ],
           },
@@ -149,7 +149,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-b355w-schritt-2.webp",
-                alt: "Menü „Einstellungen“ mit den Reitern „Status“, „Kontrolle der Benutzer“ und „Einstellungen für System“",
+                alt: "Menü „Einstellungen“ mit den Reitern „Status“, „Kontrolle der Benutzer“ und „Einstellungen für System“; der Reiter „Status“ ist orange umkreist und mit einem Pfeil markiert",
               },
             ],
           },
@@ -158,7 +158,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-b355w-schritt-3.webp",
-                alt: "Reiter „Status“ mit einer Liste links; darin die Zeile „Gesamtzählung“",
+                alt: "Reiter „Status“ mit einer Liste links; darin die Zeile „Gesamtzählung“; die Zeile ist orange umkreist",
               },
             ],
           },
@@ -167,7 +167,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-b355w-schritt-4.webp",
-                alt: "Seite „Gesamtzählung“ mit den Buttons „Drucken“ und „Update“ und einer Tabelle mit Zählerständen",
+                alt: "Seite „Gesamtzählung“ mit den Buttons „Drucken“ und „Update“ und einer Tabelle mit Zählerständen; der Button „Drucken“ ist orange umkreist",
               },
             ],
           },
@@ -182,7 +182,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-c301w-schritt-1.webp",
-                alt: "Bedienfeld mit Touchdisplay; unten links neben dem Ziffernblock der Knopf „System Settings“",
+                alt: "Bedienfeld mit Touchdisplay; unten links neben dem Ziffernblock der Knopf „System Settings“; der Knopf ist orange umkreist",
               },
             ],
           },
@@ -191,7 +191,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-c301w-schritt-2.webp",
-                alt: "Display „Systemeinstellungen“; oben links der Button „Gesamtzählung“",
+                alt: "Display „Systemeinstellungen“; oben links der Button „Gesamtzählung“; der Button ist orange umkreist",
               },
             ],
           },
@@ -200,7 +200,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-c301w-schritt-3.webp",
-                alt: "Display „Gesamtzählung“ mit den Buttons „Jobzählung“ und „Gerätezähler“",
+                alt: "Display „Gesamtzählung“ mit den Buttons „Jobzählung“ und „Gerätezähler“; der Button „Jobzählung“ ist orange umkreist",
               },
             ],
           },
@@ -209,7 +209,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-c301w-schritt-4.webp",
-                alt: "Display „Jobzählung“ mit Zählertabelle und dem Button „Drucken“",
+                alt: "Display „Jobzählung“ mit Zählertabelle und dem Button „Drucken“; der Button „Drucken“ ist orange umkreist",
               },
             ],
           },
@@ -225,7 +225,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-2610-schritt-1.webp",
-                alt: "Startbildschirm des Touchdisplays; in der unteren Leiste das Symbol „Einstellungen“ mit Schraubenzieher und Schraubenschlüssel",
+                alt: "Startbildschirm des Touchdisplays; in der unteren Leiste das Symbol „Einstellungen“ mit Schraubenzieher und Schraubenschlüssel; das Symbol ist orange umkreist",
               },
             ],
           },
@@ -234,7 +234,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-2610-schritt-2.webp",
-                alt: "Menü „Einstellungen“ mit einer Liste links; darin die Zeile „Einstellungen für System“",
+                alt: "Menü „Einstellungen“ mit einer Liste links; darin die Zeile „Einstellungen für System“; die Zeile ist orange umkreist",
               },
             ],
           },
@@ -243,7 +243,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "sharp-mx-2610-schritt-3.webp",
-                alt: "Seite „Gesamtzählung“ mit Zählertabelle und den Buttons „Drucken“ und „Update“",
+                alt: "Seite „Gesamtzählung“ mit Zählertabelle und den Buttons „Drucken“ und „Update“; „Einstellungen für System“ und „Drucken“ sind orange umkreist",
               },
             ],
           },
@@ -279,7 +279,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "lexmark-neue-menuefuehrung-schritt-1.webp",
-                alt: "Startbildschirm des Lexmark-Touchdisplays mit dem Symbol „Einstellungen“ (Schraubenschlüssel)",
+                alt: "Startbildschirm des Lexmark-Touchdisplays mit dem Symbol „Einstellungen“ (Schraubenschlüssel); das Symbol ist orange umkreist",
               },
             ],
           },
@@ -288,7 +288,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "lexmark-neue-menuefuehrung-schritt-2.webp",
-                alt: "Menü „Einstellungen“ mit einer Liste links; unten der Eintrag „Berichte“",
+                alt: "Menü „Einstellungen“ mit einer Liste links; unten der Eintrag „Berichte“; ein orangefarbener Pfeil führt zum umkreisten Eintrag „Berichte“",
               },
             ],
           },
@@ -297,7 +297,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "lexmark-neue-menuefuehrung-schritt-3.webp",
-                alt: "Menü „Berichte“ mit den Einträgen „Menüeinstellungsseite“, „Gerät“, „Drucken“ und weiteren",
+                alt: "Menü „Berichte“ mit den Einträgen „Menüeinstellungsseite“, „Gerät“, „Drucken“ und weiteren; „Gerät“ ist orange umkreist",
               },
             ],
           },
@@ -306,7 +306,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "lexmark-neue-menuefuehrung-schritt-4.webp",
-                alt: "Menü „Berichte – Gerät“ mit den Einträgen „Geräteinformationen“, „Gerätestatistik“, „Profilliste“ und „Bestandsbericht“",
+                alt: "Menü „Berichte – Gerät“ mit den Einträgen „Geräteinformationen“, „Gerätestatistik“, „Profilliste“ und „Bestandsbericht“; „Gerätestatistik“ ist orange umkreist",
               },
             ],
           },
@@ -321,7 +321,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "lexmark-alte-menuefuehrung-schritt-1.webp",
-                alt: "Startbildschirm des älteren Lexmark-Displays; unten rechts das Menü-Symbol",
+                alt: "Startbildschirm des älteren Lexmark-Displays; unten rechts das Menü-Symbol; das Menü-Symbol ist orange umkreist",
               },
             ],
           },
@@ -330,7 +330,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "lexmark-alte-menuefuehrung-schritt-2.webp",
-                alt: "Menüliste mit „Menü Papier“, „Berichte“, „Netzwerk/Anschlüsse“, „Sicherheit“ und „Einstellungen“; „Berichte“ ist rot umkreist",
+                alt: "Menüliste mit „Menü Papier“, „Berichte“, „Netzwerk/Anschlüsse“, „Sicherheit“ und „Einstellungen“; „Berichte“ ist orange umkreist; ein orangefarbener Pfeil zeigt auf den Pfeil-Button daneben",
               },
             ],
           },
@@ -339,7 +339,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "lexmark-alte-menuefuehrung-schritt-3.webp",
-                alt: "Menü „Berichte“ mit Drucker-Symbolen neben jedem Eintrag; „Gerätestatistik“ ist rot umkreist",
+                alt: "Menü „Berichte“ mit Drucker-Symbolen neben jedem Eintrag; „Gerätestatistik“ ist orange umkreist; ein orangefarbener Pfeil zeigt auf das Drucker-Symbol daneben",
               },
             ],
           },
@@ -376,7 +376,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "epson-wf-m5299-schritt-1.webp",
-                alt: "Startbildschirm des Epson-Displays mit den Kacheln „Speichergerät“, „Faxbox“, „Vertraulicher Auftrag“ und „Einstellungen“ (Zahnrad)",
+                alt: "Startbildschirm des Epson-Displays mit den Kacheln „Speichergerät“, „Faxbox“, „Vertraulicher Auftrag“ und „Einstellungen“ (Zahnrad); „Einstellungen“ ist orange umkreist",
               },
             ],
           },
@@ -385,7 +385,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "epson-wf-m5299-schritt-2.webp",
-                alt: "Menü „Einstellungen“ mit den Einträgen „Allgemeine Einstellungen“ und „Druckzähler“",
+                alt: "Menü „Einstellungen“ mit den Einträgen „Allgemeine Einstellungen“ und „Druckzähler“; „Druckzähler“ ist orange umkreist",
               },
             ],
           },
@@ -394,7 +394,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "epson-wf-m5299-schritt-3.webp",
-                alt: "Anzeige „Druckzähler“ mit dem Wert „Insgesamt“ und dem Button „Seite drucken“",
+                alt: "Anzeige „Druckzähler“ mit dem Wert „Insgesamt“ und dem Button „Seite drucken“; „Seite drucken“ ist orange umkreist",
               },
             ],
           },
@@ -410,7 +410,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "epson-wf-c878-schritt-1.webp",
-                alt: "Startseite des Epson-Displays mit Kacheln wie „Kopie“, „Scan“, „Fax“ und „Einstellungen“ (Zahnrad)",
+                alt: "Startseite des Epson-Displays mit Kacheln wie „Kopie“, „Scan“, „Fax“ und „Einstellungen“ (Zahnrad); „Einstellungen“ ist orange umkreist",
               },
             ],
           },
@@ -419,7 +419,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "epson-wf-c878-schritt-2.webp",
-                alt: "Menü „Einstellungen“ mit Kacheln; oben in der Mitte die Kachel „Druckzähler“",
+                alt: "Menü „Einstellungen“ mit Kacheln; oben in der Mitte die Kachel „Druckzähler“; „Druckzähler“ ist orange umkreist",
               },
             ],
           },
@@ -428,7 +428,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "epson-wf-c878-schritt-3.webp",
-                alt: "Anzeige „Druckzähler“ mit den Werten „Insgesamt“, „S&W-Ausdrucke“ und „Farbe-Ausdrucke“ und dem Button „Seite drucken“",
+                alt: "Anzeige „Druckzähler“ mit den Werten „Insgesamt“, „S&W-Ausdrucke“ und „Farbe-Ausdrucke“ und dem Button „Seite drucken“; „Seite drucken“ ist orange umkreist",
               },
             ],
           },
@@ -444,11 +444,11 @@ export const hersteller: ZHersteller[] = [
       bilder: [
         {
           datei: "epson-statusseite-a.webp",
-          alt: "Beispiel eines Epson-Nutzungsverlaufsblatts eines Farbgeräts (WF-C17590) mit dem Abschnitt „Anzahl Seiten“",
+          alt: "Beispiel eines Epson-Nutzungsverlaufsblatts eines Farbgeräts (WF-C17590) mit dem Abschnitt „Anzahl Seiten“; „Gesamtanzahl S&W-Seiten“ und „Gesamtanzahl Farbe-Seiten“ mit ihren Werten sind orange umkreist",
         },
         {
           datei: "epson-statusseite-b.webp",
-          alt: "Beispiel eines Epson-Nutzungsverlaufsblatts eines Schwarzweiß-Geräts (WF-M5799) mit dem Abschnitt „Anzahl Seiten“",
+          alt: "Beispiel eines Epson-Nutzungsverlaufsblatts eines Schwarzweiß-Geräts (WF-M5799) mit dem Abschnitt „Anzahl Seiten“; „Gesamtanzahl Seiten“ ist orange umkreist",
         },
       ],
     },
@@ -746,7 +746,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "toshiba-bv400d-schritt-6.webp",
-                alt: "Installationsassistent „Welcome to the InstallShield Wizard for BCP Setting Tool“ mit dem Button „Next“",
+                alt: "Installationsassistent „Welcome to the InstallShield Wizard for BCP Setting Tool“ mit dem Button „Next“; „Next“ ist rot umkreist",
               },
             ],
           },
@@ -755,7 +755,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "toshiba-bv400d-schritt-7.webp",
-                alt: "Installationsassistent „License Agreement“; ein Pfeil zeigt auf „I accept the terms of the license agreement“",
+                alt: "Installationsassistent „License Agreement“; ein Pfeil zeigt auf „I accept the terms of the license agreement“; „Next“ ist rot umkreist",
               },
             ],
           },
@@ -764,7 +764,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "toshiba-bv400d-schritt-8.webp",
-                alt: "Installationsassistent „Choose Destination Location“ mit dem Zielordner und dem Button „Next“",
+                alt: "Installationsassistent „Choose Destination Location“ mit dem Zielordner und dem Button „Next“; „Next“ ist rot umkreist",
               },
             ],
           },
@@ -773,7 +773,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "toshiba-bv400d-schritt-9.webp",
-                alt: "Installationsassistent „Ready to Install the Program“ mit dem Button „Install“",
+                alt: "Installationsassistent „Ready to Install the Program“ mit dem Button „Install“; „Install“ ist rot umkreist",
               },
             ],
           },
@@ -782,7 +782,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "toshiba-bv400d-schritt-10.webp",
-                alt: "Installationsassistent „InstallShield Wizard Complete“ mit dem Button „Finish“",
+                alt: "Installationsassistent „InstallShield Wizard Complete“ mit dem Button „Finish“; „Finish“ ist rot umkreist",
               },
             ],
           },
@@ -827,7 +827,7 @@ export const hersteller: ZHersteller[] = [
             bilder: [
               {
                 datei: "toshiba-bv400d-schritt-15.webp",
-                alt: "Fenster „Get Printer Info“ mit vollem Fortschrittsbalken und dem Button „Close“",
+                alt: "Fenster „Get Printer Info“ mit vollem Fortschrittsbalken und dem Button „Close“; „Close“ ist rot umkreist",
               },
             ],
           },
