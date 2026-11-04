@@ -84,7 +84,7 @@ const ServiceArea = () => (
             <div className="flex flex-col gap-4 text-sm">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <a href="tel:+497617040700" className="hover:text-primary transition-colors">(0761) 704070</a>
+                <a href="tel:+49761704070" className="hover:text-primary transition-colors">(0761) 704070</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary shrink-0" />

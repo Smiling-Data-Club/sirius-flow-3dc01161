@@ -18,6 +18,7 @@ import Datenschutz from "./pages/Datenschutz";
 import AGBUebersicht from "./pages/AGBUebersicht";
 import AGBAllgemein from "./pages/AGBAllgemein";
 import AGBLeistungen from "./pages/AGBLeistungen";
+import Zaehlerstand from "./pages/Zaehlerstand";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/ueber-uns/team" element={<Team />} />
             <Route path="/ueber-uns/karriere" element={<Karriere />} />
             <Route path="/service-area" element={<ServiceArea />} />
+            <Route path="/zaehlerstand" element={<Zaehlerstand />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/agb" element={<AGBUebersicht />} />

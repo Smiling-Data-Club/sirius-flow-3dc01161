@@ -112,9 +112,22 @@
 /sustain-now/                                                 /                                     410
 
 
+# --- ZÄHLERSTÄNDE: Seite /zaehlerstand + PDF mit festem Namen -
+# AGB § 12 verweist auf /Support/Zählerstände (alte WP-Adresse).
+# Umlaute einmal als Zeichen, einmal URL-kodiert, damit beide Schreibweisen greifen.
+/Support/Zählerstände                                         /zaehlerstand                         301
+/Support/Zählerstände/                                        /zaehlerstand                         301
+/Support/Z%C3%A4hlerst%C3%A4nde                               /zaehlerstand                         301
+/Support/Z%C3%A4hlerst%C3%A4nde/                              /zaehlerstand                         301
+/support/zaehlerstaende                                       /zaehlerstand                         301
+/zaehlerstaende                                               /zaehlerstand                         301
+# PDF heißt jetzt immer gleich; alter Dateiname mit Datum leitet weiter.
+/downloads/Anleitung-zum-Auslesen-von-Zaehlern-01.06.2026.pdf /downloads/anleitung-zaehlerstaende.pdf  301
+
+
 # --- WORDPRESS-ASSETS → 410 ---------------------------------
 # Alte Uploads/Plugin-Pfade nicht mehr verfügbar
-/wp-content/uploads/2025/06/Anleitung-zum-Auslesen-von-Zaehlern-01.06.2025.pdf  /downloads/Anleitung-zum-Auslesen-von-Zaehlern-01.06.2026.pdf  301
+/wp-content/uploads/2025/06/Anleitung-zum-Auslesen-von-Zaehlern-01.06.2025.pdf  /downloads/anleitung-zaehlerstaende.pdf  301
 /wp-content/*                                                 /                                     410
 /wp-admin/*                                                   /                                     410
 /wp-includes/*                                                /                                     410

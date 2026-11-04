@@ -385,7 +385,7 @@ const Index = () => (
       "@type": "LocalBusiness",
       name: "SIRIUS GmbH document solutions",
       url: "/",
-      telephone: "+49 761 4002-0",
+      telephone: "+49 761 704070",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Abrichstrasse 23",
