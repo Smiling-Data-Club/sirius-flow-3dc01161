@@ -461,11 +461,13 @@ export const hersteller: ZHersteller[] = [
     id: "toshiba",
     name: "Toshiba Etikettendrucker",
     beschreibung: "Etikettendrucker von Toshiba TEC",
+    hinweis:
+      "Je nach Modell tragen Sie den Zählerstand in km oder in cm ein – das steht bei jedem Modell. km-Werte tragen Sie mit Komma und drei Nachkommastellen ein, z. B. „12,345“. Ein Punkt im Display entspricht dem Komma. Zeigt das Display weniger Nachkommastellen, ergänzen Sie Nullen: aus „12.3“ wird „12,300“.",
     gruppen: [
       {
         id: "toshiba-ba400t",
         titel: "BA400T-Reihe",
-        einleitung: "Den Zählerstand tragen Sie im Webportal in km ein.",
+        einleitung: "Für das Webportal brauchen Sie den Wert „TOTAL FEED“ in km, mit Komma und drei Nachkommastellen, z. B. „12,345“.",
         schritte: [
           {
             text: "Schalten Sie das Gerät aus. Halten Sie die Tasten „Feed“ und „Pause“ gedrückt und schalten Sie das Gerät mit dem Power-Button ein.",
@@ -567,6 +569,7 @@ export const hersteller: ZHersteller[] = [
       {
         id: "toshiba-b-ex4",
         titel: "B-EX4T1, B-EX4T2, B-EX4D2",
+        einleitung: "Den Zählerstand tragen Sie im Webportal in cm ein.",
         schritte: [
           {
             text: "Starten Sie das Gerät neu. Das Display zeigt das Hauptmenü.",
@@ -630,6 +633,7 @@ export const hersteller: ZHersteller[] = [
       {
         id: "toshiba-b-ex6",
         titel: "B-EX6T1, B-EX6T3",
+        einleitung: "Den Zählerstand tragen Sie im Webportal in cm ein.",
         schritte: [
           {
             text: "Starten Sie das Gerät neu. Das Display zeigt das Hauptmenü.",
@@ -690,7 +694,7 @@ export const hersteller: ZHersteller[] = [
         id: "toshiba-bv400d",
         titel: "BV400D-Reihe",
         einleitung:
-          "Für diese Geräte brauchen Sie einen Windows-PC, der mit dem Etikettendrucker verbunden ist, und das kostenlose Programm „BCP Setting Tool“ von Toshiba. Den Zählerstand tragen Sie im Webportal in km ein.",
+          "Für diese Geräte brauchen Sie einen Windows-PC, der mit dem Etikettendrucker verbunden ist, und das kostenlose Programm „BCP Setting Tool“ von Toshiba. Den Zählerstand tragen Sie im Webportal in km ein, mit Komma und drei Nachkommastellen, z. B. „12,345“.",
         schritte: [
           {
             text: "Öffnen Sie die Download-Seite von Toshiba: https://www.toshibatec.com/download_overseas/printer/setting_tool/BCP_Series/ – oder suchen Sie im Internet nach „BCP Setting Tool“.",
@@ -849,6 +853,7 @@ export const hersteller: ZHersteller[] = [
       {
         id: "toshiba-b-sa4tm",
         titel: "B-SA4TM",
+        einleitung: "Den Zählerstand tragen Sie im Webportal in cm ein.",
         schritte: [
           {
             text: "Starten Sie das Gerät neu. Das Display zeigt das Hauptmenü.",
@@ -909,7 +914,7 @@ export const hersteller: ZHersteller[] = [
         id: "toshiba-b-fv4",
         titel: "B-FV4D, B-FV4T",
         einleitung:
-          "Für das Webportal brauchen Sie den Wert „TOTAL FEED1“ (in km). Er steht auf einem Testdruck.",
+          "Für das Webportal brauchen Sie den Wert „TOTAL FEED1“ in km, mit Komma und drei Nachkommastellen, z. B. „12,345“. Er steht auf einem Testdruck.",
         schritte: [
           {
             text: "Schalten Sie den Drucker aus. Legen Sie Material in voller Breite (104 mm) ein.",

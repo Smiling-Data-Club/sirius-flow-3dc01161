@@ -1,8 +1,8 @@
 # Rückfragen zur neuen Seite „Zählerstände auslesen“
 
-> **Stand 04.11.2026:** Die Fragen 1–10 sind beantwortet und auf der Seite eingearbeitet (Details: `aenderungen.md`, Abschnitt 5). Offen sind noch **Teil 2** (Technik/Geschäftsführung) und die Nachfrage in **Teil 3**.
+> **Stand 04.11.2026:** Die Fragen 1–16 sind beantwortet und eingearbeitet (Details: `aenderungen.md`, Abschnitt 5). Teil 2: Die Freigabe ist erfolgt und die Telefonnummern sind vereinheitlicht. Offen sind nur noch der AGB-Link (liegt bei der Geschäftsführung) und der Wert beim BV400D (Frage 16).
 >
-> Kurzfassung der Antworten: 1a (nicht am Gerät getestet) · 2a FEED1 · 3c km · 4b wie B-EX6 · 5a Gerät vorher aus; Thermal Transfer oder Direct Thermal je nach Etiketten · 6 kein Modellabgleich, dafür „zuerst neue, dann alte Menüführung“ · 7 ja/ja · 8 passt · 9 keine allgemeine Portal-Adresse · 10 nicht unkenntlich machen
+> Kurzfassung der Antworten: 1a (nicht am Gerät getestet) · 2a FEED1 · 3c km · 4b wie B-EX6 · 5a Gerät vorher aus; Thermal Transfer oder Direct Thermal je nach Etiketten · 6 kein Modellabgleich, dafür „zuerst neue, dann alte Menüführung“ · 7 ja/ja · 8 passt · 9 keine allgemeine Portal-Adresse · 10 nicht unkenntlich machen · 14b cm · 15a Komma + 3 Nachkommastellen · 16 BA400T „TOTAL FEED“, BV400D unklar · Farbband-Zuordnung bestätigt
 
 
 Hallo Angela, hallo Technik,

@@ -192,6 +192,10 @@ const Zaehlerstand = () => {
                 Tragen Sie nur Ziffern ein – ohne führende Nullen, Punkte oder Kommas. Beispiel: Aus „00,081,767“ wird
                 „81767“.
               </li>
+              <li>
+                Ausnahme Etikettendrucker mit km-Zähler: Tragen Sie den Wert mit Komma und drei Nachkommastellen ein,
+                z. B. „12,345“.
+              </li>
               <li>Bitte melden Sie die Zählerstände innerhalb von 3 Werktagen nach unserer Aufforderung.</li>
               <li>Sie brauchen kein Passwort. Der persönliche Link aus unserer E-Mail genügt.</li>
               <li>Notieren Sie die ID-Nr. auf dem Ausdruck. Das erleichtert die Eingabe im Webportal.</li>
