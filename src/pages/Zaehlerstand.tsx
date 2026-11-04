@@ -128,9 +128,20 @@ const Zaehlerstand = () => {
   const treffer = useMemo(() => {
     if (!q) return null;
     const ids = new Set<string>();
-    for (const h of hersteller)
-      for (const g of h.gruppen)
-        if (normalisiere(`${h.name} ${g.titel}`).includes(q)) ids.add(g.id);
+    for (const h of hersteller) {
+      const passt = (text: string) => h.gruppen.filter((g) => normalisiere(`${h.name} ${g.titel}`).includes(text));
+      // Hersteller genannt (z. B. "Lexmark CX725" oder nur "Lexm"): passende Modelle zeigen,
+      // ohne Treffer alle Anleitungen dieses Herstellers.
+      if (q.startsWith(h.id)) {
+        const rest = q.slice(h.id.length);
+        const treffer = rest ? h.gruppen.filter((g) => normalisiere(g.titel).includes(rest)) : [];
+        (treffer.length ? treffer : h.gruppen).forEach((g) => ids.add(g.id));
+      } else if (q.length >= 3 && h.id.startsWith(q)) {
+        h.gruppen.forEach((g) => ids.add(g.id));
+      } else {
+        passt(q).forEach((g) => ids.add(g.id));
+      }
+    }
     return ids;
   }, [q]);
 
@@ -157,7 +168,7 @@ const Zaehlerstand = () => {
           </p>
           <ol className="grid gap-4 md:grid-cols-3 mb-10">
             {[
-              ["Auslesen", "Drucken Sie die Zählerseite an Ihrem Gerät aus. Die Anleitung für Ihr Modell finden Sie unten."],
+              ["Auslesen", "Drucken Sie an Ihrem Gerät die Statusseite mit den Zählerständen aus. Die Anleitung für Ihr Modell finden Sie unten."],
               ["Eintragen", "Tragen Sie die Werte im Webportal ein. Nutzen Sie dafür den persönlichen Link aus unserer E-Mail."],
               ["Fertig", "Mehr ist nicht zu tun. Wir übernehmen die Werte für Ihre Abrechnung."],
             ].map(([titel, text], i) => (
@@ -230,7 +241,7 @@ const Zaehlerstand = () => {
             <p className="mt-2 text-sm text-muted-foreground" aria-live="polite">
               {treffer
                 ? treffer.size === 0
-                  ? "Kein passendes Modell gefunden. Rufen Sie uns gern an – wir helfen Ihnen weiter."
+                  ? "Kein passendes Modell gefunden. Wählen Sie oben Ihren Hersteller oder rufen Sie uns an – wir helfen Ihnen weiter."
                   : treffer.size === 1
                     ? "1 Modellgruppe gefunden"
                     : `${treffer.size} Modellgruppen gefunden`
@@ -246,6 +257,12 @@ const Zaehlerstand = () => {
                   {h.name}
                 </h2>
                 {h.beschreibung && <p className="text-muted-foreground mb-5">{h.beschreibung}</p>}
+                {h.hinweis && (
+                  <p className="mb-5 flex gap-2 rounded-lg border border-primary/30 bg-primary/5 p-4 text-sm">
+                    <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                    <span>{h.hinweis}</span>
+                  </p>
+                )}
                 <div className="space-y-4">
                   {h.gruppen.filter(sichtbar).map((g) => (
                     <Aufklapper key={g.id} id={g.id} titel={g.titel} offen={offen.has(g.id)} onToggle={toggle}>

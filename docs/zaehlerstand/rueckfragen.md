@@ -1,5 +1,10 @@
 # Rückfragen zur neuen Seite „Zählerstände auslesen“
 
+> **Stand 04.11.2026:** Die Fragen 1–10 sind beantwortet und auf der Seite eingearbeitet (Details: `aenderungen.md`, Abschnitt 5). Offen sind noch **Teil 2** (Technik/Geschäftsführung) und die Nachfrage in **Teil 3**.
+>
+> Kurzfassung der Antworten: 1a (nicht am Gerät getestet) · 2a FEED1 · 3c km · 4b wie B-EX6 · 5a Gerät vorher aus; Thermal Transfer oder Direct Thermal je nach Etiketten · 6 kein Modellabgleich, dafür „zuerst neue, dann alte Menüführung“ · 7 ja/ja · 8 passt · 9 keine allgemeine Portal-Adresse · 10 nicht unkenntlich machen
+
+
 Hallo Angela, hallo Technik,
 
 die neue Seite „Zählerstände auslesen“ (www.sirius-gmbh.de/zaehlerstand) ist inhaltlich fertig. Für den Livegang fehlen noch ein paar Antworten. Bitte antwortet einfach mit der Nummer und einem kurzen Satz. Wo Antwortmöglichkeiten stehen, reicht die Nummer der Antwort, z. B. „1b“.
@@ -90,3 +95,25 @@ Sind diese beiden Nummern veraltet und sollen angeglichen werden? (ja / nein / r
 ---
 
 *Für Rückfragen zu dieser Liste: Sie basiert auf der Datei `docs/zaehlerstand/aenderungen.md` im Website-Projekt. Dort steht zu jeder Frage, an welcher Stelle der Anleitung sie aufgefallen ist.*
+
+---
+
+## Teil 3: Nachfrage an die Service-Technik (km-Werte)
+
+Die Antwort auf Frage 3 war „km“. Dabei ergeben sich drei Punkte:
+
+**14. Geräte ohne km-Anzeige**
+B-EX4, B-EX6 und B-SA4TM zeigen nur cm und inch an, keinen km-Wert.
+- a) Der Kunde rechnet um (cm geteilt durch 100.000 = km).
+- b) Bei diesen Geräten trägt der Kunde cm ein.
+- c) etwas anderes: ______
+
+**15. Nachkommastellen**
+km-Werte haben oft Nachkommastellen, z. B. „0,35 km“. Auf der Seite steht aber: „nur Ziffern, ohne Punkt oder Komma“.
+- a) Komma ist bei km erlaubt, z. B. „0,35“.
+- b) Auf ganze km runden.
+- c) etwas anderes: ______
+
+**16. Welche Zeile?**
+- BA400T: Das Display zeigt TOTAL FEED, FEED, FEED1 und FEED2. Welcher Wert wird eingetragen? ______
+- BV400D: Das Programm zeigt mehrere Zähler. Welcher Wert wird eingetragen? ______

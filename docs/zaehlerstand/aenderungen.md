@@ -67,22 +67,26 @@ Alles, was mit **[prüfen]** markiert ist, habe ich nicht abschließend entschie
 
 ---
 
-## 5. Inhaltliche Unklarheiten – NICHT entschieden
+## 5. Inhaltliche Unklarheiten
 
-| # | Stelle | Frage |
+Antworten von Service-Technik und Angela vom 04.11.2026 sind eingearbeitet.
+
+| # | Stelle | Stand |
 |---|---|---|
-| A | **B-FV4D/B-FV4T – Reihenfolge** | „Der Zähler wird ausgedruckt.“ steht in der DOCX **nach** Schritt 6 („aus- und wieder einschalten“). Vermutlich ist der Ausdruck aber der Testdruck aus Schritt 5. Auf der Seite steht die Reihenfolge wie in der Quelle. Bitte klären, wann der Ausdruck kommt. |
-| B | **B-FV4D/B-FV4T – welcher Wert?** | Abgefragt werden „0,1 km-Zähler (FEED1)“ und „cm/Inch-Zähler (FEED2)“, der Ausdruck zeigt TOTAL FEED1 in km und TOTAL FEED2 in cm **und** inch. Welche Werte trägt der Kunde im Portal ein? |
-| C | **Etikettendrucker allgemein – Einheit** | Die Zähler gibt es in km, cm oder inch. Bei B-SA4TM heißt es „Sollte die Zahl in inch dargestellt werden, Restart drücken“. Das deutet auf cm hin. Welche Einheit erwartet das Portal? Gehört als Hinweis auf die Seite. |
-| D | **B-EX4, Schritt 4** | „Drücken Sie die Cancel-Taste. Anschließend werden die Zähler angezeigt.“ Bei B-EX6 erscheinen die Zähler schon nach „Pfeil nach oben“, und „Cancel“ führt **zurück ins Hauptmenü**. Ist Schritt 4 bei B-EX4 richtig? |
-| E | **BA400T, Schritt 1** | „Power-Button, Feed und Pause gleichzeitig drücken und halten.“ Muss das Gerät vorher ausgeschaltet sein, also Feed und Pause beim Einschalten halten? |
-| F | **BA400T, Schritt 6** | Das Display bietet drei Optionen: Thermal Transfer, **Direct Thermal**, Display. „Direct Thermal“ wird nicht erklärt. Ist das abhängig vom Etikettenmaterial? |
-| G | **Lexmark – keine Modellliste** | Die Gruppen heißen nur „neue/alte Menüführung“. Die Modellsuche und Strg+F finden deshalb keine Lexmark-Modelle. Bitte die Modelle je Menüführung liefern. |
-| H | **Sharp – Begriffe** | Mal „Zählerseite“, mal „Statusseite“ für denselben Ausdruck. Ist das gewollt? |
-| I | ~~Fehlende Markierungen in Bildern~~ | **Erledigt am 02.11.2026:** Die Markierungen (Kreise, Pfeile, Verbinder) stammen jetzt aus dem PDF, das aus derselben Word-Datei exportiert wurde. Sie sehen also genauso aus wie in der Word-Vorlage. Betroffen sind 35 Bilder: Sharp, Lexmark, Epson inkl. Statusseite und 6 BV400D-Schritte. Die Alt-Texte nennen jetzt auch, was markiert ist. |
-| J | **Word-Zuschnitt** | Word zeigt viele Bilder beschnitten an (Beispiel: die Sharp-Tastenfolge ist im Original ein ganzes Foto). Exportiert ist der **in Word sichtbare Ausschnitt**, ohne weitere Bearbeitung. |
-| K | **Geräte-Kennungen in Screenshots** | Auf Beispielbildern sind Seriennummern, MAC-Adressen und private IP-Adressen von Beispielgeräten zu sehen. Sie sind schon im öffentlichen PDF. Falls es Kundengeräte sind: schwärzen? Auch das wäre eine Bildänderung und braucht eine Freigabe. |
-| L | **PDF passt nicht mehr zur Seite** | Die Korrekturen aus Abschnitt 2 stehen nur auf der Webseite. Bitte die DOCX korrigieren und das PDF neu exportieren (Ablauf: `pflege.md`, Abschnitt „PDF austauschen“). |
+| A | **B-FV4D/B-FV4T – Reihenfolge** | **Geklärt:** Der Zählerstand steht auf dem Testdruck (Schritt 5). Schritt 7 („Der Zähler wird ausgedruckt“) ist entfallen. **[prüfen]** Laut Technik „eher so“, konnte aber nicht am Gerät getestet werden. Beim nächsten Gerät bitte einmal bestätigen. |
+| B | **B-FV4D/B-FV4T – welcher Wert?** | **Geklärt:** Der Kunde trägt „TOTAL FEED1“ (km) ein. Das steht jetzt in der Einleitung und in Schritt 5. |
+| C | **Etikettendrucker – Einheit** | **Teilweise geklärt:** Laut Technik werden die Werte in km eingetragen. Bei BA400T, BV400D und B-FV4 steht das jetzt auf der Seite, denn diese Geräte zeigen km an. **Offen:** B-EX4, B-EX6 und B-SA4TM zeigen nur cm und inch an. Außerdem haben km-Werte oft Nachkommastellen, die Hinweisbox sagt aber „ohne Punkt oder Komma“. → Nachfrage an die Technik (siehe `rueckfragen.md`, Teil 3). |
+| D | **B-EX4, Schritt 4** | **Geklärt:** Der Ablauf ist wie beim B-EX6. Die Zähler erscheinen nach „Pfeil nach oben“ (jetzt Schritt 3). Schritt 4: „Cancel“ führt zurück ins Hauptmenü, „Enter“ druckt das Etikett. Insgesamt sind es jetzt 4 statt 5 Schritte; die Bilder sind entsprechend umbenannt. |
+| E | **BA400T, Schritt 1** | **Geklärt:** Das Gerät muss vorher aus sein. Neuer Text: „Schalten Sie das Gerät aus. Halten Sie die Tasten „Feed“ und „Pause“ gedrückt und schalten Sie das Gerät mit dem Power-Button ein.“ |
+| F | **BA400T, Schritt 6** | **Geklärt:** Thermal Transfer oder Direct Thermal hängt von den eingelegten Etiketten ab. Ergänzt habe ich: „Thermal Transfer“ für Etiketten mit Farbband, „Direct Thermal“ für Thermoetiketten ohne Farbband. **[prüfen]** Die Zuordnung zum Farbband ist allgemeines Fachwissen, nicht aus der Anleitung. |
+| G | **Lexmark – keine Modellliste** | **Gelöst ohne Modellliste**, nach dem Vorschlag der Technik: Ein Hinweis bei Lexmark sagt „zuerst die neue Menüführung ausprobieren, sonst die alte“. Die neue Menüführung ist im Titel als „bitte zuerst ausprobieren“ markiert. Die Suche zeigt bei Eingabe von „Lexmark …“ beide Anleitungen. Nur eine Modellnummer ohne „Lexmark“ (z. B. „CX725“) findet weiterhin nichts. Die Seite rät dann, oben den Hersteller zu wählen. |
+| H | **Sharp – Begriffe** | **Geklärt:** „Zählerseite“ und „Statusseite“ sind dasselbe. Jetzt heißt es überall „Statusseite“, passend zu „Statusseite lesen“. Die Regel „letzte zwei Nullen der Seriennummer weglassen“ gilt nur für Sharp und steht nur dort. |
+| I | ~~Fehlende Markierungen in Bildern~~ | **Erledigt am 02.11.2026:** Die Markierungen stammen jetzt aus dem PDF, das aus derselben Word-Datei exportiert wurde (35 Bilder). Die Alt-Texte nennen, was markiert ist. |
+| J | **Word-Zuschnitt** | Exportiert ist der in Word sichtbare Ausschnitt, ohne weitere Bearbeitung. |
+| K | **Geräte-Kennungen in Screenshots** | **Geklärt:** Laut Technik müssen sie nicht unkenntlich gemacht werden, weil die Seriennummern nicht mit Kundendaten verknüpft werden können. Die Bilder bleiben unverändert. |
+| L | **PDF passt nicht mehr zur Seite** | **Offen:** Die Korrekturen stehen nur auf der Webseite. Bitte die DOCX korrigieren und das PDF neu exportieren (Ablauf: `pflege.md`, Abschnitt „PDF austauschen“). Neu dazugekommen: B-EX4, B-FV4 und BA400T laut den Antworten anpassen. |
+| M | **Frist** | **Bestätigt:** „innerhalb von 3 Werktagen nach unserer Aufforderung“ |
+| N | **Webportal** | **Geklärt:** Es gibt keine allgemeine Portal-Adresse. Die Seite zeigt keinen Button, sondern nur den Hinweis auf den persönlichen Link aus der E-Mail. `PORTAL_URL` bleibt auf dem Platzhalter. |
 
 ---
 
@@ -90,5 +94,5 @@ Alles, was mit **[prüfen]** markiert ist, habe ich nicht abschließend entschie
 
 - **AGB § 12** verlinkt `www.sirius-gmbh.de/Support/Zählerstände`. Die Weiterleitung ist angelegt. Den Link in den AGB auf `/zaehlerstand` zu ändern, ist eine Änderung am Rechtstext und wurde **nicht** vorgenommen. → Freigabe GF.
 - **Telefonnummer:** Seite und Anruf-Link nutzen jetzt **(0761) 704070** (`tel:+49761704070`). So steht die Nummer auf dem Deckblatt der Word-Vorlage und im PDF. Abweichungen an anderer Stelle der Website: Die Service-Area-Seite wählt `+49 761 7040700`, die Daten der Startseite für Google (JSON-LD) nennen `+49 761 4002-0`. **[prüfen]** Ist 4002-0 veraltet?
-- **Webportal-Link:** `PORTAL_URL` steht noch auf dem Platzhalter `[PORTAL-URL]`. Solange das so ist, zeigt die Seite **keinen** Button, nur den Hinweis auf den persönlichen Link aus der E-Mail. Die Seite zeigt keinen Link mit `USR=`/`PW=`-Parametern, auch wenn er versehentlich eingetragen wird. Ein automatischer Test prüft das zusätzlich.
+- **Webportal-Link:** Es gibt keine allgemeine Portal-Adresse (Antwort vom 04.11.2026). `PORTAL_URL` bleibt auf dem Platzhalter `[PORTAL-URL]`, die Seite zeigt deshalb **keinen** Button, nur den Hinweis auf den persönlichen Link aus der E-Mail. Die Seite zeigt keinen Link mit `USR=`/`PW=`-Parametern, auch wenn er versehentlich eingetragen wird. Ein automatischer Test prüft das zusätzlich.
 - **Nicht verwendet aus der DOCX:** Deckblattgrafik (`image1.png`), Briefpapier-Hintergrund aus der Kopfzeile (`image90.jpg`), Bildeffekt-Dateien (`hdphoto1–3.wdp`).

@@ -56,6 +56,8 @@ export interface ZHersteller {
   id: string;
   name: string;
   beschreibung?: string;
+  /** Optionaler Hinweis-Kasten über den Modellgruppen */
+  hinweis?: string;
   gruppen: ZGruppe[];
   statusseite?: ZStatusseite;
 }
@@ -120,7 +122,7 @@ export const hersteller: ZHersteller[] = [
             ],
           },
           {
-            text: "Tippen Sie 1 ein und drücken Sie zweimal die OK-Taste. Der Drucker druckt eine Zählerseite.",
+            text: "Tippen Sie 1 ein und drücken Sie zweimal die OK-Taste. Der Drucker druckt eine Statusseite.",
             bilder: [
               {
                 datei: "sharp-mx-b350p-schritt-4.webp",
@@ -239,7 +241,7 @@ export const hersteller: ZHersteller[] = [
             ],
           },
           {
-            text: "Wählen Sie den Unterpunkt „Gesamtzählung“ und klicken Sie auf „Drucken“. Der Drucker druckt eine Zählerseite.",
+            text: "Wählen Sie den Unterpunkt „Gesamtzählung“ und klicken Sie auf „Drucken“. Der Drucker druckt eine Statusseite.",
             bilder: [
               {
                 datei: "sharp-mx-2610-schritt-3.webp",
@@ -260,7 +262,7 @@ export const hersteller: ZHersteller[] = [
       bilder: [
         {
           datei: "sharp-statusseite.webp",
-          alt: "Beispiel einer Sharp-Zählerseite: markiert sind Seriennummer, Gesamtzähler Schwarzweiß und Farbe sowie die Scan-Zähler „Scan senden“ und „Fax-Senden“",
+          alt: "Beispiel einer Sharp-Statusseite: markiert sind Seriennummer, Gesamtzähler Schwarzweiß und Farbe sowie die Scan-Zähler „Scan senden“ und „Fax-Senden“",
         },
       ],
     },
@@ -269,10 +271,12 @@ export const hersteller: ZHersteller[] = [
     id: "lexmark",
     name: "Lexmark",
     beschreibung: "Multifunktionsgeräte und Drucker",
+    hinweis:
+      "Lexmark-Geräte haben je nach Alter eine neue oder eine alte Menüführung. Probieren Sie zuerst die neue Menüführung. Sieht Ihr Display anders aus, nehmen Sie die alte.",
     gruppen: [
       {
         id: "lexmark-neue-menuefuehrung",
-        titel: "Lexmark – neue Menüführung",
+        titel: "Lexmark – neue Menüführung (bitte zuerst ausprobieren)",
         schritte: [
           {
             text: "Wählen Sie den Button „Einstellungen“. Er hat immer ein Schraubenschlüssel-Symbol.",
@@ -461,9 +465,10 @@ export const hersteller: ZHersteller[] = [
       {
         id: "toshiba-ba400t",
         titel: "BA400T-Reihe",
+        einleitung: "Den Zählerstand tragen Sie im Webportal in km ein.",
         schritte: [
           {
-            text: "Drücken Sie gleichzeitig den Power-Button, die Taste „Feed“ und die Taste „Pause“ und halten Sie sie gedrückt.",
+            text: "Schalten Sie das Gerät aus. Halten Sie die Tasten „Feed“ und „Pause“ gedrückt und schalten Sie das Gerät mit dem Power-Button ein.",
             bilder: [
               {
                 datei: "toshiba-ba400t-schritt-1.webp",
@@ -522,7 +527,7 @@ export const hersteller: ZHersteller[] = [
           {
             text: "Wählen Sie, wie die Zähler ausgegeben werden sollen:",
             punkte: [
-              "„Thermal Transfer“: Der Drucker druckt die Werte auf Etiketten. Wenn Sie schneiden möchten, wählen Sie danach „Yes“ (nur mit Schneideeinheit möglich).",
+              "„Thermal Transfer“ oder „Direct Thermal“: Der Drucker druckt die Werte auf Etiketten. Wählen Sie das Druckverfahren, das zu den eingelegten Etiketten passt: „Thermal Transfer“ für Etiketten mit Farbband, „Direct Thermal“ für Thermoetiketten ohne Farbband. Wenn Sie schneiden möchten, wählen Sie danach „Yes“ (nur mit Schneideeinheit möglich).",
               "„Display“: Das Display zeigt die Werte an. Wählen Sie danach „Counter“. Mit „Feed“ scrollen Sie nach unten, mit „Restart“ nach oben.",
             ],
             bilder: [
@@ -586,16 +591,24 @@ export const hersteller: ZHersteller[] = [
             ],
           },
           {
-            text: "Halten Sie die Taste „Pfeil nach oben“ 3 Sekunden lang gedrückt.",
+            text: "Halten Sie die Taste „Pfeil nach oben“ 3 Sekunden lang gedrückt. Das Display zeigt die Zähler an.",
             bilder: [
               {
-                datei: "toshiba-b-ex4-schritt-3.webp",
+                datei: "toshiba-b-ex4-schritt-3a.webp",
                 alt: "Bedienfeld; die Taste „Pfeil nach oben“ ist gelb umkreist",
+              },
+              {
+                datei: "toshiba-b-ex4-schritt-3b.webp",
+                alt: "Display „BCP COUNTER“ mit Werten in cm und inch und dem Hinweis „PUSH ENTER OR CANCEL“",
               },
             ],
           },
           {
-            text: "Drücken Sie die Taste „Cancel“. Das Display zeigt die Zähler an.",
+            text: "Wählen Sie, wie es weitergeht:",
+            punkte: [
+              "„Cancel“: zurück ins Hauptmenü.",
+              "„Enter“: Der Drucker druckt den Zählerstand auf ein Etikett. Danach erscheint wieder das Hauptmenü.",
+            ],
             bilder: [
               {
                 datei: "toshiba-b-ex4-schritt-4a.webp",
@@ -603,25 +616,16 @@ export const hersteller: ZHersteller[] = [
               },
               {
                 datei: "toshiba-b-ex4-schritt-4b.webp",
-                alt: "Display „BCP COUNTER“ mit Werten in cm und inch und dem Hinweis „PUSH ENTER OR CANCEL“",
-              },
-            ],
-          },
-          {
-            text: "Drücken Sie die Taste „Enter“, um den Zählerstand auszudrucken. Der Drucker druckt den Zählerstand auf ein Etikett.",
-            bilder: [
-              {
-                datei: "toshiba-b-ex4-schritt-5a.webp",
                 alt: "Bedienfeld; die Taste „Enter“ ist gelb umkreist",
               },
               {
-                datei: "toshiba-b-ex4-schritt-5b.webp",
+                datei: "toshiba-b-ex4-schritt-4c.webp",
                 alt: "Ausgedrucktes Etikett „TOTAL COUNTER LIST“; die Zählerwerte in cm und inch sind rot markiert",
               },
             ],
           },
         ],
-        abschluss: "Nach dem Druck erscheint wieder das Hauptmenü. Der Vorgang ist abgeschlossen.",
+        abschluss: "Der Vorgang ist abgeschlossen.",
       },
       {
         id: "toshiba-b-ex6",
@@ -686,7 +690,7 @@ export const hersteller: ZHersteller[] = [
         id: "toshiba-bv400d",
         titel: "BV400D-Reihe",
         einleitung:
-          "Für diese Geräte brauchen Sie einen Windows-PC, der mit dem Etikettendrucker verbunden ist, und das kostenlose Programm „BCP Setting Tool“ von Toshiba.",
+          "Für diese Geräte brauchen Sie einen Windows-PC, der mit dem Etikettendrucker verbunden ist, und das kostenlose Programm „BCP Setting Tool“ von Toshiba. Den Zählerstand tragen Sie im Webportal in km ein.",
         schritte: [
           {
             text: "Öffnen Sie die Download-Seite von Toshiba: https://www.toshibatec.com/download_overseas/printer/setting_tool/BCP_Series/ – oder suchen Sie im Internet nach „BCP Setting Tool“.",
@@ -905,7 +909,7 @@ export const hersteller: ZHersteller[] = [
         id: "toshiba-b-fv4",
         titel: "B-FV4D, B-FV4T",
         einleitung:
-          "Abgefragt werden der „0,1 km-Zähler“ (FEED1) und der „cm/Inch-Zähler“ (FEED2). Dafür drucken Sie einen Testdruck.",
+          "Für das Webportal brauchen Sie den Wert „TOTAL FEED1“ (in km). Er steht auf einem Testdruck.",
         schritte: [
           {
             text: "Schalten Sie den Drucker aus. Legen Sie Material in voller Breite (104 mm) ein.",
@@ -920,19 +924,16 @@ export const hersteller: ZHersteller[] = [
             text: "Drücken Sie noch einmal die Taste „Feed“.",
           },
           {
-            text: "Der Testdruck erscheint. Danach ist der Drucker im DUMP-Modus.",
+            text: "Der Testdruck mit dem Zählerstand erscheint. Lesen Sie den Wert „TOTAL FEED1“ ab. Danach ist der Drucker im DUMP-Modus.",
+            bilder: [
+              {
+                datei: "toshiba-b-fv4-schritt-5.webp",
+                alt: "Testdruck „B-FV4T-G PRINTER INFO“; die Zeilen TOTAL FEED1 und TOTAL FEED2 sind rot umrandet",
+              },
+            ],
           },
           {
             text: "Um zurück in den ONLINE-Status zu gelangen, schalten Sie den Drucker aus und wieder ein.",
-          },
-          {
-            text: "Der Zähler wird ausgedruckt.",
-            bilder: [
-              {
-                datei: "toshiba-b-fv4-ausdruck.webp",
-                alt: "Ausdruck „B-FV4T-G PRINTER INFO“; die Zeilen TOTAL FEED1 und TOTAL FEED2 sind rot umrandet",
-              },
-            ],
           },
         ],
       },
