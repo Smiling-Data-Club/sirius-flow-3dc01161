@@ -23,6 +23,8 @@ export interface ZBild {
   datei: string;
   /** Kurze Bildbeschreibung auf Deutsch */
   alt: string;
+  /** Optionale Bildunterschrift, die unter dem Bild steht */
+  beschriftung?: string;
 }
 
 export interface ZSchritt {
@@ -442,17 +444,19 @@ export const hersteller: ZHersteller[] = [
     statusseite: {
       punkte: [
         "Lesen Sie die Werte im Abschnitt „Anzahl Seiten“ unter „Nach Funktion sortiert“ ab.",
-        "Farbgeräte: „Gesamtanzahl S&W-Seiten“ und „Gesamtanzahl Farbe-Seiten“.",
+        "Farbgeräte: Lesen Sie Schwarzweiß und Farbe getrennt ab – „Gesamtanzahl S&W-Seiten“ und „Gesamtanzahl Farbe-Seiten“. Nehmen Sie nicht die „Gesamtanzahl Seiten“.",
         "Schwarzweiß-Geräte: „Gesamtanzahl Seiten“.",
       ],
       bilder: [
         {
-          datei: "epson-statusseite-a.webp",
-          alt: "Beispiel eines Epson-Nutzungsverlaufsblatts eines Farbgeräts (WF-C17590) mit dem Abschnitt „Anzahl Seiten“; „Gesamtanzahl S&W-Seiten“ und „Gesamtanzahl Farbe-Seiten“ mit ihren Werten sind orange umkreist",
+          datei: "epson-statusseite-farbgeraet.webp",
+          alt: "Beispiel eines Epson-Nutzungsverlaufsblatts eines Farbgeräts (WF-C529RBAM); im Abschnitt „Anzahl Seiten“ sind „Gesamtanzahl Farbe-Seiten“ und „Gesamtanzahl S&W-Seiten“ pink umkreist",
+          beschriftung: "Beispiel Farbgerät: Schwarzweiß und Farbe getrennt ablesen",
         },
         {
-          datei: "epson-statusseite-b.webp",
+          datei: "epson-statusseite-sw-geraet.webp",
           alt: "Beispiel eines Epson-Nutzungsverlaufsblatts eines Schwarzweiß-Geräts (WF-M5799) mit dem Abschnitt „Anzahl Seiten“; „Gesamtanzahl Seiten“ ist orange umkreist",
+          beschriftung: "Beispiel Schwarzweiß-Gerät: Gesamtanzahl Seiten ablesen",
         },
       ],
     },

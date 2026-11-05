@@ -90,6 +90,14 @@ Antworten von Service-Technik und Angela vom 04.11.2026 sind eingearbeitet.
 
 ---
 
+## 5a. Nachträge nach dem Livegang
+
+- **05.11.2026 – Epson-Statusseite:** Hinweis der Service-Technik: Bei Farbgeräten liest man Schwarzweiß und Farbe getrennt ab, nicht die „Gesamtanzahl Seiten“.
+  - Das bisherige Farbbeispiel (WF-C17590) ist ersetzt durch einen neuen, deutlicher markierten Ausdruck eines WF-C529RBAM. Der Ausdruck kommt von der Technik, nicht aus der DOCX.
+  - Beide Beispielbilder haben jetzt eine Bildunterschrift („Beispiel Farbgerät …“ / „Beispiel Schwarzweiß-Gerät …“).
+  - Der Text bei Farbgeräten sagt jetzt ausdrücklich: „Nehmen Sie nicht die Gesamtanzahl Seiten.“
+- **05.11.2026 – Zeilenumbruch:** Der Lexmark-Titel „… (bitte zuerst ausprobieren)“ brach auf dem Handy nicht um, die Seite ließ sich dadurch seitlich verschieben. Behoben.
+
 ## 6. Hinweise an die Geschäftsführung / IT
 
 - **AGB § 12** verlinkt `www.sirius-gmbh.de/Support/Zählerstände`. Die Weiterleitung ist angelegt. Den Link in den AGB auf `/zaehlerstand` zu ändern, ist eine Änderung am Rechtstext und wurde **nicht** vorgenommen. → Freigabe GF.
