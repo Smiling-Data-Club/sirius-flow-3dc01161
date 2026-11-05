@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { ChevronDown, Download, ExternalLink, Info, Mail, Phone, Search } from "lucide-react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { ChevronDown, Download, ExternalLink, Info, Mail, Phone, Search, X, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/PageLayout";
 import {
@@ -17,30 +18,86 @@ import { istGueltigePortalUrl, normalisiere } from "@/lib/zaehlerstand";
 
 const BILD_PFAD = "/zaehlerstand/";
 
-const Bilder = ({ bilder }: { bilder: ZBild[] }) => (
-  <div className="flex flex-wrap items-start gap-4 mt-3">
-    {bilder.map((b) => {
-      const bild = (
-        <img
-          key={b.datei}
-          src={BILD_PFAD + b.datei}
-          alt={b.alt}
-          loading="lazy"
-          decoding="async"
-          className="max-w-full h-auto max-h-[420px] rounded-lg border bg-white"
-        />
-      );
-      return b.beschriftung ? (
-        <figure key={b.datei} className="max-w-full">
-          {bild}
-          <figcaption className="mt-2 text-sm font-medium">{b.beschriftung}</figcaption>
-        </figure>
-      ) : (
-        bild
-      );
-    })}
-  </div>
+/** Großansicht eines Bildes: öffnet per Klick oder Antippen, schließt per X, Esc oder Klick daneben. */
+const Grossansicht = ({ bild, breite, onClose }: { bild: ZBild | null; breite: number; onClose: () => void }) => (
+  <DialogPrimitive.Root open={!!bild} onOpenChange={(auf) => !auf && onClose()}>
+    <DialogPrimitive.Portal>
+      <DialogPrimitive.Overlay className="fixed inset-0 z-[60] bg-black/80 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+      <DialogPrimitive.Content
+        className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-3 p-4 outline-none sm:p-8"
+        onClick={onClose}
+      >
+        {bild && (
+          <>
+            <DialogPrimitive.Title className="sr-only">{bild.beschriftung ?? "Bild vergrößert"}</DialogPrimitive.Title>
+            <DialogPrimitive.Description className="sr-only">{bild.alt}</DialogPrimitive.Description>
+            <img
+              src={BILD_PFAD + bild.datei}
+              alt={bild.alt}
+              onClick={(e) => e.stopPropagation()}
+              // Kleine Bilder bis zum 2,5-Fachen vergrößern, höchstens auf Fensterbreite.
+              style={{ width: `min(92vw, ${Math.round(breite * 2.5)}px)` }}
+              className="h-auto max-h-[85vh] rounded-lg bg-white object-contain shadow-2xl"
+            />
+            {bild.beschriftung && <p className="text-center text-sm font-medium text-white">{bild.beschriftung}</p>}
+            <DialogPrimitive.Close
+              className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-white text-foreground shadow-lg hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-ring"
+              aria-label="Großansicht schließen"
+            >
+              <X className="h-5 w-5" aria-hidden />
+            </DialogPrimitive.Close>
+          </>
+        )}
+      </DialogPrimitive.Content>
+    </DialogPrimitive.Portal>
+  </DialogPrimitive.Root>
 );
+
+const Bilder = ({ bilder }: { bilder: ZBild[] }) => {
+  const [gross, setGross] = useState<ZBild | null>(null);
+  const [breite, setBreite] = useState(0);
+  return (
+    <div className="flex flex-wrap items-start gap-4 mt-3">
+      {bilder.map((b) => {
+        const bild = (
+          <button
+            key={b.datei}
+            type="button"
+            onClick={(e) => {
+              setBreite(e.currentTarget.querySelector("img")?.naturalWidth || 800);
+              setGross(b);
+            }}
+            className="group relative block max-w-full cursor-zoom-in rounded-lg transition-transform duration-200 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            aria-label={`Bild vergrößern: ${b.alt}`}
+          >
+            <img
+              src={BILD_PFAD + b.datei}
+              alt={b.alt}
+              loading="lazy"
+              decoding="async"
+              className="max-w-full h-auto max-h-[420px] rounded-lg border bg-white transition-shadow duration-200 group-hover:shadow-lg"
+            />
+            <span
+              className="pointer-events-none absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-80 transition-opacity md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100"
+              aria-hidden
+            >
+              <ZoomIn className="h-4 w-4" />
+            </span>
+          </button>
+        );
+        return b.beschriftung ? (
+          <figure key={b.datei} className="max-w-full">
+            {bild}
+            <figcaption className="mt-2 text-sm font-medium">{b.beschriftung}</figcaption>
+          </figure>
+        ) : (
+          bild
+        );
+      })}
+      <Grossansicht bild={gross} breite={breite} onClose={() => setGross(null)} />
+    </div>
+  );
+};
 
 const Aufklapper = ({
   id,

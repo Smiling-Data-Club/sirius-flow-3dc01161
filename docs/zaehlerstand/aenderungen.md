@@ -98,6 +98,9 @@ Antworten von Service-Technik und Angela vom 04.11.2026 sind eingearbeitet.
   - Der Text bei Farbgeräten sagt jetzt ausdrücklich: „Nehmen Sie nicht die Gesamtanzahl Seiten.“
 - **05.11.2026 – Zeilenumbruch:** Der Lexmark-Titel „… (bitte zuerst ausprobieren)“ brach auf dem Handy nicht um, die Seite ließ sich dadurch seitlich verschieben. Behoben.
 
+- **05.11.2026 – Bilder vergrößern:** Beim Drüberfahren mit der Maus erscheinen eine Lupe als Mauszeiger, ein Lupen-Symbol und ein leichter Schatten. Ein Klick oder Antippen öffnet das Bild groß, kleine Bilder bis zum 2,5-Fachen. Schließen per X, Esc oder Klick daneben. Eine Vergrößerung nur beim Drüberfahren funktioniert auf Handy und Tablet nicht, deshalb diese Lösung.
+- **05.11.2026 – Footer (ganze Website):** Das Newsletter-Feld war bei Tablet-Breite (768 px) zu breit, die Seiten ließen sich seitlich verschieben. Behoben.
+
 ## 6. Hinweise an die Geschäftsführung / IT
 
 - **AGB § 12** verlinkt `www.sirius-gmbh.de/Support/Zählerstände`. Die Weiterleitung ist angelegt. Den Link in den AGB auf `/zaehlerstand` zu ändern, ist eine Änderung am Rechtstext und wurde **nicht** vorgenommen. → Freigabe GF.
