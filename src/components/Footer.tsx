@@ -85,7 +85,7 @@ const NewsletterForm = () => {
           placeholder="Ihre E-Mail-Adresse"
           value={email}
           onChange={(e) => { setEmail(e.target.value); setSuccess(false); }}
-          className="flex-1 bg-transparent px-4 py-2 text-sm text-dark-foreground placeholder:text-dark-foreground/40 focus:outline-none"
+          className="flex-1 min-w-0 bg-transparent px-4 py-2 text-sm text-dark-foreground placeholder:text-dark-foreground/40 focus:outline-none"
         />
         <button
           type="submit"
