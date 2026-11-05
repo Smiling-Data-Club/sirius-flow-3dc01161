@@ -19,16 +19,26 @@ const BILD_PFAD = "/zaehlerstand/";
 
 const Bilder = ({ bilder }: { bilder: ZBild[] }) => (
   <div className="flex flex-wrap items-start gap-4 mt-3">
-    {bilder.map((b) => (
-      <img
-        key={b.datei}
-        src={BILD_PFAD + b.datei}
-        alt={b.alt}
-        loading="lazy"
-        decoding="async"
-        className="max-w-full h-auto max-h-[420px] rounded-lg border bg-white"
-      />
-    ))}
+    {bilder.map((b) => {
+      const bild = (
+        <img
+          key={b.datei}
+          src={BILD_PFAD + b.datei}
+          alt={b.alt}
+          loading="lazy"
+          decoding="async"
+          className="max-w-full h-auto max-h-[420px] rounded-lg border bg-white"
+        />
+      );
+      return b.beschriftung ? (
+        <figure key={b.datei} className="max-w-full">
+          {bild}
+          <figcaption className="mt-2 text-sm font-medium">{b.beschriftung}</figcaption>
+        </figure>
+      ) : (
+        bild
+      );
+    })}
   </div>
 );
 
@@ -58,7 +68,7 @@ const Aufklapper = ({
       <span className="min-w-0 leading-relaxed">
         {titel.split(", ").map((teil, i, alle) => (
           <span key={i}>
-            <span className="whitespace-nowrap">
+            <span className={teil.includes(" ") ? undefined : "whitespace-nowrap"}>
               {teil}
               {i < alle.length - 1 ? "," : ""}
             </span>

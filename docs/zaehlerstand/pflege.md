@@ -113,6 +113,7 @@ Prüfen Sie zuerst: **Wird das neue Modell genauso bedient wie ein Modell, das s
    - **`titel`**: die Modellliste, genau so wie auf dem Gerät, mit Komma getrennt. **Danach suchen die Kunden.**
    - **Je Schritt** den **`text`** in Sie-Form und kurzen Sätzen.
    - **Je Bild** die **`datei`** (Ihr Dateiname) und den **`alt`**-Text. Der Alt-Text beschreibt in einem Satz, was zu sehen ist, z. B. `"Display mit dem Menü Einstellungen; der Eintrag Druckzähler ist ausgewählt"`.
+   - Optional **`beschriftung`**: ein kurzer Satz, der sichtbar unter dem Bild steht, z. B. `beschriftung: "Beispiel Farbgerät"`.
    - Zu viele Schritte? Löschen Sie den ganzen Schritt-Block von `{` bis `},`. Zu wenige? Kopieren Sie einen Schritt-Block und fügen Sie ihn dahinter ein.
 7. Unten: **„Commit changes…“** → **„Commit directly to the …-Branch“** (also Ihr Branch, nicht `main`) → **„Commit changes“**.
 8. Gehen Sie oben auf den Reiter **„Pull requests“**, öffnen Sie Ihren Pull Request und bitten Sie um Prüfung.
