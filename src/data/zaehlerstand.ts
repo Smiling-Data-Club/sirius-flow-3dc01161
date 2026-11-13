@@ -60,6 +60,14 @@ export interface ZHersteller {
   beschreibung?: string;
   /** Optionaler Hinweis-Kasten über den Modellgruppen */
   hinweis?: string;
+  /**
+   * true = statt der aufklappbaren Modelllisten erscheint ein Suchfeld.
+   * Die Anleitung zeigt sich erst, wenn jemand sein Modell eingibt.
+   * Die Titel der Gruppen müssen dafür Modellnamen mit Komma getrennt sein.
+   */
+  nurSuche?: boolean;
+  /** Beispiel im Suchfeld, z. B. "MX-3071" */
+  suchBeispiel?: string;
   gruppen: ZGruppe[];
   statusseite?: ZStatusseite;
 }
@@ -87,6 +95,8 @@ export const hersteller: ZHersteller[] = [
     id: "sharp",
     name: "Sharp",
     beschreibung: "Multifunktionsgeräte und Drucker",
+    nurSuche: true,
+    suchBeispiel: "MX-3071",
     gruppen: [
       {
         id: "sharp-mx-b350p",
@@ -370,6 +380,8 @@ export const hersteller: ZHersteller[] = [
   {
     id: "epson",
     name: "Epson",
+    nurSuche: true,
+    suchBeispiel: "WF-C878",
     beschreibung: "Business-Tintenstrahldrucker und Multifunktionsgeräte",
     gruppen: [
       {

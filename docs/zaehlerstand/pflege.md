@@ -52,6 +52,8 @@ Prüfen Sie zuerst: **Wird das neue Modell genauso bedient wie ein Modell, das s
 - **Ja** → Fall 1 (dauert 2 Minuten)
 - **Nein**, es braucht eigene Schritte und Bilder → Fall 2
 
+> **Sharp und Epson:** Auf der Seite gibt es dort nur ein Suchfeld. Die Suche liest die Modellnamen aus dem `titel`. Deshalb dort bitte immer nur Modellnamen eintragen, **mit Komma und Leerzeichen getrennt**, also z. B. `"MX-3070, MX-3071"`, keinen anderen Text. Bei Lexmark und Toshiba ist der Titel frei.
+
 ### Fall 1: Modellname zu einer bestehenden Gruppe hinzufügen
 
 1. Öffnen Sie https://github.com/Smiling-Data-Club/sirius-flow-3dc01161
