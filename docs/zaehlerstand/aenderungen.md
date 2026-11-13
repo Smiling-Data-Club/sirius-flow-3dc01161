@@ -110,6 +110,12 @@ Antworten von Service-Technik und Angela vom 04.11.2026 sind eingearbeitet.
 
 - **13.11.2026 – Reihenfolge:** Zuerst die Hersteller mit Suchfeld (Sharp, Epson), dann die mit aufklappbaren Modellen (Lexmark, Toshiba). Das gilt für Statusseiten, Sprungmarken und Anleitungen und wird automatisch aus `nurSuche` abgeleitet.
 
+- **13.11.2026 – PDF im Website-Design:** Das PDF entsteht jetzt mit `npm run pdf:zaehlerstand` (`scripts/zaehlerstand-pdf.ts`) aus `src/data/zaehlerstand.ts`, nicht mehr aus der Word-Vorlage.
+  - Gestaltung: neues Logo, Schrift Urbanist, SIRIUS-Blau.
+  - Aufbau: Deckblatt, Ablauf und Hinweise, Inhaltsverzeichnis mit Seitenzahlen und Links, Statusseiten, Anleitungen in der Reihenfolge der Website, Kontakt.
+  - Umfang: 39 Seiten, ca. 4,7 MB.
+  - Die Texte „So geht's“ und „Bitte beachten Sie“ stehen jetzt in der Datendatei (`ABLAUF`, `HINWEISE`), damit Website und PDF übereinstimmen.
+
 ## 6. Hinweise an die Geschäftsführung / IT
 
 - **AGB § 12:** Link nach Freigabe der Geschäftsführung am 13.11.2026 auf `www.sirius-gmbh.de/zaehlerstand` geändert. Die Weiterleitung von der alten Adresse bleibt bestehen. Bisher verlinkte der Text `www.sirius-gmbh.de/Support/Zählerstände`. Die Weiterleitung ist angelegt. Den Link in den AGB auf `/zaehlerstand` zu ändern, ist eine Änderung am Rechtstext und wurde **nicht** vorgenommen. → Freigabe GF.

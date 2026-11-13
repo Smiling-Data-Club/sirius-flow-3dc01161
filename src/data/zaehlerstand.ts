@@ -83,6 +83,26 @@ export interface ZHersteller {
  */
 export const PORTAL_URL = "[PORTAL-URL]";
 
+/** Ablauf in drei Schritten (oben auf der Seite und im PDF) */
+export const ABLAUF: [titel: string, text: string][] = [
+  ["Auslesen", "Drucken Sie an Ihrem Gerät die Statusseite mit den Zählerständen aus. Die Anleitung für Ihr Modell finden Sie unten."],
+  ["Eintragen", "Tragen Sie die Werte im Webportal ein. Nutzen Sie dafür den persönlichen Link aus unserer E-Mail."],
+  ["Fertig", "Mehr ist nicht zu tun. Wir übernehmen die Werte für Ihre Abrechnung."],
+];
+
+/** Hinweisbox „Bitte beachten Sie“ (Seite und PDF) */
+export const HINWEISE: string[] = [
+  "Tragen Sie nur Ziffern ein – ohne führende Nullen, Punkte oder Kommas. Beispiel: Aus „00,081,767“ wird „81767“.",
+  "Ausnahme Etikettendrucker mit km-Zähler: Tragen Sie den Wert mit Komma und drei Nachkommastellen ein, z. B. „12,345“.",
+  "Bitte melden Sie die Zählerstände innerhalb von 3 Werktagen nach unserer Aufforderung.",
+  "Sie brauchen kein Passwort. Der persönliche Link aus unserer E-Mail genügt.",
+  "Notieren Sie die ID-Nr. auf dem Ausdruck. Das erleichtert die Eingabe im Webportal.",
+];
+
+/** Reihenfolge auf Seite und im PDF: zuerst Hersteller mit Suchfeld, dann die mit aufklappbaren Modellen. */
+export const reihenfolge = (liste: ZHersteller[]) =>
+  [...liste].sort((a, b) => Number(!!b.nurSuche) - Number(!!a.nurSuche));
+
 /** Anleitung als PDF – Dateiname bleibt beim Austausch immer gleich. */
 export const PDF_URL = "/downloads/anleitung-zaehlerstaende.pdf";
 
