@@ -5,7 +5,10 @@ import { ChevronDown, Download, ExternalLink, Info, Mail, Phone, Search, X, Zoom
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/PageLayout";
 import {
+  ABLAUF,
+  HINWEISE,
   hersteller,
+  reihenfolge,
   PDF_URL,
   PORTAL_URL,
   type ZBild,
@@ -18,8 +21,7 @@ import { istGueltigePortalUrl, normalisiere, passendeModelle } from "@/lib/zaehl
 
 const BILD_PFAD = "/zaehlerstand/";
 
-/** Reihenfolge auf der Seite: zuerst Hersteller mit Suchfeld (Sharp, Epson), dann die mit aufklappbaren Modellen. */
-const reihenfolge = [...hersteller].sort((a, b) => Number(!!b.nurSuche) - Number(!!a.nurSuche));
+const sortiert = reihenfolge(hersteller);
 
 /** Großansicht eines Bildes: öffnet per Klick oder Antippen, schließt per X, Esc oder Klick daneben. */
 const Grossansicht = ({ bild, breite, onClose }: { bild: ZBild | null; breite: number; onClose: () => void }) => (
@@ -295,7 +297,7 @@ const Zaehlerstand = () => {
     });
 
   const portalOk = istGueltigePortalUrl(PORTAL_URL);
-  const mitStatusseite = reihenfolge.filter((h) => h.statusseite);
+  const mitStatusseite = sortiert.filter((h) => h.statusseite);
 
   return (
     <PageLayout
@@ -310,11 +312,7 @@ const Zaehlerstand = () => {
             Für die Abrechnung brauchen wir regelmäßig die Zählerstände Ihrer Geräte. So geht es:
           </p>
           <ol className="grid gap-4 md:grid-cols-3 mb-10">
-            {[
-              ["Auslesen", "Drucken Sie an Ihrem Gerät die Statusseite mit den Zählerständen aus. Die Anleitung für Ihr Modell finden Sie unten."],
-              ["Eintragen", "Tragen Sie die Werte im Webportal ein. Nutzen Sie dafür den persönlichen Link aus unserer E-Mail."],
-              ["Fertig", "Mehr ist nicht zu tun. Wir übernehmen die Werte für Ihre Abrechnung."],
-            ].map(([titel, text], i) => (
+            {ABLAUF.map(([titel, text], i) => (
               <li key={titel} className="rounded-xl border bg-card p-5 shadow-sm">
                 <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                   {i + 1}
@@ -331,17 +329,9 @@ const Zaehlerstand = () => {
               <Info className="h-5 w-5 text-primary" aria-hidden /> Bitte beachten Sie
             </h2>
             <ul className="list-disc space-y-2 pl-5">
-              <li>
-                Tragen Sie nur Ziffern ein – ohne führende Nullen, Punkte oder Kommas. Beispiel: Aus „00,081,767“ wird
-                „81767“.
-              </li>
-              <li>
-                Ausnahme Etikettendrucker mit km-Zähler: Tragen Sie den Wert mit Komma und drei Nachkommastellen ein,
-                z. B. „12,345“.
-              </li>
-              <li>Bitte melden Sie die Zählerstände innerhalb von 3 Werktagen nach unserer Aufforderung.</li>
-              <li>Sie brauchen kein Passwort. Der persönliche Link aus unserer E-Mail genügt.</li>
-              <li>Notieren Sie die ID-Nr. auf dem Ausdruck. Das erleichtert die Eingabe im Webportal.</li>
+              {HINWEISE.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
             </ul>
           </aside>
 
@@ -395,7 +385,7 @@ const Zaehlerstand = () => {
           {/* Sprungmarken */}
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Anleitung für Ihr Gerät</h2>
           <nav aria-label="Hersteller" className="mb-10 flex flex-wrap gap-2">
-            {reihenfolge.map((h) => (
+            {sortiert.map((h) => (
               <a
                 key={h.id}
                 href={`#${h.id}`}
@@ -407,7 +397,7 @@ const Zaehlerstand = () => {
           </nav>
 
           {/* Hersteller */}
-          {reihenfolge.map((h) => (
+          {sortiert.map((h) => (
             <section key={h.id} id={h.id} className="mb-14 scroll-mt-28" aria-labelledby={`${h.id}-titel`}>
               <h3 id={`${h.id}-titel`} className="text-2xl md:text-3xl font-bold mb-1">
                 {h.name}

@@ -7,7 +7,7 @@
 Diese Anleitung zeigt Schritt für Schritt,
 
 1. wie Sie ein **neues Druckermodell ergänzen**,
-2. wie Sie das **PDF austauschen**, ohne dass sich ein Link ändert,
+2. wie Sie das **PDF aktualisieren**, ohne dass sich ein Link ändert,
 3. wie Sie den **Link zum Webportal** eintragen.
 
 Sie brauchen dafür **keine Programmierkenntnisse**. Sie arbeiten in **GitHub** im Browser.
@@ -169,21 +169,20 @@ Das ist möglich, aber aufwendiger. Ein Hersteller bekommt eine eigene Sprungmar
 
 ---
 
-## B. PDF austauschen (Link bleibt gleich)
+## B. PDF aktualisieren (Link bleibt gleich)
 
-Das PDF heißt **immer** `anleitung-zaehlerstaende.pdf`, ohne Datum im Namen. Dadurch bleibt der Download-Link `https://www.sirius-gmbh.de/downloads/anleitung-zaehlerstaende.pdf` beim Austausch gleich. Die Adresse der Seite (`/zaehlerstand`) ändert sich ohnehin nie.
+Das PDF wird **nicht mehr in Word gepflegt**. Es entsteht automatisch aus denselben Inhalten wie die Website: im Website-Design, mit Logo und Inhaltsverzeichnis. Die alte Word-Vorlage wird dafür nicht mehr gebraucht.
 
-1. Öffnen Sie die Word-Vorlage `Anleitung_zum_Auslesen_von_Zählern_MFPs_EDs.docx`, nehmen Sie Ihre Änderungen vor und speichern Sie sie.
-2. In Word: **Datei** → **Speichern unter** → Dateityp **PDF** wählen.
-3. Geben Sie als Dateiname **genau** `anleitung-zaehlerstaende` ein, alles klein, mit Bindestrich, ohne Datum. Word ergänzt `.pdf`.
-4. Öffnen Sie in GitHub den Ordner **`public`** → **`downloads`**.
-5. Klicken Sie auf **„Add file“** → **„Upload files“** und ziehen Sie die neue PDF-Datei hinein.
-6. Unten: Notiz, z. B. `Zählerstand-PDF aktualisiert (Stand 11/2026)`. Wählen Sie **„Create a new branch … and start a pull request“** → **„Propose changes“** → **„Create pull request“**.
-7. Nach der Freigabe und ein paar Minuten ist das neue PDF online. Falls Sie noch das alte sehen, laden Sie die Seite mit **Strg+F5** neu.
+**Wann?** Immer nachdem Sie in `zaehlerstand.ts` etwas geändert haben, z. B. ein neues Modell (Abschnitt A). Sonst passen Website und PDF nicht mehr zusammen.
 
-**Bitte nicht:** Die Datei umbenennen oder eine zweite PDF-Datei mit anderem Namen hochladen. Dann zeigt der Button weiter auf die alte Datei.
+**Wie?** Das kann nicht im Browser auf GitHub passieren, sondern braucht einen Rechner mit dem Website-Projekt. Am einfachsten:
 
-**Hinweis:** Wenn Sie in der Word-Datei Texte ändern, stimmen PDF und Webseite nicht mehr überein. Tragen Sie die Änderung bitte auch in `zaehlerstand.ts` ein (Abschnitt A).
+- **Mit Claude Code:** „Erzeuge das Zählerstand-PDF neu (`npm run pdf:zaehlerstand`) und lege einen Pull Request an.“
+- **Oder die Technik bitten:** Im Projektordner `npm run pdf:zaehlerstand` ausführen, dann die geänderte Datei `public/downloads/anleitung-zaehlerstaende.pdf` committen.
+
+Der Dateiname bleibt immer `anleitung-zaehlerstaende.pdf`. Der Download-Link `https://www.sirius-gmbh.de/downloads/anleitung-zaehlerstaende.pdf` ändert sich also nie.
+
+**Bitte nicht:** Ein PDF mit anderem Namen hochladen oder die Datei umbenennen. Dann zeigt der Button weiter auf die alte Datei.
 
 ---
 
@@ -208,7 +207,7 @@ Statt die Datei selbst zu bearbeiten, können Sie die Änderung auch von Claude 
 
 - „Ergänze auf der Seite /zaehlerstand das Modell **MX-2615** in der Sharp-Gruppe mit **MX-C301W**. Halte dich an docs/zaehlerstand/pflege.md.“
 - „Ich habe Fotos für den **Sharp BP-70M** hochgeladen. Lege eine neue Modellgruppe mit diesen Schritten an: … Zeichne auf Bild 2 einen orangen Kreis um den Button ‚Drucken‘. Wandle alle Bilder in WebP um.“
-- „Tausche das PDF der Zählerstand-Anleitung gegen die angehängte Datei aus. Der Link soll gleich bleiben.“
+- „Erzeuge das Zählerstand-PDF neu und lege einen Pull Request an.“
 
 Lassen Sie Claude die Änderung als **Pull Request** anlegen, nicht direkt veröffentlichen. Dann kann jemand drüberschauen, bevor sie live geht. Claude prüft die Änderung mit den automatischen Tests (`npm test`) und sagt Ihnen, ob alles passt.
 
