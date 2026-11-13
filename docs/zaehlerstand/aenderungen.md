@@ -108,6 +108,8 @@ Antworten von Service-Technik und Angela vom 04.11.2026 sind eingearbeitet.
   - Lexmark und Toshiba bleiben unverändert aufklappbar.
   - Die allgemeine Modellsuche oben ist entfallen, weil sie doppelt gewesen wäre.
 
+- **13.11.2026 – Reihenfolge:** Zuerst die Hersteller mit Suchfeld (Sharp, Epson), dann die mit aufklappbaren Modellen (Lexmark, Toshiba). Das gilt für Statusseiten, Sprungmarken und Anleitungen und wird automatisch aus `nurSuche` abgeleitet.
+
 ## 6. Hinweise an die Geschäftsführung / IT
 
 - **AGB § 12** verlinkt `www.sirius-gmbh.de/Support/Zählerstände`. Die Weiterleitung ist angelegt. Den Link in den AGB auf `/zaehlerstand` zu ändern, ist eine Änderung am Rechtstext und wurde **nicht** vorgenommen. → Freigabe GF.
