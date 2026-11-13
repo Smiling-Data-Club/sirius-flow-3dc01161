@@ -68,26 +68,28 @@ const bilder = (liste: ZBild[] = [], gross = false) =>
 
 const marke = (id: string, mitMarken: boolean) => (mitMarken ? `<span class="marke">§§${id}§§</span>` : "");
 
+const schritt = (s: ZGruppe["schritte"][number], i: number) => `
+  <div class="schritt">
+    <span class="nr">${i + 1}</span>
+    <div class="inhalt${s.bilder?.length ? " mit-bild" : ""}">
+      <div class="text">
+        <p>${text(s.text)}</p>
+        ${s.punkte ? `<ul>${s.punkte.map((p) => `<li>${text(p)}</li>`).join("")}</ul>` : ""}
+      </div>
+      ${bilder(s.bilder)}
+    </div>
+  </div>`;
+
+// Überschrift und erster Schritt stehen in einem Block, der nicht getrennt wird.
 const gruppe = (g: ZGruppe, mitMarken: boolean) => `
   <section class="gruppe" id="${g.id}">
     ${marke(g.id, mitMarken)}
-    <h3>${esc(g.titel)}</h3>
-    ${g.einleitung ? `<p class="einleitung">${text(g.einleitung)}</p>` : ""}
-    <ol class="schritte">
-      ${g.schritte
-        .map(
-          (s, i) => `
-        <li class="schritt">
-          <span class="nr">${i + 1}</span>
-          <div class="inhalt">
-            <p>${text(s.text)}</p>
-            ${s.punkte ? `<ul>${s.punkte.map((p) => `<li>${text(p)}</li>`).join("")}</ul>` : ""}
-            ${bilder(s.bilder)}
-          </div>
-        </li>`,
-        )
-        .join("")}
-    </ol>
+    <div class="gruppenkopf">
+      <h3>${esc(g.titel)}</h3>
+      ${g.einleitung ? `<p class="einleitung">${text(g.einleitung)}</p>` : ""}
+      ${g.schritte.length ? schritt(g.schritte[0], 0) : ""}
+    </div>
+    ${g.schritte.slice(1).map((s, i) => schritt(s, i + 1)).join("")}
     ${g.abschluss ? `<p class="abschluss">${text(g.abschluss)}</p>` : ""}
   </section>`;
 
@@ -157,30 +159,32 @@ function html(seiten: Record<string, number>, mitMarken: boolean) {
 
   /* Statusseiten */
   .statusseiten { break-before: page; }
-  .statusseite { break-inside: avoid-page; margin-bottom: 8mm; border: 1px solid var(--linie); border-radius: 4mm; padding: 6mm; }
-  .statusseite + .statusseite { break-before: page; }
+  .statusseite { break-inside: avoid-page; margin-bottom: 6mm; border: 1px solid var(--linie); border-radius: 4mm; padding: 6mm; }
   .statusseite h3 { font-size: 15pt; margin-bottom: 2mm; }
   .statusseite ul { padding-left: 5mm; margin: 0 0 4mm; }
 
   /* Hersteller und Schritte */
   .hersteller { break-before: page; }
   .hinweis { background: #eef3fa; border-left: 1.2mm solid var(--blau); border-radius: 2mm; padding: 3.5mm 5mm; margin: 0 0 6mm; font-size: 9.5pt; }
-  .gruppe { margin-bottom: 8mm; }
-  .gruppe + .gruppe { break-before: page; }
+  .gruppe { margin-bottom: 7mm; }
+  .gruppenkopf { break-inside: avoid; }
   .gruppe h3 { font-size: 13pt; font-weight: 700; background: var(--hell); border-radius: 3mm; padding: 3.5mm 5mm; break-after: avoid; }
   .einleitung { margin: 3mm 0 0; color: var(--grau); }
-  .schritte { list-style: none; padding: 0; margin: 4mm 0 0; }
-  .schritt { display: flex; gap: 4mm; padding: 3mm 0; break-inside: avoid; border-bottom: 1px solid var(--linie); }
-  .schritt:last-child { border-bottom: 0; }
+  .schritt { display: flex; gap: 4mm; padding: 2.5mm 0; break-inside: avoid; border-bottom: 1px solid var(--linie); }
+  .gruppe > .schritt:last-of-type { border-bottom: 0; }
+  .gruppenkopf h3 + .schritt, .gruppenkopf .einleitung + .schritt { margin-top: 3mm; }
   .schritt .nr { flex: 0 0 7mm; height: 7mm; border-radius: 99px; background: var(--blau); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 9pt; }
   .schritt .inhalt { flex: 1; min-width: 0; }
+  /* Text links, Bilder rechts – spart viel Platz */
+  .schritt .inhalt.mit-bild { display: grid; grid-template-columns: 38% 1fr; gap: 5mm; align-items: start; }
+  .schritt .inhalt.mit-bild .bilder { margin-top: 0; justify-content: flex-end; }
   .schritt p { margin: .8mm 0 0; }
   .schritt ul { margin: 1.5mm 0 0; padding-left: 5mm; }
   .abschluss { font-weight: 600; margin-top: 3mm; }
   .bilder { display: flex; flex-wrap: wrap; gap: 3mm; margin-top: 2.5mm; align-items: flex-start; }
   .bilder figure { margin: 0; max-width: 100%; }
-  .bilder img { display: block; max-width: 100%; max-height: 62mm; width: auto; height: auto; border: 1px solid var(--linie); border-radius: 2mm; background: #fff; }
-  .bilder.gross img { max-height: 175mm; }
+  .bilder img { display: block; max-width: 100%; max-height: 48mm; width: auto; height: auto; border: 1px solid var(--linie); border-radius: 2mm; background: #fff; }
+  .bilder.gross img { max-height: 160mm; }
   .bilder figcaption { font-size: 8.5pt; font-weight: 600; margin-top: 1.5mm; }
 
   .kontaktseite { break-before: page; }
