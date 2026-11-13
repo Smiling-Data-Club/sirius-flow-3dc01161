@@ -18,6 +18,9 @@ import { istGueltigePortalUrl, normalisiere, passendeModelle } from "@/lib/zaehl
 
 const BILD_PFAD = "/zaehlerstand/";
 
+/** Reihenfolge auf der Seite: zuerst Hersteller mit Suchfeld (Sharp, Epson), dann die mit aufklappbaren Modellen. */
+const reihenfolge = [...hersteller].sort((a, b) => Number(!!b.nurSuche) - Number(!!a.nurSuche));
+
 /** Großansicht eines Bildes: öffnet per Klick oder Antippen, schließt per X, Esc oder Klick daneben. */
 const Grossansicht = ({ bild, breite, onClose }: { bild: ZBild | null; breite: number; onClose: () => void }) => (
   <DialogPrimitive.Root open={!!bild} onOpenChange={(auf) => !auf && onClose()}>
@@ -292,7 +295,7 @@ const Zaehlerstand = () => {
     });
 
   const portalOk = istGueltigePortalUrl(PORTAL_URL);
-  const mitStatusseite = hersteller.filter((h) => h.statusseite);
+  const mitStatusseite = reihenfolge.filter((h) => h.statusseite);
 
   return (
     <PageLayout
@@ -392,7 +395,7 @@ const Zaehlerstand = () => {
           {/* Sprungmarken */}
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Anleitung für Ihr Gerät</h2>
           <nav aria-label="Hersteller" className="mb-10 flex flex-wrap gap-2">
-            {hersteller.map((h) => (
+            {reihenfolge.map((h) => (
               <a
                 key={h.id}
                 href={`#${h.id}`}
@@ -404,7 +407,7 @@ const Zaehlerstand = () => {
           </nav>
 
           {/* Hersteller */}
-          {hersteller.map((h) => (
+          {reihenfolge.map((h) => (
             <section key={h.id} id={h.id} className="mb-14 scroll-mt-28" aria-labelledby={`${h.id}-titel`}>
               <h3 id={`${h.id}-titel`} className="text-2xl md:text-3xl font-bold mb-1">
                 {h.name}
