@@ -56,12 +56,12 @@ const sections: { title: string; body: React.ReactNode }[] = [
         notwendig. Diese Leistung ist vom Kunden zu erbringen, idealerweise vollautomatisch über den
         Best-for-Admin-Fleet, oder manuell über{" "}
         <a
-          href="https://www.sirius-gmbh.de/Support/Zählerstände"
+          href="https://www.sirius-gmbh.de/zaehlerstand"
           target="_blank"
           rel="noopener noreferrer"
           className="text-primary underline underline-offset-4"
         >
-          www.sirius-gmbh.de/Support/Zählerstände
+          www.sirius-gmbh.de/zaehlerstand
         </a>
         . Der Kunde wird bei jeder Meldung vorab durch SIRIUS hierzu aufgefordert, unter Angabe der
         aktuellen und relevanten Informationen. Um einen geordneten Ablauf zu gewährleisten, ist der
