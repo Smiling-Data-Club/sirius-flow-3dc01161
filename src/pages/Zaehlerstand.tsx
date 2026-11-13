@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { ChevronDown, Download, ExternalLink, Info, Mail, Phone, Search, X, ZoomIn } from "lucide-react";
@@ -12,7 +12,7 @@ import {
   type ZGruppe,
   type ZHersteller,
 } from "@/data/zaehlerstand";
-import { istGueltigePortalUrl, normalisiere } from "@/lib/zaehlerstand";
+import { istGueltigePortalUrl, normalisiere, passendeModelle } from "@/lib/zaehlerstand";
 
 /* Inhalte stehen in src/data/zaehlerstand.ts – hier nur die Darstellung. */
 
@@ -166,18 +166,119 @@ const Gruppeninhalt = ({ gruppe }: { gruppe: ZGruppe }) => (
   </>
 );
 
+/** Suchfeld für Hersteller mit sehr vielen Modellen (Sharp, Epson). */
+const ModellSuche = ({
+  h,
+  suche,
+  setSuche,
+  offen,
+  onToggle,
+}: {
+  h: ZHersteller;
+  suche: string;
+  setSuche: (text: string) => void;
+  offen: Set<string>;
+  onToggle: (id: string, offen: boolean) => void;
+}) => {
+  const treffer = h.gruppen
+    .map((g) => ({ g, modelle: passendeModelle(g.titel, suche) }))
+    .filter((t) => t.modelle.length > 0);
+  const eingabeId = `${h.id}-suche`;
+  // Genau ein Treffer: Anleitung gleich aufklappen (lässt sich danach wieder zuklappen).
+  const einzigerTreffer = treffer.length === 1 ? treffer[0].g.id : null;
+  useEffect(() => {
+    if (einzigerTreffer) onToggle(einzigerTreffer, true);
+    // onToggle ändert sich bei jedem Rendern; maßgeblich ist nur der Treffer.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [einzigerTreffer]);
+  return (
+    <div>
+      <label htmlFor={eingabeId} className="mb-2 block text-sm font-medium">
+        Ihr {h.name}-Modell
+      </label>
+      <div className="relative">
+        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
+        <input
+          id={eingabeId}
+          type="search"
+          value={suche}
+          onChange={(e) => setSuche(e.target.value)}
+          placeholder={`Modell eingeben, z. B. ${h.suchBeispiel ?? ""}`}
+          className="w-full rounded-lg border bg-background py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-ring"
+        />
+      </div>
+      <p className="mt-2 text-sm text-muted-foreground" aria-live="polite">
+        {normalisiere(suche).length < 2
+          ? "Die Modellbezeichnung steht meist vorn oder oben am Gerät."
+          : treffer.length === 0
+            ? "Kein passendes Modell gefunden. Prüfen Sie die Schreibweise oder rufen Sie uns an: (0761) 704070."
+            : treffer.length === 1
+              ? "Ihre Anleitung:"
+              : `${treffer.length} passende Anleitungen – bitte wählen Sie Ihr Modell:`}
+      </p>
+      {treffer.length > 0 && (
+        <div className="mt-3 space-y-4">
+          {treffer.map(({ g, modelle }) => {
+            const gezeigt = modelle.slice(0, 3);
+            const rest = modelle.length - gezeigt.length;
+            const titel = `${h.name} ${gezeigt.join(", ")}${rest > 0 ? ` und ${rest} weitere` : ""}`;
+            return (
+              <Aufklapper
+                key={g.id}
+                id={g.id}
+                titel={titel}
+                offen={offen.has(g.id)}
+                onToggle={onToggle}
+              >
+                <Gruppeninhalt gruppe={g} />
+              </Aufklapper>
+            );
+          })}
+        </div>
+      )}
+      {/* Vollständige Modellliste: zugeklappt, damit Google und Strg+F die Modelle trotzdem finden. */}
+      <details className="mt-4 text-sm">
+        <summary className="cursor-pointer text-muted-foreground underline underline-offset-4 hover:text-primary">
+          Alle {h.name}-Modelle anzeigen
+        </summary>
+        <ul className="mt-3 space-y-2">
+          {h.gruppen.map((g) => (
+            <li key={g.id}>
+              <button
+                type="button"
+                onClick={() => {
+                  setSuche(g.titel.split(", ")[0]);
+                  document.getElementById(eingabeId)?.scrollIntoView({ behavior: "smooth", block: "center" });
+                }}
+                className="text-left text-muted-foreground hover:text-primary"
+              >
+                {g.titel}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </div>
+  );
+};
+
 const Zaehlerstand = () => {
   const { hash } = useLocation();
-  const [suche, setSuche] = useState("");
+  const [suchen, setSuchen] = useState<Record<string, string>>({});
   const [offen, setOffen] = useState<Set<string>>(new Set());
 
-  // Direktlink auf ein Modell, z. B. /zaehlerstand#toshiba-b-sa4tm, klappt es auf.
+  // Direktlink, z. B. /zaehlerstand#toshiba-b-sa4tm: Gruppe aufklappen.
+  // Bei Sharp und Epson wird dafür das erste Modell der Gruppe in die Suche eingetragen.
   useEffect(() => {
     const id = decodeURIComponent(hash.replace(/^#/, ""));
     if (!id) return;
-    const istGruppe = hersteller.some((h) => h.gruppen.some((g) => g.id === id) || `${h.id}-statusseite` === id);
-    if (istGruppe) setOffen((alt) => new Set(alt).add(id));
-    const t = window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 150);
+    for (const h of hersteller) {
+      const g = h.gruppen.find((x) => x.id === id);
+      if (!g) continue;
+      if (h.nurSuche) setSuchen((alt) => ({ ...alt, [h.id]: g.titel.split(", ")[0] }));
+      setOffen((alt) => new Set(alt).add(id));
+    }
+    const t = window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 250);
     return () => window.clearTimeout(t);
   }, [hash]);
 
@@ -190,36 +291,8 @@ const Zaehlerstand = () => {
       return neu;
     });
 
-  // Suche: filtert nur, was angezeigt wird. Die Inhalte selbst bleiben unverändert.
-  const q = normalisiere(suche);
-  const treffer = useMemo(() => {
-    if (!q) return null;
-    const ids = new Set<string>();
-    for (const h of hersteller) {
-      const passt = (text: string) => h.gruppen.filter((g) => normalisiere(`${h.name} ${g.titel}`).includes(text));
-      // Hersteller genannt (z. B. "Lexmark CX725" oder nur "Lexm"): passende Modelle zeigen,
-      // ohne Treffer alle Anleitungen dieses Herstellers.
-      if (q.startsWith(h.id)) {
-        const rest = q.slice(h.id.length);
-        const treffer = rest ? h.gruppen.filter((g) => normalisiere(g.titel).includes(rest)) : [];
-        (treffer.length ? treffer : h.gruppen).forEach((g) => ids.add(g.id));
-      } else if (q.length >= 3 && h.id.startsWith(q)) {
-        h.gruppen.forEach((g) => ids.add(g.id));
-      } else {
-        passt(q).forEach((g) => ids.add(g.id));
-      }
-    }
-    return ids;
-  }, [q]);
-
-  // Wenige Treffer: automatisch aufklappen.
-  useEffect(() => {
-    if (treffer && treffer.size > 0 && treffer.size <= 5) setOffen(new Set(treffer));
-  }, [treffer]);
-
-  const sichtbar = (g: ZGruppe) => !treffer || treffer.has(g.id);
-  const herstellerSichtbar = (h: ZHersteller) => h.gruppen.some(sichtbar);
   const portalOk = istGueltigePortalUrl(PORTAL_URL);
+  const mitStatusseite = hersteller.filter((h) => h.statusseite);
 
   return (
     <PageLayout
@@ -281,8 +354,44 @@ const Zaehlerstand = () => {
             <p className="text-muted-foreground">Nutzen Sie den persönlichen Link aus unserer E-Mail.</p>
           </div>
 
-          {/* Sprungmarken und Suche */}
-          <nav aria-label="Hersteller" className="mb-6 flex flex-wrap gap-2">
+        </div>
+
+        {/* Statusseiten nebeneinander – etwas breiter als der Rest */}
+        <div className="container max-w-6xl mb-14">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">Statusseite lesen</h2>
+          <p className="text-muted-foreground mb-6">
+            Diese Werte tragen Sie im Webportal ein. Notieren Sie dazu die ID-Nr. auf dem Ausdruck. Klicken Sie auf ein
+            Bild, um es zu vergrößern.
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {mitStatusseite.map((h) => (
+              <article
+                key={h.id}
+                id={`${h.id}-statusseite`}
+                className="scroll-mt-28 rounded-xl border border-primary/30 bg-card p-5 shadow-sm"
+                aria-labelledby={`${h.id}-statusseite-titel`}
+              >
+                <h3 id={`${h.id}-statusseite-titel`} className="text-lg font-semibold mb-3">
+                  {h.name}
+                </h3>
+                <ul className="list-disc space-y-2 pl-5 text-sm">
+                  {h.statusseite!.punkte.map((p) => (
+                    <li key={p}>{p}</li>
+                  ))}
+                </ul>
+                <Bilder bilder={h.statusseite!.bilder} />
+              </article>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Toshiba-Etikettendrucker: Welchen Wert Sie eintragen, steht direkt in der Anleitung für Ihr Modell.
+          </p>
+        </div>
+
+        <div className="container max-w-4xl">
+          {/* Sprungmarken */}
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Anleitung für Ihr Gerät</h2>
+          <nav aria-label="Hersteller" className="mb-10 flex flex-wrap gap-2">
             {hersteller.map((h) => (
               <a
                 key={h.id}
@@ -294,74 +403,38 @@ const Zaehlerstand = () => {
             ))}
           </nav>
 
-          <div className="mb-12">
-            <label htmlFor="modellsuche" className="block text-sm font-medium mb-2">
-              Modell suchen
-            </label>
-            <div className="relative">
-              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
-              <input
-                id="modellsuche"
-                type="search"
-                value={suche}
-                onChange={(e) => setSuche(e.target.value)}
-                placeholder="z. B. MX-3071, WF-C878 oder B-EX4"
-                className="w-full rounded-lg border bg-background py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground" aria-live="polite">
-              {treffer
-                ? treffer.size === 0
-                  ? "Kein passendes Modell gefunden. Wählen Sie oben Ihren Hersteller oder rufen Sie uns an – wir helfen Ihnen weiter."
-                  : treffer.size === 1
-                    ? "1 Modellgruppe gefunden"
-                    : `${treffer.size} Modellgruppen gefunden`
-                : "Tipp: Die Modellbezeichnung steht meist vorn oder oben am Gerät."}
-            </p>
-          </div>
-
           {/* Hersteller */}
-          {hersteller.map((h) =>
-            herstellerSichtbar(h) ? (
-              <section key={h.id} id={h.id} className="mb-14 scroll-mt-28" aria-labelledby={`${h.id}-titel`}>
-                <h2 id={`${h.id}-titel`} className="text-2xl md:text-3xl font-bold mb-1">
-                  {h.name}
-                </h2>
-                {h.beschreibung && <p className="text-muted-foreground mb-5">{h.beschreibung}</p>}
-                {h.hinweis && (
-                  <p className="mb-5 flex gap-2 rounded-lg border border-primary/30 bg-primary/5 p-4 text-sm">
-                    <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-                    <span>{h.hinweis}</span>
-                  </p>
-                )}
+          {hersteller.map((h) => (
+            <section key={h.id} id={h.id} className="mb-14 scroll-mt-28" aria-labelledby={`${h.id}-titel`}>
+              <h3 id={`${h.id}-titel`} className="text-2xl md:text-3xl font-bold mb-1">
+                {h.name}
+              </h3>
+              {h.beschreibung && <p className="text-muted-foreground mb-5">{h.beschreibung}</p>}
+              {h.hinweis && (
+                <p className="mb-5 flex gap-2 rounded-lg border border-primary/30 bg-primary/5 p-4 text-sm">
+                  <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  <span>{h.hinweis}</span>
+                </p>
+              )}
+              {h.nurSuche ? (
+                <ModellSuche
+                  h={h}
+                  suche={suchen[h.id] ?? ""}
+                  setSuche={(text) => setSuchen((alt) => ({ ...alt, [h.id]: text }))}
+                  offen={offen}
+                  onToggle={toggle}
+                />
+              ) : (
                 <div className="space-y-4">
-                  {h.gruppen.filter(sichtbar).map((g) => (
+                  {h.gruppen.map((g) => (
                     <Aufklapper key={g.id} id={g.id} titel={g.titel} offen={offen.has(g.id)} onToggle={toggle}>
                       <Gruppeninhalt gruppe={g} />
                     </Aufklapper>
                   ))}
-                  {h.statusseite && (
-                    <Aufklapper
-                      id={`${h.id}-statusseite`}
-                      titel={`${h.name}: Statusseite lesen`}
-                      offen={offen.has(`${h.id}-statusseite`)}
-                      onToggle={toggle}
-                      hervorheben
-                    >
-                      <p className="mb-3">Diese Werte tragen Sie im Webportal ein:</p>
-                      <ul className="list-disc space-y-2 pl-5">
-                        {h.statusseite.punkte.map((p) => (
-                          <li key={p}>{p}</li>
-                        ))}
-                      </ul>
-                      <p className="mt-3">Notieren Sie die ID-Nr. auf dem Ausdruck. Das erleichtert die Eingabe im Webportal.</p>
-                      <Bilder bilder={h.statusseite.bilder} />
-                    </Aufklapper>
-                  )}
                 </div>
-              </section>
-            ) : null,
-          )}
+              )}
+            </section>
+          ))}
 
           {/* PDF */}
           <div className="rounded-xl border bg-card p-6 md:p-8 shadow-sm mb-10">

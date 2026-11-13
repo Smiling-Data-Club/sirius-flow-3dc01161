@@ -101,6 +101,13 @@ Antworten von Service-Technik und Angela vom 04.11.2026 sind eingearbeitet.
 - **05.11.2026 – Bilder vergrößern:** Beim Drüberfahren mit der Maus erscheinen eine Lupe als Mauszeiger, ein Lupen-Symbol und ein leichter Schatten. Ein Klick oder Antippen öffnet das Bild groß, kleine Bilder bis zum 2,5-Fachen. Schließen per X, Esc oder Klick daneben. Eine Vergrößerung nur beim Drüberfahren funktioniert auf Handy und Tablet nicht, deshalb diese Lösung.
 - **05.11.2026 – Footer (ganze Website):** Das Newsletter-Feld war bei Tablet-Breite (768 px) zu breit, die Seiten ließen sich seitlich verschieben. Behoben.
 
+- **13.11.2026 – Neuer Aufbau (Wunsch Angela):**
+  - Die Statusseiten von Sharp, Lexmark und Epson stehen jetzt **oben nebeneinander** (auf dem Handy untereinander), gleich aufgeklappt.
+  - **Sharp und Epson** zeigen keine Modelllisten mehr, sondern nur ein **Suchfeld**. Die Anleitung erscheint erst nach Eingabe des Modells, bei genau einem Treffer gleich aufgeklappt.
+  - Die vollständige Modellliste steht zugeklappt unter „Alle …-Modelle anzeigen“, damit Google und Strg+F die Modellnamen weiterhin finden.
+  - Lexmark und Toshiba bleiben unverändert aufklappbar.
+  - Die allgemeine Modellsuche oben ist entfallen, weil sie doppelt gewesen wäre.
+
 ## 6. Hinweise an die Geschäftsführung / IT
 
 - **AGB § 12** verlinkt `www.sirius-gmbh.de/Support/Zählerstände`. Die Weiterleitung ist angelegt. Den Link in den AGB auf `/zaehlerstand` zu ändern, ist eine Änderung am Rechtstext und wurde **nicht** vorgenommen. → Freigabe GF.

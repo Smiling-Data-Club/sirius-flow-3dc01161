@@ -2,7 +2,7 @@ import { existsSync, readdirSync } from "fs";
 import { resolve } from "path";
 import { describe, expect, it } from "vitest";
 import { hersteller, PDF_URL, PORTAL_URL } from "@/data/zaehlerstand";
-import { istGueltigePortalUrl, normalisiere } from "@/lib/zaehlerstand";
+import { istGueltigePortalUrl, normalisiere, passendeModelle } from "@/lib/zaehlerstand";
 
 const bildOrdner = resolve(__dirname, "../../public/zaehlerstand");
 const alleBilder = hersteller.flatMap((h) => [
@@ -51,5 +51,19 @@ describe("Hilfsfunktionen", () => {
   it("Suche ignoriert Bindestriche und Leerzeichen", () => {
     expect(normalisiere("MX-B350P, MX-B450P")).toContain(normalisiere("mx b450"));
     expect(normalisiere("B-EX4T1")).toBe("bex4t1");
+  });
+});
+
+describe("Modellsuche Sharp/Epson", () => {
+  it("findet einzelne Modelle in der Modellliste", () => {
+    expect(passendeModelle("MX-3070, MX-3071, MX-M3071", "mx-3071")).toEqual(["MX-3071"]);
+    expect(passendeModelle("MX-3070, MX-3071, MX-M3071", "3071")).toEqual(["MX-3071", "MX-M3071"]);
+    expect(passendeModelle("WF-C878RDTWF, WF-C879RDTWF", "wf c878")).toEqual(["WF-C878RDTWF"]);
+    expect(passendeModelle("MX-3070", "m")).toEqual([]);
+  });
+
+  it("jede Gruppe bei Sharp und Epson ist über ihr erstes Modell auffindbar", () => {
+    for (const h of hersteller.filter((x) => x.nurSuche))
+      for (const g of h.gruppen) expect(passendeModelle(g.titel, g.titel.split(", ")[0]).length).toBeGreaterThan(0);
   });
 });
