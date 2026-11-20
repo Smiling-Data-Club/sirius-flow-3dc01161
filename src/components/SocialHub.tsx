@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Linkedin, Instagram, Play, Eye, ExternalLink } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import LinkedInFeed from "@/components/LinkedInFeed";
+import ExterneMedien from "@/components/ExterneMedien";
 
 function openExternalLink(event: React.MouseEvent<HTMLAnchorElement>, url: string) {
   event.preventDefault();
@@ -308,7 +309,7 @@ export default function SocialHub() {
 
       {/* Tab Navigation */}
       <div className="flex justify-center mb-12">
-        <div className="inline-flex bg-muted rounded-xl p-1 gap-1">
+        <div className="inline-flex flex-wrap justify-center bg-muted rounded-xl p-1 gap-1">
           {tabs.map((tab) => (
             <button
               key={tab.key}
@@ -327,11 +328,9 @@ export default function SocialHub() {
       </div>
 
       {/* Tab Content */}
-      {active === "linkedin" ? (
-        <LinkedInFeed />
-      ) : (
-        <PlatformFeed platform={active} />
-      )}
+      <ExterneMedien anbieter="LinkedIn, Instagram, TikTok und YouTube (Bilder teils über images.weserv.nl)" className="min-h-[16rem]">
+        {active === "linkedin" ? <LinkedInFeed /> : <PlatformFeed platform={active} />}
+      </ExterneMedien>
 
       {/* Follow Buttons */}
       <div className="mt-16 flex flex-wrap justify-center gap-4">
