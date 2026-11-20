@@ -1,14 +1,7 @@
-import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
-import { Linkedin, Instagram, Facebook, Youtube, Send, Check } from "lucide-react";
+import { Linkedin, Instagram, Facebook, Youtube } from "lucide-react";
 import SiriusLogo from "./SiriusLogo";
-import { toast } from "@/hooks/use-toast";
 import { oeffneCookieEinstellungen } from "@/lib/consent";
-
-// Webhook-URL für Newsletter-Anmeldungen (z. B. Zapier, Make, n8n, Zoho Flow).
-// Hier eintragen — der Footer schickt dann bei jeder Anmeldung ein POST mit { email, source, timestamp }.
-const NEWSLETTER_WEBHOOK_URL =
-  (import.meta.env.VITE_NEWSLETTER_WEBHOOK_URL as string | undefined) ?? "";
 
 const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/79397257/", icon: <Linkedin size={18} /> },
@@ -26,98 +19,16 @@ const socials = [
   { label: "YouTube", href: "https://www.youtube.com/@sirius.freiburg", icon: <Youtube size={18} /> },
 ];
 
-const NewsletterForm = () => {
-  const [email, setEmail] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    if (!NEWSLETTER_WEBHOOK_URL) {
-      toast({
-        title: "Newsletter noch nicht konfiguriert",
-        description: "Bitte hinterlegen Sie die Webhook-URL im Footer-Code.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setSubmitting(true);
-    try {
-      await fetch(NEWSLETTER_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        mode: "no-cors",
-        body: JSON.stringify({
-          email: email.trim(),
-          source: "sirius-gmbh.de Footer",
-          timestamp: new Date().toISOString(),
-        }),
-      });
-      setSuccess(true);
-      setEmail("");
-      toast({
-        title: "Vielen Dank!",
-        description: "Ihre Anmeldung wurde übermittelt.",
-      });
-    } catch {
-      toast({
-        title: "Anmeldung fehlgeschlagen",
-        description: "Bitte versuchen Sie es später erneut.",
-        variant: "destructive",
-      });
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md" zps-mask="true">
-      <label htmlFor="newsletter-email" className="text-xs uppercase tracking-[0.2em] text-dark-foreground/50 mb-3 block">
-        Newsletter
-      </label>
-      <div className="flex items-center gap-2 bg-dark-foreground/5 border border-dark-foreground/15 rounded-full p-1 focus-within:border-primary transition-colors">
-        <input
-          id="newsletter-email"
-          type="email"
-          required
-          placeholder="Ihre E-Mail-Adresse"
-          value={email}
-          onChange={(e) => { setEmail(e.target.value); setSuccess(false); }}
-          className="flex-1 min-w-0 bg-transparent px-4 py-2 text-sm text-dark-foreground placeholder:text-dark-foreground/40 focus:outline-none"
-        />
-        <button
-          type="submit"
-          disabled={submitting}
-          aria-label="Anmelden"
-          className="shrink-0 bg-primary text-primary-foreground p-2.5 rounded-full hover:scale-[1.03] active:scale-95 transition-transform disabled:opacity-60"
-        >
-          {success ? <Check className="w-4 h-4" /> : <Send className="w-4 h-4" />}
-        </button>
-      </div>
-      <p className="text-xs text-dark-foreground/40 mt-2">
-        Mit der Anmeldung stimmen Sie unserer{" "}
-        <Link to="/datenschutz" className="underline underline-offset-2 hover:text-primary">
-          Datenschutzerklärung
-        </Link>{" "}
-        zu.
-      </p>
-    </form>
-  );
-};
-
 const Footer = () => (
   <footer className="bg-dark text-dark-foreground">
     <div className="container py-16">
       {/* Top: Logo + Socials + Newsletter */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <SiriusLogo variant="white" className="h-10 w-auto" />
         </div>
 
-        <div className="flex md:justify-center flex-wrap gap-3">
+        <div className="flex md:justify-end flex-wrap gap-3">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -132,9 +43,6 @@ const Footer = () => (
           ))}
         </div>
 
-        <div className="md:flex md:justify-end">
-          <NewsletterForm />
-        </div>
       </div>
 
       {/* Sitemap */}
