@@ -27,7 +27,7 @@ const ALTER_KEY = "cookie-consent"; // alter Hinweis-Banner, hatte keine Wirkung
 // PageSense-Projekt „SIRIUS HP ab 05/2026“. Schlüssel aus der Script-Adresse
 // https://cdn-eu.pagesense.io/js/siriusgmbh/<SCHLÜSSEL>.js – leer = nichts laden.
 // Nur EIN PageSense-Script pro Seite (Zoho erkennt Duplikate, das zweite bleibt wirkungslos).
-const PAGESENSE_PROJEKT = "";
+const PAGESENSE_PROJEKT = "2300da9d6f6942f8a806fe3fd9c9a52c";
 
 const ZOHO_PREFIXE = ["zab", "zps", "zpc", "zsc", "zft", "z_user_info"];
 const AENDERUNG_EVENT = "sirius:einwilligung";
