@@ -21,6 +21,7 @@ import marderLogo from "@/assets/referenzen/marder-stopgo.png";
 import andockLogo from "@/assets/referenzen/andocksysteme.png";
 import kundoLogo from "@/assets/referenzen/kundo-xt.png";
 import waldhausLogo from "@/assets/referenzen/waldhaus.png";
+import ExterneMedien from "@/components/ExterneMedien";
 
 
 
@@ -260,14 +261,16 @@ const Testimonials = () => (
           {testimonials.map((t, i) => (
             <div key={i} className="reveal">
               <div className="aspect-video rounded-2xl overflow-hidden mb-5 shadow-xl">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
-                  title={`Testimonial von ${t.name}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                  loading="lazy"
-                />
+                <ExterneMedien anbieter="YouTube" className="h-full rounded-none border-0">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
+                    title={`Testimonial von ${t.name}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                    loading="lazy"
+                  />
+                </ExterneMedien>
               </div>
               <p className="font-semibold">{t.name}</p>
               <p className="text-muted-foreground text-sm">{t.role}</p>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Linkedin, Instagram, Facebook, Youtube, Send, Check } from "lucide-react";
 import SiriusLogo from "./SiriusLogo";
 import { toast } from "@/hooks/use-toast";
+import { oeffneCookieEinstellungen } from "@/lib/consent";
 
 // Webhook-URL für Newsletter-Anmeldungen (z. B. Zapier, Make, n8n, Zoho Flow).
 // Hier eintragen — der Footer schickt dann bei jeder Anmeldung ein POST mit { email, source, timestamp }.
@@ -73,7 +74,7 @@ const NewsletterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md">
+    <form onSubmit={handleSubmit} className="w-full max-w-md" zps-mask="true">
       <label htmlFor="newsletter-email" className="text-xs uppercase tracking-[0.2em] text-dark-foreground/50 mb-3 block">
         Newsletter
       </label>
@@ -164,6 +165,9 @@ const Footer = () => (
             <Link to="/impressum" className="hover:text-primary transition-colors">Impressum</Link>
             <Link to="/datenschutz" className="hover:text-primary transition-colors">Datenschutz</Link>
             <Link to="/agb" className="hover:text-primary transition-colors">AGB</Link>
+            <button type="button" onClick={oeffneCookieEinstellungen} className="text-left hover:text-primary transition-colors">
+              Cookie-Einstellungen
+            </button>
             <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">sitemap.xml</a>
           </div>
         </div>

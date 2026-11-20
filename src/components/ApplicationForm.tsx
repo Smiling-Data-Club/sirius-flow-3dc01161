@@ -17,7 +17,7 @@ const ApplicationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4" zps-mask="true">
       <input
         required
         type="text"
